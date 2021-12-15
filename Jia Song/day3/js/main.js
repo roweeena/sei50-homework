@@ -6,13 +6,14 @@ const resultArr = ["_", "_", "_", "_", "_"];
 let reward = 0;
 
 const guessLetter = function(guessedLetter) {
-// 0. transform input to uppercase
+// 0. validate input
+  if(guessedLetter.length !== 1) {
+    console.log(`Please enter 1 letter`);
+    return null;
+  }
+  // transform input to uppercase
   let inputLetter = guessedLetter.toUpperCase();
 
-  // validate input
-  if(inputLetter.length !== 0) {
-    console.log(`Please enter 1 letter`);
-  }
 
   if(resultArr.includes(inputLetter)) {
     console.log(`You've already had ${inputLetter}`);
@@ -22,20 +23,17 @@ const guessLetter = function(guessedLetter) {
 
 
 
-// 1. check if any letter in guessedLetter is matched, and if it is, update resultArr array, and foundLetter
-
+// 1. check if any letter in guessedLetter is matched, and if it is, update resultArr array
   let matchedLetter = null;
 
-  // check matching with nested loop
+  // check matching with loop
   for(let i=0; i<word.length; i++) {
-
     if(word[i] === inputLetter){
       // update resultArr array with the found letter
       resultArr[i] = inputLetter;
       // update matchedLetter value
       matchedLetter = inputLetter;
     }
-
   }
 
 
@@ -60,7 +58,7 @@ const guessLetter = function(guessedLetter) {
     matchedLetter = null
   }else {
     // subtract reward
-    reward -= 100;
+    reward -= 200;
 
     console.log(`
       Result: ${result}
