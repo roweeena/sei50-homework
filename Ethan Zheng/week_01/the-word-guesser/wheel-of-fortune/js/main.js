@@ -43,8 +43,7 @@ const rewardCalculator = function (multiplier) {
 
 //function that prints wordguess
 const printWordGuess = function () {
-    const wordGuessString = wordGuess.toString();
-    console.log(wordGuessString.replaceAll(",", ""));
+    console.log(wordGuess.join(''));
 }
 
 //function that checks for win condition
