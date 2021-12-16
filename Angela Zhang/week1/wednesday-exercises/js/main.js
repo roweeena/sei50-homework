@@ -1,11 +1,14 @@
-// Exercises: Arrays
-// Your top choices
-// Create an array to hold your top five choices of something 
-//(colors, presidents, whatever). If you choose movies, the right top choice is "Satantango".
+// // Exercises: Arrays/////HOMEWORK WK1-WEDNESDAY/////
 
-// For each choice, log to the screen a string like: "My #1 choice is blue."
-// Bonus: Change it to log "My 1st choice, "My 2nd choice", "My 3rd choice", 
-//picking the right suffix for the number.
+
+
+// // Your top choices
+// // Create an array to hold your top five choices of something 
+// //(colors, presidents, whatever). If you choose movies, the right top choice is "Satantango".
+
+// // For each choice, log to the screen a string like: "My #1 choice is blue."
+// // Bonus: Change it to log "My 1st choice, "My 2nd choice", "My 3rd choice", 
+// //picking the right suffix for the number.
 
 const topColors=[
     "purple",
@@ -38,8 +41,8 @@ for(let i=0;i<=topColors.length-1;i++){
 console.log('---------------------')
 
 
-// Extra Challenges to Achieve Array Mastery
-// Starting with an empty array called rainbowColors:
+// // Extra Challenges to Achieve Array Mastery
+// // Starting with an empty array called rainbowColors:
 
 // Add "orange" to the end of the array
 // Add "red" to the start of the array
@@ -66,11 +69,11 @@ console.log(`Index of Blue: ${rainbowColors.indexOf('blue')}`);
 console.log('---------------------')
 
 
-// Bonus: Find out the difference between .slice and .splice
-// Create an array called twoColors using one method - don't change the rainbowColors array! 
-//Essentially pull two colors out of the array (say, between the index of 1 and 3)
-// Starting with this array var nums = [0, 1, 2, 2, 2, 3, 3, 4, 5];, remove the duplicates 
-//destructively using slice or splice (whichever one is appropriate)
+// // Bonus: Find out the difference between .slice and .splice
+// // Create an array called twoColors using one method - don't change the rainbowColors array! 
+// //Essentially pull two colors out of the array (say, between the index of 1 and 3)
+// // Starting with this array var nums = [0, 1, 2, 2, 2, 3, 3, 4, 5];, remove the duplicates 
+// //destructively using slice or splice (whichever one is appropriate)
 
 const twoColors= rainbowColors.slice(1,3);
 console.log ('Result of Slice');
@@ -100,7 +103,7 @@ console.log(arrOfArrs[0][0]);
 
 
 
-/////HOMEWORK
+/////HOMEWORK////////
 
 // # Homework: The Word Guesser
 
@@ -113,11 +116,6 @@ console.log(arrOfArrs[0][0]);
 
 console.log('---------------------')
 let gameWord=['f','o','x']
-
-let guessword=[]
-
-//////
-console.log('---------------------')
 const guessWord=['\_','\_','\_']
 console.log(`Guess the word: ${guessWord}`);
 
@@ -125,7 +123,7 @@ console.log(`Guess the word: ${guessWord}`);
 // - Write a function called guessLetter that will:
 // - Take one argument, the guessed letter.
 
-const guessLetter = function(x){
+let guessLetter = function(x){
     for(i=0;i<gameWord.length;i++){
         if(x===gameWord[i]){
             console.log(`This letter is correct!`);
@@ -144,14 +142,45 @@ guessLetter('x');
 
 
 
-console.log('--------version 2-------------');
+console.log('--------version 2 RandomWord-------------');
+
+let wordBank=['cat','dog','horse','chicken'];
+let gameWord2 = [];
+let guessWord2= [];
+
+let chosenWord =wordBank[Math.floor(Math.random()*wordBank.length)];
+
+
+let gameSpaceOutput=function(guess){
+    let emptyWord=guess.slice('');
+
+    for(i=0;i<emptyWord.length;i++){
+        emptyWord[i]="1";
+        console.log( `Guess the word: ${emptyWord}`);
+    }
+
+  console.log(`the num of letters ${guess.length}`);
+
+}//
+
+gameSpaceOutput("Hello");
+
+//////////
+console.log('--------testArrayReplacement-------------');
+
+let testArray=['t','e','s','t'];
+
+for(i=0;i<testArray.length;i++){
+    testArray[i]="_";
+}
+
+console.log( `test the replacement of letter: ${testArray}`);
 
 
 
 
 
-
-
+``
 // - Iterate through the word letters and see if the guessed letter is in there.
 // - If the guessed letter matches a word letter, changed the guessed letters array to reflect that.
 // - When it's done iterating, it should log the current guessed letters ('F__')
@@ -201,3 +230,6 @@ console.log('--------version 2-------------');
 // 6. Write a function `findLongestWord` that takes an array of words and returns the length of the longest one.
 // 7. Write a function `filterLongWords` that takes an array of words and an number `i` and returns the array of words that are longer 
 //than i.
+
+
+
