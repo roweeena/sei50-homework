@@ -1,30 +1,16 @@
 const guessLetter = (word) => {
     let failAttempts = 0;
-    let globalArr = word.split(""); // Generates the global arr
-
-    // Generates the globalArr length of "_" in wordProgress
-    const underScoreGenerate = () => {
-        let wordProgress = [];
-        for (let i = 0; i < globalArr.length; i++) {
-            wordProgress.push("_");
-        }
-        return wordProgress;
-
-        //vs
-        // wordProgress = globalArr.slice();
-        // wordProgress.map(letter => "_");
-        // return wordProgress
-    }
+    let secretWordLetters = word.split(""); // Generates the global arr
 
     // When Guess is correct: Switch all values of the "_" in the respective position of the guess values.
     const switchLetter = (guess) => {//TODO: do debugging with this!
         let currentIndex;
 
-        do { // fill in every matching letter in the relevant space. 
-            currentIndex = globalArr.indexOf(guess);
-            globalArr[currentIndex] = "_";
+        do { // fill in every matching letter in the relevant space.  //TODO: Use ReplaceAll
+            currentIndex = secretWordLetters.indexOf(guess);
+            secretWordLetters[currentIndex] = "_";
             wordProgress[currentIndex] = guess;
-        } while (globalArr.indexOf(guess) !== -1)
+        } while (secretWordLetters.indexOf(guess) !== -1)
         console.log(`${guess} was a correct letter`);
     }
 
@@ -34,20 +20,18 @@ const guessLetter = (word) => {
         console.log(`Sorry ${guess} is not in here. Try Again!`);
     }
 
-    let wordProgress = underScoreGenerate();// While loop that takes in a guess, check if that letter is there
+    let wordProgress = new Array(secretWordLetters.length).fill("_"); // Generates the secretWordLetters length of "_" in wordProgress
+    
+    //for each guess checks if the work matches and uses the switchLetter & guessAgain methods.
+    for (i = 0; i < guesses.length; i++){ 
+        secretWordLetters.includes(guess) ? switchLetter(guess) : guessAgain(guess); // Replaces "_" if correct until no more  
 
-    // wrapped the foreach in a try catch, in order to use the break funciton
-    try{
-        guesses.forEach(guess => {
-            globalArr.includes(guess) ? switchLetter(guess) : guessAgain(guess); // Replaces "_" if correct until no more  
-
-            console.log(wordProgress);
-            if(!wordProgress.includes("_")) {
-                console.log("Congrats you found the word!");
-                throw BreakException;
-            }
-        });
-    } catch (e) {}
+        if(!wordProgress.includes("_")) { //TODO: change this to a counter method. 
+            console.log("Congrats you found the word!");
+            break;
+        }
+        console.log(wordProgress);
+    }
 }
 
 const globalWord = "GOOFY";

@@ -1,12 +1,12 @@
 const askSimon = (input) => {
-    if(input[input.length -1] === "?") {    
+    if(input.endsWith("?")) {    
         console.log("Sure");
-    }
-    else if(input === input.toUpperCase() && input !== "") {
-        console.log("Whoa Chill out");
     }
     else if(input===""){
         console.log("Fine be that way!")
+    }
+    else if(input === input.toUpperCase()) {
+        console.log("Whoa Chill out");
     }
     else{
         console.log("Whatever")
