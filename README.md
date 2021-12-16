@@ -38,7 +38,7 @@ _Adding an upstream repository links the local repository on your computer to th
 You should put each night's homework in a new folder within the appropriate directory of your homework repo. So, for day two, where you have two tasks ("Calculator" and "Strings"), you might do something like this:
 
 1. Open Terminal/iTerm2/Ubuntu;
-2. Go to your local homework repo (eg, `cd ~/Projects/sei50-homework`);
+2. Go to your local homework repo (eg, `cd ~/Projects/sei50/homework`);
 3. From here, go to the folder matching your name within that repo, and the appropriate week (eg, `taylor_swift/week_01`);
 4. Create new folders for each of the day's homework tasks: (eg `mkdir calculator` and `mkdir strings`);
 5. Create the files necessary to complete the homework in their respective directories;
