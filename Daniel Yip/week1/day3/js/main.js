@@ -17,8 +17,8 @@ console.log(`###################################################################
 // and if not, it should congratulate the user for winning the game.
 // - Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
 
-const answer = ['F','O','X']; 
-const userInput = ['','','']; 
+const answer = ['F','O','O','X']; 
+const userInput = ['_','_','_','_']; 
 
 const guessLetter = function(letter){ 
     console.log(`You guessed ${letter}`)
@@ -83,7 +83,6 @@ const wofGuessLetter = function(letter){
         }
     } 
 
-    
     if (roundWin === true){ // checking the win condition to decide how to increment the total winnings.
         if (wofPrize <= 0){
             wofPrize = stakes
@@ -118,7 +117,6 @@ console.log(`###################################################################
 const hangmanAnswer = ['F','O','X']; 
 const sliceHangmanAnswer = hangmanAnswer.slice();
 const hangmanUserInput = [`_`,`_`,`_`]; 
-
 const guessedLetters = []
 let hangmanState = 0;
 
@@ -164,9 +162,6 @@ const hangmanGuessLetter = function(letter){
       =========`)
     }
 };
-
-
-
 
 
 
