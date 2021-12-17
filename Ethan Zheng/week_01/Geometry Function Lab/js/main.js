@@ -47,3 +47,4 @@ const isObtuse = function (object) {
         return false;
     }  
 }
+//BUGS - Invalid triangles may be passed through - im not fixing this
