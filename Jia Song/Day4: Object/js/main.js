@@ -31,13 +31,21 @@ const isIsosceles = function(tri) {
 
 // area(tri) - Returns the area of the Triangle
 const triArea = function(tri) {
-  return (tri.sideA + tri.sideB + tri.sideC) / 2;
+  // return (tri.sideA + tri.sideB + tri.sideC) / 2;
 }
 
 // isObtuse(tri) - Returns whether the triangle is obtuse or not
 const isObtuse = function(tri) {
-  // ...
+  const sortedArr = [tri.sideA, tri.sideB, tri.sideC].sort((a,b) => a-b);
+
+  return Math.pow(sortedArr[2]) > Math.pow(sortedArr[1]) + Math.pow(sortedArr[0]);
 }
+// let tri = {
+//   sideA: 1,
+//   sideB: 2,
+//   sideC: 3
+// }
+// console.log(isObtuse(tri))
 
 
 // The Cash Register -----------------------------------------------------------

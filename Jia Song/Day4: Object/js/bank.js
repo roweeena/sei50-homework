@@ -3,7 +3,7 @@ const bank = {
   accounts: [
     {
       owner: "jia",
-      balance: 100,
+      balance: 0,
     },
     {
       owner: "jenna",
@@ -34,7 +34,7 @@ const bank = {
   addAccount: function(owner, amount) {
     // check if amount is minus
     if(amount < 0) {
-      console.log("You can't create an account with no money!");
+      console.log(`%cERROR: You can't create an account with no money, ${owner}!`, "color: red");
       // exit from method
       return null;
     }
@@ -61,12 +61,12 @@ const bank = {
   },
 
   // method to find the user's account based on name (for DRY code)
-  findTheAccount: function(owner) {
+  findAccount: function(owner) {
     // iterate this.accounts 
     for(let i=0; i<this.accounts.length; i++) {
       // if owner name is found, return the index number
       if(this.accounts[i].owner === owner) {
-        return i;
+        return this.accounts[i];
       }
     }
 
@@ -78,61 +78,67 @@ const bank = {
 
   getBalance: function(owner) {
     // find the account's index with owner's name
-    const index = this.findTheAccount(owner);
+    const account = this.findAccount(owner);
 
-    // if the account is found, return it's balance
-    if(index !== false) {
-      console.log(`${owner}'s balance: ${this.accounts[index].balance}`);
-      return this.accounts[index].balance;
+    // if the account is not found, early return
+    if(index === false) {
+      return null;
     }
+
+    console.log(`${owner}'s balance: ${account.balance}`);
+    return account.balance;
   },
 
   deposit: function(owner, amount) {
     // find the account's index with owner's name
-    const index = this.findTheAccount(owner);
+    const account = this.findAccount(owner);
 
-    if(index !== false) {
-      // add amount
-      this.accounts[index].balance += amount;
-
-      console.log(`
-        ${owner} deposited $${amount} 
-        Balance: $${this.accounts[index].balance}
-      `);
-
-      return this.accounts[index].balance;
+    if(account === false) {
+      return null;
     }
+
+    // add amount
+    account.balance += amount;
+
+    console.log(`
+      ${owner} deposited $${amount} 
+      Balance: $${account.balance}
+    `);
+
+    return account.balance;
   },
 
   withdraw: function(owner, amount) {
-    const index = this.findTheAccount(owner);
+    const account = this.findAccount(owner);
 
-    if(index !== false) {
-      let someonesBalance = this.accounts[index].balance;
-
-      // if owner doesn't have enough balance, return false and exit
-      if(someonesBalance - amount < 0) {
-        console.log(
-          `%c ERROR: ${owner} can't withdraw $${amount}. ${owner}'s balance is $${someonesBalance}!`,
-          `color: red;`
-        );
-
-        return false;
-      }else {
-        // if they have enough, subtract balance
-        this.accounts[index].balance = this.accounts[index].balance - amount;
-  
-        // !!! why doesn't it work !!! it gives me ...
-        // someonesBalance -= amount; 
-  
-        console.log(`
-          ${owner} withdrew $${amount}
-          Balance: $${this.accounts[index].balance}
-        `);
-      }
-  
-      return someonesBalance;
+    if(account === false) {
+      return false;
     }
+
+    let someonesBalance = account.balance;
+
+    // if owner doesn't have enough balance, return false and exit
+    if(someonesBalance - amount < 0) {
+      console.log(
+        `%c ERROR: ${owner} can't withdraw $${amount}. ${owner}'s balance is $${someonesBalance}!`,
+        `color: red;`
+      );
+
+      return false;
+    }else {
+      // if they have enough, subtract balance
+      account.balance -= amount;
+
+      // !!! why doesn't it work !!! doesn't change the value
+      // someonesBalance -= amount; 
+
+      console.log(`
+        ${owner} withdrew $${amount}
+        Balance: $${account.balance}
+      `);
+    }
+
+    return someonesBalance;
   },
 
   transfer: function(from, to, amount) {
@@ -145,14 +151,15 @@ const bank = {
   }
 };
 
-bank.getTotalSum();
-bank.deposit("jia", 1000000)
-bank.addAccount("nick", 1000);
-bank.deposit("nick", 200);
-bank.withdraw("nick", 300);
-bank.withdraw("jia", 50);
-bank.transfer("mona", "jia", 10000);
-bank.transfer("jia", "joelle", 30000);
+// bank.getTotalSum();
+// bank.deposit("jia", 1000000);
+// bank.addAccount("nick", 1000);
+// bank.deposit("nick", 200);
+// bank.withdraw("nick", 300);
+// bank.addAccount("mimi", -100);
+// bank.withdraw("jia", 50);
+// bank.transfer("mona", "jia", 10000);
+// bank.transfer("jia", "joelle", 30000);
 
 
 
@@ -173,8 +180,19 @@ const validateCreditCard = function(input) {
 
 
   // condition2: You must have at least two different digits represented (all of the digits cannot be the same)
+  let firstDigit = creditNumArr[0];
+  let isDifferent = false;
+
   for(let i=0; i<creditNumArr.length; i++) {
-    // ...
+    if(firstDigit !== creditNumArr[i]) {
+      isDifferent = true;
+      // break;
+    }
+  }
+
+  if(isDifferent === false) {
+    console.log("%c ERROR: You must have at least two different digits", "color: red");
+    return false;
   }
 
 
@@ -202,8 +220,12 @@ const validateCreditCard = function(input) {
     console.log("%c ERROR: The sum of all the digits must be greater than 16", "color: red")
     return false;
   }
+
+  console.log("%c SUCCESS: Credit card is created successfully!", "color: blue");
+  return true;
 }
 
-// console.log(validateCreditCard('9999-9b99-8888-00a0'));
-// console.log(validateCreditCard('9999-9899-8888-0001'));
-// console.log(validateCreditCard('1111-1111-1211-0002'));
+validateCreditCard('9999-9b99-8888-00a0');
+validateCreditCard('9999-9899-8888-0001');
+validateCreditCard('1111-1111-1211-0002');
+validateCreditCard('1111-1111-1111-1111');
