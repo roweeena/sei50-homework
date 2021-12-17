@@ -130,6 +130,8 @@ console.log(`The Cash Register`)
 // // Output
 // cashRegister(cartForParty); // 60.55
 
+
+
 const cartForParty = {  
       banana: "1.25",
       handkerchief: ".99",
@@ -150,6 +152,8 @@ const cashRegister = function (cart){
 }
 console.log(cashRegister(cartForParty))
 
+
+
 // In this homework, you'll create a basic bank in Javascript. The bank has many accounts and the following capabilities that you need to write.
 
 // Bank
@@ -168,9 +172,10 @@ console.log(cashRegister(cartForParty))
 // You should write a basic story through a series of JavaScript commands that shows that the methods do indeed work as expected: add some accounts, show the total balance, make some deposits and withdrawals, show the new total balance.
 
 console.log(`######################`)
-console.log('%c___________________Welcome to the Bank!_________________',
-'color: yellow; font-size: 16pt');
+console.log('%cWelcome to the Bank!',
+'color: red; font-size: 16pt');
 
+console.log('%cbank.records()','color: red; font-size: 14pt' )
 console.log('%cbank.accountsTotal()','color: red; font-size: 14pt' )
 console.log('%cbank.addAccount()','color: red; font-size: 14pt')
 console.log('%cbank.findAccount()','color: red; font-size: 14pt')
@@ -201,10 +206,11 @@ const bank = {
         {accountName: 'Rowena Leung', currentBalance: 1017},
     ],
 
-    message: (string) => {
+    message: (string) => { // this didn't end up being very useful because it would only take one argument... 
         console.log(string)
     },
 
+    // PRINT A LIST OF ALL ACCOUNTS AND THEIR VALUES
     records: () => {
         const bankAccArray = bank.accounts
         for (let i = 0; i < bankAccArray.length; i++){
@@ -241,7 +247,7 @@ const bank = {
         return accountNameCheck
     },
 
-    // DEPOSITS INTO AN ACCOUNT
+    // DEPOSIT TO AN ACCOUNT
     deposit: (account, amount) => {
         const depositAccount = bank.findAccount(account);
         if (amount <= 0){ //if you try to deposit nothing or less then nothing you'll be rejected
@@ -254,6 +260,7 @@ const bank = {
         };
     },
 
+    // WITHDRAW TO AN ACCOUNT
     withdraw: (account, amount) => {
         const withdrawAccount = bank.findAccount(account);
         if (withdrawAccount === undefined){ // check  for the account
@@ -268,6 +275,7 @@ const bank = {
         };
     },
 
+    // TRANSFER TO AN ACCOUNT
     transfer: (withdrawAcc, amount, depositAcc ) => {
         const withdrawAccount = bank.findAccount(withdrawAcc);
 
@@ -284,8 +292,8 @@ const bank = {
         bank.withdraw(withdrawAcc, amount);
         bank.deposit(depositAcc, amount);
     },
-
-    dodgyTransfer: (withdrawAcc, amount, depositAcc ) => {
+    // SHADY TRANSFER TO AN ACCOUNT
+    dodgyTransfer: (withdrawAcc, amount, depositAcc ) => { // this one will give the deposit account the money regardless of if the withdraw account exists or if it doesnt have enoough funds...
         bank.withdraw(withdrawAcc, amount);
         bank.deposit(depositAcc, amount)
     },
