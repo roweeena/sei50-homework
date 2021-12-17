@@ -1,7 +1,9 @@
 // The Word Guesser -----------------------------------------------------------------------------------
 
-const word = ["A", "P", "P", "L", "E"];
-const resultArr = ["_", "_", "_", "_", "_"];
+const solutionArr = ["A", "P", "P", "L", "E"];
+// const resultArr = ["_", "_", "_", "_", "_"];
+const resultArr = new Array(solutionArr.length).fill("_");
+
 
 let reward = 0;
 
@@ -27,11 +29,11 @@ const guessLetter = function(guessedLetter) {
   let matchedLetter = null;
 
   // check matching with loop
-  for(let i=0; i<word.length; i++) {
-    if(word[i] === inputLetter){
+  for(let i=0; i<solutionArr.length; i++) {
+    if(solutionArr[i] === inputLetter){
       // update resultArr array with the found letter
       resultArr[i] = inputLetter;
-      // update matchedLetter value
+      // store the value in matchedLetter variable
       matchedLetter = inputLetter;
     }
   }
@@ -44,7 +46,7 @@ const guessLetter = function(guessedLetter) {
   // if the user find the letter
   if(matchedLetter !== null) {
     // bonus: calculate reward
-    let howMany = word.filter(letter => letter === matchedLetter).length;
+    let howMany = solutionArr.filter(letter => letter === matchedLetter).length;
     reward += howMany * 1000;
 
     console.log(`
@@ -78,15 +80,15 @@ const guessLetter = function(guessedLetter) {
       foundLetterCount++;
     }
 
-    // if all of the letters in resultArr array are not "_", then finish the game.
-    if(foundLetterCount === word.length) {
+    // during the iteration, if all of the letters in resultArr array are not "_", then finish the game.
+    if(foundLetterCount === solutionArr.length) {
       console.log(`You found all letters!😊`);
     }
   }
 
   // if there are still letters to be found
-  if(foundLetterCount < resultArr.length) {
-    console.log(`You need to find ${word.length - foundLetterCount} more letters.`);
+  if(foundLetterCount < solutionArr.length) {
+    console.log(`You need to find ${solutionArr.length - foundLetterCount} more letters.`);
   }
 
   console.log(`TOTAL REWARD $${reward}`)
@@ -96,6 +98,7 @@ const guessLetter = function(guessedLetter) {
 
 
 // Array and Functions Bonus Material -----------------------------------------------------------
+
 // question 1
 const maxOfTwoNumbers = function(num1, num2) {
   if(num1 >= num2) {
