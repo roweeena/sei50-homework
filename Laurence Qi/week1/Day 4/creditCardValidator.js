@@ -9,26 +9,26 @@
 
 const checkConditions = (cardNum) => {
     // return (cardNum[cardNum.length - 1] % 2 === 0)
-    return !(cardNum.length !== 16) && !cardNum.includes(NaN) && isDiffDigits(cardNum) && (cardNum[cardNum.length - 1] % 2 === 0) && !(cardNum.reduce((a, b) => a + b, 0) <= 16);
+    return isSixteenDigits(cardNum) && isOnlyNumbers(cardNum) && isDiffDigits(cardNum) && isLastDigitEven(cardNum) && isSumOfDigitsLargerThan16(cardNum);
 }
 
-// break down all the conditionals into individual functions
-
 const isDiffDigits = (cardNum) => {
-    let prevState = true;
+    let prevState = false;
     for (let i = 0; i < cardNum.length - 1; i++) {
-        prevState = cardNum[i] === cardNum[i + 1] && prevState;
+        prevState = cardNum[i] !== cardNum[i + 1] && prevState;
     }
 
     return !prevState;
 }
 
-const isLastDigitEven = (cardNum) => {(cardNum[cardNum.length - 1] % 2 === 0)};
-const isSumOfDigitsLargerThan16 = (cardNum) => {!(cardNum.reduce((a, b) => a + b, 0) <= 16)}
+const isSixteenDigits = (cardNum) => {return !(cardNum.length !== 16)}
+const isOnlyNumbers = (cardNum) => { return !cardNum.includes(NaN) } // when non numeric chacters are used in parseInt converted to NaN. 
+const isLastDigitEven = (cardNum) => { return cardNum[cardNum.length - 1] % 2 === 0 }
+const isSumOfDigitsLargerThan16 = (cardNum) => { return !(cardNum.reduce((a, b) => a + b, 0) <= 16) }
 
 const creditCard = {
-    cardNum: "8888-8888-8888-8878",
-    // cardNum: "a923-3211-9c01-1112",
+    // cardNum: "8888-8888-8888-8878",
+    cardNum: "a923-3211-9c01-1112",
     validate: function () {
         numArr = this.cardNum.replace(/-/g, "").split("").map(element => parseInt(element)); //TODO: learn the regex for this. 
         return checkConditions(numArr);
