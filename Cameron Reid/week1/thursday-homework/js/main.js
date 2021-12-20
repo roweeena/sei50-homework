@@ -18,11 +18,24 @@
 // isIsosceles(tri) - Returns whether the triangle is isosceles or not
 // area(tri) - Returns the area of the Triangle
 // isObtuse(tri) - Returns whether the triangle is obtuse or not
-// const triangle = {
-//   sideA: 3,
-//   sideB: 4,
-//   sideC: 4
-// };
+const triangle = {
+  sideA: 3,
+  sideB: 4,
+  sideC: 4
+};
+
+const isEquilateral = function(object){
+    return (object.sideA === object.sideB && object.sideA === object.sideC)
+};
+
+const isIsosceles = function(object){
+    if(object.sideA === object.sideB || object.sideA === object.sideC || object.sideB === object.sideC){
+        return `This is an isosceles triangle`
+    }
+    return `This is not an isosceles triangle`
+}
+
+
 // As above, these functions should take a single object as an argument, which will have the same keys as the triangle above, and which you will use for your calcuations.
 
 // js-homework-5.md
