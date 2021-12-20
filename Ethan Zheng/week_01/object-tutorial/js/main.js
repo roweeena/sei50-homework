@@ -74,3 +74,30 @@ const explorer = {
 };
 explorer.displayPurpose();
 explorer.displayFullName();
+
+
+
+//Factory Pattern
+const DogFactory = function (dogName, dogBreed) {
+    const dog = {};
+
+    dog.name= dogName;
+    dog.breed = dogBreed;
+
+    return dog;
+};
+const tamaskan = DogFactory("Tammy", "Tamaskan");
+
+
+console.log(tamaskan); //output: {name: Tammy, breed: Tamaskan}
+
+
+//Constructor Pattern
+const Dog = function (dogName, dogBreed) {
+    this.name = dogName;
+    this.breed = dogBreed;
+    this.bark = function () {
+        console.log("Woof!");
+    }
+};
+const moodle = new Dog("Xiao Bai", "Moodle");
