@@ -27,17 +27,17 @@ console.log(`Leap Year Calculator
 // How to structure it...
 // - We want a custom function called isLeapYear
 
-const isLeapYear = function (yearInput){
-    if(yearInput%4===0 && yearInput%100!==0 && yearInput%4===0){
-        console.log(`${yearInput} is a leap year`)
-    } else if (yearInput%1000==0){
-        console.log(`${yearInput} is a leap year`);
-    } else {
-        console.log(`${yearInput} is not a leap year...`)
-    }
 
+//MY SOLUTION:
 
-}
+// const isLeapYear = function (yearInput){
+//     if(yearInput%4===0 && yearInput%100!==0 && yearInput%4===0){
+//         console.log(`${yearInput} is a leap year`)
+//     } else if (yearInput%1000==0){
+//         console.log(`${yearInput} is a leap year`);
+//     } else {
+//         console.log(`${yearInput} is not a leap year...`)
+//     }
 isLeapYear(1997);
 isLeapYear(1996);
 isLeapYear(1900);
@@ -48,3 +48,34 @@ isLeapYear(2200);
 isLeapYear(45678);
 isLeapYear(600);
 
+// }
+
+// Example solution:
+
+// const isLeapYear = function(year){
+//     if (year % 400 === 0){
+//         return true;
+//     } else if (year % 100 === 0){
+//         return false;
+//     } else if (year% 4 === 0){
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// console.log(isLeapYear(1997));
+// console.log(isLeapYear(1996));
+// console.log(isLeapYear(1900));
+// console.log(isLeapYear(2000));
+// console.log(isLeapYear(2100));
+// console.log(isLeapYear(2012));
+// console.log(isLeapYear(2200));
+// console.log(isLeapYear(45678));
+// console.log(isLeapYear(600));
+
+//example solution 2:
+
+const isLeapYear=function(year){
+    return (year% 4 === 0 && (year%100 !==0|| year%400 === 0))
+}

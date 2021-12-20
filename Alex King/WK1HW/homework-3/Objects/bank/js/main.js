@@ -25,7 +25,7 @@ _|   |_                     _|   |_
 
 // The bank has many accounts. Accounts should be objects that all share a set of common functionality. 
 
-const theOnlyBank = {
+const bank = {
     accounts:[
     {name:"Alex King", accountNumber:1, accountValue:4, password:"cal1c0"}, 
     {name:"blank name", accountNumber:2, accountValue:10, password:"abc123"},
@@ -35,27 +35,29 @@ const theOnlyBank = {
 
     newAcc: function(name, accVal){
         let passGen = (Math.random() + 1).toString(36).substring(7); //stole this from stack...
-        let newAccNum = theOnlyBank.length+1
-        bank.push({name: name, accountNum: newAccNum, accountVal: accVal, password:`${passGen}`});
+        let newAccNum = bank.accounts.length+1
+        bank.accounts.push({name: name, accountNum: newAccNum, accountVal: accVal, password:`${passGen}`});
         console.log(`new account added! ${name} has joined the bank`);
     },
     // newAcc() to start function 
-    
-    bank: function(accNum, amt){
+  
+    depositAmt: function(accNum, amt){
         const accNumCut = accNum-1
-        bank[accNumCut].accountValue += amt
-        console.log(`You have successfully deposited $${amt} into your account. Your current balance is ${bank[accNumCut].accountValue}`)
+        let bankAcc = bank.accounts;
+        bank.accounts[accNumCut].accountValue += amt
+        console.log(`You have successfully deposited $${amt} into your account. Your current balance is ${bankAcc[accNumCut].accountValue}`)
     },
     // depositAmt(); to start function 
     
     withdrawAmt: function(accNum, amt){
         const accNumCut = accNum-1
-        bank[accNumCut].accountValue -= amt;
-        if (bank[accNumCut].accountValue < amt ){
-            bank[accNumCut].accountValue += amt;
-            console.log(`Sorry, insufficient funds... You have ${bank[accNumCut].accountValue} remaining`);
+        let bankAcc = bank.accounts;
+        bankAcc[accNumCut].accountValue -= amt;
+        if (bankAcc[accNumCut].accountValue < amt ){
+            bankAcc[accNumCut].accountValue += amt;
+            console.log(`Sorry, insufficient funds... You have ${bankAcc[accNumCut].accountValue} remaining`);
         } else {
-        console.log(`You have successfully withdrawn $${amt} into your account. Your current balance is ${bank[accNumCut].accountValue}`)}
+        console.log(`You have successfully withdrawn $${amt} into your account. Your current balance is ${bankAcc[accNumCut].accountValue}`)}
     },
     // withdrawAmt();
     // let all = bank[numCut].accountValue;
@@ -64,12 +66,13 @@ const theOnlyBank = {
     transferAmt: function(accNum, secondAcc, amt){
         let numCut = accNum-1;
         let secondAccCut = secondAcc-1;
-        bank[numCut].accountValue -= amt;
-        bank[secondAccCut].accountValue += amt;
-        if (bank[numCut].accountValue<amt){
-            bank[numCut].accountValue+=amt;
-            console.log(`Sorry, insufficient funds... You have ${bank[numCut].accountValue}`);
-         } else {console.log(`Transfer successful! You current account balance is ${bank[numCut].accountValue}`)
+        let bankAcc = bank.accounts;
+        bankAcc[numCut].accountValue -= amt;
+        bankAcc[secondAccCut].accountValue += amt;
+        if (bankAcc[numCut].accountValue<amt){
+            bankAcc[numCut].accountValue+=amt;
+            console.log(`Sorry, insufficient funds... You have ${bankAcc[numCut].accountValue}`);
+         } else {console.log(`Transfer successful! You current account balance is ${bankAcc[numCut].accountValue}`)
         }
         
         // if (numCut == undefined){
@@ -77,13 +80,39 @@ const theOnlyBank = {
         // }
     },
     // transferAmt(1,2,100);
-    
+    myAcc: function(accNum){
+        const numCut = accNum - 1;
+        let bankAcc = bank.accounts;
+        console.log(`Welcome ${bankAcc[numCut].name}, please enter your password`);
+    },
+    myPass: function(accNum){
+        const numCut = accNum - 1;
+        let bankAcc = bank.accounts;
+        console.log(`Welcome ${bankAcc[numCut].name}, your password is ${bankAcc[numCut].password}`)
+
+    },
+    accVer: function(accNum, accPass){
+        const numCut = accNum - 1;
+        let bankAcc = bank.accounts;
+        if (accPass != bankAcc.password){
+            console.log(`Account Verified: Welcome ${bankAcc[numCut].name}`)
+        } else{
+            console.log(`wrong pass, try again`)
+        }
+        
+    },
     myBalance: function(accNum) {
         const numCut = accNum - 1;
-        console.log(bank[numCut].accountValue);
-    }
+        let bankAcc = bank.accounts;
+        console.log(`You current balance is $${bankAcc[numCut].accountValue}`);
+    },
+    bankValue: function(){
+        // loop through acc value. then total = total + i 
+    },
 }
-let bank = theOnlyBank;
+
+
+//if entered amt is > the last acc num 
 
 // console.log(bank[0].name);
 

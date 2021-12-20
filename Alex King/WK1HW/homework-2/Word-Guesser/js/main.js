@@ -367,6 +367,11 @@ let guessLetter = function(inputLetter){
     // guessLetter('f');
     // guessLetter('a'); 
 
+    arr = [1, 1, 1, 1]
+    const arrFrst = arr[0]
+    console.log(arrFrst)
+    console.log(arr.every(arrFrst))
+    
 
 // ## Bonus: Make it more like Wheel of Fortune:
 // - Start with a reward amount of $0
