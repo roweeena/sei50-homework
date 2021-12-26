@@ -206,7 +206,7 @@ const mtaTripPlanner = {
                 console.log(`No line transfer required`)
             }
             else if (whereAt<whereUnionSquare){
-                console.log(`Change over at Union Square required. Your journey to Union Square is  ${bkwdStops.length} stops long. Take line ${firstLineId} from station ${currentPos} and travel from ${fwrdStops.join(', then, ')} to arrive at station "Union Square" where you'll change over to line ${secondLineId}`)
+                console.log(`Change over at Union Square required. Your journey to Union Square is ${fwrdStops.length} stops long. Take line ${firstLineId} from station ${currentPos} and travel from ${fwrdStops.join(', then, ')} to arrive at station "Union Square" where you'll change over to line ${secondLineId}`)
             } else if (whereAt>whereUnionSquare) {
                 console.log(`Change over at Union Square required. Your journey to Union Square is ${bkwdStops.length} stops long. Take line ${firstLineId} from ${currentPos} and travel from ${bkwdStops.join(', then ')} to arrive at station "Union Square" where you'll change over to line ${secondLineId}`)
             }
@@ -221,6 +221,26 @@ const mtaTripPlanner = {
             } else if (whereUnionSquareTwo>whereTo){
                 console.log(`From Union Square, your journey is ${bkwdStopsNewLine.length} stops long. On line ${secondLineId}, travel from ${bkwdStopsNewLine.join(`, then, `)} to arrive at ${desiredPos}`)
             }
+
+            // stop counter
+            if (whereAt===whereUnionSquare && whereUnionSquareTwo===whereTo){
+                console.log(`Total stops: 0`);
+            } else if (whereAt===whereUnionSquare && whereUnionSquareTwo<whereTo){
+                console.log(`Total stops: ${fwrdStopsNewLine.length}`);
+                } else if (whereAt===whereUnionSquare && whereUnionSquareTwo>whereTo){
+                    console.log(`Total stops: ${bkwdStopsNewLine.length}`)
+                }
+            if (whereAt<whereUnionSquare && whereUnionSquareTwo<whereTo){
+                console.log(`Total stops: ${fwrdStops.length += fwrdStopsNewLine.length}`);
+                } else if (whereAt<whereUnionSquare && whereUnionSquareTwo>whereTo){
+                console.log(`Total stops: ${fwrdStops.length += bkwdStopsNewLine.length}`);
+                }
+            if (whereAt>whereUnionSquare && whereUnionSquareTwo<whereTo){
+                console.log(`Total stops: ${bkwdStops.length += fwrdStopsNewLine.lengths}`);
+                } else if (whereAt>whereUnionSquare && whereUnionSquareTwo>whereTo){
+                console.log(`Total stops: ${bkwdStops.length+= bkwdStopsNewLine.length}`)
+                }
+
 
 
 
