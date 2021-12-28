@@ -339,6 +339,45 @@ const bank = {
 // validateCreditCard('9999-9999-8888-0000'); // Returns: true
 // Hint: Remove the dashed from the input string before checking if the input credit card number is valid.
 
+const validateCreditCard = function(cardNumber){
+
+    // REMOVE NON DIGIT CHARS, SPLIT INTO AN ARRAY, CONVERT ARRAY TO NUMBERS 
+    cardNumArray = cardNumber.replace(/\D/g, '').split('').map(Number);
+
+    //CHECK LENGTH IS 16
+    if (cardNumArray.length != 16){
+        console.log('incorrect length card number')
+        return false
+    }
+
+    //CHECK FOR DIFFERENT DIGITS
+    if (cardNumArray.every(index => { return index === cardNumArray[0]})){
+        console.log('card number must have 2 different digits')
+        return false
+    }
+
+    //CHECK FINAL DIGIT IS EVEN
+    if (cardNumArray[15] % 2){
+        console.log('last digit must be even')
+        return false
+    } 
+
+    //CHECK SUM IS GREATER THAN 16
+    const sum = function(total, value){
+        return total + value
+    }
+
+    if(cardNumArray.reduce(sum) <= 16){
+        console.log('sum of card number is less then 16');
+        return false
+    }
+
+    return true;
+    
+};
+
+
+
 // Bonus: Return an object indicating whether the credit card is valid, and if not, what the error is
 
 // { valid: true, number: 'a923-3211-9c01-1112' } 
