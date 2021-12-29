@@ -5,13 +5,16 @@ const mta = {
         L:["8th","6th","Union Square","3rd","1st"],
         SIX:["Grand Central","33rd","28th","23rd","Union Square", "Astor Place"]
     },
-
+    
     findStartIndex: function(station, line){
         if(line in this.subwayLines){
             let indexOfStart=this.subwayLines[line].indexOf(station);
             return indexOfStart;
         }
     },
+   
+
+ //there is an apple in the fridge, tim ate this apple,this apple was sweet. 
 
     findEndIndex: function(station, line){
         if(line in this.subwayLines){
@@ -88,6 +91,8 @@ const mta = {
        //corret line and stations
        else{
            //need to change line
+           //mta.planTrip("34th","N","6th","L")
+
             if(startLine!==endLine){
                 let newEndLine=this.subwayLines[endLine];
                 let newStartLine=this.subwayLines[startLine];
@@ -97,21 +102,20 @@ const mta = {
                 let startLineStops=[];
                 //start line going forward
                 if(newStartLine.indexOf(startStation)<newStartLine.indexOf("Union Square")){
-                    let startLineStops=newStartLine.slice(startIndex+1,newStartLine.indexOf("Union Square"));
+                    startLineStops=newStartLine.slice(startIndex+1,newStartLine.indexOf("Union Square")+1);
                     console.log(`You must travel through the following stops on the ${startLine} line: ${startLineStops} `);
                     //update total stops numbers
                     totalStops+=startLineStops.length;
+
                 }
                 //start line reverse
                 if(newStartLine.indexOf(startStation)>newStartLine.indexOf("Union Square")){
-                    let startLineStops=newStartLine.slice(newStartLine.indexOf('Union Square')+1,startIndex);
+                     startLineStops=newStartLine.slice(newStartLine.indexOf('Union Square')+1,startIndex);
                     startLineStops=startLineStops.reverse();
                     console.log(`You must travel through the following stops on the ${startLine} line: ${startLineStops}`);
                     totalStops+=startLineStops.length;
 
                 }
-                //update total stops numbers;
-                totalStops+=startLineStops.length;
                 console.log("Change at Union Square.");
                 //end line going foward
                 if(newEndLine.indexOf(endStation)>newEndLine.indexOf("Union Square")){
