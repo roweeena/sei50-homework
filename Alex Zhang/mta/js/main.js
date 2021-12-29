@@ -14,7 +14,6 @@ const mta = {
     },
    
 
- //there is an apple in the fridge, tim ate this apple,this apple was sweet. 
 
     findEndIndex: function(station, line){
         if(line in this.subwayLines){
@@ -91,8 +90,6 @@ const mta = {
        //corret line and stations
        else{
            //need to change line
-           //mta.planTrip("34th","N","6th","L")
-
             if(startLine!==endLine){
                 let newEndLine=this.subwayLines[endLine];
                 let newStartLine=this.subwayLines[startLine];
