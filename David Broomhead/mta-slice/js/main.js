@@ -6,9 +6,6 @@
 
 // #### Activity
 // * Create a program that models a simple subway system.
-
-
-
 // * The program takes the line and stop that a user is getting on at and the line and stop that user is getting off at and prints the journey and the total number of stops for the trip in the console:
 
 // Javascript
@@ -39,54 +36,55 @@
 // note: if the user is travelling uptown, the index of the destination will be higher,
 // if the user is travelling downtown, the index of the destination will be lower
 
-const planJourney = function(firstTrain, originStation, secondTrain, destinationStation){
 
-    const mta = {
 
-        nLine: {
-            name: "N Line",
-            stops: [
-                "Times Square",
-                "34th",
-                "28th N Line",
-                "23rd N Line",
-                "Union Square",
-                "8th N Line"
-            ]
-        },
-    
-        lLine: {
-            name: "L Line",
-            stops: [
-            "8th L Line",
-            "6th", 
-            "Union Square", 
-            "3rd",
-            "1st"
-            ]
-        },
-    
-        sixLine: { 
-            name: "6 Line",
-            stops: [
-            "Grand Central",
-            "33rd",
-            "28th Six Line",
-            "23rd Six Line",
+//Object of arrays - trains and their names and stations
+const mta = {
+
+    "N Line": {
+        name: "N Line",
+        stops: [
+            "Times Square",
+            "34th",
+            "28th N Line",
+            "23rd N Line",
             "Union Square",
-            "Astor Place"
-            ]
-        }
+            "8th N Line"
+        ]
+    },
+
+    "L Line": {
+        name: "L Line",
+        stops: [
+        "8th L Line",
+        "6th", 
+        "Union Square", 
+        "3rd",
+        "1st"
+        ]
+    },
+
+    "6 Line": { 
+        name: "6 Line",
+        stops: [
+        "Grand Central",
+        "33rd",
+        "28th Six Line",
+        "23rd Six Line",
+        "Union Square",
+        "Astor Place"
+        ]
     }
-    //Object of arrays - trains and their names and stations
+}
 
-    console.log(`MTA Slice Method
-    Welcome to the MTA! Please call planJourney(firstTrain, originStation, secondTrain, destinationStation) to get a print out of your directions. Use the tables below to find the right names for your train and station.
-    N Train: ${mta.nLine.stops}
-    L Train: ${mta.lLine.stops}
-    6 Train: ${mta.sixLine.stops}`);
-    //General instructions for user - how to use MTA
+console.log(`MTA Slice Method
+Welcome to the MTA! Please call planJourney(firstTrain, originStation, secondTrain, destinationStation) to get a print out of your directions. Use the tables below to find the right names for your train and station.
+N Line: ${mta["N Line"].stops}
+L Line: ${mta["L Line"].stops}
+6 Line: ${mta["6 Line"].stops}`);
+//General instructions for user - how to use MTA
 
+const planJourney = function(firstTrain, originStation, secondTrain, destinationStation){
 
     //GLOBAL FUNCTIONS
     const getStationIndex = function(train,station){
@@ -174,5 +172,3 @@ const planJourney = function(firstTrain, originStation, secondTrain, destination
 
     } //end of two train journey code
 } //end of plan journey function
-
-console.log(planJourney("nLine","34th","sixLine","33rd"))
