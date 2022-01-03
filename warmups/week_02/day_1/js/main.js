@@ -20,18 +20,20 @@ const pigIt = function(str) {
   for ( let i = 0; i < array.length; i++){
     //take care of punctuation
     if (array[i].includes("!") || array[i].includes("?")){
-      //array[i] === "!"
+      //array[i] === "!" also works
       result.push(array[i])
-    } else {
+    } //take care of everything else
+    else {
       const firstChar = array[i].charAt(0) // first char of the word at index i
       const restOfWord = array[i].substr(1) // rest of the word at index i
-      console.log(`first character: ${firstChar}, rest of word: ${restOfWord}`)
+      //console.log(`first character: ${firstChar}, rest of word: ${restOfWord}`)
       let newWord = restOfWord + firstChar + "ay"
+
       result.push(newWord)
     }
-    //take care of everything else
+
   }
   return result.join(' ')
-}
+} // end of function
 
 console.log(pigIt("Pig Latin is cool !"))
