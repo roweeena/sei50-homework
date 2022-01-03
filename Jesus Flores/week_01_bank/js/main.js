@@ -24,7 +24,7 @@ Don't overthink this. Shorter code is probably the answer.
 Bonus
 Ensure that the accounts cannot have negative values.
 Write a 'transfer' on the bank that allows you to transfer amounts between two accounts. */
-/* 
+
 const bank = {
     accounts: [
         {accNumber: 1, accFullName: "John Wick", accAmount: 500},
@@ -122,7 +122,7 @@ const bank = {
         return false;
     }
 
-} */
+} 
 
 /* Credit Card Validation
 You're starting your own credit card business. You've come up with a new way to validate credit cards with a simple function called validateCreditCard that returns true or false.
