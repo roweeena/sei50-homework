@@ -22,11 +22,10 @@ const findSum = function (array) {
 
 const validateCreditCard = function (cardNo) {
     //remove non-number characters
-    const noHyphenCard = cardNo.replaceAll("/0-9/g", "");   //causes a bug where non-numeric characters are not removed, but replaced with NaN
-    const noNaNCard = noHyphenCard.replaceAll(NaN, ""); 
+    const noHyphenCard = cardNo.replaceAll(/[^0-9]/g, "");   //causes a bug where non-numeric characters are not removed, but replaced with NaN
 
     //convert string into array
-    const cardArrray = noNaNCard.split('').map(Number);
+    const cardArrray = noHyphenCard.split('').map(Number);
     console.log(cardArrray); //debug
     //check array.length === 16
     if (cardArrray.length !== 16) {
