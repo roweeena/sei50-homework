@@ -16,15 +16,13 @@ const pigLatin = (sentence) => {
 
     // for each word move the first letter to the end
     let pigSentence = sentenceArr.map(word => {
-        console.log(`word before: ${word}`);
-        word = word.substring(2) + word.substring(0,2) + "ay";
-        console.log(`word after: ${word}`);
+        word = word.substring(1) + word.substring(0,1) + "ay";
         
         return word
     });
 
     console.log(pigSentence.join(" "));
-    // add "ay" onto the  end of the word
+    // add "ay" onto the  end of the word;
 }
 
-pigLatin('this is a test case')
+pigLatin('Pig Latin is cool !');

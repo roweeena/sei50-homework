@@ -1,0 +1,35 @@
+#container {
+    padding: 40px;
+    font-size: 12px;
+    line-height: 17px;
+    font-family: "Times New Roman", serif;
+    color: #656565;
+}
+
+p,
+img {
+    width: 80%;
+}
+
+span img {
+    width: 19.5%;
+    border: 3px solid grey;
+}
+
+span {
+    width: 80%;
+}
+
+a,
+h3 {
+    color: rgb(97, 172, 233);
+}
+
+a:hover {
+    color: #20222a;
+}
+
+#Copyright {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
