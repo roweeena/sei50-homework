@@ -157,7 +157,7 @@ div.gallery {
     border: 1px solid #ccc;
     float: left;
     width: 25%;
-    height: 310px
+    height: 100%
   }
   
   div.gallery:hover {
