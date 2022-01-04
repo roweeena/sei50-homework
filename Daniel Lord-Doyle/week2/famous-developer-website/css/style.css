@@ -1,0 +1,325 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* My own ruleset */
+/* 
+* {
+    border: solid 1px red;
+} */
+
+#topofpage {
+    background-color: #f8f5f1;
+}
+
+header {
+    background-color: #f8f5f1;
+    position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+    border-bottom: solid 2px black;
+}
+
+nav {
+    position: static;
+    display: block;
+    padding: 20px;
+    background-color: #f8f5f1;
+}
+
+
+ul#navlist
+{
+  text-align: center;
+}
+
+a.navlink {
+    color: black;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 1.6em;
+}
+
+a.navlink:hover {
+    color: gray;
+    text-decoration: underline;
+    font-family: monospace;
+    font-size: 1.6em;
+}
+
+li.navlinks {
+    display: inline;
+    position: static;
+    padding: 20px;
+}
+
+img#logo {
+    display: block;
+    margin: auto;
+    height: 300px;
+}
+
+section#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    background: url(https://images.theconversation.com/files/144157/original/image-20161102-27212-1lrsqz2.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop);
+    background-size: cover;
+    background-blend-mode: lighten;
+}
+
+#bannerdiv {
+    width: 75%;
+    margin: 0 auto;
+}
+
+h1 {
+    display: block;
+    font-family: monospace;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    background-color: #f8f5f1;
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;
+}
+
+button:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+button p {
+    font-size: 1.6em;
+}
+
+section#gallery {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 25%;
+    height: 310px
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+  
+.column {
+    flex: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#column2 {
+    flex: 50%;
+    padding-left: 0%;
+    padding-right: 10%;
+}
+
+h2 {
+    font-family: monospace;
+    font-size: 2.4em;
+    padding: 40px 0px;
+    text-align: center;
+    font-weight: 700;
+}
+
+img#whowasmary {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+a {
+    font-family: monospace;
+}
+
+p {
+    font-family: monospace;
+    font-size: 1.4em;
+    text-align: center;
+    line-height: 1.2;
+}
+
+footer {
+    margin-top: 30px;
+    background-color: #f8f5f1;
+    padding: 40px 10px;
+}
+
+h3 {
+    font-family: monospace;
+    font-size: 1.4em;
+    padding: 40px 0px;
+    text-align: center;
+}
+
+#funfacts {
+    background-color: #f8f5f1;
+    padding: 10px 40px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+    .row {
+        flex-wrap: wrap;
+    }
+    #column2 {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+.articlecolumn {
+    display: block;
+    flex: 75%;
+}
+
+article img {
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
+
+.asidecolumn {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    color: #f8f5f1;
+    flex: 25%;
+    justify-content: center;
+}
+
+.asidecolumn img {
+    width: 100%;
+}
+
+article h2 {
+    background-color: #f8f5f1;
+    padding-bottom: 20px;
+}
+
+article h3 {
+    background-color: #f8f5f1;
+    font-family: monospace;
+    font-size: 1.8em;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0 10% 20px 10%;
+}
+
+article h4 {
+    background-color: #f8f5f1;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0 10%;
+    padding-bottom: 30px;
+}
+
+article p {
+    text-align: left;
+    padding: 10px 5% 10px 5%;
+}
+
+blockquote {
+    background-color: #f8f5f1;
+    margin: 30px;
+}
+
+blockquote p {
+    text-align: center;
+}
+
+aside h3 {
+    padding: 20px 20px 0 20px;
+}
+
+article h1 {
+    padding-bottom: 0px;
+}
+
+.obit {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 50px;
+}
