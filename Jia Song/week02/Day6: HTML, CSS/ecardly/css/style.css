@@ -1,0 +1,68 @@
+/* Box Model Hack */
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+
+/* basic setting */
+body {
+  background: #d6d6d6;
+  color: #000000;
+  position: relative;
+}
+
+a {
+  color: #cc6633;
+  text-decoration: none;
+}
+
+/* top side */
+.background {
+  width: 100%;
+  height: 160px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../images/background.jpg");
+  z-index: -1;
+}
+
+.title {
+  margin: 0;
+  padding-top: 20px;
+}
+
+.title > img {
+  display: block;
+  width: 200px;
+  margin: 0 auto 50px;
+}
+
+.acard {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+}
+
+.acard-title {
+  font-size: 20px;
+}
+
+.acard-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.acard-box > p {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.acard-box a {
+  text-transform: uppercase;
+  font-weight: 600;
+}

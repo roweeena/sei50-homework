@@ -40,7 +40,7 @@ const mta = {
 
 
     reverseLineOrder: function (line) { 
-        this.stops[`${line}`].reverse();
+        this.stops[line].reverse();
     }, // end of reverseLineOrder
     
     

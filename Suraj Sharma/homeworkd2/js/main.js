@@ -7,51 +7,44 @@
 // It should also figure out if there are any more letters that need to be guessed, and if not, it should congratulate the user for winning the game.
 // Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
 const secretWordLetter = ['T', 'E', 'S', 'T',];
-const GuessedLetter = ['', '', '', '',]
+const guessedLetters = ['', '', '', '',]
 
 
 
 const guessLetter = function(userGuess) {
   //console.log('guessLetter', guess);
   // use this variable to remeber what happens in the loop overall any of the letter
-let correctGuessMade = false;
+  let correctGuessMade = false;
   //Iterate through the word letters and see if the guessed letter is in there.
 
   for(let i = 0; i < secretWordLetter.length; i++) {
 
-const currentSecretLetter = secretWordLetter[i];
-// If the guessed letter matches a word letter, changed the guessed letters array to reflect that.
-console.log('secret Letter', currentSecretLetter);
+    const currentSecretLetter = secretWordLetter[i];
+    // If the guessed letter matches a word letter, changed the guessed letters array to reflect that.
+    console.log('secret Letter', currentSecretLetter);
 
-      if(currentSecretLetter === userGuess) {
+    if(currentSecretLetter === userGuess) {
+      console.log('correct guess');
 
-        console.log('correct guess');
+      guessLetter[i] == userGuess;
 
-        guessLetter[i] == userGuess;
+      console.log('guessed letters:', guessedLetters.join(''));
+      correctGuessMade = true; // remember least one correct guess was madeif(
 
-        console.log('guessed letters:', guessedLetters.join(''));
-        correctGuessMade = true; // remember least one correct guess was madeif(
-        if(correctGuessMade === false) {
-          console.log('sorry bad guess');
-        }
+      if(correctGuessMade === false) {
+        console.log('sorry bad guess');
+        //
+      } // end of if statement
 
-
-
-
-      // } else {// too soon to sayi
-      //   //we cant tell the user the guess was ncorrect
-      //   console.log('%incorrect guess for', 'color:');
-      // }
-
-// after the lop is the only place well know for sure if a guess was overall correct or incorrect
-  }
-
+      // after the lop is the only place well know for sure if a guess was overall correct or incorrect
+    } // end if currentsecret letter ----
+  } // end of for loop
 }; //end of the guessLetter()
 
 
 
-// guessLetter('o');
-// guessLetter('k');
+//guessLetter('T');
+guessLetter('k');
 
 // Create an array to hold your top five choices of something (colors, presidents, whatever). If you choose movies, the right top choice is "Satantango".
 //
@@ -65,7 +58,7 @@ for(let i = 0; i < myFavFood.length; i++) {
 console.log('My #' + (i + 1) + ' food is ' + myFavFood[i]);
 }
 for(let i = 0; i < myFavFood.length; i++) {
-  let myChoice = ;
+  let myChoice = i;
   let myChoiceSuffix;
   if(myChoice == 1) {
     myChoiceSuffix = "1st"
@@ -76,7 +69,7 @@ for(let i = 0; i < myFavFood.length; i++) {
   }
   console.log('my' + myChoice + myChoiceSuffix + 'choice' + myFavFood);
 }
-//
+
 //
 // const rainbowColors = [""];
 // for(let i = 0; i < arr.length; i++) {
