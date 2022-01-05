@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+    
+    <h1>CSS Layout</h1>
+    
+    <p>Let's do this</p>
+    <div class="box static-example">
+        <strong>static (default):</strong>
+        <br>
+        the position is whatever the browser calculates fot this element in the page flow; you cant change it with top/left CSS offsets
+    </div>
+    
+    <div class="box relative-example">
+        <strong>relative:</strong>
+        <br>
+        Offsets <em>do</em> work, and are calculated relative to the default (static) position in the browser's page flow.
+    </div>
+    <div class="box parent-of-absolute">
+        <strong>(parent of absolute)</strong>
+        <div class="box absolute-example">
+            <strong>absolute:</strong>
+            <br>
+            Offsets work, and are calculated relative to the nearest containing elemnt (ancestor) which has a specific non-static position value... 
+            otherwise relative to the body tag, i.e. whole document.
+        </div>
+    </div> 
+
+    <div class="box fixed-example">
+        <strong>fixed:</strong>
+        <br>
+        Offsets are calculated realtve to the entire browser window (viewport) - i.e. the element does not move when you scroll te document
+    </div>
+    
+
+    <br>
+    <br>
+    
+    <div class="inline-example">
+        This element has <code>display: inline;</code>
+    </div>
+    <div class="inline-example">
+        This element is also <code>display: inline;</code>
+    </div>
+    <div class="block-example">
+        This element has <code>display: block;</code>
+    </div>
+    <div class="block-example">
+        This element is also <code>display: block;</code>
+    </div>
+
+    <div class="display-none-example">
+        This element is also <code>display: none;</code>
+    </div>
+
+    <div class="inline-block-example">
+        This element has <code>display: inline-block;</code>
+    </div>
+    <div class="inline-block-example">
+        This element is also <code>display: inline-block;</code>
+    </div>
+
+
+</body>
+
+</html>

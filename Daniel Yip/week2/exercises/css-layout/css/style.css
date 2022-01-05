@@ -1,0 +1,61 @@
+
+
+.inline-example {
+    border: 1px solid red;
+    display: inline;
+    width: 300px;
+}
+
+.block-example {
+    border: 1px solid green;
+    display: block;
+    width: 400px;
+
+}
+
+.inline-block-example {
+    border: 1px solid blue;
+    display: inline-block;
+    width: 200px;
+}
+
+.display-none-example {
+    display: none;
+    /* visibility: hidden; */
+}
+
+.box {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid grey;
+}
+
+.static-example {
+    position: static;
+    left: 100px; /* this has no effect due to 'static' */
+}
+
+.relative-example {
+    position: relative;
+    left: 50px;
+    top: 100px;
+}
+
+.absolute-example {
+    position: absolute;
+    top: 50px;
+    left: 100px
+}
+
+.parent-of-absolute {
+    position: relative;
+}
+
+.fixed-example {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+}
