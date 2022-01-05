@@ -1,4 +1,5 @@
 const mta = {
+
     lines: {
         'N': ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
         'L': ['8th', '6th', 'Union Square', '3rd', '1st'],
@@ -9,7 +10,7 @@ const mta = {
         legOneArr: null,
         legTwoArr: null,
         stopCount: null,
-    },
+    }, //tripDetails
 
     singleLineTrip : function(line, stationOn, stationOff){ //returns an array for a single trip leg
 
@@ -21,11 +22,10 @@ const mta = {
             
             lineArray = this.lines[line].slice(stationOffIndex, stationOnIndex)
             lineArray.reverse() //reverse the array
-            // stationOnIndex = lineArray.indexOf(stationOn) //reset the starting index
-            // stationOffIndex = lineArray.indexOf(stationOff) //reset the ending index
+            
         } else {
             lineArray = this.lines[line].slice(stationOnIndex + 1, stationOffIndex + 1); 
-            //slice the array using the station indexes both offest by +1. 
+            // Slice the array using the station indexes both offest by +1. 
             // The resulting array excludes the boarding station and includes the departing station.
         }
         return lineArray
