@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=David+Libre&family=Playfair+Display&family=Poppins:wght@400;700&family=Rock+3D&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap");
+.homepage .container {
+  background-color: antiquewhite;
+}
+
+.homepage .container h1 {
+  padding: 2em;
+  font-family: 'rock 3D';
+  text-align: center;
+}
+
+.homepage .rest {
+  background-color: beige;
+  padding: 10em;
+}
+
+.homepage .rest .watch-video {
+  text-align: center;
+  display: block;
+  margin-top: -2em;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-family: 'Poppins';
+  color: black;
+}
+
+.homepage .rest .watch-video img {
+  margin-right: .5em;
+}
+
+.homepage .rest .subsites {
+  list-style-type: none;
+  text-align: center;
+}
+
+.homepage .rest .subsites li {
+  display: inline-block;
+  padding: 3em;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.homepage .rest .subsites li a {
+  text-decoration: none;
+  font-family: 'Comforter Brush';
+  color: saddlebrown;
+  font-size: 2em;
+}
+
+.homepage .rest .subsites li a:hover {
+  font-weight: bold;
+}
+
+.homepage .rest blockquote {
+  font-family: 'Poppins';
+  font-style: italic;
+}
+
+.homepage .rest cite {
+  text-align: right;
+  display: block;
+}
+
+.biography, .trivia, .legacy {
+  font-family: "poppins";
+}
+
+.biography .home-button, .trivia .home-button, .legacy .home-button {
+  width: 5%;
+  display: inline;
+}
+
+.biography span, .trivia span, .legacy span {
+  font-weight: bold;
+}
+
+.biography .bio, .trivia .bio, .legacy .bio {
+  text-align: center;
+  display: block;
+  font-family: 'rock 3D';
+  background-color: khaki;
+  padding: 2em;
+  font-size: 1.5em;
+  margin: -1;
+}
+
+.biography img, .trivia img, .legacy img {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.biography h1, .trivia h1, .legacy h1 {
+  background-color: burlywood;
+  width: 300px;
+  height: 30px;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+.biography h1:hover, .trivia h1:hover, .legacy h1:hover {
+  width: 600px;
+}
+
+.trivia p, .legacy p {
+  font-size: 1.3em;
+  background-color: cadetblue;
+}
+/*# sourceMappingURL=style.css.map */
