@@ -5,26 +5,94 @@ Author: Christopher Castig | @castig
 Developer @GA in NYC
 */
 
+
 /* Box Model Hack */
+
 * {
-     -moz-box-sizing: border-box; /* Firexfox */
-     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
-     box-sizing: border-box; /* IE */
+    -moz-box-sizing: border-box;
+    /* Firexfox */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome/iOS/Android */
+    box-sizing: border-box;
+    /* IE */
 }
 
+
 /* Clear fix hack */
+
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
 }
 
 .clear {
-	clear: both;
+    clear: both;
+}
+
+#header-background {
+    background-image: url("../images/background.jpg");
+    height: 200px;
+    width: 100%;
+}
+
+body {
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgb(218, 218, 218);
+}
+
+#logo {
+    display: block;
+    margin: auto;
+    margin-top: -175px;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 
+/* div {
+    background-color: lightgray;
+} */
 
+h2 {
+    margin-top: 0;
+}
+
+#main-block {
+    width: 1000px;
+    margin: auto;
+}
+
+
+/* TODO: NEED HELP I had to hard code the height, I couldn't get this div to automatically contain the img */
+
+#white {
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    height: 490px;
+}
+
+#main-img {
+    /* width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%; */
+    /* object-fit: contain; */
+    display: inline;
+    float: left;
+    padding-right: 20px;
+}
+
+a {
+    color: rgb(51, 204, 255);
+}
+
+p {
+    display: inline;
+    padding: 1000;
+}

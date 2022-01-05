@@ -4,20 +4,22 @@
     line-height: 17px;
     font-family: "Times New Roman", serif;
     color: #656565;
+    max-width: 1000px;
 }
 
-p,
+
+/* p,
 img {
     width: 80%;
+} */
+
+#header-imgs {
+    width: 100%;
 }
 
-span img {
-    width: 19.5%;
+#brands img {
+    width: 20%;
     border: 3px solid grey;
-}
-
-span {
-    width: 80%;
 }
 
 a,
