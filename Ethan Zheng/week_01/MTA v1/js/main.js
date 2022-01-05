@@ -27,7 +27,7 @@ console.log("MTA Loaded!");
 
     // DONE-Make an object that encompasses the whole project
     // DONE-Initialise three arrays within the object for each line
-    // TODO-Make a method that finds a user-given stop in either array
+    // DONE-Make a method that finds a user-given stop in either array
         // This method should take two arguments - the name of the line, and the name of the stop
         // The line argument will inform the method of which array to look, and will loop until it finds the given stop.
     // TODO-

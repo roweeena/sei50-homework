@@ -113,6 +113,7 @@ function changeDirection (event) {
         dx = 0;
         dy = 10;
     }
+    console.log(event);
 
 }
 
