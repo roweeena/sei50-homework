@@ -1,0 +1,38 @@
+
+body{
+    overflow:hidden;
+    background:black;
+    /* background-image: url("/Users/calicoalex/GA/homework/Alex King/WK2HW/DAY2/man-made-horror-beyond-your-comprehension/propagandaGarf.png"); */
+    background-size: cover;
+}
+/* section{
+    position:relative;
+} */
+.garf{
+    /* color:blue; */
+    position:absolute;
+    width:200px;
+    fill:orange;
+    animation:rotate360 3.2s linear infinite;
+    animation-play-state: paused;
+}
+
+.garf:hover{
+    fill:orange;
+    cursor:grab;
+    animation-play-state:running;
+}
+    @keyframes rotate360{
+        to{
+    transform:rotate(360deg);
+        }
+    }
+/* .garf:hover body{
+    background-image: url("/Users/calicoalex/GA/homework/Alex King/WK2HW/DAY2/man-made-horror-beyond-your-comprehension/propagandaGarf.png"); */
+    /* background:yellow; */
+ 
+/* }
+
+/* #cat{
+    fill:orange;
+} */
