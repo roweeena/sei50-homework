@@ -1,0 +1,88 @@
+/* https://coolors.co/594157-726da8-7d8cc4-a0d2db-bee7e8 */
+
+
+nav{
+    background-color:#7D8CC4;
+    border:3px solid #ffffff;
+    /* padding:0px 0px 0px 0px; */
+}
+
+li{
+    list-style-type: none;
+    display:inline-block;
+    float:none;
+    padding:5px 10px 5px;
+
+}
+p{
+    /* text-indent: 10%; */
+    margin: 0 0 20px 20px;
+}
+
+img{
+    width:300px;
+    border:4px solid #7D8CC4;
+    border-radius:10%;
+    height:auto;
+    margin:0;
+    animation: fadein 2.25s;}
+    @keyframes fadein {
+        from {opacity: 0 ;}
+        to   {opacity: 1 ;}
+    }
+p{
+    font-family:'Trebuchet MS', sans-serif;
+    animation: fadein 2.25s;}
+    @keyframes fadein {
+        from {opacity: 0;}
+        to   {opacity: 1;}
+    }
+
+h4{
+    text-align:left;
+    padding:0 0 0 30px;
+}
+
+body{
+    text-align:center;
+    background-color:#A0D2DB;
+    margin:0px;
+    /* font-weight:100px; */
+    /* text-shadow:5px; */
+    font-family: 'Spline Sans', sans-serif;
+    
+    /* font-weight:500px; */
+    /* padding: 0px 0px 0px 50px; */
+}
+
+button{
+    background-color:#726DA8;
+    color:#f9f9f9;
+    text-align:center;
+    cursor:grab;
+    padding:4px 20px 4px;
+    border:none;
+    font-size:20px;
+    
+}
+button:hover{
+    background-color:#594157;
+    
+}
+
+h1{
+
+}
+
+iframe{
+    /* margin:20px; */
+    /* display:block; */
+    /* position:center; */
+    height:300px;
+    width:420px;
+    padding: 10px
+}
+/* animation: fadein 3.5s;}
+@keyframes fadein {
+    from {opacity:0;}
+    to {opacity:1;} */
