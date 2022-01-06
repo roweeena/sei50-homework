@@ -1,0 +1,29 @@
+h1 {
+    color: hotpink;
+}
+
+p {
+    color: green;
+    border: 1px solid red;
+}
+#intro {
+    color: rgb(255,0,255);
+    background-color: rgb(0,255,0);
+}
+
+h4 {
+    color: darkblue;
+}
+
+li.special{
+    font-family: "Comic Sans MS";
+    color:rgb(100, 0, 255)
+}
+
+p a{
+    font-weight: bold;
+}
+
+*:hover {
+    border: 1px solid blue;
+}
