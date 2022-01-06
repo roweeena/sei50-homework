@@ -1,0 +1,19 @@
+#walkingcat {
+    position: absolute;
+    border: 1px red solid;
+}
+
+.transform1 {
+    transform: scaleX(-1);
+}
+
+.transform2 {
+    transform: scaleX(1);
+}
+
+#quote {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    /* visibility: hidden; */
+}
