@@ -1,0 +1,29 @@
+#game {
+    display: block;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    transform: translate(-50%, -50%);
+}
+
+#snakeCanvas {
+    height: 400px;
+    width: 400px;
+    margin: 10px 0px;
+}
+
+#walkingCat {
+    /*visibility: hidden;*/
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    opacity: 0.5;
+}
+
+h1 {
+    font-weight:900;
+    -webkit-text-stroke: 0.5px white;
+}

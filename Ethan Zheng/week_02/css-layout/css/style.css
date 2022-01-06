@@ -1,0 +1,63 @@
+body {
+    height: 5000px;
+}
+
+div.inlineExample {
+    border: 1px solid red;
+    display: inline;
+    width: 300px;
+}
+
+div.blockExample {
+    border: 1px solid blue;
+    display: block;
+    width: 30%;
+}
+
+div.inlineBlockExample {
+    border: 2px solid purple;
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+}
+
+div.displayNoneExample {
+    display: none;
+    /*visibility: none; this achieves the same effect, but affects the flow of the page */
+}
+
+.box {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid grey;
+}
+
+.staticExample {
+    position: static;
+    left: 100px /* this has no effect due to 'static'*/
+}
+
+.relativeExample {
+    position: relative;
+    left: 50px; /*pushes this element from the left towards the right*/
+    top: 100px; /*pushes this element from the top towards the bottom*/
+}
+
+.absoluteExample {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+}
+
+.parentOfAbsolute {
+    position: relative;
+}
+
+.fixedExample {
+    position: fixed;
+    top: 100px;
+    right: 10px;
+}

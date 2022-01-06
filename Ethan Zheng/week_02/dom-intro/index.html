@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Intro</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Welcome to My Special Site With All My Thoughts And Feelings On It</h1>
+
+    <p id = "intro">Thank you for<br>visiting my page</p>
+
+    <img id="bill" src="http://placekitten.com/300/100" alt="placeholder image" >
+
+    <h4>My Favourite Dogs:</h4>
+    <ul>
+        <li>Xiao Bai</li>
+        <li>Xiao Bai</li>
+        <li class="special">Other Dogs Aren't Even Worth Considering</li>
+    </ul>
+
+    <ol>
+        <li>Xiao Bai</li>
+        <li>Xiao Bai</li>
+    </ol>
+<!-- This is a comment -->
+
+    <p>Brandname &copy; <!-- HTML entitiy for copyright--></p>
+    <h2>Forms</h2>
+    <form>
+        <!-- the container tag for grouping together all the related form elements-->
+        <label>
+            Enter Date:
+            <input type="date"> <!--input is an inline element-->
+        </label>
+        <br>
+        <label>
+            Text:
+            <input type="text" value="Pre-loaded content here">
+        </label>
+
+        <br>
+
+        <textarea>
+            Whatever you have here is the pre-loaded content of the textarea.
+
+            You can type multiple lines or paragraphs.
+        </textarea>
+        <br>
+
+        <label>
+            Dog Breed:
+            <select name="breed-for-server">
+                <option value="1">Moodle</option>
+                <option value="2">Maltese</option>
+                <option value="3">Poodle</option>
+                <option value="4">Shih Tsu</option>
+            </select>
+        </label>
+
+        <br>
+
+        <fieldset>
+            <legend>Select the preferred dog traits: </legend>
+            <label>
+                <input type="checkbox" name="traits" value="boundy">
+                Lots of bounding around
+            </label>
+            <label>
+                <input type="checkbox" name="traits" value="cow">
+                Lots of eating grass
+            </label><label>
+                <input type="checkbox" name="traits" value="starfish">
+                Lots of asexual reproduction
+            </label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Select only one brother:</legend>
+            <label>
+                <input type="radio" name="bro" id="Groucho">
+                Groucho
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="bro" id="Chico">
+                Chico
+            </label>
+        </fieldset>
+
+        <button>Submit Info!</button>
+        <input type="submit" value="Submit Info!">
+
+    </form>
+
+
+
+    <table>
+        <thead>
+            <th>Brother</th>
+            <th>Instrument</th>
+        </thead>
+
+        <tr>
+            <td>Groucho</td>
+            <td>Guitar</td>
+        </tr>
+
+        <tr>
+            <td>Harpo</td>
+            <td>Harp</td>
+        </tr>
+
+        <tr>
+            <td>Chico</td>
+            <td>Flute</td>
+        </tr>
+    </table>
+
+    <h4>Forbidden!!!!</h4>
+    <p>
+    <br> DON'T USE BR FOR FORMATTING! Use CSS padding/margins
+    <b>Bold tag</b> - use "strong" instead.
+    <strong>Better Bold tag</strong>
+    <br>
+    <i>Italic tag</i> - use "em" instead.
+    <em>Better Italics tag</em>
+    <br>
+    <blink>BLINK - don't ever use it. It actually doesn't work</blink> Use JS or CSS animations instead if you really want to BLINK.
+    <marquee direction="up">Scrolling text. Don't use this either</marquee>
+    <font size = "16"> Font tag - use CSS instead</font>
+    <br>
+    <span style="color: red;">Inline styles - use a seperate CSS file instead for good "seperation of concerns"</span>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    2 < 3
+    <br>
+    2 &lt; 3 <!-- HTML entity for < -->
+    </p>
+
+
+
+
+    <pre>
+        First line...                 then some spaces
+        Third Line
+        Pew pew
+    </pre>
+
+    <p>
+        Here is some code: <code>const x = 1;</code>
+        <br>
+        Here is some code: <pre>const x = 1;</pre>
+    </p>
+
+    <p class="special">
+        Here is a div: <div>Notice that divs demand their own line. This is because divs are "block-level" elements, unlike "inline" elements. </div> Notice how this comes after the div.
+    </p>
+
+    <p class="special">
+        Here is a span: <span>This span shares a line with other content because it is "inline".</span> Notice how this line stays on the same line as the span.
+    </p>
+
+
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, illum eos voluptatem debitis dolore obcaecati dolorem similique. Vel repellat porro saepe corporis culpa facere quisquam error eligendi expedita, officia corrupti.</p>
+
+    <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nihil laborum debitis accusamus qui aspernatur deserunt minus assumenda iste, sed rerum delectus, tempore ab aliquid dolorem magni dolorum, numquam atque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae provident culpa iusto delectus, eveniet molestiae nostrum, quod, dolore veritatis incidunt nemo ullam quas nihil maxime et neque? Aliquam, omnis dicta?</blockquote>
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem quis sequi nobis! Necessitatibus laboriosam repudiandae quo quasi, distinctio provident facilis possimus, quaerat nam et temporibus minus quam. Fugit, odit suscipit! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi provident fugiat doloribus non perferendis commodi molestiae esse qui, distinctio reprehenderit in, assumenda porro, dicta tempore temporibus soluta veritatis illum iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, nesciunt doloremque ipsum fuga aliquam maxime necessitatibus earum totam suscipit sint dolorum nobis, corrupti explicabo perspiciatis reiciendis aut quibusdam ab asperiores! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, blanditiis minima! Adipisci illum aliquid reprehenderit quis molestias eum aut corporis blanditiis earum sit? Assumenda ad dolorum temporibus amet nulla veniam.</p>
+
+    <p>
+        You wouldn't <a href="https://ga.co/" target="_blank" >Click Me!</a>
+    </p>
+    
+    <button id="eventExample">Click me!</button>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
