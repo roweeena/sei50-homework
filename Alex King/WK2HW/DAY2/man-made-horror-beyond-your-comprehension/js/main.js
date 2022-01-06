@@ -1,6 +1,6 @@
 
 const garf = document.querySelector('.garf');
-
+// changing color only works with an svg file!
 
 // garf.style.fill = #d7e074;
 
