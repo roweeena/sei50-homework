@@ -1,0 +1,38 @@
+h1{
+    color:orange
+}
+
+p{
+    color:red;
+    border:1px solid green;
+}
+
+#brand{
+    font-size:17px;
+    background-color:whitesmoke;
+}
+
+.special{
+    background-color:orange;
+}
+
+/* p a {
+ } <-- this means a tags within p. can be within another tag  */ 
+
+ /* p>a{
+  }<--- only direct children of tag */ 
+
+  /* p.specificclass>a.specificalso{
+   }<--- more specificity */
+
+
+
+   /* *{
+       border:1px solid plum;
+   }  */
+   /* selects everything */
+
+   img:hover{
+       border:1px solid green;
+       width:50%
+   }

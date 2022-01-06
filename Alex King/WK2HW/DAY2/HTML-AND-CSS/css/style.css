@@ -1,0 +1,64 @@
+div.inlineExample{
+    border:1px solid orange;
+    display:inline;
+    /* padding: 10px;
+    margin: 20px; */
+    width:300px;
+}   
+
+div.blockExample{
+    border:1px solid plum;
+    display:block; /*this is the default ... just */
+    /* width:400px; */
+    width: 30%;
+    /* width:10rem; */
+
+}
+
+div.inlineBlockExample{
+    border:1px solid indigo;
+    display:inline-block;
+    width:200px;
+    height:100px;
+}
+
+div.displayNoneExample{
+    /* display:none; */
+    visibility:hidden;
+}
+
+.box{
+    display:inline-block;
+    width: 150px;
+    height: 150px;
+    text-align:center;
+    vertical-align: top;
+    border:1px solid greenyellow;
+}
+
+.staticExample{
+    position:static; /*default pos */
+    left: 1000px;
+}
+
+.relativeExample{
+    position:relative;
+    left: 50px;
+    top: 100px;
+}
+
+.absoluteExample{
+    position:absolute;
+    top:50px;
+    left: 100px;
+}
+.parentOfAbsolute{
+    position: relative;
+}
+/* relative to parent... so offsents are relative to the set dimensions of the parent */
+
+.fixedExample{
+    position:fixed;
+    top:20px;
+    right:10px;
+}
