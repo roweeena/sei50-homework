@@ -1,25 +1,34 @@
-for (let i = 0; i < 100; i++) {
+// generate cat elements from 0 to 199
+for (let i = 0; i < 30; i++) {
     const $currentCat = $('<img src="http://www.anniemation.com/clip_art/images/cat-walk.gif">');
     $currentCat.attr('id', 'cat' + i);
-    $currentCat.css('left', i * 20 + 'px')
-    $currentCat.css('top', i * 20 + 'px')
-    $currentCat.css('position', 'absolute')
+    $currentCat.css({
+        left: i * 10 + 'px',
+        top: i * 30 + 'px',
+        position: 'absolute'
+    })
 
     $('body').append($currentCat);
 }
 
 const $cat = $('img');
-console.log($cat);
+const walkingRights = new Array($cat.length).fill(true);
+const speeds = new Array($cat.length);
+for (let i = 0; i < $cat.length; i++) {
+    speeds[i] = i + 1;
+}
 
-let walkingRight = true;
+console.log('The $cat object is as follows:', $cat);
+
+console.log('the $cat length is:', $cat.length);
+
 const screenWidth = globalThis.screen.availWidth;
 const screenHeight = globalThis.screen.availHeight;
 
-console.log("the screen width should be:", screenWidth);
-// console.log("the screen width should be:", document.body.clientWidth);
+// console.log("the screen width should be:", screenWidth);
 
-function walk($specificCat, direction) { //direction needs to be positive or negative. 
-    const moveIncrement = 10 * direction;
+function walk($specificCat, speed) { //direction needs to be positive or negative. 
+    const moveIncrement = speed;
     const currentTopOffset = parseInt($specificCat.css('left'));
     const newTopOffset = currentTopOffset + moveIncrement;
     $specificCat.css('left', newTopOffset + 'px');
@@ -27,32 +36,27 @@ function walk($specificCat, direction) { //direction needs to be positive or neg
 
 function walkRightThenLeft() { // TODO: abstract this to do an each for the individual cats to dictate if they are individually going left or right
     // console.log(`cat.left = ${parseInt(cat1.style.left)} & availWIdth ${screenWidth}`);
-    if (walkingRight) {
-        $cat.each(function() {
-            walk($(this), 1);
-        });
-    } else {
-        $cat.each(function() {
-            walk($(this), -1);
-        });
-    }
+    $cat.each(function(i) {
+        if (walkingRights[i]) {
+            walk($(this), speeds[i]);
+        } else {
+            walk($(this), -1 * speeds[i]);
+        }
 
-    if (parseInt($cat.css('left')) > screenWidth - 100) {
-        walkingRight = false;
-    } else if (parseInt($cat.css('left')) < 0) {
-        walkingRight = true;
-        console.log('changed walking right to true')
-    }
+
+        if (parseInt($(this).css('left')) > screenWidth - 255) {
+            walkingRights[i] = false;
+        } else if (parseInt($(this).css('left')) < 0) {
+            walkingRights[i] = true;
+            console.log('changed walking right to true')
+        }
+    })
 }
 
-// setInterval($cat.each(function() {}))
 // need to perform the walkRightThenLeft on the .each property. 
 
-setInterval(walkRightThenLeft, 10);
+setInterval(walkRightThenLeft, 20);
 //create new cat
-
-
-
 
 // when the cat hits the right hand side of the screen then flip image and walk back
 
