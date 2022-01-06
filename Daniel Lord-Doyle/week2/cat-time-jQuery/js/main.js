@@ -1,47 +1,44 @@
-// $('p').addClass('special')
-// $('p').addClass('special2')
-// $('p').removeClass('special2')
+$catImage = $('#walkingcat')
 
-// get all items with ID intro
-const $intro = $('#intro')
-console.log('$intro', $intro)
+console.log($catImage)
 
-// change the CSS in relation to elements with #intro
-$intro.css({
-    backgroundColor: 'red',
-    fontFamily: 'Comic Sans MS',
-    fontSize: 32
+$catImage.css({
+    left: 0,
+    top: 100,
 })
 
-const $p = $('p')
-console.log($p)
-
-$p.
-    css({ textDecoration: 'underline' })
-
-$intro
-    .fadeOut(5000)
-    .css ( { color: 'blue' } )
-
-const $allALinks = $( 'a' )
-// console.log($allALinks.attr('href'))
-
-// const aTagHref = $allALinks.attr('href')
-// console.log(aTagHref)
-
-// const aTagHTML = $allALinks.html();
-// console.log(aTagHTML)
-
-$allALinks.each( function () {
-    console.log($(this).attr('href'))
-} )
 
 
-$allALinks.each( function () {
-    $(this).attr('href', 'https://maryisthebest.com')
-    // $(this).append($p)
-} )
+catwalk = (speed) => {
 
-$allALinks.each( function (i) {
-    console.log($(this).attr('href'))
-} )
+    const intervalID = setInterval( () => {
+        const currentLeftOffset = parseInt($catImage.css('left'));
+        const newLeftOffset = currentLeftOffset + speed;
+        $catImage.css('left', newLeftOffset);
+
+        if (newLeftOffset >= (window.innerWidth - $catImage.prop('width'))) {
+            clearInterval (intervalID)
+            $catImage.toggleClass('transform')
+            catwalkLeft(speed)
+        }
+
+    }, 50);
+}
+
+catwalkLeft = (speed) => {
+
+    const intervalID = setInterval( () => {
+        const currentLeftOffset = parseInt($catImage.css('left'));
+        const newLeftOffset = currentLeftOffset - speed;
+        $catImage.css('left', newLeftOffset);
+
+        if (newLeftOffset <= 0) {
+            clearInterval (intervalID)
+            $catImage.toggleClass('transform')
+            catwalk(speed)
+        }
+
+    }, 50);
+}
+
+catwalk(10)
