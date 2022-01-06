@@ -1,4 +1,4 @@
-const imagesInfo = [
+ const imagesInfo = [
   // {
   //   element: allImages[0],
   //   speedX: 3,
@@ -11,7 +11,6 @@ $(".images-wrapper > img").each(function() {
     const imageObj = {
       element: this,
     }
-    // push image's info object to "imageInfo" array
     imagesInfo.push(imageObj);
   
     // set random position between 0 and browser edge
@@ -50,7 +49,7 @@ const moveImage = function(image) {
   $(image.element).css({
     "left": `${positionX}px`,
     "top": `${positionY}px`,
-    // flip the image if speedX is positive value
+    // flip the image if speedX is positive value (when they're going right side)
     "transform": `scaleX(${Math.sign(image.speedX) * -1})`
   });
   
@@ -82,7 +81,7 @@ const controlAnimation = function() {
     }, 20);
 
     // make it visible
-    $(".images-wrapper > img").css("opacity", "1");
+    $(".images-wrapper > img").fadeTo(100, 1);
 
     isAnimationRunning = true;
   }else {
@@ -90,7 +89,8 @@ const controlAnimation = function() {
     clearInterval(moveImagesID);
 
     // make all images opacity down
-    $(".images-wrapper > img").css("opacity", "0.6");
+    $(".images-wrapper > img").fadeTo(100, 0.6);
+
 
     isAnimationRunning = false;
     console.log("Animation stopped");
@@ -109,4 +109,3 @@ $("#speedRange").on("input", function() {
 
 // start setInterval when js loaded
 controlAnimation();
-
