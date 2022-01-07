@@ -33,13 +33,17 @@ const allAcc = [checkingAcc, savingAcc];
 
 // I think I need to make a person object and add the actual accounts to their key values pairs, upon which point I can loop 
 
-module.exports = Account;
+// module.exports = Account;
 
 //TODO: determine if I should be exporting the instance of the object or the actual function and generate a copy there. 
 
 //FRONT END: run a function that updates all the balance values when doing a deposit or withdrawal. 
 //TODO: if you use the same names for the props as in the the front end code you can save alot of repeated code.
 
-// const $checkingBalance = $('checking ')
 
 //TODO: rework the html so that you can generate new accounts by pressing buttons with automatic account id generation.
+$(function() {
+    const $checkingBalance = $(`#${allAcc[0].accType} div`);
+    $checkingBalance.html('$' + allAcc[0].balance);
+    console.log($checkingBalance.html());
+});
