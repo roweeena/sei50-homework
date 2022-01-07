@@ -40,7 +40,6 @@ const allAcc = [checkingAcc, savingAcc];
 //FRONT END: run a function that updates all the balance values when doing a deposit or withdrawal. 
 //TODO: if you use the same names for the props as in the the front end code you can save alot of repeated code.
 
-
 //TODO: rework the html so that you can generate new accounts by pressing buttons with automatic account id generation.
 $(function() {
     const $checkingBalance = $(`#${allAcc[0].accType} div`);
