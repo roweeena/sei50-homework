@@ -1,0 +1,16 @@
+body{
+    background-color:black;
+    overflow: hidden;
+}
+
+h1{
+    color:orange;
+}
+
+div.circle{
+    display:inline-block;
+    color:orange;
+    /* border: 1px solid rgba(159, 255, 115, 0.829); */
+    position:absolute;
+    border-radius:50%;
+}
