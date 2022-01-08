@@ -13,7 +13,7 @@ function Account(accType, balance = 0) {
         if (this.balance >= amount) {
             this.balance -= amount;
         } else {
-            canOverDraft(amount) ? this.balance -= balance : console.log('Can not withdraw, current balance is too low :(');
+            canOverDraft(amount) ? this.balance -= amount : console.log('Can not withdraw, current balance is too low :(');
         }
     };
     this.zeroBalance = function() { //only use this function when needing to overdraft. 
@@ -42,28 +42,42 @@ $(function() {
     const $savingBalance = $(`#${allAcc[1].accType} div`);
     updatBalances();
 
-    const $depositBtn = $('#checking-deposit');
-    const $withdrawBtn = $('#checking-withdraw');
+    // so need to change these buttons to extend for both html elements. Then use the specific id to use specific acc
+    const $allBtn = $('[type="button"]');
+    // const $allBtn = $('[type="button"][value="Deposit"]');
 
-    //update all balances with the Account.balance value
+    //update all balance elements with the Account.balance value
     function updatBalances() {
-        $checkingBalance.html('$' + checkingAcc.balance); //update balance
-        $savingBalance.html('$' + savingAcc.balance); //update balance
-
-        console.log($checkingBalance.text());
+        $checkingBalance.html('$' + checkingAcc.balance);
+        $savingBalance.html('$' + savingAcc.balance);
+        // console.log($checkingBalance.text());
     }
 
-    $depositBtn.on('click', function() {
-        checkingAcc.deposit(parseInt($('#checking-amount').val()));
-        updatBalances();
-    })
+    /*
+    1. for the specific button parse the Value of the element DONEEEE
+    2. get the value of the parent div (Checking || Savings) DONEEEE
+    3. use these values to deposit and withdraw from the specific account. DONEEEE
+    */
 
-    $withdrawBtn.on('click', function() {
-        checkingAcc.withdraw(parseInt($('#checking-amount').val()));
-        // console.log(`the current balance is ${checkingAcc.balance}`);
+    $allBtn.on('click', function() {
+        console.log($(this));
+        console.log('the attr value of type is:', $(this).attr('value'));
+
+        const amount = parseInt($('#checking-amount').val());
+        const btnType = $(this).attr('value');
+        const accountName = $(this).parent().attr('id');
+        const currentAcc = accountName === 'checking' ? checkingAcc : savingAcc;
+
+        console.log("accountName should be checking or savings:", accountName);
+
+        if (btnType === 'Deposit') {
+            currentAcc.deposit(amount);
+        } else {
+            currentAcc.withdraw(amount);
+        }
         updatBalances();
-        // updatBalance()
-    }); //TODO: figure out why you can go to -$1000 just by continuously withdrawing. 
+    });
+
     // make a jquery system that more easily adjusts the balances when depositing and withdrawing
 });
 
