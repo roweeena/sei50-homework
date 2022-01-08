@@ -1,83 +1,83 @@
 // console.log('bank js loaded');
 
-const savings = {
-    balance: 0,
-}
-const checking = {
-    balance: 0,
-}
+// SECRET BANK STUFF
+const bank = {
 
-//  WITHDRAW SAVINGS
-const withdrawSavings = function(amount){
-    if (savings.balance >= amount){
+    customers: {
+    /*
+    This customers object isn't actually requried for this version, it could be replaced by the checking and savings as discrete key value pairs in the bank object. In the next version I would like to build in multiple users maybe with pin numbers to access the accounts from the atm page.
+    */
 
-        console.log(`process withdrawl`);
-        
-        savings.balance -= amount;
+        dan: {checking: 1000, savings: 1000,},
+    },
 
-        return [checking.balance, savings.balance]
+    // TRANSACTIONS OBJECT CONTAINS METHODS FOR EACH TRANSACTION
+    transactions: {
+        deposit: function(name, accountType, depositAmount){
 
-    } else if ( savings.balance + checking.balance >= amount){
+            const customer = bank.customers[name]; // for readability
+            
+            customer[accountType] += depositAmount; // add the deposit amount to the current balance
+    
+            return this.balanceCheck(customer) // run a balance check and return the results
+        },
+    
+        withdraw: function(name, account, withdrawlAmount){
+            
+            const customer = bank.customers[name]
+    
+            if (customer[account] >= withdrawlAmount){ // if there is enough in the requested account
+             
+                customer[account] -= withdrawlAmount // deduct the amount from the current balance
+                
+                console.log(`withdrawl processed`);
+                return this.balanceCheck(customer) // run a balance check and return the results
+    
+            } else if (customer.savings + customer.checking >= withdrawlAmount){ // if there is enough in both accounts combined
+    
+                let transactionAmount = withdrawlAmount; // set a variable to track the overdraw process
+                const otherAccount = account === 'checking' ? 'savings' : 'checking'; // set the otherAccount 
+                      
+                transactionAmount -= customer[account]; // deduct the amount in the requested account from the transaction
+                customer[account] = 0; // set the requested account to 0
+                customer[otherAccount] -= transactionAmount; // deduct the remaining amount from the otherAccount
+                
+                console.log(`overdraft processed`);
+                return this.balanceCheck(customer) // run a balance check and return the results
+    
+            } else {
+                console.log(`insufficient funds`);
+                return this.balanceCheck(customer) // run a balance check and return the results
+            }
+        },
 
-        console.log(`process overdraw`);
+        balanceCheck: function(customer){
+            // return an array with the customers account balances. 
+            // the returned values for display are rounded to 2 decimal places. Account values are not altered.           
+            return [Math.round(customer.checking * 100) / 100, Math.round(customer.savings * 100) / 100]
+        }
+    },
+    
+    // METHOD THAT atm.js USES TO INTERACT WITH THE BANK
+    transactionRequest: function(transactionType, name, accountType, amount){
 
-        let withdrawlAmount = amount;
+        //DATA VALIDATION
 
-        withdrawlAmount -= savings.balance;
-        
-        savings.balance = 0;
-        
-        checking.balance -= withdrawlAmount;
+        if (transactionType === 'balanceCheck' &&   // check for balance check and
+            name in this.customers){                // and if the name has an account
 
-        console.log(savings, checking);
+                return this.transactions.balanceCheck(bank.customers[name]); // run a balanceCheck
 
-        return [checking.balance, savings.balance]
-        
-    } else {
-        console.log(`insufficient funds`);
-        return [checking.balance, savings.balance]
+        } else if (
+            transactionType in this.transactions && // check that the requested transaction is possible at this bank
+            name in this.customers &&   // check the user is a customer at this bank
+            accountType in this.customers[name] && // check the selected user has an account of the type requested
+            !isNaN(amount)){    // check the amount is a number
+
+                return this.transactions[transactionType](name, accountType, amount); // run the transaction and return the result
+
+        };
+
+        console.log(`invalid request`);
     }
-}
-
-// WITHDRAW CHECKING
-const withdrawChecking = function(amount){
-    if (checking.balance >= amount){
-
-        console.log(`process withdrawl`);
-
-        checking.balance -= amount;
-
-        console.log(checking);
-
-        return [checking.balance, savings.balance]
-
-    } else if ( checking.balance + savings.balance >= amount){
-
-        console.log(`process overdraw`);
-
-        let withdrawlAmount = amount;
-
-        withdrawlAmount -= checking .balance;
-        
-        checking.balance = 0;
-        
-        savings.balance -= withdrawlAmount;
-
-        console.log(checking, savings);
-
-        return [checking.balance, savings.balance]
-        
-    } else {
-        console.log(`insufficient funds`);
-        return [checking.balance, savings.balance]
-    }
-}
-
-// DEPOSIT
-const deposit = function(account, amount){
-    account.balance += amount
-
-    console.log(account);
-
-    return [checking.balance, savings.balance]
 }
