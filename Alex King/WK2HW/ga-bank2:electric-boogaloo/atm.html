@@ -16,7 +16,7 @@
     <section id="balance">
       <div class="account" id="checking">
         <h1>Checking</h1>
-        <div class="balance" id="checking-balance">$0</div>
+        <div class="balance" id="checking-balance" draggable="true" ondragstart="transfer(ev)" ondrop="drop(event)" ondragover="allowDrop(event)">$0</div>
         <input id="checking-amount" type="text" placeholder="enter an amount" />
         <input id="checking-deposit" type="button" value="Deposit" />
         <input id="checking-withdraw" type="button" value="Withdraw" />
@@ -26,18 +26,19 @@
     <section id="balance">
       <div class="account" id="savings">
         <h1>Savings</h1>
-        <div class="balance" id="savings-balance">$0</div>
+        <div class="balance" id="savings-balance" draggable="true" ondragstart="transfer(ev)" ondrop="drop(event)" ondragover="allowDrop(event)">$0</div>
         <input id="savings-amount" type="text" placeholder="enter an amount" />
         <input id="savings-deposit" type="button" value="Deposit" />
         <input id="savings-withdraw" type="button" value="Withdraw" />
       </div>
     </section>
     <div class="clear"></div>
-    <div class="alert-box error">Error: You can't withdraw an amount greater than your balance</div>
+    <div class="alert-box error">Error: You can't withdraw an amount greater than your balance</div> 
     <div class="alert-box secondError">Error: Invalid input</div>
-    
+    <!-- make jQuery add these instead! You can also make jQuery handle the drag and drop -->
   </div>
   <script src="js/jquery.js"></script>
-  <script src="js/atm.js"></script>
+  <script src="js/back.js"></script>
+  <script src="js/front.js"></script>
 </body>
 </html>
