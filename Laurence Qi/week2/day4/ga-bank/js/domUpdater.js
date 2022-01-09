@@ -5,31 +5,21 @@ const allAcc = [checkingAcc, savingAcc]; // TODO: you might just want to make th
 
 //using jquery use the click events to trigger the withdrawal and deposit in the Account methods.
 $(function() {
-    //TODO: change this to an add to the actual object. 
-    // for (let i = 0; i < allAcc.length; i++) {
-    //     allAcc[i].$element = $(`#${allAcc[i].accType} div`);
-    // }
+    // assign element to a prop in the Account objects. 
+    for (let i = 0; i < allAcc.length; i++) {
+        allAcc[i].$element = $(`#${allAcc[i].accType} div`);
+    }
 
-    const $checkingBalance = $(`#${allAcc[0].accType} div`);
-    const $savingBalance = $(`#${allAcc[1].accType} div`);
     updatBalances();
     const $allBtn = $('[type="button"]');
 
     //updates all balance elements with the Account.balance value
     function updatBalances() {
-        $checkingBalance.html('$' + checkingAcc.balance);
-        $savingBalance.html('$' + savingAcc.balance);
-
-        // color balance
-        // for (let i = 0; i < allAcc.length; i++) {
-
-        // }
-        if (checkingAcc.balance <= 0) {
-            $checkingBalance.css('background-color', 'red');
-        } else {
-            $checkingBalance.css('background-color', '#E3E3E3');
-        }
-        // check if the balance is below zero and do the redbackground stuff
+        // update balances and background color. 
+        allAcc.forEach(acc => {
+            acc.$element.html('$' + acc.balance);
+            acc.balance <= 0 ? acc.$element.css('background-color', 'red') : acc.$element.css('background-color', '#E3E3E3');
+        });
     }
 
     /* The function performs the
