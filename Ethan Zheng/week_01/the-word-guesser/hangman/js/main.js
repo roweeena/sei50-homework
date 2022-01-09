@@ -10,28 +10,13 @@ console.log('Please enter one letter in the English Alphabet.'); //I'm not progr
 let hangman = 0;
 let money = 0;
 let correctGuesses = 0;
+
 //initialising array containing the correct word
-const wordAnswer = [
-    //word is 'defenestration' - the act of throwing someone out of a window
-    'd',
-    'e',
-    'f',
-    'e',
-    'n',
-    'e',
-    's',
-    't',
-    'r',
-    'a',
-    't',
-    'i',
-    'o',
-    'n'
-];
+const wordAnswer = ['d', 'e', 'f', 'e', 'n', 'e', 's', 't', 'r', 'a', 't', 'i', 'o', 'n'];  //the act of throwing someone out the window
 //initialising empty array - this is where the player logs their answers
 const wordGuess = [];
-//I'm not typing out 13 '_'
-for (let i = 0; i < wordAnswer.length; i++) {
+
+for (let i = 0; i < wordAnswer.length; i++) {   //I'm not typing out 13 '_'
     wordGuess[i] = '_';
 }
 //track guessed letters
@@ -48,8 +33,7 @@ const rewardCalculator = function (multiplier) {
 
 //function that prints wordguess
 const printWordGuess = function () {
-    const wordGuessString = wordGuess.toString();
-    console.log(wordGuessString.replaceAll(",", ""));
+    console.log(wordGuess.join(''));
 }
 
 //function that checks for win condition
@@ -80,9 +64,7 @@ const guessLetter = function (playerGuessAny) {
     } 
    
     //check lose condition
-    if (wordAnswer.includes(playerGuess)) {
-        //do nothing
-    } else {
+    if (!wordAnswer.includes(playerGuess)) {
         hangman++;
         if (hangman === 6) {
             console.log("6 wrong guesses! The hangman is hung.");

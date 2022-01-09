@@ -1,0 +1,40 @@
+
+
+h1{
+   color : #929191;
+   font-size: 20px;
+   
+}
+
+h3 {
+    color: #656565;
+}
+
+mark.blue {
+    color: rgb(109, 169, 206);  
+}
+
+p {
+    font-size: 12px;
+    color: #929191;
+    font-family : "Times New Roman", serif;
+
+}
+
+body {
+    margin-left: 23px;
+   
+}
+
+.photos {    
+    border: 1px solid white;
+    outline: 5px solid #c5c2c2 ; 
+}
+
+img:hover {
+    border: 1px solid #20222a;
+}
+
+div#container {
+    line-height : 17px;
+}
