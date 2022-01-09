@@ -10,7 +10,7 @@ $(function() {
     // assign each acc to a prop in the Account objects.
     allAcc.forEach(acc => {
         acc.$element = $(`#${acc.accType} div`)
-        checkBtn(acc.accType);
+        setBtnClick(acc.accType);
     });
 
     updateBalances();
@@ -21,24 +21,23 @@ $(function() {
         updateBalances();
     });
 
-    //updates all balance elements with the Account.balance value
+    // Update all balance elements with the Account.balance value
     function updateBalances() {
-        // update balances and background color. 
         allAcc.forEach(acc => {
-            acc.$element.html('$' + acc.balance);
-            acc.balance <= 0 ? acc.$element.css('background-color', 'red') : acc.$element.css('background-color', '#E3E3E3');
+            acc.$element.html('$' + acc.balance); //update balance
+            acc.balance <= 0 ? acc.$element.css('background-color', 'red') : acc.$element.css('background-color', '#E3E3E3'); // change to red if no money
         });
     }
 
-    // With each new account bind the buttons to perform the deposit/withdraw methods of the respective obj
-    function checkBtn(accType) { // TODO: TALK ABOUT PROBLEM WITH THIS.
-        $(`#${accType} [type="button"]`).on('click', function() { //This used to use allBtns
-            const btnType = $(this).attr('value');
-            const accountName = $(this).parent().attr('id');
-            const currentAcc = allAcc.find(acc => acc.accType === accountName); // find the specific acc object belonging to the div in which button was pressed
-            const amount = parseInt($(`#${accountName} [type="text"]`).val());
+    // Bind the buttons to perform the deposit/withdraw methods of the respective obj
+    function setBtnClick(accType) { // TODO: TALK ABOUT PROBLEM WITH THIS.
+        $(`#${accType} [type="button"]`).on('click', function() {
+            const $btnType = $(this).attr('value');
+            const $accountName = $(this).parent().attr('id');
+            const currentAcc = allAcc.find(acc => acc.accType === $accountName); // find the specific acc object belonging to the div in which button was pressed
+            const amount = parseInt($(`#${$accountName} [type="text"]`).val());
 
-            (btnType === 'Deposit') ? currentAcc.deposit(amount): currentAcc.withdraw(amount); // perform withdraw/deposit depending on btntype 
+            ($btnType === 'Deposit') ? currentAcc.deposit(amount): currentAcc.withdraw(amount); // perform withdraw/deposit depending on btntype 
 
             updateBalances();
         });
@@ -72,6 +71,6 @@ $(function() {
 
         allAcc[allAcc.length - 1].$element = $(`#${allAcc[allAcc.length - 1].accType} div`);
 
-        checkBtn(accType);
+        setBtnClick(accType);
     }
 });
