@@ -43,7 +43,7 @@ function walk($specificCat, speedRight, speedBottom) { //Speed can be positive o
 }
 
 // produces the direction value for the code
-function walkRightThenLeft() { // TODO: abstract this to do an each for the individual cats to dictate if they are individually going left or right
+function walkRightThenLeft() {
     // console.log(`cat.left = ${parseInt(cat1.style.left)} & availWIdth ${screenWidth}`);
     $cat.each(function(i) {
         isWalkingRights[i] ? walk($(this), speeds[i]) : walk($(this), -1 * speeds[i]);
