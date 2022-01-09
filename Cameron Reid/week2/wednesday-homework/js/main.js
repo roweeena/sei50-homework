@@ -1,121 +1,74 @@
 const cat = document.querySelector("#cat");
 cat.style.left = "0px"; 
-
-let intervalID; //creates a global id variable for the interval timer
-
-//PACING LEFT TO RIGHT
-
-// const catWalkRight = function(){
-//     const currentLeftOffset = parseInt(cat.style.left); 
-//     const newLeftOffset = currentLeftOffset + 10; 
-//     cat.style.left = newLeftOffset + 'px';
-//     if (window.innerWidth - cat.width < newLeftOffset){ // checks if the left offset is greater than the window width - the width of the cat image. If u 
-//                                                         //dont take away the cat image width the cat will go off the screen
-//         clearInterval(intervalID)                          //if this is true then the setInterval stops
-//         cat.classList.add("flip");                      // the flip class is added to the cat
-//         intervalID = setInterval(catWalkLeft, 50);      // a new function is called to do the oposite of the first
-//     }
-// };
-
-// const catWalkLeft = function(){
-//     const currentLeftOffset = parseInt(cat.style.left);
-//     const newLeftOffset = currentLeftOffset - 10;       
-//     cat.style.left = newLeftOffset + 'px';
-//     if (newLeftOffset === 0){
-//         clearInterval(intervalID)
-//         cat.classList.remove("flip");
-//         intervalID = setInterval(catWalkRight, 50)
-
-//     }
-// };
-
-
-// forever walking left to right
-
-// const catWalkRight = function(){
-//     let currentLeftOffset = parseInt(cat.style.left); 
-//     const newLeftOffset = currentLeftOffset + 10; 
-//     cat.style.left = newLeftOffset + 'px';
-//     if (window.innerWidth < newLeftOffset){ // checks if the left offset is greater than the window width - the width of the cat image. If u 
-//                                                         //dont take away the cat image width the cat will go off the screen
-//         clearInterval(intervalID) 
-//         console.log(cat.width);                         //if this is true then the setInterval stops
-//         cat.style.left = "0px";                         //FIGURE OUT HOW 
-//         intervalID = setInterval(catWalkRight, 50);      // a new function is called to do the oposite of the first
-//     }
-// };
-
-
-//Forwards and back?
-
-// const catWalkRight = function(){
-//     const currentLeftOffset = parseInt(cat.style.left); 
-//     const newLeftOffset = currentLeftOffset + 10; 
-//     cat.style.left = newLeftOffset + 'px';
-//     if (window.innerWidth - cat.width < newLeftOffset){ // checks if the left offset is greater than the window width - the width of the cat image. If u 
-//                                                         //dont take away the cat image width the cat will go off the screen
-//         clearInterval(intervalID)                          //if this is true then the setInterval stops
-//         // cat.classList.add("flip");                      // the flip class is added to the cat
-//         intervalID = setInterval(catWalkLeft, 50);      // a new function is called to do the oposite of the first
-//     }
-// };
-
-// const catWalkLeft = function(){
-//     const currentLeftOffset = parseInt(cat.style.left);
-//     const newLeftOffset = currentLeftOffset - 10;       
-//     cat.style.left = newLeftOffset + 'px';
-//     if (newLeftOffset === 0){
-//         clearInterval(intervalID)
-//         // cat.classList.remove("flip");
-//         intervalID = setInterval(catWalkRight, 50)
-
-//     }
-// };
-
-// Middle surprise
-
+let partyHappened = false;
 const middleOfPage = window.innerWidth / 2;
 
+const walkLeft = function(){
+    cat.style.transform = "scaleX(-1)";  //flip image to face left
 
-const catWalkRight = function(){
-    const currentLeftOffset = parseInt(cat.style.left); 
-    const newLeftOffset = currentLeftOffset + 10; 
-    cat.style.left = newLeftOffset + 'px';
-    if (window.innerWidth - cat.width < newLeftOffset){ // checks if the left offset is greater than the window width - the width of the cat image. If u 
-                                                        //dont take away the cat image width the cat will go off the screen
-        clearInterval(intervalID)                          //if this is true then the setInterval stops
-        cat.classList.add("flip");                      // the flip class is added to the cat
-        intervalID = setInterval(catWalkLeft, 50);      // a new function is called to do the oposite of the first
-    }
-    if (middleOfPage - cat.width < newLeftOffset){
-        midWayParty(newLeftOffset);
-    }
+    const walkLeftID = setInterval(function() {
+        
+        const currentOffsetInt = parseInt(cat.style.left);
+        cat.style.left = currentOffsetInt - 10 + "px";
 
+        if(currentOffsetInt < 0){
+            clearInterval(walkLeftID);
+            walkRight();
+        }
+    }, 50);
 };
 
-const catWalkLeft = function(){
-    const currentLeftOffset = parseInt(cat.style.left);
-    const newLeftOffset = currentLeftOffset - 10;       
-    cat.style.left = newLeftOffset + 'px';
-    if (newLeftOffset === 0){
-        clearInterval(intervalID)
-        cat.classList.remove("flip");
-        intervalID = setInterval(catWalkRight, 50)
+const walkRight = function(){
+    cat.style.transform = "scaleX(1)";  //flip image to face left
 
-    }
-};
+    const walkRightID = setInterval(function() {
+        
+        const currentOffsetInt = parseInt(cat.style.left);
+        cat.style.left = currentOffsetInt + 10 + "px";
 
+        if(currentOffsetInt >= window.innerWidth - cat.clientWidth ){
+            clearInterval(walkRightID);
+            walkLeft();
+        }
+    }, 50);
+}
 
-const midWayParty = function(newOffSet){
-    
-    clearInterval(intervalID)                          
-    cat.classList.add("disappear")
-    // setTimeout(function(){console.log("its stopped");}, 2000)
-    cat.style.left = newOffSet;
-    cat.classList.remove("disappear")
-    
-    intervalID = setInterval(catWalkRight, 50)
-};
-intervalID = setInterval(catWalkRight, 50); //starts the inital function 
+walkRight();
 
+//SUPER CLEAN AND REFINED CODE VVVVVVVVVVVVVVVVVVV
 
+// This variable is like a flag that we toggle between 1 and -1
+// to indicate the direction of travel... we multiply it by
+// our step value on line 48 below,
+// and it also happens to work for the CSS scaleX() transform
+let walkDirection = 1;
+
+setInterval( function(){
+
+  const currentOffsetInt = parseInt(cat.style.left) + (walkDirection * 10);
+  cat.style.left = currentOffsetInt  + 'px';
+
+  // When should we stop walking to the right?
+  // if( currentOffsetInt >= window.innerWidth-cat.clientWidth ){
+  //   cat.style.transform = 'scaleX(-1)';
+  //   walkOffset = -10;
+  // } else if( currentOffsetInt <= 0 ){  // we've hit the left edge
+  //   cat.style.transform = 'scaleX(1)';
+  //   walkOffset = 10;
+  // }
+
+  if(
+    currentOffsetInt > window.innerWidth-cat.clientWidth
+    || currentOffsetInt < 0
+  ){
+    // Because of the choice of values for walkDirection,
+    // we do *the same thing* regardless of which edge we have
+    // hit - just flip the variable from positive to negative
+    // or vice versa. This is shorter code.... but is it harder
+    // to understand than the longer but more explicit if-else
+    // version above?
+    walkDirection *= -1;
+    cat.style.transform = `scaleX(${ walkDirection })`;
+  }
+
+}, 40 ); // end of setInterval
