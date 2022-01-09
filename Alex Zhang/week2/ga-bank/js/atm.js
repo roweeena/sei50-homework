@@ -3,8 +3,8 @@ let checkingBalance=$("#checking-balance");
 let savingsBalance=$("#savings-balance");
 let checkingAmount=$("#checking-amount");
 let savingsAmount=$("#savings-amount");
-let totalCheckingBalance=0;
-let totalSavingsBalance=0;
+let totalCheckingBalance=20;
+let totalSavingsBalance=20;
 //set a foratter to format the $x.xx
 const formatter = new Intl.NumberFormat
 ('en-US', {
@@ -30,6 +30,12 @@ $("#checking-deposit").click(function(){
             checkingBalance.text(formatter.format(totalCheckingBalance));
         }
     }
+    if(checkingBalance.text()!=="$0.00"){
+        checkingBalance.css("background-color","#E3E3E3");
+    };  
+    if(savingsBalance.text()!=="$0.00"){
+        savingsBalance.css("background-color","#E3E3E3");
+    }; 
 })
 $("#savings-deposit").click(function(){
     if(isNaN(savingsAmount.val())){
@@ -45,6 +51,12 @@ $("#savings-deposit").click(function(){
             savingsBalance.text(formatter.format(totalSavingsBalance));
         }
     }
+    if(checkingBalance.text()!=="$0.00"){
+        checkingBalance.css("background-color","#E3E3E3");
+    };  
+    if(savingsBalance.text()!=="$0.00"){
+        savingsBalance.css("background-color","#E3E3E3");
+    }; 
 })
 //withdraw
 $("#checking-withdraw").click(function(){
@@ -75,7 +87,7 @@ $("#checking-withdraw").click(function(){
     };  
     if(savingsBalance.text()==="$0.00"){
         savingsBalance.css("background-color","red");
-    }; 
+    };  
 });
 
 
