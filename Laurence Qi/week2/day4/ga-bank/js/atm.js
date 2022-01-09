@@ -23,7 +23,9 @@ function Account(accType, Initialbalance = 0) {
 }
 
 function canOverDraft(amount) {
-    return amount <= allAcc[0].balance + allAcc[1].balance;
+    const totalBalance = allAcc.map(x => x.balance).reduce((a, b) => a + b);
+    console.log('total balance is:', totalBalance);
+    return amount <= totalBalance;
 }
 // module.exports = Account; //UNCOMMENT THIS TO TEST
 
