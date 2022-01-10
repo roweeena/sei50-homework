@@ -17,5 +17,4 @@ test('check whether Account does not withdraw when balance < withdrawal amount',
     accountInstance.withdraw(100);
     expect(accountInstance.balance).toBe(0);
 });
-
 //TODO: figure out a better way of checking capability of overdrafting.

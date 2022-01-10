@@ -32,8 +32,8 @@ $(function() {
     // Bind the buttons to perform the deposit/withdraw methods of the respective obj
     function setBtnClick(accType) { // TODO: TALK ABOUT PROBLEM WITH THIS.
         $(`#${accType} [type="button"]`).on('click', function() {
-            const $btnType = $(this).attr('value');
-            const $accountName = $(this).parent().attr('id');
+            const $btnType = $(this).attr('value'); //deposit/withdraw
+            const $accountName = $(this).parent().attr('id'); //accountName
             const currentAcc = allAcc.find(acc => acc.accType === $accountName); // find the specific acc object belonging to the div in which button was pressed
             const amount = parseInt($(`#${$accountName} [type="text"]`).val());
 
@@ -61,6 +61,7 @@ $(function() {
         const $depositBtn = $('<input/>', { id: `${accType}-deposit`, type: 'button', value: 'Deposit' })
         const $withdrawBtn = $('<input/>', { id: `${accType}-withdraw`, type: 'button', value: 'Withdraw' })
 
+        // set the onclick
         $wrapper
             .append($header)
             .append($balanceDisplay)
