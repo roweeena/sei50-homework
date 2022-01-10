@@ -36,19 +36,6 @@ const amendCheckingAccount = function (amount) {
     let fixedAmount = parseFloat(amount).toFixed(2)
     let parsedAmount = parseFloat(fixedAmount)
 
-// my checks
-
-    // console.log('amount is', amount)
-    // console.log('typeof amount is', typeof(amount));
-    // console.log('parsed amount is', parsedAmount)
-    // console.log('typeof parsed amount is', typeof(parsedAmount));
-
-    // this regex looks for
-    // ^ start of string
-    // looks for - symbol and allows it
-    // looks for 0-9 digits and allows them
-    // if anything else does not allow it
-
     if ( isnum === true ) {
         if ((updatedCheckingBalance + amount) >= 0) {
             updatedTotalBalance += parseFloat(amount);
@@ -168,4 +155,3 @@ const savingsOverdraft = function (amount) {
     amendSavingsAccount((updatedSavingsBalance)*-1)
     amendCheckingAccount((amountNeededFromOtherAccount))
 }
-
