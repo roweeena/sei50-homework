@@ -1,6 +1,6 @@
 body{
 	background-image: url("https://i2.wp.com/nobhillgazette.com/wp-content/uploads/2020/12/jaron_lanier_final_larger_larger.jpg?w=714&ssl=1");
-	background-color: gray;
+	/* background-color: gray; */
 	font-family: "Quicksand";
 	max-width: 900px;
 	max-height: auto;
@@ -11,7 +11,7 @@ h1 {
 	font-size: 80px;
 	padding: 25px;
 	font-weight: bolder;
-	color: black;
+	/* color: black; */
 	-webkit-text-stroke: 1px yellow;
 	-webkit-text-fill-color: green;
 }
