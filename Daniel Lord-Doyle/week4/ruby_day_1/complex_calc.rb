@@ -60,9 +60,9 @@ end # end of convert_val
 
 def give_result num
     if num > 0
-        puts "#{num}".green
+        puts "The result is: #{num}".green
     else
-        puts "#{num}".red
+        puts "The result is: #{num}".red
     end
 end # end of give_result
 

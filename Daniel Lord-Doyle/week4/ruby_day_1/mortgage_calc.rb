@@ -66,7 +66,7 @@ def monthly_payment
     monthly_interest = monthly_non_interest_payment * mir
     total_monthly_payment = monthly_non_interest_payment + monthly_interest
 
-    puts "Your monthly interest will be $#{mir}%."
+    puts "Your monthly interest will be #{mir}%."
     puts "Your payment each month without interest will be $#{(monthly_non_interest_payment).round(2)}."
     puts "Your monthly interest will be $#{(monthly_interest).round(2)}."
     puts "So you will be paying a total of $#{(total_monthly_payment).round(2)} for #{months_to_pay} months."
