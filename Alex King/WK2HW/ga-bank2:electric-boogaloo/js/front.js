@@ -32,9 +32,9 @@ $("input[value='Withdraw']").on('click', function () {
     let amtInput = parseFloat(userInput)
     let yourCash = checkingTotal + savingsTotal
 
-    if (userInput === "/clr") {
-        $(this).siblings('.balance').html(`$${0}`)
-    }
+    // if (userInput === "/clr") {
+    //     $(this).siblings('.balance').html(`$${0}`)
+    // }
 
     if (isNaN(amtInput) && !(userInput === "/clr")) {
         playError2();
@@ -94,7 +94,7 @@ $("input[value='Withdraw']").on('click', function () {
 });
 
 
-function allowDrop(ev) {
+function allowDrop(ev) { //I want change css of target 
     ev.preventDefault();
 };
 function transfer (ev) {
@@ -197,11 +197,10 @@ function drop(ev) {// this is really ugly, you can cut out a lot!
 }
 //TO DO:
 
+// put everything into a function to call. you can cut at least 80+ lines!!!
 
+// you can add drag and drop permissions to html!!!!
 
-// separate visual from backend 
-// ie update animations, html, colors, errors in one file and what triggers them in another
-// Make drag and drop that allows transfer 
 
 
 
