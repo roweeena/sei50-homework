@@ -2,19 +2,19 @@ const triangle = {
     sideA: 3,
     sideB: 7,
     sideC: 9,
-    isEquilateral: function () {
+    isEquilateral: function() {
         return this.sideA === this.sideB && this.sideA === this.sideC; //TODO: compress this line
     },
-    isIsosceles: function () {
+    isIsosceles: function() {
         return this.sideA === this.sideB || this.sideA === this.sideC || this.sideB === this.sideC;
     },
-    area: function () {
+    area: function() {
         semiPerimeter = (this.sideA + this.sideB + this.sideC) / 2;
         const sum = semiPerimeter * (semiPerimeter - this.sideA) * (semiPerimeter - this.sideB) * (semiPerimeter - this.sideC);
         _area = Math.sqrt(sum);
         return _area;
     },
-    isObtuse: function () {
+    isObtuse: function() {
         const sidesAscending = [this.sideA, this.sideB, this.sideB].sort((a, b) => a - b);
         return this.sideC * this.sideC > this.sideB * this.sideB + this.sideA * this.sideA; //TODO: rework this. 
     },

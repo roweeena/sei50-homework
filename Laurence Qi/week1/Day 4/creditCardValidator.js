@@ -9,7 +9,11 @@
 
 const checkConditions = (cardNum) => {
     // return (cardNum[cardNum.length - 1] % 2 === 0)
-    return isSixteenDigits(cardNum) && isOnlyNumbers(cardNum) && isDiffDigits(cardNum) && isLastDigitEven(cardNum) && isSumOfDigitsLargerThan16(cardNum);
+    return isSixteenDigits(cardNum) &&
+        isOnlyNumbers(cardNum) &&
+        isDiffDigits(cardNum) &&
+        isLastDigitEven(cardNum) &&
+        isSumOfDigitsLargerThan16(cardNum);
 }
 
 const isDiffDigits = (cardNum) => {
@@ -21,7 +25,7 @@ const isDiffDigits = (cardNum) => {
     return !prevState;
 }
 
-const isSixteenDigits = (cardNum) => {return !(cardNum.length !== 16)}
+const isSixteenDigits = (cardNum) => { return !(cardNum.length !== 16) }
 const isOnlyNumbers = (cardNum) => { return !cardNum.includes(NaN) } // when non numeric chacters are used in parseInt converted to NaN. 
 const isLastDigitEven = (cardNum) => { return cardNum[cardNum.length - 1] % 2 === 0 }
 const isSumOfDigitsLargerThan16 = (cardNum) => { return !(cardNum.reduce((a, b) => a + b, 0) <= 16) }
@@ -29,7 +33,7 @@ const isSumOfDigitsLargerThan16 = (cardNum) => { return !(cardNum.reduce((a, b) 
 const creditCard = {
     // cardNum: "8888-8888-8888-8878",
     cardNum: "a923-3211-9c01-1112",
-    validate: function () {
+    validate: function() {
         numArr = this.cardNum.replace(/-/g, "").split("").map(element => parseInt(element)); //TODO: learn the regex for this. 
         return checkConditions(numArr);
     }
