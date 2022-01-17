@@ -1,32 +1,201 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap');
+
+:root{
+    --main-width: 960px;
+    --main-color: white;
+    --h1-font-size: 6em;
     font-family: 'Raleway', sans-serif;
-    
-    
-    background-image: 
-    /* top, transparent red */
-    linear-gradient(
-      rgba(0, 12, 78, 0.9), 
-      rgba(0, 12, 78, 0.9) 
-    ),
-    /* your image */
-    url(/images/pexels-satoshi-hirayama-2890019.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1000px) {
+    :root{
+        --main-width: 700px;
+        --h1-font-size: 5em
+    }
+}
+
+@media screen and (max-width: 750px) {
+    :root{
+        --main-width: 320px;
+        --h1-font-size: 3em
+    };
 
 }
-    
-#wrapper {
-    width: 100vw;
-    min-height: 100vh;
+
+
+
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+    url('../images/pexels-satoshi-hirayama-2890019.jpg');
+    background-size: cover;
+    color: var(--main-color);
+}
+
+
+main {
+    width: var(--main-width);
+    height: 100vh;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
 }
 
-h1{
+nav {
+    background: linear-gradient(rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0.5));
+    width: 100vw;
+    position: absolute;
+    /* height: 3em; */
+}
+
+nav ul {
+    padding: 0;
     margin: 0;
-    color: white;
+    text-align: center;
 }
+
+nav li {
+    display: inline-block;
+    height: 100%;
+    padding: 1em 2em;
+}
+
+header {
+    text-align: center;
+}
+
+.wrapper{
+    background-image: radial-gradient(rgba(255, 0, 0, 0.507), rgba(0, 0, 0, 0) 80%);
+        padding: 50px 50px 0 50px;
+
+}
+
+.ruby{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-wrapper {
+
+    margin-top: 50px;
+    
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.ruby-text{
+    line-height: 1.5em;
+}
+
+@media screen and (max-width: 750px){
+    .ruby-text {
+        text-align: justify;
+    }
+    
+}
+
+header p {
+    margin: 0;
+margin-bottom: 50px;
+    font-size: 1.5em;
+}
+
+
+/* section {
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: var(--main-width);
+} */
+
+#ruby-logo {
+    display: inline-block;
+    height: 100px;
+    border: 1px solid white;
+}
+
+blockquote {
+    margin: 0 auto;
+    padding: 5em;
+    width: 30%;
+    background: radial-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .5)50%, rgba(255, 255, 255, 0) 75%);
+    font-style: italic;
+    text-align: center;
+    color: rgba(170, 3, 3, 1);
+    opacity: 0;
+    transition: 1s;
+}
+
+blockquote:hover {
+    opacity: 100%;
+    
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
+}
+
+@media screen and (max-width: 750px) {
+    iframe {
+        width: 240px;
+        height: 120px;
+    }
+
+}
+
+footer {
+    position: sticky;
+    width: 100vw;
+    bottom: 0;
+    background: black;
+    
+}
+
+footer p{
+    text-align: center;
+    font-size: 0.8em;
+    padding: 0.4em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-color);
+    display: inline-block;
+}
+
+a::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+    background: rgba(0, 0, 0, 0);
+    transition: 300ms;
+} 
+
+a:hover::after{
+    background: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+

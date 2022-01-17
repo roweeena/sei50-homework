@@ -129,5 +129,3 @@ const moveCssLogo = setInterval(function() {
     css_logo.style.top = "-150px"
   }
 }, 50);
-
-
