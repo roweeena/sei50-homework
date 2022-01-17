@@ -48,9 +48,9 @@ end # end of convert_val
 
 def give_result num
     if num > 0
-        puts "#{num}".green
+        puts "The answer is: #{num}".green
     else
-        puts "#{num}".red
+        puts "The answer is: #{num}".red
     end
 end # end of give_result
 
@@ -68,14 +68,10 @@ while true
     secondNum = convert_val val2
 
     case choice
-    when 'add'
-        result = firstNum + secondNum
-    when 'subtract'
-        result = secondNum - firstNum
-    when 'multiply'
-        result = firstNum * secondNum
-    when 'divide'
-        result = firstNum / secondNum
+    when 'add'      then result = firstNum + secondNum
+    when 'subtract' then result = secondNum - firstNum
+    when 'multiply' then result = firstNum * secondNum
+    when 'divide'   then result = firstNum / secondNum
     end
     give_result result
 end # end of the calc loop
