@@ -18,26 +18,21 @@ def get_value order, choice
 
     if order == "first"
         print "What is the #{order} value would you like to #{choice}: "
-        val = gets.chomp
-        return val
+        gets.chomp
     else
         case choice
         when 'add'
             print "And what would you like to add this to: "
-            val = gets.chomp
-            return val
+            gets.chomp
         when 'subtract'
             print "And what would you like to subtract this from: "
-            val = gets.chomp
-            return val
+            gets.chomp
         when 'divide'
             print "And what would you like to divide this by: "
-            val = gets.chomp
-            return val
+            gets.chomp
         when 'multiply'
             print "And what would you like to multiply this by: "
-            val = gets.chomp
-            return val
+            gets.chomp
         end
     end
 end # end of get_value

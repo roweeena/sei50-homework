@@ -21,35 +21,28 @@ def get_value order, choice
     if order == "first"
         if choice == 'root'
             print "What non-negative integer would you like the square root of: "
-            val = gets.chomp
-            return val
+            gets.chomp
         elsif choice == 'square'
             print "What number would you like to square itself by: "
-            val = gets.chomp
-            return val
+            gets.chomp
         else
         print "What is the #{order} value would you like to #{choice}: "
-        val = gets.chomp
-        return val
+        gets.chomp
         end
     else 
         case choice
         when 'add'
             print "And what would you like to add this to: "
-            val = gets.chomp
-            return val
+            gets.chomp
         when 'subtract'
             print "And what would you like to subtract from this: "
-            val = gets.chomp
-            return val
+            gets.chomp
         when 'divide'
             print "And what would you like to divide this by: "
-            val = gets.chomp
-            return val
+            gets.chomp
         when 'multiply'
             print "And what would you like to multiply this by: "
-            val = gets.chomp
-            return val
+            gets.chomp
         end
     end
 end # end of get_value
@@ -66,14 +59,9 @@ def give_result num
     end
 end # end of give_result
 
-def firstNum order, choice
-    val1 = get_value 'first', choice
-    firstNum = convert_val val1
-end
-
-def secondNum order, choice
-    val2 = get_value 'second', choice
-    secondNum = convert_val val2
+def ask_for_num order, choice
+    val1 = get_value order, choice
+    convert_val val1
 end
 
 # the calc itself
@@ -86,18 +74,18 @@ while true
 
     case choice
     when 'add'
-        result = firstNum('first', choice) + secondNum('second', choice)
+        result = ask_for_num('first', choice) + ask_for_num('second', choice)
     when 'subtract'
-        result = firstNum('first', choice) - secondNum('second', choice)
+        result = ask_for_num('first', choice) - ask_for_num('second', choice)
     when 'multiply'
-        result = firstNum('first', choice) * secondNum('second', choice)
+        result = ask_for_num('first', choice) * ask_for_num('second', choice)
     when 'divide'
-        result = firstNum('first', choice) / secondNum('second', choice)
+        result = ask_for_num('first', choice) / ask_for_num('second', choice)
     when 'root'
-        integer = firstNum('first', choice)
+        integer = ask_for_num('first', choice)
         result = Integer.sqrt(integer)
     when 'square'
-        numToSquare = firstNum('first', choice)
+        numToSquare = ask_for_num('first', choice)
         result = numToSquare * numToSquare
     end
     give_result result
