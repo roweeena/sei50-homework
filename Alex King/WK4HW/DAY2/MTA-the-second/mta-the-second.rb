@@ -1,5 +1,6 @@
 require 'pry'
 require 'colorize'
+
 $close_planner = "no"
 until $close_planner == "N"
 lines = {
@@ -39,9 +40,7 @@ union_square_second = (line_second.index "Union_Square")
 # puts where_first, union_square_first, where_second, union_square_second 
 
 stations = []
-# stations = stations.uniq
 
-# First line
 if union_square_first >= where_first #if before
     stations << line_first[where_first..union_square_first]
 else #if after 
@@ -57,17 +56,22 @@ end # Closing second line
 
 # stations is made up of 2 arrays because there's 2 separate 
 stations = stations.flatten!.uniq!
-
+stations.pop
 trip_length = stations.length
+
+# binding.pry
+
 puts "Change over at Union Square require (stop #{stations.index("Union_Square")} of your trip)".red
-puts "Your journey will be #{trip_length} stop/s long".yellow
-puts ""
-# you'll travel to ... then ..., then you'll arrive at when stations[-1]
-# to cut the last stop, you do stations[0,-2]
-puts "Would you like to plan another trip? [Y/N]".green
-$close_planner = gets.chomp
-puts $close_planner
+
+puts "Your journey will be #{trip_length} stop/s long".yellow, ""
+
+puts "On your journey you will go from:"
+
+stations.each{|el| puts "#{el} then,"}
+puts "you'll arive at your destination #{station_second}", ""
+
+puts "Would you like to plan another trip? [Y/N]".blue
+$close_planner = gets.chomp.upcase
 
 end
 
-# binding.pry
