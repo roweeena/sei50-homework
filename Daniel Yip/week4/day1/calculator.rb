@@ -3,7 +3,7 @@ require 'colorize'
 # method that displays the options and asks the user to choose, returns the selection 
 def operation_sel
   puts 'WELCOME TO THE CALCULATOR'.blue
-  puts 'Please choose from the following options:1'.blue
+  puts 'Please choose from the following options: '.blue
   puts "'a'   = addition".red
   puts "'b'   = subtraction".red
   puts "'c'   = multiplication".red
@@ -54,13 +54,12 @@ def mortgage_calculator
   principal = gets.to_f
   
   print "What is the intrest rate: "
-  intrest = gets.to_f
-  
+  interest = gets.to_f
+  interest = interest / 12
   print "How many months: "
   num_payments = gets.to_f
   
-  ## check this formula is calculating correctly
-  result = principal * (interest*(interest+1.0) ** num_payments) / (((1.0+interest) ** num_payments) - 1.0) 
+  result = principal * (interest * ( interest + 1.0)  ** num_payments ) / ((( 1.0 + interest ) ** num_payments ) - 1.0) 
 
   puts 
   puts "Your repayments will be $#{result.round 2} per month".green
@@ -108,7 +107,6 @@ end
 
 # calculator method
 def calculator operation
-  selected_op = operation
 
   if operation == 'q'
     return
@@ -135,7 +133,7 @@ def calculator operation
   print "Please enter the second number: ".yellow
   second_num = gets.to_f
   
-  result = case selected_op
+  result = case operation
   when 'a'  then add first_num, second_num
   when 'b'  then subtract first_num, second_num
   when 'c'  then divide first_num, second_num
@@ -157,6 +155,7 @@ selected_operation = 'nope'
 until selected_operation == 'q'
 
   selected_operation = operation_sel
+
   calculator selected_operation
 
 end
