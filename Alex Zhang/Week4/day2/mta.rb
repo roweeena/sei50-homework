@@ -33,24 +33,28 @@ def wrong_line_and_stations(start_line, start_station, stop_line, stop_station) 
     return false
   end
 end
+
 # plan_trip()
 def plan_trip(start_line, start_station, stop_line, stop_station)
   if wrong_line_and_stations(start_line, start_station, stop_line, stop_station) == false
     puts "You entered wrong line/station".red #check if station or lines are wrong
   elsif start_line != stop_line #needs to change lines
     # use no_change function to create two lines, start line & stop lines
-    #start line always ends with Union Sq, stop line always start with Union Sq. 
-    new_start_line = no_change(start_line, start_station, "Union Square") 
+    #start line always ends with Union Sq, stop line always start with Union Sq.
+    new_start_line = no_change(start_line, start_station, "Union Square")
     new_stop_line = no_change(stop_line, "Union Square", stop_station)
+    total_stops = new_start_line.count() + new_stop_line.count()
     puts "You must travel through the following stops on the #{start_line} line: #{new_start_line.join(",")}".green
     puts "Change at Union Square"
-    puts "Your journey continues through the following stops: #{new_stop_line.join(",")} on the #{stop_line} line".yellow #print out msg, change array to string, change colour. 
+    puts "Your journey continues through the following stops: #{new_stop_line.join(",")} on the #{stop_line} line".yellow
+    puts "There are #{total_stops} stops in total." #print out msg, change array to string, change colour.
   else #no need to change line, recall no_change function
     travel_stations = no_change(start_line, start_station, stop_station)
+    total_stops = travel_stations.count()
     puts "You must travel through the following stops: #{travel_stations.join(",")}".blue
+    puts "There are #{total_stops} stops in total."
   end
 end #plan_trip
-
 
 # test cases:
 plan_trip("N", "Times Square", "SIX", "33rd")
