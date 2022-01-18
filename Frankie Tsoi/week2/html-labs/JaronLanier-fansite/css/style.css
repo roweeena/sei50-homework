@@ -1,0 +1,111 @@
+body{
+	background-image: url("https://i2.wp.com/nobhillgazette.com/wp-content/uploads/2020/12/jaron_lanier_final_larger_larger.jpg?w=714&ssl=1");
+	/* background-color: gray; */
+	font-family: "Quicksand";
+	max-width: 900px;
+	max-height: auto;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 80px;
+	padding: 25px;
+	font-weight: bolder;
+	/* color: black; */
+	-webkit-text-stroke: 1px yellow;
+	-webkit-text-fill-color: green;
+}
+
+#profilePic{
+	width: 100%;
+	height: auto;
+}
+
+.mytabs{
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 900px;
+	padding: 25px;
+}
+
+.mytabs input[type="radio"]{
+	display: none;
+}
+
+.mytabs label{
+	height: 10px;
+	padding: 25px;
+	background-color: white;
+	font-weight: bold;
+	border-radius: 10px 10px 0 0 ;
+}
+
+.mytabs .tab{
+	width: 900px;
+	padding: 20px;
+	background-color: white;
+	order: 1;
+	display: none;
+}
+
+.mytabs .tab h2{
+	font-size: 40px;
+}
+
+.mytabs .tab p{
+	/* border: 1px solid red; */
+	padding: 5px;
+	margin: 10px;
+}
+
+.mytabs input[type="radio"]:checked + label + .tab{
+	display: block;
+}
+
+.mytabs input[type="radio"]:checked + label {
+	background-color: lightblue;
+}
+
+
+#gadgetBook{
+	/* border: 1px solid red; */
+	width: 150px;
+	height: auto;
+	margin-right: 15px;
+	float: left;
+	
+}
+
+#futureBook{
+	/* border: 1px solid red; */
+	width: 150px;
+	height: auto;
+	margin-right: 15px;
+	float: left;
+}
+#everythingBook{
+	/* border: 1px solid red; */
+	width: 150px;
+	height: auto;
+	margin-right: 15px;
+	float: left;
+}
+
+
+h3{
+	font-size: 15px;
+}
+
+iframe{
+	width: 420px;
+	height: 315px;
+	margin: 0 15px 0 0;
+	float: left;
+}
+
+
+#copyright{
+	font-size: 10px;
+	margin: 0 auto;
+	text-align: center;
+}

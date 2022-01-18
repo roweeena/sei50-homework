@@ -1,0 +1,54 @@
+.inlineExample {
+  border: 1px solid red;
+  display: inline;
+}
+
+.blockExample {
+  border: 1px solid green;
+  display: block;
+  width: 400px;
+}
+
+.inlineBlockExample {
+  border: 1px solid blue;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+}
+
+.displayNoneExample {
+  display: none;
+}
+
+.box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  vertical-align: top;
+  border: 1px solid gray;
+}
+
+.staticExample {
+  position: static;
+  left: 100px;
+}
+
+.relativeExample {
+  position: relative;
+  left: 50px;
+  top: 100px;
+}
+
+.absoluteExample {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+.fixedExample {
+  position: fixed;
+  top: 20px;
+  right: 50px;
+}
+/*# sourceMappingURL=style.css.map */

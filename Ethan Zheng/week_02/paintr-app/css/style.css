@@ -1,0 +1,12 @@
+body {
+    background-color: black;
+}
+
+div.circle {
+    display: inline-block;
+    color: white;
+    border: 1px solid red;
+    position: absolute;
+    border-radius: 50%;
+    
+}

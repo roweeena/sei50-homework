@@ -4,7 +4,7 @@
 #content {
   margin: 0 auto;
   text-align: center;
-  width: 700px;
+  width: 750px;
 }
 
 #nav {
@@ -19,6 +19,7 @@
 
 #checking {
   float: left;
+  /* display:inline; */
 }
 
 #savings {
@@ -47,3 +48,34 @@
   background-color: #F52F4F;
   color: #FFF;
 }
+section{
+
+}
+
+.shakebox {
+  background-color:crimson;
+  animation: kf_shake 0.4s 1 linear;
+}
+@keyframes kf_shake {
+  0% { transform: translate(30px); }
+  20% { transform: translate(-30px); }
+  40% { transform: translate(15px); }
+  60% { transform: translate(-15px); }
+  80% { transform: translate(8px); }
+  100% { transform: translate(0px); }
+}
+
+.alert-box {
+	padding: 15px;
+  margin-top:20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;  
+}
+.error, .secondError{
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  display: none;
+}
+

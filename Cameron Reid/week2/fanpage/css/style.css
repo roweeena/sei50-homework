@@ -1,0 +1,66 @@
+body {
+    background-color: #1F73A1;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.wrapper {
+    max-width: 70%;
+    margin: auto;
+    background-color: #F5F5F3;
+    border-radius: 20px;
+
+}
+
+.main {
+    max-width: 80%;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+}
+
+#pearl {
+    max-height: 200px;
+    
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 30px;
+
+}
+
+.shell img {
+    max-width: 20px;
+    position: absolute;
+    
+}
+
+
+
+li a {
+    text-decoration: none;
+}
+
+.intro {
+    margin: auto;
+    width: 70%;
+    
+    
+}
+
+#intro-img img {
+    max-height: 300px;
+    /* float: right; */
+}
+
+#intro-content {
+   width: 50%;
+}
