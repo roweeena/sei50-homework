@@ -50,11 +50,11 @@ def single_trip(start_line, start_stop, end_stop)
     # p end_index
 
     if start_index<end_index
-        station_pass = sub_line.slice(start_index, end_index)
+        station_pass = sub_line.slice(start_index..end_index)
         # p station_pass
     
     else
-        station_pass = sub_line.slice(end_index, start_index).reverse
+        station_pass = sub_line.slice(end_index..start_index).reverse
         # p station_pass
     
     end
@@ -67,22 +67,31 @@ end
 
 def plan_trip(start_line, start_stop, end_line, end_stop)
 
-    if start_line == end_line
+    if (start_stop == "Union Square" && end_stop == "Union Square")
+        puts "You're already there idiot"
+        
+    elsif start_line == end_line
         trip_total = single_trip(start_line, start_stop, end_stop)
-        num_of_stops = trip_total.length
-        p ("You must start on the #{start_line} line and travel through #{trip_total.join(', ')} for a total of #{num_of_stops} stops")
-    else
-        trip_one = single_trip(start_line, start_stop, "Union Square") 
+
+        p ("You must start on the #{start_line} line and travel through #{trip_total.join(', ')} for a total of #{trip_total.length} stops")
+
+        #elsif start_stop || end_stop == Union Square for better outpit
+    else        
+        trip_one = single_trip(start_line, start_stop, "Union Square")
+
         trip_two = single_trip(end_line, "Union Square", end_stop)
+        #why can't i just shift trip_two
+        trip_two.shift
+
         trip_total = [trip_one, trip_two].flatten
-        num_of_stops = trip_total.length
-        # trip_one.join!(', ')
-        # trip_two.join!(', ')
-        p ("You must start on the #{start_line} line and travel through #{trip_one.join(', ')} and change at Union Square and then go to #{end_line} line and travel through #{trip_two.join(', ')} for a total of #{num_of_stops} stops")
+        # num_of_stops = trip_total.length
+
+        p ("You must start on the #{start_line} line and travel through #{trip_one.join(', ')} and change at Union Square and then go to the #{end_line} line and travel through #{trip_two.join(', ')} for a total of #{trip_total.length} stops")
 
     end
 end
 
-plan_trip(:N, "34th", :N, "8th")
+plan_trip("6", "Union Square", "6", "23rd")
 
-# plan_trip(:N, "34th", :L, "8th")
+# plan_trip(:N, "Times Square", :L, "Union Square")
+#how to colorize
