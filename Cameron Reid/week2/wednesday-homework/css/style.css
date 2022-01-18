@@ -1,0 +1,23 @@
+.container {
+    border: 2px solid red;
+    height: 100vh;
+    max-width: 100%;
+}
+
+#cat {
+    position: absolute;
+    left: 0px;
+}
+
+.flip {
+    transform: scaleX(-1);
+}
+
+.disappear {
+    display: none;
+}
+
+#coolKid {
+    position: absolute;
+    top: 50%;
+}

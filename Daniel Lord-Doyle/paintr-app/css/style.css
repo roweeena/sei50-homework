@@ -1,0 +1,10 @@
+body {
+    background-color: black;
+}
+
+div.circle {
+    color: white;
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+}

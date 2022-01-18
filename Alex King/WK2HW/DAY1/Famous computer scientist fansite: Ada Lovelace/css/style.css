@@ -9,10 +9,59 @@ h1, h4, p, h3{
 
 
 nav{
-    background-color:#7D8CC4;
-    border:3px solid #ffffff;
+    /* background-color:#7D8CC4; */
+    /* border:3px solid #ffffff; */
+    display:none;
+    position:fixed;
+    overflow:none;
+    width:100vw;
+
     /* padding:0px 0px 0px 0px; */
 }
+nav button{
+    border-radius:100px;
+    /* background-color:#D66853; */
+}
+
+ul{
+    margin-left:67%;
+    margin-top:0;
+}
+
+
+#toggleNav{
+    margin-left:90%;
+    border-radius:50px;
+    /* top:20px; */
+    padding:20px;
+    /* position:sticky; */
+    position:fixed;
+    background-color:#D66853;
+    overflow:none;
+    /* border:3px solid crimson; */
+}
+#toggleNav:hover{
+    background-color:#594157;
+}
+/* .sticky{
+    position:fixed;
+} */
+
+button{
+    background-color:#726DA8;
+    color:#f9f9f9;
+    text-align:center;
+    cursor:grab;
+    padding:4px 20px 4px;
+    border:none;
+    font-size:20px;
+}
+button:hover{
+    background-color:#594157;
+    
+}
+
+
 
 li{
     list-style-type: none;
@@ -21,7 +70,9 @@ li{
     padding:5px 10px 5px;
 }
 
-p{ margin: 0 0 20px 20px; }
+p, iframe{ margin: 0 0 20px 20px; }
+
+
 
 img{
     width:100vw;
@@ -29,6 +80,10 @@ img{
     overflow:hidden;
     object-fit:cover;
     margin:0;
+    border-top:3px solid white;
+    border-bottom:3px solid white;
+    padding-top:5px;
+    padding-bottom:5px;
     } 
 
 p{
@@ -45,7 +100,6 @@ p{
     width:35%;
     padding-right:5%;
     float:left;
-
     }
 .rightSide {
     padding-left:45%;
@@ -69,9 +123,9 @@ h4 a{
 }
 
 h1{
-
     padding-left:12%;
     padding-bottom:25px;
+    display:hidden;
 
 }
 
@@ -88,11 +142,22 @@ h3{
     padding-top:12px;
 }
 
+/* fieldset{
+    border: 1px solid #D66853;
+    border-bottom:none;
+    border-left:none;
+    margin: 0 0 20px 10%;
+    padding-bottom: 12px;
+    padding-top: 12px;
+
+
+} */
 
 body{
     background-color:#11151C;
-    margin:0px;
+    /* margin:0px; */
     font-family: 'Spline Sans', sans-serif;
+    height:auto;
 }
 
 a{
@@ -108,23 +173,19 @@ a:hover{
 label{
     color:#D66853;
 }
-button{
-    background-color:#726DA8;
-    color:#f9f9f9;
-    text-align:center;
-    cursor:grab;
-    padding:4px 20px 4px;
-    border:none;
-    font-size:20px;
-    
-}
-button:hover{
-    background-color:#594157;
-    
-}
+
 
 html{
     scroll-behavior:smooth;
 }
+html, body {
+    margin: 0;
+    height: auto;
+}
+
+select{
+    margin-left:45%;
+}
+
 
 
