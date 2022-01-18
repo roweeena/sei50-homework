@@ -53,7 +53,7 @@ def mortgage_calculator
   print "What is the principal amount: "
   principal = gets.to_f
   
-  print "What is the intrest rate: "
+  print "What is the interest rate: "
   interest = gets.to_f
   interest = interest / 12
   print "How many months: "
