@@ -10,25 +10,25 @@ def get_route( station_start, line_start, station_stop, line_stop )
         start_I = lines[line].index(start)
         stop_I = lines[line].index(stop)
 
-        if start_I > stop_I
-            # reverse line 
-            lines[line][stop_I..start_I].reverse
-        else
-            #standard
+        if start_I < stop_I
+            # go forward in the line
             lines[line][start_I..stop_I]
+        else
+            # go backward in the line
+            lines[line][stop_I..start_I].reverse
         end
     end
 
     # if different starting and stopping lines then need to go to Union first then from union second line to last stop
     if line_start != line_stop
-        route_1 = get_one_line(station_start, 'Union Square', line_start)
-        route_2 = get_one_line( 'Union Square',station_stop, line_stop)
+        route_1 = get_one_line station_start, 'Union Square', line_start
+        route_2 = get_one_line 'Union Square',station_stop, line_stop
         route_2.shift # remove the duplicate Union Square
         p 'Changing at Union Square'
         p stops = route_1 + route_2
         
     else
-        p stops = get_one_line(station_start, station_stop, line_start)
+        p stops = get_one_line station_start, station_stop, line_start
     end
 
     p "the total number of stops: #{stops.length}"
