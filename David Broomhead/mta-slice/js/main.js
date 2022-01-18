@@ -88,16 +88,19 @@ const planJourney = function(firstTrain, originStation, secondTrain, destination
 
     //GLOBAL FUNCTIONS
     const getStationIndex = function(train,station){
-        let stationIndex = mta[train].stops.indexOf(station);          // function that gets index of the relevant station
+    // function that gets index of the relevant station
+        let stationIndex = mta[train].stops.indexOf(station);          
         return stationIndex
     }
 
     const getUptownTrainArray = function(train,origin,destination){
+    //function that gets array for uptown travel
         let uptownTrainArray = mta[train].stops.slice(origin,destination + 1);
         return uptownTrainArray;
     }
 
     const getDowntownTrainArray = function(train,origin,destination){
+    //function that gets array for downtown travel
         let downtownTrainArray = mta[train].stops.slice(destination,origin);
         downtownTrainArray = downtownTrainArray.reverse();
         return downtownTrainArray;
