@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+    overflow: hidden;
+}
+div.circle{
+    /* border: 20px solid red; */
+    display: inline-block;
+    position:absolute;
+    border-radius: 50%;
+    background-color: green;
+}

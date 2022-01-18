@@ -1,11 +1,11 @@
-//Initialisation and declaration. 
+//Initialization and declaration. 
 let checkingBalance=$("#checking-balance");
 let savingsBalance=$("#savings-balance");
 let checkingAmount=$("#checking-amount");
 let savingsAmount=$("#savings-amount");
 let totalCheckingBalance=20;
 let totalSavingsBalance=20;
-//set a foratter to format the $x.xx
+//set a formatter to format the $x.xx
 const formatter = new Intl.NumberFormat
 ('en-US', {
     style: 'currency',
@@ -23,10 +23,9 @@ $("#checking-deposit").click(function(){
         //check if the number is valid, has to be >0.01&<50000
         if (checkingAmount.val()<0.01||checkingAmount.val()>50000) {
             alert("You can only deposit between $0.01 and $50,000.")
-            return checkingAmount.val();
+            // return checkingAmount.val();
         } else {
             totalCheckingBalance+=Number(checkingAmount.val());
-
             checkingBalance.text(formatter.format(totalCheckingBalance));
         }
     }
@@ -105,7 +104,7 @@ $("#savings-withdraw").click(function(){
             if(totalCheckingBalance<0){
                 alert("Your balance cannot drop below $0");
             }
-            // ??? How do I prevent the account balance is negative when the alert shows? 
+            // ???? How do I prevent the account balance is negative when the alert shows? 
         }
         else{
             totalSavingsBalance-=Number(savingsAmount.val());
