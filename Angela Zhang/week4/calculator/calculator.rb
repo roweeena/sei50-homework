@@ -13,6 +13,7 @@
 # #### Phase 1
 # - Calculator functionality
 # - Calculator should be able to do basic arithmetic (+,-, *, /)
+require 'colorize'
 
 def add
     puts "Choose 2 numbers to add up "
@@ -20,8 +21,7 @@ def add
     a = gets.to_i
     print "Enter second number: "
     b = gets.to_i
-    result = a + b
-    puts "#{a} + #{b} = #{result}"
+    puts "#{a} + #{b} = #{a + b}"
 end
 
 def minus 
@@ -30,8 +30,7 @@ def minus
     a = gets.to_i
     print "Enter second number: "
     b = gets.to_i
-    result = a - b
-    puts "#{a} - #{b} = #{result}"
+    puts "#{a} - #{b} = #{a - b}"
 end
 
 def multiply
@@ -40,8 +39,7 @@ def multiply
     a = gets.to_i
     print "Enter second number: "
     b = gets.to_i
-    result = a * b
-    puts "#{a} * #{b} = #{result}"
+    puts "#{a} * #{b} = #{a * b}"
 end
 
 def divide
@@ -50,8 +48,7 @@ def divide
     a = gets.to_i
     print "Enter second number: "
     b = gets.to_i
-    result = a / b
-    puts "#{a} / #{b} = #{result}"
+    puts "#{a} / #{b} = #{a / b}"
 end
 
 def exponents
@@ -60,15 +57,30 @@ def exponents
     a = gets.to_i
     print "Enter exponent number: "
     b = gets.to_i
-    result = a ** b
-    puts "#{a} to the power of #{b} = #{result}"
+    puts "#{a} to the power of #{b} = #{a ** b}"
 end
 
 def sq_root
     print "Enter number to square root:  "
-    a = gets.to_i
-    result = Math.sqrt(a)  
-    puts "Square root of #{a} = #{result}"
+    a = gets.to_i 
+    puts "Square root of #{a} = #{Math.sqrt(a)}"
+end
+
+def bmi
+        puts "Welcome to the BMI calculator"
+        print "enter your height(cm): "
+        height= gets.to_f
+        print "enter your weight(kg): "
+        weight = gets.to_f
+        bmi= (weight/(height * height) * 10000).ceil(2)
+        puts "Your BMI is: #{bmi}"
+
+        case 
+        when bmi < 18.50 then "You're underweight".red
+        when bmi == (18.50 .. 24.99) then "You're healthy".green
+        when bmi == (25.00 .. 29.99) then "You're overweight".red
+        when bmi > 30 then "You're obese".red
+        end
 end
 
 run_cal = 'no'
@@ -81,6 +93,7 @@ until run_cal == 'yes'
         puts "4.Division"
         puts "5.Exponents"
         puts "6.Square Roots"
+        puts "7.BMI"
         puts
         print "Choose your operation(select number): "
         output = gets.to_i
@@ -98,6 +111,14 @@ until run_cal == 'yes'
             exponents
         when 6
             sq_root
+        when 7
+            # bmi
+            run_BMI = 'yes'
+            until run_BMI == 'no'
+                puts bmi
+                print "would you like to restart?"
+                run_BMI= gets.chomp.downcase
+            end
         else
             puts "incorrect input"
         end
@@ -125,24 +146,14 @@ end
 
 # BMI Formulas · Metric units: BMI = weight (kg) ÷ height2 (m) 
 
-def bmi_cal
-        puts "Welcome to the BMI calculator"
-        print "enter your height(cm): "
-        height= gets.to_i
-        print "enter your weight(kg): "
-        weight = gets.to_i
-        bmi = weight/(height ** 2)
-        puts "Your BMI is: #{bmi}"
 
-        if bmi 
-end
-bmi_cal
+
 
 # run_BMI = 'no'
 # while run_BMI == 'yes'
-#     bmi_cal
+#     bmi
 #     print "would you like to restart?"
-#     run_cal= gets.chomp.downcase
+#     run_BMI= gets.chomp.downcase
 # end
 
 
@@ -154,3 +165,18 @@ bmi_cal
 # - miles per gallon
 # - price per gallon
 # - speed in miles per hour
+
+
+# # time = distance/speed
+
+# def time
+#     print "enter distance(km): "
+#     distance = gets.to_i
+
+#     print "enter speed(mph): "
+#     speed = gets.to_i
+
+#     puts distance/speed 
+# end
+
+# time
