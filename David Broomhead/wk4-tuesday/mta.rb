@@ -12,39 +12,65 @@
 
 # plan_trip( :n, "Times Square", :l, "1st" )
 
+puts "--------------------"
 
-def get_array(origin_station,destination_station)
+def get_array(line,origin_station,destination_station)
     
     mta = {
-        name: :n,
-        stops: [
+        :n => [
             "Times Square",
             "34th",
             "28th N Line",
             "23rd N Line",
             "Union Square",
             "8th N Line"
+        ],
+        :l => [
+            "8th L Line",
+            "6th", 
+            "Union Square", 
+            "3rd",
+            "1st"
+        ],
+        :six => [
+            "Grand Central",
+            "33rd",
+            "28th Six Line",
+            "23rd Six Line",
+            "Union Square",
+            "Astor Place"
         ]
     }
 
-    origin = mta[:stops].index(origin_station)
-    destination = mta[:stops].index(destination_station)
+    origin = mta[line].index(origin_station)
+    destination = mta[line].index(destination_station)
 
-    if origin > destination
-        station_array = mta[:stops][origin..destination]
+    if origin<destination
+        station_array = mta[line][origin..destination]
+        # p station_array
         puts "Board the train and travel through #{station_array}"
-    elsif origin < destination
-        station_array = mta[:stops][destination..origin]
+    elsif origin>destination
+        station_array = mta[line][destination..origin]
         station_array = station_array.reverse
         puts "Board the train and travel through #{station_array}"
     else
         puts "stations invalid"
     end # if
-
 end # get_array
 
-get_array("Times Square","Union Square")
-get_array("Union Square","Times Square")
+def multi_line(first_line,origin_station,second_line,destination_station)
+    get_array(first_line,origin_station,"Union Square")
+    get_array(second_line,"Union Square",destination_station)
+end
 
+def trip_planner(first_line,origin_station,second_line,destination_station)
 
+    if(first_line == second_line)
+        get_array(first_line,origin_station,destination_station)
+    else
+        multi_line(first_line,origin_station,second_line,destination_station)
+    end #if
+end #trip_planner
+
+multi_line(:six,"Astor Place",:n,"Times Square")
 
