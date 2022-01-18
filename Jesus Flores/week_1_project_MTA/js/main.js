@@ -31,7 +31,7 @@ const mta = {
 
     //We show the stops for the single trip
     singleTrip: function(lineFrom, stopFrom, stopTo){
-        const travel1 = this.getLinesStops(lineFrom, stopFrom, stopTo, true);
+        const travel1 = this.getLinesStops(lineFrom, stopFrom, stopTo);
         totalStops = travel1.length
         return `You must travel trough the fallowing stops in line ${lineFrom}
                 \n ${travel1.join("\n ")} 
