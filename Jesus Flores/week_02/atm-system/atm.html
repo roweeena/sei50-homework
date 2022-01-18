@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ATM</title>
+  <link rel="stylesheet" href="css/atm.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/dbAtm.js"></script>
+  <script src="js/atm.js"></script>
+</head>
+<body>
+
+  <div id="content">
+    <div id="nav">
+      <div id="logo"><img src="img/ga.png" alt="Bank of GA"/></div>
+      <div id="title">Bank of GA</div>
+    </div>
+    <div class="account ga-atm" id="ga-atm">
+      <h1>Welcome to GA-ATM</h1>
+      <h5>Enter costumer number to start.</h5>   
+      <input  class="search-acc" id="idAccount" type="text" placeholder="" /> 
+      <div class="check-btn">
+        <input id="findAccount" class="btn" type="button" value="Submit" />
+      </div>
+    </div> 
+    <div class="account  atm-panel hide" id="checking">
+      <h1>Checking</h1>
+      <div class="balance" id="checking-balance">$0</div>
+      <input id="checking-amount" type="text"  class="amount"  placeholder="enter an amount" />
+      <input id="checking-deposit"class="btn deposit" accType="checking" type="button" value="Deposit" />
+      <input id="checking-withdraw" class="btn withdraw" accType="checking"  type="button" value="Withdraw" />
+      <input id="checking-transfer" type="button" value="Transfer"  accType="checking"  class="btn transfer"/>
+    </div>
+
+    <div class="account  atm-panel hide" id="savings">
+      <h1>Savings</h1>
+      <div class="balance" id="savings-balance">$0</div>
+      <input id="savings-amount" type="text" class="amount" placeholder="enter an amount" />
+      <input id="savings-deposit" type="button" value="Deposit" accType="savings" class="btn deposit"  />
+      <input id="savings-withdraw" type="button" value="Withdraw"  accType="savings"  class="btn withdraw"/>
+      <input id="savings-transfer" type="button" value="Transfer"  accType="savings"  class="btn transfer"/>
+    </div> 
+  </div>
+</body>
+</html>
