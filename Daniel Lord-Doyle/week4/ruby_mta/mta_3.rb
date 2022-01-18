@@ -34,4 +34,43 @@ def plan_trip line1, stop1, line2, stop2
 end
 
 # plan_trip :six, 'Astor Place', :l, '8th'
-plan_trip :n, 'Times Square', :six, '33rd'
+# plan_trip :n, 'Times Square', :six, '33rd'
+
+def get_input
+
+    puts "Train Schedule:"
+    puts "N: Times Square -- 34th -- 28th -- 23rd -- Union Square -- 8th"
+    puts "L: 8th -- 6th -- Union Square -- 3rd -- 1st"
+    puts "6: Grand Central -- 33rd -- 28th -- 23rd -- Union Square -- Astor Place"
+
+    puts "Where would you like to begin your journey?"
+    puts "For:
+    n - N Line
+    l - L Line
+    six - 6 Line"
+
+    line_1_select = gets.chomp.to_sym
+    p line_1_select
+
+    puts "Thank you. And where would you like to start your journey?"
+    p "Please write out the name of your stop: "
+    p stop_1_select = gets.chomp
+
+    puts "Great! And where would you like to end your journey?"
+    puts "For:
+    n - N Line
+    l - L Line
+    six - 6 Line"
+
+    line_2_select = gets.chomp.to_sym
+    p line_2_select
+
+    puts "Thank you. And whcih stop is at the end of your journey?"
+    p "Please write out the name of your stop: "
+    p stop_2_select = gets.chomp
+
+    plan_trip line_1_select, stop_1_select, line_2_select, stop_2_select
+
+end
+
+get_input
