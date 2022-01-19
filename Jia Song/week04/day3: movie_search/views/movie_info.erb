@@ -1,0 +1,19 @@
+<section class="movieInfo">
+  <%# movie poster %>
+  <img 
+    src="https://image.tmdb.org/t/p/original/<%= @results["poster_path"] %>" 
+    alt="movie poster"
+  >
+
+  <%# movie info %>
+  <div>
+    <h2><%= @results["title"]%></h2>
+    <p class="releasedDate">
+      Release date : <%= @results["release_date"]%>
+    </p>
+    <p class="overview"> 
+      <%= @results["overview"]%>
+    </p>
+  </div>
+  
+</section>

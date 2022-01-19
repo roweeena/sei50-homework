@@ -1,0 +1,33 @@
+<div class="searchResults">
+  <%# if a user searched title, display it
+  if not, "Popular Movies" %>
+  <% if @title %>
+    <h2>Search result of "<%= @title %>"</h2>
+  <% else %>
+    <h2>Popular Movies</h2>
+  <% end %>
+
+  <ul>
+    <%# iterate all items in the hash %>
+    <% @results["results"].each do |movie| %>
+
+      <li>
+        <%# when a user click the movie info, take them to the "/movie" with id params %>
+        <a href="movie?id=<%= movie["id"] %>">
+          <img 
+            class="moviePoster"
+            src="https://image.tmdb.org/t/p/original/<%= movie["poster_path"] %>" 
+            alt="movie thumbnail"
+          >
+          <h3><%= movie["title"] %></h3>
+          <img 
+            class="starIcon" 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Star_icon_stylized.svg/1077px-Star_icon_stylized.svg.png"
+          >
+          <p><%= movie["vote_average"] %> (<%= movie["vote_count"] %>)<p>
+        </a>
+      </li>
+
+    <% end %>
+  </ul>
+</div>
