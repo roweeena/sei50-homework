@@ -1,0 +1,34 @@
+
+<marquee id="result-count" behavior="alternate"> <%=@results['total_results']%> Results for "<%= params[:movie].capitalize%>" </marquee>
+
+<ul>
+<% @results['results'].each do |movie|%>
+  <li class="movie-results">
+  
+  <h3>
+  <%= movie['original_title'] %>
+  </h3>
+  <div>
+
+  <form action="/movie/<%= movie['id'] %>">
+  
+  <button>
+  <img src="https://image.tmdb.org/t/p/w154<%= movie['poster_path'] %>" alt="">
+  </button>
+
+  </form>
+  
+  <p><strong>Overview</strong><br>
+  <%= movie['overview'] %></p>
+  </div>
+  
+
+  </li>
+
+<% end %>
+
+
+
+</ul>
+
+
