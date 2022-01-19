@@ -55,8 +55,6 @@
 
 console.log("ATM.js loaded")
 
-
-
 //stores button values in variables
 const checkingDepositButton = document.querySelector('#checking-deposit');
 const checkingWithdrawButton = document.querySelector('#checking-withdraw');
