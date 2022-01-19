@@ -112,7 +112,6 @@ def menu # prints the menu, returns if the user wants to plan another trip
   
 end
 
-
 trip_planner_running = 'y'
 
 until trip_planner_running == 'n'
@@ -120,6 +119,3 @@ until trip_planner_running == 'n'
   trip_planner_running = menu ## launch the program
 
 end
-
-
-
