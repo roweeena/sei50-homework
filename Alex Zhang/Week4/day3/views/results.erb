@@ -1,0 +1,12 @@
+<h2>You searched "<%= params[:original_title]%>"</h2>
+<h3>The movies are:</h3>
+<ul>
+  <% @results['results'].each do |movie| %>
+  <a href="www.google.com">
+    <li id="title"><%= movie["title"]%><br /></li>
+  </a>
+  <li id="release-date">The release date is: <%=movie["release_date"]%></li>
+  <a> <img src="https://image.tmdb.org/t/p/w154<%=movie["poster_path"] %>"> </a>
+  <% end %>
+  <ul></ul>
+</ul>
