@@ -1,0 +1,48 @@
+
+<h3>Update: "<%= @balloon['type'] %>"</h3>
+
+<form action="/balloons/<%= @balloon['id'] %>" method="post">
+
+  <label>
+    Type: 
+    <input type="text" name="type" value="<%= @balloon['type'] %>" > 
+  </label>
+  <br>
+  <label>
+    Style: 
+    <input type="text" name="style" value="<%= @balloon['style'] %>" > 
+  </label>
+  <br>
+  <label>
+    Size: 
+    <input type="text" name="size" value="<%= @balloon['size'] %>" > 
+  </label>
+  <br>
+  <label>
+    Fun Factor: 
+    <input type="text" name="fun_factor" value="<%= @balloon['fun_factor'] %>" > 
+    (0-10)
+  </label>
+  <br>
+  <label>
+    Exciting: 
+    <input type="text" name="exciting" value="<%= @balloon['exciting'] %>" > 
+    (1 = true, 0 = false) 
+  </label>
+  <br>
+  <label>
+    Image Url: 
+    <input type="text" name="image_url" value="<%= @balloon['image_url'] %>" > 
+  </label>
+  <br>
+  <button>Update</button>
+  
+
+
+ 
+
+
+
+
+
+</form>
