@@ -1,0 +1,10 @@
+div#story {
+    position: fixed;
+    visibility: hidden;
+}
+
+div#randomWord {
+    display: none;
+    position: absolute;
+    visibility: visible;
+}

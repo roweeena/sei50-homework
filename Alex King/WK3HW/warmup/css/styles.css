@@ -1,0 +1,19 @@
+#words {
+    display:none;
+    /* color:green; */
+}
+body{
+    background-color:black;
+}
+
+.words{
+    color:white;
+    font-family:Georgia, serif;
+    position: absolute;
+    font-size:20px;
+    display:none;
+}
+/* p{
+    color:brown;
+    display:none;
+} */

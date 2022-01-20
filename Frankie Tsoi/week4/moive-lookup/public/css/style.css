@@ -1,0 +1,23 @@
+body{
+  background-color: rgb(189, 203, 238);
+  font-family: 'Quicksand';
+  background-image: url(https://ae01.alicdn.com/kf/Heb8f677abbd1444d886f4595fca4544aj/Vintage-Poster-classic-movie-Pulp-Fiction-Kill-Bill-Fight-Club-poster-Retro-kraft-paper-posters-decorative.jpg_Q90.jpg_.webp);
+  background-blend-mode: overlay;
+  color: hotpink;
+  text-shadow: 2px 1px black;
+}
+
+ul {
+  font-size: 20px;
+  /* color: red; */
+  display: inline-block;
+}
+.none {
+  list-style: none;
+  color: blue;
+}
+
+button{
+  background-color: lightblue;
+  padding: 5px;
+}

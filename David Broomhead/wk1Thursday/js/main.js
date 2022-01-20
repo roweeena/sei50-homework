@@ -66,7 +66,7 @@ const triangleArea = function(tri){
     const b = tri.sideB
     const c = tri.sideC
     const p = (a + b + c)/2
-    const areaOfTriangleMath = Math.sqrt(p*((p - a)+(p - b)+(p - c)))
+    const areaOfTriangleMath = Math.sqrt(p*((p - a)*(p - b)*(p - c)))
     return areaOfTriangleMath   // not completely sure the result is correct
 }
 

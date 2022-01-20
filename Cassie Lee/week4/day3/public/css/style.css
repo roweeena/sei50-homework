@@ -1,0 +1,63 @@
+body {
+  background-color: #c8e6c9;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+button {
+  border: none;
+  background-color: #a5d6a7;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  color: #5a9216;
+  margin-top: 10px;
+  padding: 3px;
+}
+
+h1 {
+  color: #00897b;
+  font-size: 80px;
+}
+
+h3 {
+  font-style: italic;
+  font-family: "Roboto", sans-serif;
+  color: #46a99a;
+}
+
+.title {
+  background-color: #dcedc8;
+  width: 500px;
+  height: auto;
+  padding: 5px 0 160px;
+  margin: 0px auto;
+}
+
+.search {
+  margin-top: 60px;
+}
+
+input {
+  text-align: center;
+  color: #2f7268;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+}
+
+.title_of_movie {
+  font-weight: bold;
+  font-size: 20px;
+  color: #036e64;
+}
+
+p {
+  /* font-family: "Roboto", sans-serif; */
+}

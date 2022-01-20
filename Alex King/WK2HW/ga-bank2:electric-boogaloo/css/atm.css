@@ -48,15 +48,12 @@
   background-color: #F52F4F;
   color: #FFF;
 }
-section{
-
-}
 
 .shakebox {
   background-color:crimson;
-  animation: kf_shake 0.4s 1 linear;
+  animation: shakey 0.4s 1 linear;
 }
-@keyframes kf_shake {
+@keyframes shakey {
   0% { transform: translate(30px); }
   20% { transform: translate(-30px); }
   40% { transform: translate(15px); }
@@ -68,9 +65,9 @@ section{
 .alert-box {
 	padding: 15px;
   margin-top:20px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;  
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;  
 }
 .error, .secondError{
   color: #a94442;
