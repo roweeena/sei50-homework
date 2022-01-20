@@ -1,0 +1,13 @@
+<h4> Index of gundams</h4>
+
+
+<ul>
+  <% @results.each do |gundams|%>
+    <li>
+    <a href="/gundams/<%=gundams['id']%>">
+      <%= gundams['name'] %>
+      
+    </a>
+    </li>
+  <%end%>
+</ul>
