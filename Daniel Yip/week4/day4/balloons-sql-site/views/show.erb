@@ -1,0 +1,27 @@
+<h3><%= @balloon["type"] %> Balloon</h3>
+
+<a href="/balloons/<%= @balloon['id'] %>/edit">Edit</a>
+<a href="/balloons/<%= @balloon['id'] %>/delete">Delete</a>
+
+<p>
+<strong>Type:</strong> <%= @balloon["type"] %>
+</p>
+
+<p>
+<strong>Style:</strong> <%= @balloon["style"] %>
+</p>
+
+<p>
+<strong>Size:</strong> <%= @balloon["size"] %>
+</p>
+
+<p>
+<strong>Fun Factor:</strong> <%= @balloon["fun_factor"] %>
+</p>
+
+<p>
+<strong>Exciting:</strong> <%= @balloon["exciting"] %>
+</p>
+
+<img class="balloon-img"src="<%= @balloon["image_url"] %>" alt="<%= @balloon["type"] %>">
+
