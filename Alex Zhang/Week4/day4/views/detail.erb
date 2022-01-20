@@ -1,0 +1,21 @@
+<div class="detail">
+<h2>
+Album details for <span id="album-name"><%= @album['album_name']%></span>
+</h2>
+<a class="edit" href="/albums/<%=@album['id']%>/edit">Edit</a>
+<a id="delete" href="/albums/<%=@album['id']%>/delete">Delete</a>
+<p>
+<strong>Artist:</strong><%= @album ['artist']%>
+</p>
+<p>
+<strong>Genre:</strong><%= @album ['genre']%>
+</p>
+<p>
+<strong>Released Year:</strong><%= @album ['released_year']%>
+</p>
+<p>
+<strong>Explicity:</strong>
+<%= @album['explicity']==1? 'Yes': 'No' %>
+</p>
+<img src="<%= @album['album_cover']%>" alt="<%= @album['album_cover']%>" class="album_cover">
+</div>
