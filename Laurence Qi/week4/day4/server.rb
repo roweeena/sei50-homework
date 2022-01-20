@@ -59,12 +59,24 @@ end
 # show specific listing based on id
 get '/rental/:id' do
     @rental = db_query("SELECT * FROM rentals WHERE id = #{params[:id]}").first
-    puts "the rental travel_time value is #{@rental['travel_time'] == nil}"
     erb :show_rental
 end
 
 # UPDATE TODO: finish this 
+# form
 get '/rental/:id/edit' do
-    'hello this is the rental page'
+    @rental = db_query("SELECT * FROM rentals WHERE id = #{params[:id]}").first
+    erb :edit_form
 end
+post '/rental/:id' do
+    db_query("UPDATE rentals SET
+        street_address = '#{params[:street_address]}',
+        suburb = '#{params[:suburb]}',
+        cost = #{params[:cost]}
+    WHERE id = #{params[:id]};
+    ")
+    redirect '/'
+end
+
+# submission
 # DELETE
