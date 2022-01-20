@@ -2,8 +2,6 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
 
-
-
 def db_query(sql)
 
   puts'-----------------------------'
@@ -17,7 +15,6 @@ def db_query(sql)
     results
 
 end #db_quary
-
 
 get '/' do #homepage
   # "hello from root"
@@ -36,8 +33,8 @@ post '/gundams' do
     '#{params[:name]}',
     '#{params[:model_number]}',
     '#{params[:pilot]}',
-    #{params[:designer]},
-    #{params[:power_sources]},
+    '#{params[:designer]}',
+    '#{params[:power_sources]}',
     #{params[:height]},
     '#{params[:image_url]}'
   );
@@ -47,7 +44,8 @@ post '/gundams' do
   redirect '/gundams'
  end 
 
-#READ
+
+ #READ
 get '/gundams' do
 
   @results = db_query "SELECT * FROM gundams ORDER BY name;"
@@ -78,8 +76,8 @@ post '/gundams/:id' do
     name = '#{params[:name]}',
     model_number = '#{params[:model_number]}',
     pilot = '#{params[:pilot]}',
-    designer = #{params[:designer]},
-    power_sources = #{params[:power_sources]},
+    designer = '#{params[:designer]}',
+    power_sources = '#{params[:power_sources]}',
     height = #{params[:height]},
     image_url = '#{params[:image_url]}'
     WHERE id = #{params[:id]};
