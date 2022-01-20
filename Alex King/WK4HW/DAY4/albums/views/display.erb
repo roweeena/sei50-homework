@@ -1,0 +1,50 @@
+<h2><strong><%= @album['name'] %> </strong></h2>
+
+
+<a href="/albums/<%=@album['id']%>/edit">Edit</a>
+<a href="/albums/<%=@album['id']%>/delete">Delete</a>
+
+
+
+
+
+
+
+<div class="container">
+  <div class="art"><img src="<%=@album["image_url"]%>" alt="<%=@album['desciption']%>" class="album_image"></div>
+
+  <div class="release"><p>
+<%= @album['release_year'] %>
+</p>
+</div>
+
+  <div class="genre"><p>
+<%= @album['genre'] %>
+</p></div>
+
+  <div class="artist">
+  <strong><h2 class="artist-name">
+</strong> <%= @album['artist'] %>:
+</h2>
+
+  </div>
+
+  <div class="title">
+  <h2 class="album-title"><strong><%= @album['name'] %> </strong></h2>
+  </div>
+
+  <div class="grammy">
+  <p>
+<strong> grammy winner: </strong> 
+<%= @album['grammy_winner'] == 1 ? 'Yes' : 'No' %>
+</p>
+
+</div>
+
+  <div class="bio">
+  <p>
+<%= @album['bio'] %>
+</p>
+  </div>
+
+</div>

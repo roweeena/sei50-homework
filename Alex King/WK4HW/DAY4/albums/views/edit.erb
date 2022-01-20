@@ -1,0 +1,45 @@
+<h3>EDIT RECORD:</h3>
+
+<form action="/albums/<%=@album['id']%>" method="post">
+
+<label> 
+Album Title:
+<input type="text" name="name" value="<%=@album['name']%>">
+</label>
+
+
+<label> 
+Artist
+<input type="text" name="artist" value="<%=@album['artist']%>">
+</label>
+
+
+<label> 
+bio
+<input type="text" name="bio" value="<%=@album['bio']%>">
+</label>
+
+<label> 
+Genre
+<input type="text" name="genre" value="<%=@album['genre']%>">
+</label>
+
+<label> 
+Release Year
+<input type="text" name="release_year" value="<%=@album['release_year']%>">
+</label>
+
+<label> 
+Grammy Winner (1 for yes, 0 for no)
+<input type="text" name="grammy_winner" value="<%=@album['grammy_winner']%>">
+</label>
+
+<label> 
+Album Art 
+<input type="text" name="image_url" value="<%=@album['image_url']%>">
+</label>
+
+<button>Update details</button>
+
+</form>
+
