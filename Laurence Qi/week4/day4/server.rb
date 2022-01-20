@@ -22,11 +22,19 @@ def db_query(sql)
     rentals
 end
 
+def get_travel_time(address)
+    
+end
 
+## USING GOOGLE MAPS API GENERATE THE TABLE VALUE
+get '/rental/maps_api' do
+    
+    db_query("UPDATE rentals SET 
+        travel_time = '5'
+    ;")
 
-
-# shows all the details on the rental prop. 
-
+    redirect '/'
+end
 
 # CREATE
 # form
@@ -47,6 +55,7 @@ post '/rental' do
     redirect '/'
 end
 
+
 # READ 
 # main page showing all rental listings
 get '/' do 
@@ -62,12 +71,15 @@ get '/rental/:id' do
     erb :show_rental
 end
 
+
 # UPDATE TODO: finish this 
 # form
 get '/rental/:id/edit' do
     @rental = db_query("SELECT * FROM rentals WHERE id = #{params[:id]}").first
     erb :edit_form
 end
+
+# submission
 post '/rental/:id' do
     db_query("UPDATE rentals SET
         street_address = '#{params[:street_address]}',
@@ -78,5 +90,11 @@ post '/rental/:id' do
     redirect '/'
 end
 
-# submission
+
 # DELETE
+get '/rental/:id/delete' do
+    db_query("DELETE FROM rentals WHERE id = #{params[:id]}")
+    redirect '/'
+end
+
+
