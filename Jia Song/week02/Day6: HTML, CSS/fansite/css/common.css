@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&900&display=swap");
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -16,6 +16,7 @@ a {
   margin: 0 auto;
 }
 
+/* header  */
 header h1 {
   margin-top: 80px;
   font-family: "Playfair Display", serif;
@@ -34,7 +35,6 @@ nav > a {
   display: block;
   font-size: 14px;
   color: gray;
-  /* text-decoration: underline; */
 }
 
 nav > a:hover {
@@ -44,4 +44,10 @@ nav > a:hover {
 nav > a.active {
   color: orange;
   font-weight: 900;
+}
+
+footer {
+  font-size: 12px;
+  color: gray;
+  padding-top: 30px;
 }

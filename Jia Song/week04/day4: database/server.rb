@@ -26,7 +26,6 @@ end
 
 # when form is submitted
 post '/' do
-
   query = "INSERT INTO todos(
     todo, dueDate, description, completed
     ) VALUES (
