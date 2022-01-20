@@ -1,0 +1,21 @@
+<h3><%= @results['total_results'] %> Results for "<%= params[:title]%>"</h3>
+
+<% @results['results'].each do |movie| %>
+    <div>
+    <img src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/<%=movie['poster_path']%>">
+    <ul>
+        <li class="movie-title"><h3><%= movie['original_title']%></h3></li>
+        <li>Release Date: <%= movie['release_date']%></li>
+        <li><%= movie['overview']%></li>
+    </ul>
+    </div>
+    
+<% end %>
+
+<footer>
+    <% @results['total_pages'].to_i.times do |i|%>
+        <a href="/search/results/<%= i + 1 %>?title=<%=params[:title]%>">
+            <span><%= i + 1%></span>
+        </a>
+    <% end %>
+</footer>
