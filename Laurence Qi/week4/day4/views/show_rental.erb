@@ -1,0 +1,8 @@
+<h3> <%= @rental['street_address'] %>, <%= @rental['suburb'] %></h3>
+<p>$<%= @rental['cost'] %> per week</p>
+
+<% if @rental['travel_time'] %> <%# if data not populated then the value is nil which is falsey%>
+    <p>Travel Time: <%= @rental['travel_time'] %></p>
+<% end %>
+
+<a href="/rental/<%= @rental['id'] %>/edit">Edit</a>
