@@ -1,0 +1,14 @@
+<h2>List of Brad Pitt movies </h2>
+
+<ul>
+    <% @results.each do |movie| %>
+    <li>
+        <a href="/bradpitt/<%= movie['id'] %>">
+            <%= movie['title'] %>
+        </a>
+
+    </li>
+    <% end %>
+
+
+</ul>
