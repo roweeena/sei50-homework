@@ -29,32 +29,34 @@ end
 
 
 # CREATE
-get 'rental/new' do
-    
-    
+# form
+get '/rental/new' do
     erb :new_form
 end
 
+# parse the data from form to add to the sql db
 post '/rental' do
-    sql = "INSERT INTO (street_address, suburb, cost)
+    sql = "INSERT INTO rentals (street_address, suburb, cost)
     VALUES (
         '#{params['street_address']}', 
         '#{params['suburb']}',
         #{params['cost']}
-    )"
+    );"
 
     db_query sql
     redirect '/'
 end
 
 # READ 
-get '/' do
+# main page showing all rental listings
+get '/' do 
     # you want to do a http request to the db get the existing data and clean through it to show on here.
     @rentals = db_query "SELECT * FROM rentals"
 
     erb :main
 end
 
+# show specific listing based on id
 get '/rental/:id' do
     @rental = db_query("SELECT * FROM rentals WHERE id = #{params[:id]}").first
     puts "the rental travel_time value is #{@rental['travel_time'] == nil}"
