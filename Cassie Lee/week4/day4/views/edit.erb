@@ -1,0 +1,45 @@
+<h2>
+    Edit movie<br> <%= @movie['title'] %>
+</h2>
+
+<form action="/bradpitt @movie['id'] %>" method="post">
+    
+    <label>
+        Title<br>
+        <input type="text" name="title" value="<%= @movie['title'] %>">
+    </label>
+    <br>
+
+
+    <label>
+        Release Date <br>
+        <input type="text" name="release" value="<%= @movie['release'] %>">
+    </label>
+    <br>
+
+    <label>
+        Duration <br>
+        <input type="text" name="duration" value="<%= @movie['duration'] %>">
+    </label>
+    <br>
+
+    <label>
+        Rating <br>
+        <input type="text" name="rating" value="<%= @movie['rating'] %>">
+    </label>
+    <br>
+
+    <label>
+        Role in the movie <br>
+        <input type="text" name="role" value="<%= @movie['role'] %>">
+    </label>
+    <br>
+
+    <label>
+        Image URL <br>
+        <input type="text" name="image_url" value="<%= @movie['image_url'] %>">
+    </label>
+    <br>
+
+    <button>Update movie</button>
+</form>
