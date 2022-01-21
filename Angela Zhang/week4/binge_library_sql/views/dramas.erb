@@ -1,0 +1,19 @@
+<h3>DRAMA SECTION</h3>
+
+
+[<a href="/dramas/new_drama">New Drama</a>]
+
+<h4>INDEX</h4>
+
+<ul>
+
+    <% @dramas.each do |drama| %>
+        <li>
+            <a href="/dramas/<%= drama['id'] %>">
+            <img src="<%= drama['poster_url'] %>" class="thumbnail"> <br><%= drama['name'] %>
+            </a>
+        </li>
+    <% end %> 
+ 
+
+</ul>
