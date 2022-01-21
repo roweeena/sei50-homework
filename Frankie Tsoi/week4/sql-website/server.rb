@@ -91,6 +91,6 @@ post '/gundams/:id' do
  get '/gundams/:id/delete' do
 
   db_query "DELETE FROM gundams WHERE id = #{params[:id]};"
-  redirect '/gundams' #back to index page
+  redirect '/gundams' 
 
 end
