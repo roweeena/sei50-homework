@@ -25,12 +25,11 @@ end
 post '/bradpitt' do
 "form sumit route"
     insert_sql = "
-        INSERT INTO bradpitt (title, release, duration, overview, rating, role, image_url)
+        INSERT INTO bradpitt (title, release, duration, rating, role, image_url)
         VALUES (
             '#{ params[:title] }',
             #{ params[:release] },
-            '#{ params[:duration] }',
-            '#{ params[:overview] }',  
+            '#{ params[:duration] }',  
             #{ params[:rating] },  
             '#{ params[:role] }',  
             '#{ params[:image_url] }'
@@ -70,13 +69,12 @@ end
 
 post '/bradpitt/:id' do
     update_sql = "
-        UPDATE pets SET
+        UPDATE bradpitt SET
             title = '#{ params[:title] }',
             release = #{ params[:release] },
-            duration = '#{ params[:duration] }',
-            overview = '#{ params[:overview] }',  
+            duration = '#{ params[:duration] }',  
             rating = #{ params[:rating] },  
-            rold = '#{ params[:role] }',  
+            role = '#{ params[:role] }',  
             image_url = '#{ params[:image_url] }'
         WHERE id = #{ params[:id] };
     "
