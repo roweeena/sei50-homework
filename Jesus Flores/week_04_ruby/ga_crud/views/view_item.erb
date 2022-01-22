@@ -1,0 +1,16 @@
+<section class='container'>
+    <div class="dashboard-title">
+        <h1> <%= @results['name'] %></h1>
+    </div>
+    <div class="grid-view card">
+        <div>
+            <img src= "<%= @results['logo']%>" alt="">
+        </div>
+        <div>
+            <p> <%= @results['description'] %> </p>
+            <hr>
+            <p> Created By <%= @results['created_by'] %>  in <%= @results['created'] %> </p>
+        </div>
+        
+    </div>
+</section>
