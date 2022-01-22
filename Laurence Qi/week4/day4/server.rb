@@ -22,15 +22,25 @@ def db_query(sql)
     rentals
 end
 
+
 def get_travel_time(address)
+    require "uri"
+    destination = '12 Bowler Ave Fairfield, NSW Australia'.gsub(/\s/,'%20BC')
+    origin = "#{address} NSW Australia".gsub(/\s/,'%20BC')
+    transport_mode = 'TRANSIT'
+
+    url = URI("https://maps.googleapis.com/maps/api/distancematrix/json?origins=#{origin}&destinations=#{destination}&mode=#{transport_mode}&key=AIzaSyAm7vYw4jkC7m9hbEKpMfFxjwLAOZgxwko")
+    p HTTParty.get(url)['rows'][0]['elements'][0]['duration']['value']
     
 end
 
 ## USING GOOGLE MAPS API GENERATE THE TABLE VALUE
 get '/rental/maps_api' do
-    
+    travel_time = get_travel_time('1/4 Beronga Street, North Strathfield')
+    # travel_time = get_travel_time('1/4 Beronga Street, North Strathfield')['rows'][0]['elements']['duration']['value']
+    p "Travel time = #{travel_time}" 
     db_query("UPDATE rentals SET 
-        travel_time = '5'
+        travel_time = #{travel_time}
     ;")
 
     redirect '/'
