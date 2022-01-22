@@ -16,10 +16,6 @@ after do
     ActiveRecord::Base.connection.close
 end
 
-class User < ActiveRecord::Base
-    has many :nfts
-end
-
 class Property < ActiveRecord::Base
     belongs_to :nft
 end
@@ -27,8 +23,6 @@ end
 class Nft < ActiveRecord::Base
     has_many :properties
 end
-
-
 
 #root route
 
@@ -43,14 +37,14 @@ end
 
 # Read
 
-get '/nfts' do
+get '/inventory' do
 
     @nfts = Nft.all
 
     erb :inventory
 end
 
-# READ OF NFT'S COMPLETED ON ROOT ROUTE
+# Individual nft pages
 
 get '/nfts/:id' do
 
