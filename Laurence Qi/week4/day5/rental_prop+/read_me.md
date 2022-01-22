@@ -10,3 +10,12 @@ NOTE: What are the primary models:
     "People" to many
     "Locations to travel to" to one
 
+
+NOTE: Major functions
+    People
+    Properties
+    Destinations
+
+    CRUD for all of these.
+    
+NOTE: get the actual visual elements of this project up to scratch 25% of your time spent on this. 
