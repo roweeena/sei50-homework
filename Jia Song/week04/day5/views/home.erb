@@ -1,0 +1,61 @@
+<main>
+  <section>
+    <ul class="projectList">
+      <li>Projects</li>
+      <li>
+        <a href="/">See all to-dos</a>
+      </li>
+      <% @projects.each do |project| %>
+        <li>
+          <a href="/project/<%= project.id%>/todos">
+            <%= project.name %>
+          </a>
+          <div class="btn-wrapper">
+            <a href="/project/<%= project.id%>/update">
+              <img src="https://cdn-icons.flaticon.com/png/512/2985/premium/2985068.png?token=exp=1642829299~hmac=66ee8085c8edc2cbf81692abf35850fe" alt="update">
+            </a>
+            <a href="/project/<%= project.id%>/delete">
+              <img src="https://cdn-icons.flaticon.com/png/512/4387/premium/4387288.png?token=exp=1642829224~hmac=92c381c3c9cb3d0ad74eed473b70f0f8" alt="delete">  
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <a class = "createBtn" href="/project/create"> Create new project </a>
+  </section>
+
+  <section>
+    <ul class="todoList">
+      <li>
+        <p class="todo">To do</p>
+        <p class="dueDate">Due date</p>
+        <p class="completed">Status</p>
+        <p class="project">Project</p>
+      </li>
+      <% @todos.each do |todo| %>
+        <li>
+          <p class="todo"><%= todo.todo %></p>
+          <p class="dueDate"><%= todo.dueDate %></p>
+          <p class="completed">
+            <%= todo.completed ? "Done" : "To do" %>
+          </p>
+          <p class="project">
+            <%= 
+              @project = Project.find todo.project_id
+              @project.name
+            %>
+          </p>
+          <div class="btn-wrapper">
+            <a href="/todo/<%= todo.id%>/update">
+              <img src="https://cdn-icons.flaticon.com/png/512/2985/premium/2985068.png?token=exp=1642829299~hmac=66ee8085c8edc2cbf81692abf35850fe" alt="update">
+            </a>
+            <a href="/todo/<%= todo.id%>/delete">
+              <img src="https://cdn-icons.flaticon.com/png/512/4387/premium/4387288.png?token=exp=1642829224~hmac=92c381c3c9cb3d0ad74eed473b70f0f8" alt="delete"> 
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <a class = "createBtn" href="/todo/create"> Create new todo </a>
+  </section>
+</main>
