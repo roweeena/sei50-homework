@@ -56,10 +56,27 @@ get '/rental/:id' do
 end
 
 #UPDATE 
-#
+# form which populates with the data specific to db row/class instance
+get '/rental/:id/update' do
+    @rental = Rental.find params[:id]
 
+    erb :update_rental
+end
+
+post '/rental/:id' do
+    rental = Rental.find params[:id]
+
+    rental.update( 
+        street_address: params[:street_address],
+        suburb: params[:suburb],
+        cost: params[:cost]
+    )
+
+    redirect "rental/#{params[:id]}"
+end
 
 #DELETE 
 get '/rental/:id/delete' do
-    
+    Rental.find(params[:id]).destroy
+    redirect '/rental'
 end
