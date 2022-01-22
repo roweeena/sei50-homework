@@ -20,14 +20,16 @@ end
 class Rental < ActiveRecord::Base
 end
 
+# class Person < ActiveRecord::Base 
+# end
+
 # require 'pry'
 # binding.pry
-
 
 #CREATE 
 # form to add new rental db entry
 get '/rental/create' do
-    erb :create_rental
+    erb :'rentals/create'
 end
 
 post '/rental' do # TODO: find out the correct route for this
@@ -45,14 +47,14 @@ end
 get '/rental' do
     @rentals = Rental.all
     
-    erb :rentals
+    erb :'rentals/rentals'
 end
 
 #page showing single rental
 get '/rental/:id' do
     @rental = Rental.find params[:id]
     
-    erb :single_rental
+    erb :'rentals/single'
 end
 
 #UPDATE 
@@ -60,7 +62,7 @@ end
 get '/rental/:id/update' do
     @rental = Rental.find params[:id]
 
-    erb :update_rental
+    erb :'rentals/update'
 end
 
 post '/rental/:id' do
