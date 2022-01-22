@@ -1,0 +1,8 @@
+<%# need to have my links to editing etc in this page.  %>
+<%# TODO: get the data below into a table. %>
+<h3><%= @rental.street_address + ', ' + @rental.suburb %></h3>
+<p>Cost: </p>
+
+<a href="/rental/<%= @rental.id %>/edit"></a>
+<a href="/rental/<%= @rental.id %>/delete"></a>
+

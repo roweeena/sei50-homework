@@ -1,0 +1,8 @@
+<h3>All current rental listings around North Strathfield</h3>
+<ul>
+
+    <% @rentals.each do |rental| %>
+        <a href="/rental/<%= rental.id %>"><li><%= rental.street_address + ", " + rental.suburb %></li></a>
+    <% end %>
+
+</ul>
