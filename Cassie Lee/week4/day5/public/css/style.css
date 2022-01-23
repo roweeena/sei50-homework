@@ -138,8 +138,11 @@ img {
   margin: 20px;
 }
 
-ul.home_ul {
+.home_ul {
   margin: 100px 0px 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .index_css {
