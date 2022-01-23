@@ -1,0 +1,40 @@
+
+body{
+  background-image: url("/image/bgimage30.png");
+  background-size: cover;
+  background-position: left;
+  background-attachment: fixed;
+  font-family: 'Permanent Marker', cursive;
+  margin-left: 20px;
+  order: 1;
+}
+h1{
+  color: hotpink;
+  font-size: 50px;
+  text-shadow: 3px 3px rebeccapurple;
+  text-align: center
+}
+h2{
+  color: red;
+  text-shadow: 1px 1px black ;
+  font-size: 35px;
+  text-align: center;
+}
+.manga_image{
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.author_image{
+  width: 200px;
+  height: auto;
+}
+
+ .index_ul{
+   list-style: none;
+   text-align: center;
+ }
+
+ li{
+   text-align: center;
+ }
