@@ -70,8 +70,6 @@ end
 ###############################################################################################################
 ###############################################################################################################
 
-
-
 #################RENTALS#################
 # USING GOOGLE MAPS API GENERATE THE total_travel_time value for each property
 get '/rental/travel' do
@@ -81,18 +79,14 @@ get '/rental/travel' do
         # binding.pry
         sum = 0
         Destination.all.each do |destination|
-
-            sum += get_travel_time(rental.street_address, rental.suburb, destination.street_address, destination.suburb, 'TRANSIT')
+            sum += get_travel_time(rental.street_address, rental.suburb, destination.street_address, destination.suburb, 'TRANSIT') * destination.visiting_frequency * 2 # the sum is the time taken for one trip * frequency * 2, where the '2' is to and from the destination. 
         end
-        puts "The sum of the travel time for #{rental.street_address}, is: #{sum}"
         # update the specific rentals total_travel_time
-
+        sum_hr = (sum/3600).round(2)
         rental.update(
-            total_travel_time: sum
+            total_travel_time: sum_hr
         )
     end
-        # travel_time = #{travel_time}
-    # ;")
 
     redirect '/rental'
 end

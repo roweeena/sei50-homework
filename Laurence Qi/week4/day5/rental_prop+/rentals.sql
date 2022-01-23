@@ -5,7 +5,7 @@ CREATE TABLE rentals (
     street_address TEXT, 
     suburb TEXT, 
     cost FlOAT, 
-    total_travel_time INTEGER
+    total_travel_time FLOAT
 );
 
 INSERT INTO rentals (street_address, suburb, cost)
