@@ -9,10 +9,10 @@
 <input type="text" name="address" value="<%= @shop.address %>">
 
 <label for="opening_time">Opening Time:</label>
-<input type="time" name="opening_time" value="<%= @shop.opening_time %>">
+<input type="time" name="opening_time" value="<%= @shop.opening_time.strftime("%H:%M")  %>">
 
 <label for="closing_time">Closing Time:</label>
-<input type="time" name="closing_time" value="<%= @shop.closing_time %>">
+<input type="time" name="closing_time" value="<%= @shop.closing_time.strftime("%H:%M")  %>">
 
 <label for="open_weekdays">Open on weekdays:</label>
 <input type="checkbox" name="open_weekdays" <%= @shop.open_weekdays ? 'checked' : '' %>>

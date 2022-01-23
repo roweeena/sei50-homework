@@ -1,0 +1,23 @@
+
+<% shop = Shop.find @item.shop_id %>
+<div class="shop-container">
+  <img src="<%= @item.image_url %>" alt="<%= @item.name %>" class= "shop-img">
+  <div class="shop-details">
+    <h3><%= @item.name %></h3> 
+    
+    <p><strong>Cost Price: </strong>$<%= sprintf('%.2f', @item.cost_price) %> <%= @item.priced_by %></p>
+    <p><strong>Retail Price: </strong>$<%= sprintf('%.2f', @item.retail_price) %> <%= @item.priced_by %></p>
+    <p><strong>Taxable: </strong> <%= @item.taxable ? 'Yes' : 'No' %></p>
+    <p><strong>Description:</strong><br><%= @item.description %></p>
+    <p><strong>Available at:</strong> 
+      <a href="/shops/<%= @item.shop_id %>" title="<%= shop.name %>">
+        <img src="<%= shop.image_url %>" alt="<%= shop.name %>" class="link-image">
+      </a>
+    </p>
+    <a href="/items/<%= @item.id %>/edit" class="page-link">Update</a>
+    <a href="/items/<%= @item.id %>/delete" class="page-link">Delete</a>
+  </div>
+</div>
+
+
+

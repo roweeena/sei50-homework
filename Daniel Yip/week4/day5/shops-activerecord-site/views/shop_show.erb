@@ -10,9 +10,20 @@
     <p><strong>Mon-Fri: </strong> <%= @shop.open_weekdays ? 'Open' : 'Closed' %></p>
     <p><strong>Sat-Sun: </strong> <%= @shop.open_weekends ? 'Open' : 'Closed' %></p>
     <p><strong>Description:</strong><br><%= @shop.description %></p>
+    <p><strong>Items:</strong></p>
+    <% items = Item.all %>
+    <div>
+    <% items.each do |item|%>
+    <% if item.shop_id == @shop.id %>
+    <a href="/items/<%= item.id %>"><img src="<%= item.image_url %>" alt="<%= item.name%>" title="<%= item.name%>" class="link-image"></a>
+    <% end%>
+    <% end%>
+    </div>
+
     <a href="/shops/<%= @shop.id %>/edit" class="page-link">Update</a>
     <a href="/shops/<%= @shop.id %>/delete" class="page-link">Delete</a>
   </div>
+  
 </div>
 
 

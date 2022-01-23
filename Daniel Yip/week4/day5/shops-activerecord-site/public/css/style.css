@@ -6,15 +6,15 @@
 
 :root {
   box-sizing: border-box;
-  --main-width: 960px; 
+  --main-width: 80vw; 
   /* font-family: 'Dongle', sans-serif; */
   font-family: sans-serif;
   
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 1000px) {
   :root {
-    --main-width: 700px;
+    --main-width: 800px;
   }
 }
 
@@ -51,6 +51,7 @@ nav ul{
 nav li{
   list-style: none;
   margin: 0 2em;
+  
 }
 
 .index-ul {
@@ -58,12 +59,20 @@ nav li{
   margin: 0 auto;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
+  grid-template-columns: repeat(auto-fit, 6em);
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: var(--main-width);
+  }
 
 .index-ul li {
   list-style: none;
   text-align: center;
+  width: fit-content;
+  align-self: center;
+  justify-self: center;
+
 }
 
 .index-ul a {
@@ -72,7 +81,7 @@ nav li{
 }
 
 .index-ul img {
-  width: 3em;
+  width: 6em;
   margin: 0 auto;
 }
 .shop-details {
@@ -81,7 +90,6 @@ nav li{
 
 .shop-container {
   display: flex;
-  gap: 20px;
   align-items: center;
   justify-content: center;
 }
@@ -110,7 +118,7 @@ form {
   gap: 8px;
 }
 
-input {
+input, select {
   align-self: left;
   max-width: fit-content
 }
@@ -125,3 +133,6 @@ label {
   justify-self: left;
 }
 
+.link-image {
+  height: 3em;
+}
