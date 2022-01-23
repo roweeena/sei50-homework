@@ -11,7 +11,7 @@ CREATE TABLE destinations (
 --Laurence's Destinations
 INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
     VALUES (
-        '12 Bowler Ave',
+        '12 Bowler Avenue',
         'Fairfield',
         2,
         1
@@ -27,8 +27,8 @@ INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
 
 INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
     VALUES (
-        '129 Harrington St',
-        'The Rocks',
+        '129 Harrington street',
+        'Sydney',
         0.3,
         1
     );
@@ -36,7 +36,7 @@ INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
 -- Eddies Destinations
 INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
     VALUES (
-        '85 Castlereagh St',
+        '85 Castlereagh street',
         'Sydney',
         3,
         2
@@ -52,7 +52,7 @@ INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
 
 INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
     VALUES (
-        '85 Castlereagh St',
+        '85 Castlereagh street',
         'Sydney',
         3,
         2
