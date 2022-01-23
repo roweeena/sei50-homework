@@ -1,0 +1,18 @@
+<section class="addProject">
+  <form 
+    action="<%= @project ? "/project/#{@project.id}" : "/project" %>" 
+    method="post"
+  >
+    <label>
+      Project: 
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="Write your project name"
+        value="<%= @project ? @project.name : "" %>"
+        required
+      >
+    </label>
+    <button type="submit" class="createBtn">Create</button>
+  </form>
+</section>
