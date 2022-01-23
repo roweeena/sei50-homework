@@ -1,0 +1,30 @@
+<h3>Chef details for: <%= @chef.name %></h3>
+
+<img src="<%= @chef.image_url %>" alt="">
+
+
+<p>
+  <strong>Years cooking:</strong>
+  <%= @chef.years_cooking%>
+</p>
+
+<p>
+  <strong>Cuisine:</strong>
+  <%= @chef.cuisine%>
+</p>
+
+<p>
+  <strong>Restaurants:</strong>
+  <ul>
+    <% @chef.restaurants.each do |rest|%>
+      <li>
+        <a href="/restaurants/<%= rest.id %>"></a>
+        <%= rest.name%>
+      </li>
+      <% end %>
+  </ul>
+</p>
+
+<a href="/chefs/<%= @chef.id %>/edit">Edit</a>
+<a href="/chefs/<%= @chef.id %>/delete">Delete</a>
+
