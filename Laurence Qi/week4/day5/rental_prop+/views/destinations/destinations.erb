@@ -1,0 +1,8 @@
+<h3>All current destination listings around North Strathfield</h3>
+<ul>
+
+    <% @destinations.each do |destination| %>
+        <a href="/destination/<%= destination.id %>"><li><%= destination.street_address + ", " + destination.suburb %></li></a>
+    <% end %>
+
+</ul>

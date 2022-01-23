@@ -1,0 +1,8 @@
+<%# need to have my links to editing etc in this page.  %>
+<%# TODO: get the data below into a table. %>
+<h3><%= @destination.street_address + ', ' + @destination.suburb %></h3>
+<p>Visiting Frequency: <%= @destination.visiting_frequency %></p>
+<p>Person destination belongs to: <%= @destination.person_id %></p>
+
+<a href="/destination/<%= @destination.id %>/update">Edit</a>
+<a href="/destination/<%= @destination.id %>/delete">Delete</a>

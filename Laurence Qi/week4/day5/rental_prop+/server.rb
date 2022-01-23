@@ -20,30 +20,45 @@ end
 class Rental < ActiveRecord::Base
 end
 
-# class Person < ActiveRecord::Base 
-# end
+class Person < ActiveRecord::Base 
+    has_many :destinations
+end
+
+class Destination < ActiveRecord::Base
+    belongs_to :person
+end
 
 # require 'pry'
 # binding.pry
 
-
-# CREATE
-
-
+###############DESTINATIONS###############
+# CREATE TODO:
 
 # READ
 
-# UDPATE 
+#TODO: convert the relevant pages to have the grid structure
+get '/destination' do
+    @destinations = Destination.all
 
-# DELETE
+    erb :'/destinations/destinations'
+end
 
+get '/destination/:id' do
+    @destination = Destination.find params[:id]
+
+    erb :'/destinations/single'
+end
+
+# UDPATE TODO: 
+
+# DELETE TODO:
 
 ###############################################################################################################
 ###############################################################################################################
 ###############################################################################################################
 
 
-
+#################RENTALS#################
 #CREATE 
 # form to add new rental db entry
 get '/rental/create' do
