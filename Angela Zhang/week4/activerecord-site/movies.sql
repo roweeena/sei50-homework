@@ -37,6 +37,27 @@ INSERT INTO movies( name, genre, release_year, overview, poster_url, studio_id )
 
     );
 
+  INSERT INTO movies( name, genre, release_year, overview, poster_url, studio_id )
+    VALUES(
+        'Shrek',
+        'Comedy',
+        2001,
+        'It aint easy being green -- especially if youre a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up with an unlikely compatriot -- a wisecracking donkey.',
+        'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2mxS4wUimwlLmI1xp6QW6NSU361.jpg',
+        3
+
+    );
+
+    INSERT INTO movies( name, genre, release_year, overview, poster_url, studio_id )
+    VALUES(
+        'Minions',
+        'Comedy',
+        2015,
+        'Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.',
+        'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7yzu84zZOp2pgFhQ6Wfd0LPjbIr.jpg',
+        4
+
+    );
 
 
 

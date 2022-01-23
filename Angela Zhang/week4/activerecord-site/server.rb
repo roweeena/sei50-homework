@@ -35,8 +35,11 @@ end
 
 # 1. New Movie form
 
+
+
+
 get '/movies/new' do
-    
+     @studio_list = Studio.all.select :name
     erb :new_movie
 end
 
@@ -50,14 +53,20 @@ post '/movies' do
     poster_url: params[:poster_url]
     );
     redirect '/movies'
+
+    
 end
+
+
+
+
 
 
 #READ
 # 1. SHOW movie INDEX 
 get '/movies' do
     @results = Movie.all
-
+   
     erb :index_movies
 end # get'/movies'
 
@@ -69,8 +78,7 @@ get '/movies/:id' do
 end # get'movies/:id'
 
 
-# require 'pry'
-# binding.pry
+
 
 #UPDATE
 
@@ -116,6 +124,9 @@ end
 get '/studios/new' do
     erb :new_studio
 end
+
+
+
 
 #submits
 post '/studios' do
@@ -174,3 +185,6 @@ get '/studios/:id/delete' do
     Studio.destroy params[:id]
     redirect '/studios'
 end
+
+# require 'pry'
+# binding.pry

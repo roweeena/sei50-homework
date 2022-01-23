@@ -36,8 +36,27 @@ INSERT INTO studios( name, foundation_year, founders, headquarters, website, stu
 
     );
 
+INSERT INTO studios( name, foundation_year, founders, headquarters, website, studio_logo )
+    VALUES(
+        'DreamWorks',
+        1994,
+        'Steven Spielberg, Jeffrey Katzenberg, David Geffen',
+        '1000 Flower Street, Glendale, California 91201, U.S',
+        'http://dreamworks.com/',
+        'https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/DreamWorks_Animation_SKG_logo_with_fishing_boy.svg/234px-DreamWorks_Animation_SKG_logo_with_fishing_boy.svg.png'
 
+    );
 
+INSERT INTO studios( name, foundation_year, founders, headquarters, website, studio_logo )
+    VALUES(
+        'Illumination',
+        2010,
+        'Chris Meledandri',
+        'Santa Monica, California Los Angeles, California, U.S.',
+        'https://www.illumination.com/',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Illumination_Entertainment_logo.svg/799px-Illumination_Entertainment_logo.svg.png'
+
+    );
 
 
 

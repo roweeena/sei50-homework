@@ -20,22 +20,18 @@
 </p>
 <br>
 <p>
-    <strong>Website: </strong> <%= @studio.website %>
+  <strong>Website: </strong><a href="<%= @studio.website %>"><%= @studio.website %></a> 
 </p>
 <br>
 
-
-
 <img src="<%= @studio.studio_logo %>" class = "studio_logo">
-
 
 <p>
     <strong>Movies: </strong>
     <ul>
         <% @studio.movies.each do |movie| %>
         <li>
-            <%= movie.name %>
-            <img src="<%= movie.poster_url %>" alt="">
+            <a href="/movies/<%= movie.id %>"><img src="<%= movie.poster_url %>" alt=""></a>
         </li>
         <% end %>
     </ul>
