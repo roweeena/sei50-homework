@@ -41,7 +41,7 @@ a:hover {
 
 .list-wrapper {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     grid-gap: 10px;
     background-color: #4a4a4a;
     /* color: white; */

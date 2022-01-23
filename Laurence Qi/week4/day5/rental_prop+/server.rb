@@ -75,16 +75,19 @@ end
 get '/rental/travel' do
     # for each of the rental entries, go to find the distance between it and each of the destinations 
     Rental.all.each do |rental|
-        # require 'pry'
-        # binding.pry
-        sum = 0
+        sum_hr = 0
+        sum_dollar_equivalent = 0
         Destination.all.each do |destination|
-            sum += get_travel_time(rental.street_address, rental.suburb, destination.street_address, destination.suburb, 'TRANSIT') * destination.visiting_frequency * 2 # the sum is the time taken for one trip * frequency * 2, where the '2' is to and from the destination. 
+            current_travel_sec = get_travel_time(rental.street_address, rental.suburb, destination.street_address, destination.suburb, destination.person.preferred_travel) * destination.visiting_frequency * 2
+            sum_hr += (current_travel_sec/3600).round(2) # the sum is the time taken for one trip * frequency * 2, where the '2' is to and from the destination. 
+            sum_dollar_equivalent += sum_hr * destination.person.time_value
         end
         # update the specific rentals total_travel_time
-        sum_hr = (sum/3600).round(2)
+        
         rental.update(
-            total_travel_time: sum_hr
+            total_travel_time: sum_hr,
+            total_time_value: sum_dollar_equivalent,
+            net_cost: sum_dollar_equivalent + rental.cost
         )
     end
 
