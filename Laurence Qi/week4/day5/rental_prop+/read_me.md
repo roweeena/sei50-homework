@@ -10,8 +10,9 @@ NOTE: What are the primary models:
 	✔    "People" to many
 	✔    "Locations to travel to" to one
 
-TODO: correct the travel_time function
+TODO: add a breakdown of the travel time for each person. 
 TODO: make a sort function for the apartments. 
+TODO: use the images in the single_rental pages
 
 NOTE: Major functions
     People

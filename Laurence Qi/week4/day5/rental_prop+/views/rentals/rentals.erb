@@ -3,7 +3,7 @@
 <div class="list-wrapper">
     <div class="col-heading">Address</div>
     <div class="col-heading">Cost ($/week)</div>
-    <div class="col-heading">Travel Time (mins)</div>
+    <div class="col-heading">Travel Time (hours)</div>
     <% @rentals.each do |rental| %>
     <div class="grid-item"><a href="/rental/<%= rental.id %>"><%= rental.street_address + ", " + rental.suburb %></a></div>
     <div class="grid-item"><%= rental.cost %></div>

@@ -7,11 +7,14 @@ body {
 a {
     color: #e2b714;
     font-family: 'Roboto', sans-serif;
-    padding: 10px;
 }
 
 a:hover {
     color: #b08d0e;
+}
+
+.nav-bar {
+    padding: 10px;
 }
 
 #main {
@@ -49,4 +52,5 @@ a:hover {
 
 .col-heading {
     font-weight: 700;
+    padding: 10px;
 }
