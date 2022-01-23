@@ -1,0 +1,14 @@
+<h2>Amazing Shortcuts</h2>
+<h4>Name (power rating)</h4>
+<ul>
+    <% @results.each do |shortcut| %>
+    <li>
+        <a href="/shortcuts/<%= shortcut['id'] %>">
+            <%= shortcut['name'] %> (<%= shortcut['power'] %>)
+        </a>
+        <p>
+            <%= shortcut['benefit'] %>
+        </p>
+    </li>
+    <% end %>
+</ul>
