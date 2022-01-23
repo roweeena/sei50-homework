@@ -39,9 +39,20 @@ a:hover {
     padding: 10px;
 }
 
-.list-wrapper {
+.rental-wrapper {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #4a4a4a;
+    /* color: white; */
+    padding: 20px;
+    width: fit-content;
+    border: rgb(189, 131, 131);
+}
+
+.destination-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
     grid-gap: 10px;
     background-color: #4a4a4a;
     /* color: white; */

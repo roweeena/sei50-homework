@@ -6,7 +6,7 @@
     <div class="grid-item">Visiting Frequency: </div>
     <div class="grid-item"><%= @destination.visiting_frequency %> Times per week</div>
     <div class="grid-item">Traveller</div>
-    <div class="grid-item"><%= @destination.person_id %> Minutes</div>
+    <div class="grid-item"><%= @destination.person.name %></div>
 </div>
 <br>
 <a href="/destination/<%= @destination.id %>/update">Edit</a>

@@ -24,3 +24,9 @@ INSERT INTO rentals ( street_address, suburb, cost )
         650
     );
 
+INSERT INTO rentals ( street_address, suburb, cost ) VALUES ('8 Carrington Street','Strathfield', 690);
+INSERT INTO rentals ( street_address, suburb, cost ) VALUES ('2E/19-21 George Street','North Strathfield', 610);
+INSERT INTO rentals ( street_address, suburb, cost ) VALUES ( '2 Beronga Street', 'North Strathfield', 650 );
+INSERT INTO rentals ( street_address, suburb, cost ) VALUES ( '11G/19-21 George Street', 'North Strathfield', 550 );
+INSERT INTO rentals ( street_address, suburb, cost ) VALUES ( '1/2 Everton Road', 'Strathfield', 650);
+INSERT INTO rentals ( street_address, suburb, cost ) VALUES ( '61/1 Clarence Street', 'Strathfield', 590);

@@ -22,7 +22,6 @@ def get_travel_time(start_street, start_suburb, destination_street, destination_
     p "URL is: #{url}"
     api_obj = HTTParty.get(url)
     travel_time = api_obj['rows'][0]['elements'][0]['duration']['value']
-    p "the time is #{travel_time} for #{start_street}"
     travel_time
 end
 
@@ -44,11 +43,8 @@ class Destination < ActiveRecord::Base
 end
 
 
+
 ###############DESTINATIONS###############
-# CREATE
-
-
-
 # READ
 get '/destination' do
     @destinations = Destination.all
@@ -62,32 +58,31 @@ get '/destination/:id' do
     erb :'/destinations/single'
 end
 
-# UDPATE TODO: 
 
-# DELETE TODO:
-
-###############################################################################################################
-###############################################################################################################
-###############################################################################################################
 
 #################RENTALS#################
 # USING GOOGLE MAPS API GENERATE THE total_travel_time value for each property
 get '/rental/travel' do
-    # for each of the rental entries, go to find the distance between it and each of the destinations 
+    # for each of the rental entries, go to find the distance between it and each of the destinations     
     Rental.all.each do |rental|
         sum_hr = 0
         sum_dollar_equivalent = 0
         Destination.all.each do |destination|
-            current_travel_sec = get_travel_time(rental.street_address, rental.suburb, destination.street_address, destination.suburb, destination.person.preferred_travel) * destination.visiting_frequency * 2
-            sum_hr += (current_travel_sec/3600).round(2) # the sum is the time taken for one trip * frequency * 2, where the '2' is to and from the destination. 
+            current_travel_sec = get_travel_time(
+                rental.street_address,
+                rental.suburb, destination.street_address,
+                destination.suburb,
+                destination.person.preferred_travel
+            ) * destination.visiting_frequency * 2
+            sum_hr += (current_travel_sec/3600) # the sum is the time taken for one trip * frequency * 2, where the '2' is to and from the destination. 
             sum_dollar_equivalent += sum_hr * destination.person.time_value
         end
         # update the specific rentals total_travel_time
         
         rental.update(
-            total_travel_time: sum_hr,
-            total_time_value: sum_dollar_equivalent,
-            net_cost: sum_dollar_equivalent + rental.cost
+            total_travel_time: sum_hr.round(2),
+            total_time_value: sum_dollar_equivalent.round(2),
+            net_cost: (sum_dollar_equivalent + rental.cost).round(2)
         )
     end
 
@@ -113,7 +108,8 @@ end
 #READ 
 # page showing all rentals
 get '/rental' do
-    @rentals = Rental.all
+    #TODO: implement logic here so that the current value of a button or something is read and determines the sorting
+    @rentals = Rental.all.sort_by { |obj| obj.cost}
     
     erb :'rentals/rentals'
 end
