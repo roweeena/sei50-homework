@@ -1,0 +1,49 @@
+
+<h3>
+Album details for: <%= @album['name'] %>
+</h3>
+
+<a href="/albums/<%=@album['id']%>/edit">Edit</a>
+<a href="/albums/<%=@album['id']%>/delete">Delete</a>
+
+
+<div class="container">
+
+<div class="genre">
+<p>
+<%= @album.genre %>
+</p>
+</div>
+
+<div class="bio">
+<p>
+<%= @album.description %>
+</p>
+</div>
+
+<div class="release">
+<p>
+<%= @album.release %>
+</p>
+</div>
+
+<div class="grammy">
+<p>
+<strong> Grammy Winner: </strong> 
+<%= @album.grammy_winner == 1 ? 'Yes' : 'No' %>
+</p>
+</div>
+
+<div class="artist">
+<p>
+    <strong>artist:</strong> 
+    <a href="/artists/<%=@album.artist.id%>">
+    <%= @album.artist.name %>
+    </a>
+</p>
+</div>
+
+<div class="art">
+<img src="<%=@album.album_art%>" alt="" class="album_art">
+</div>
+</div>
