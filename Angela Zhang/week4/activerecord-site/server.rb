@@ -18,7 +18,11 @@ end
 
 
 class Movie < ActiveRecord::Base
-    
+    belongs_to :studio
+end
+
+class Studio < ActiveRecord::Base
+    has_many :movies
 end
 
 
@@ -96,4 +100,77 @@ get '/movies/:id/delete' do
 
     Movie.destroy params[:id]
     redirect '/movies'
+end
+
+
+#######################################################
+#######################################################
+#######################################################
+#######################################################
+
+#OWNERS
+
+#CREATE
+# 1. New Studio form
+
+get '/studios/new' do
+    erb :new_studio
+end
+
+#submits
+post '/studios' do
+    Studio.create(
+    name: params[:name],
+    foundation_year: params[:foundation_year],
+    founders: params[:founders],
+    headquarters: params[:headquarters],
+    website: params[:website],
+    studio_logo: params[:studio_logo]
+    );
+    redirect '/studios'
+end
+
+#READ
+# 1. SHOW studios INDEX 
+get '/studios' do
+    @results = Studio.all
+
+    erb :index_studios
+end # get'/studios'
+
+# 2. SHOW individual Studio detail
+get '/studios/:id' do
+    @studio = Studio.find params[:id]
+
+    erb :show_studio
+end # get'studios/:id'
+
+#UPDATE
+
+get '/studios/:id/edit' do
+    @studio = Studio.find params[:id]
+    erb :edit_studio
+end
+
+post '/studios/:id' do
+    studio = Studio.find params[:id],
+
+    studio.update(
+    name: params[:name],
+    genre: params[:genre],
+    release_year: params[:release_year],
+    overview: params[:overview],
+    poster_url: params[:poster_url]
+    );
+    redirect "/studios/#{ params[:id]}"
+end
+
+
+
+#DELETE
+
+get '/studios/:id/delete' do
+
+    Studio.destroy params[:id]
+    redirect '/studios'
 end

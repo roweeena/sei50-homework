@@ -1,0 +1,14 @@
+<h1>Animation Studio Index</h1>
+
+<a href="/studios/new">Add New Studio</a>
+
+<ul>
+    <% @results.each do |studio| %>
+        <li>
+            <a href="/studios/<%= studio.id %>">
+             <%= studio.name %>
+            </a>
+        </li>
+
+    <% end %>
+</ul>

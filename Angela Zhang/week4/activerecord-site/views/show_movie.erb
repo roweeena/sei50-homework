@@ -19,6 +19,11 @@
     <strong>Overview: </strong> <%= @movie.overview %>
 </p>
 <br>
+<p>
+    <strong>Studio: </strong>
+    <a href="/studios/<%= @movie.studio.id %>"><%= @movie.studio.name %></a> 
+</p>
+<br>
 
 
 
