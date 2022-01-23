@@ -1,12 +1,15 @@
 
 
-<h3>Manga Name: <%= @mangabook.name %></h3>
+<h3><%= @mangabook.name %></h3>
 
 <p>
 <strong>Author:</strong> 
 <% unless @mangabook.author.nil?%>
 <a href="/authors/<%= @mangabook.author.id%>">
 <%= @mangabook.author.name%>
+<% @author.each do |author|%>
+<option value="<%= @author.id%>"> <%= @author.name%> </option>
+<% end %>
 </a>
 <%end%>
 </p>
