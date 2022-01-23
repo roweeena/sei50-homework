@@ -1,0 +1,39 @@
+<h1>
+    Studio Details: <%= @studio.name %>
+</h1>
+
+[<a href="/studios/<%= @studio.id %>/edit">Edit</a>]
+|
+[<a href="/studios/<%= @studio.id %>/delete">Delete</a>]
+
+
+<p>
+    <strong>Founded: </strong> <%= @studio.foundation_year %>
+</p>
+<br>
+<p>
+    <strong>Founders: </strong> <%= @studio.founders %>
+</p>
+<br>
+<p>
+    <strong>Headquarters: </strong> <%= @studio.headquarters %>
+</p>
+<br>
+<p>
+  <strong>Website: </strong><a href="<%= @studio.website %>"><%= @studio.website %></a> 
+</p>
+<br>
+
+<img src="<%= @studio.studio_logo %>" class = "studio_logo">
+
+<p>
+    <strong>Movies: </strong>
+    <ul>
+        <% @studio.movies.each do |movie| %>
+        <li>
+            <a href="/movies/<%= movie.id %>"><img src="<%= movie.poster_url %>" alt=""></a>
+        </li>
+        <% end %>
+    </ul>
+    
+</p>

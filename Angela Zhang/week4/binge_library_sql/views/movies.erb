@@ -1,0 +1,24 @@
+<h3>MOVIE SECTION</h3>
+
+[<a href="/movies/new_movie">New Movie</a>]
+<select name="status">
+        <option value="Watched">Watched</option>
+        <option value="To Watch">To Watch</option>
+</select>
+
+<%= @movies_filter_watched %>
+
+<h4>INDEX</h4>
+
+<ul>
+
+    <% @movies.each do |movie| %>
+        <li>
+            <a href="/movies/<%= movie['id'] %>">
+            <img src="<%= movie['poster_url'] %>" class="thumbnail"> <br><%= movie['name'] %>
+            </a>
+        </li>
+    <% end %> 
+ 
+
+</ul>
