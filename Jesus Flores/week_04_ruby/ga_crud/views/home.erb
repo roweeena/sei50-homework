@@ -1,0 +1,32 @@
+<section class="container">
+    <div class="dashboard-title">
+        <h1> Programing Languages</h1>
+    </div>
+    <div class="show-message">  
+        <% if params['message'] %>
+            <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                    <%= params['message'] %>
+            </div>
+        <% end %>
+        </div>
+    <table id="customers">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        <% @results.each do |el| %>
+        <tr>
+            <td ><img src="<%= el['logo']%>" class="image-logo" alt=""></td>
+            <td ><%= el['name']%></td>
+            <td > 
+             <a href="view/<%= el['id']%>"> <i class="far fa-file-alt"></i> </a>
+             <a href="update/<%= el['id']%>"> <i class="far fa-edit"></i></a>
+             <a href="delete/<%= el['id']%>"> <i class="far fa-trash-alt"></i> </a>
+            </td>
+        </tr>
+        <% end %>
+        </table>
+        <div class="rendered-form">
+</section>

@@ -1,0 +1,29 @@
+<h1>
+    Movie Detail: <%= @movie.name %>
+</h1>
+
+[<a href="/movies/<%= @movie.id %>/edit">Edit</a>]
+|
+[<a href="/movies/<%= @movie.id %>/delete">Delete</a>]
+
+
+<p>
+    <strong>Genre: </strong> <%= @movie.genre %>
+</p>
+<br>
+<p>
+    <strong>Release Year: </strong> <%= @movie.release_year %>
+</p>
+<br>
+<p>
+    <strong>Overview: </strong> <%= @movie.overview %>
+</p>
+<br>
+<p>
+  <strong>Studio: </strong>
+  <a href="/studios/<%= @movie.studio.id %>"><%= @movie.studio.name %></a> 
+</p>
+<br>
+
+
+<img src="<%= @movie.poster_url %>" class = "poster_image">

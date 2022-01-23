@@ -1,0 +1,43 @@
+<h2>Movie details: <%= @movie_info['name'] %>
+</h2>
+
+<a href="/movies/<%= @movie_info['id'] %>/edit"><button>Edit</button></a>
+<a href="/movies/<%= @movie_info['id'] %>/delete"><button>Delete</button></a>
+
+
+<div class="info_box"> 
+    <img src="<%= @movie_info['poster_url'] %>" class="poster_image">
+
+    <span class="details">
+        <p>
+            <strong>Genre: </strong><%= @movie_info['genre'] %>
+        </p>
+        <br>
+
+        <p>
+            <strong>Original Language: </strong><%= @movie_info['original_language'] %>
+        </p>
+        <br>
+
+        <p>
+            <strong>Status: </strong><%= @movie_info['status'] %>
+        </p>
+        <br>
+
+        <p>
+            <strong>Rating: </strong><%= @movie_info['rating'] %>
+        </p>
+        <br>
+
+        <p>
+            <strong>Description: </strong><%= @movie_info['description'] %>
+        </p>
+        <br>
+    </span>
+    
+
+</div>
+
+
+
+

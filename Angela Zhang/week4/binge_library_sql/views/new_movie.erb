@@ -1,0 +1,57 @@
+<h3>NEW MOVIE SECTION</h3>
+
+<form action="/movies" method="post">
+
+<label>
+    Name:
+    <input type="text" name="name" >
+</label>
+<br>
+
+<label>
+    Genre:
+    <input type="text" name="genre">
+</label>
+<br>
+
+<label>
+    Original Language:
+    <input type="text" name="original_language">
+</label>
+<br>
+
+<label for="status" name="status">
+    Status(watched/to watch):
+    <select name="status" >
+        <option value="Watched">Watched</option>
+        <option value="To Watch">To Watch</option>
+    </select>
+</label>
+<br>
+
+<label>
+    Rating(1-10):
+    <input type="text" name="rating">
+</label>
+<br>
+
+<label>
+    Description:
+    <br>
+    <textarea name="description" cols="50" rows="5" maxlength="250">
+    </textarea>
+</label>
+
+<br>
+
+<label>
+    Poster URL:
+    <br>
+    <textarea name="poster_url" cols="50" rows="5" maxlength="250">
+    </textarea>
+</label>
+<br>
+
+<button>Add Movie</button>
+
+</form>

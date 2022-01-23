@@ -1,0 +1,24 @@
+<h3>Editing: <%= @rental['street_address'] + ', ' + @rental['suburb']%>  </h3>
+
+<form action="/rental/<%= @rental['id'] %>" method="post">
+
+    <label>
+        Street Address:
+        <input type="text" name="street_address" value="<%= @rental['street_address'] %>">
+    </label>
+    <br>
+
+    <label>
+        Suburb:
+        <input type="text" name="suburb" value="<%= @rental['suburb'] %>">
+    </label>
+    <br>
+
+    <label>
+        Cost (weekly):
+        <input type="text" name="cost" value="<%= @rental['cost'] %>">
+    </label>
+    <br>
+
+    <button>Submit</button>
+</form>

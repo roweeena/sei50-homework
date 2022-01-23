@@ -1,0 +1,23 @@
+
+
+<h3>Edit Artist: <%= @artist.name %></h3>
+
+<form action="/artists/<%=@artist.id%>" method="post">
+
+<label>
+    Name:
+    <input type="text" name="name" value="<%=@artist.name%>">
+</label>
+<br>
+
+<label>
+    Birth:
+    <input type="text" name="birth_year" value="<%=@artist.birth_year%>">
+</label>
+<br>
+
+<input type="submit" value="update">
+
+<!-- -->
+
+</form>
