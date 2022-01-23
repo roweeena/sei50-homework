@@ -1,0 +1,38 @@
+<h3>Update <%= @item.name %></h3>
+
+<form action="/items/<%= @item.id %>" method="post">
+
+<label for="name">Name:</label>
+<input type="text" name="name" value="<%= @item.name %>">
+
+<label for="cost_price">Cost Price:</label>
+<input type="number" step="0.01" min="0" name="cost_price" value="<%= @item.cost_price %>">
+
+<label for="retail_price">Retail Price:</label>
+<input type="number" step="0.01" min="0" name="retail_price" value="<%= @item.retail_price %>" >
+
+<label for="priced_by">Priced By:</label>
+<input type="text" name="priced_by" value="<%= @item.priced_by %>">
+
+<label for="taxable">Taxable:</label>
+<input type="checkbox" name="taxable" <%= @item.taxable ? "checked" : "" %>>
+
+<label for="image_url">Image URL:</label>
+<input type="text" name="image_url" value="<%= @item.image_url %>">
+
+<label for="description">Description:</label>
+<textarea name="description" cols="30" rows="10"><%= @item.description %></textarea >
+
+<label for="shop_id">Available At: </label>
+<% shops = Shop.all %>
+<select name="shop_id" >
+  <% shops.each do |shop|%>
+    <option value="<%= shop.id %>" <%= shop.id == @item.shop_id ? selected="Selected" : "" %>><%= shop.name %> </option>    
+  <% end%>
+</select>
+
+<button class="update-button">Update</button>
+
+</form>
+
+
