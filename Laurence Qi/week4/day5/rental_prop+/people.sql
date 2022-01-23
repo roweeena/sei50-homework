@@ -25,7 +25,7 @@ INSERT INTO people (name, preferred_travel, time_value)
 
 INSERT INTO people (name, preferred_travel, time_value)
 VALUES (
-    'Eddie',
+    'Patrick',
     'TRANSIT',
     10
 );

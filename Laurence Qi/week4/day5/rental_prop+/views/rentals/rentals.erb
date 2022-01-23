@@ -1,8 +1,14 @@
-<h3>All current rental listings around North Strathfield</h3>
-<ul>
+<h3>Current Rental Listings Around North Strathfield</h3>
 
+<div class="list-wrapper">
+    <div class="col-heading">Address</div>
+    <div class="col-heading">Cost ($/week)</div>
+    <div class="col-heading">Travel Time (mins)</div>
     <% @rentals.each do |rental| %>
-        <a href="/rental/<%= rental.id %>"><li><%= rental.street_address + ", " + rental.suburb %></li></a>
+    <div class="grid-item"><a href="/rental/<%= rental.id %>"><%= rental.street_address + ", " + rental.suburb %></a></div>
+    <div class="grid-item"><%= rental.cost %></div>
+    <div class="grid-item"><%= rental.total_travel_time %></div>
     <% end %>
+</div>
 
 </ul>
