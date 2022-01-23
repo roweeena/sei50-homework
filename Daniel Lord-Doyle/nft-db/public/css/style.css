@@ -12,7 +12,11 @@ body {
 .mainBody {
     position: relative;
     flex-direction: row;
-    padding: 200px 15% 50px 15%;
+    padding: 150px 5% 50px 5%;
+}
+
+.wrap {
+    padding: 0 15% 0 15%;
 }
 
 .homepageImage {
@@ -133,6 +137,7 @@ header a:hover {
 }
 
 button.listing {
+    width: 100%;
     color: white;
     font-weight: 600;
     letter-spacing: 2px;
@@ -140,6 +145,7 @@ button.listing {
     font-size: 18px;
     border-radius: 5px;
     background-color: rgb(20,181,203);
+    cursor: pointer;
 }
 
 button.listing:hover {
@@ -154,7 +160,7 @@ button.listing:hover {
 }
 
 .grid {
-    font-family: 'Open Sans', sans-serif;;
+    font-family: 'Open Sans', sans-serif;
     display: grid;
     gap: 12px;
     grid-template-columns: 1fr 1fr;
@@ -226,6 +232,18 @@ p.prop {
     min-width: 270px;
     max-width: 330px;
     width: 30%;
+    text-align: center;
+}
+
+.projectBanner {
+    padding: 20px;
+    margin-right: 30px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.projectBanner:hover {
+    background-color: rgb(117, 124, 142);
 }
 
 .nftsContainer {
@@ -267,7 +285,7 @@ p.prop {
 }
 
 .assetDetails {
-    width: 100%;
+    box-sizing: border-box;
     -webkit-box-flex: 1;
     flex-grow: 1;
     display: flex;
@@ -275,6 +293,16 @@ p.prop {
     padding: 16px;
     min-height: 96px;
     background-color: rgb(28, 31, 39);
+}
+
+span.price {
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+}
+
+img.eth {
+    width: 15px;
 }
 
 .assetDetails2 {
@@ -318,4 +346,113 @@ p.prop {
     color: rgb(246, 246, 246);
     text-decoration: none;
     min-height: 34px;
+}
+
+form.mint {
+    display: grid;
+}
+
+label {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.newMintH1 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.leftFormColumn {
+    align-self: center;
+    text-align: right;
+    margin-right: 30px;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mintButton {
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    justify-self: center;
+    text-align: center;
+    width: 200px;
+    background-color: rgb(20,181,203);
+    cursor: pointer;
+}
+
+.mintButton:hover {
+    background-color: rgb(34,209,233);
+}
+
+.mintBody {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.buyImage {
+    width: 30%;
+    padding-bottom: 15px;
+}
+
+.buyEthImg {
+    display: inline-block;
+    width: 30px;
+}
+
+.buyEthPrice {
+    display: inline-block;
+}
+
+.transactionContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.inlineBlock {
+    margin-top: 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+.transactionText {
+    margin: 0 20px 0 20px;
+}
+
+.transactionText p {
+    font-size: 18px;
+}
+
+.previousOwner {
+    color: rgb(34,209,233);
+    font-weight: 700;
+}
+
+.rightFormColumn {
+    text-align: left;
+}
+
+.opensea {
+    width: 20%;
+    margin-right: 40%;
+    margin-left: 40%;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgb(20,181,203);
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.opensea:hover {
+    background-color: rgb(34,209,233);
+    cursor: pointer;
 }

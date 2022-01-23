@@ -1,4 +1,4 @@
-
+<div class="wrap">
 <div class="flexWrapper">
     <div class="nftImageWrap">
         <img class="individualPageImage" src="<%= @nft.image_route %>" alt=" <%= @nft.project_name %> ">
@@ -26,9 +26,20 @@
 
             </div>
 
-            <div class="nftListingButton">
-                <button class="listing">LIST FOR SALE</button>
-            </div>
+            <% if @nft.owned == true %>
+                <div class="nftListingButton">
+                    <a class="listing" href="/nfts/<%= @nft.id %>/sell">
+                    <button class="listing">SELL NOW</button>
+                    </a>
+                </div>
+            <% else %>
+                <div class="nftListingButton">
+                    <a class="listing" href="/nfts/<%= @nft.id %>/buy">
+                    <button class="listing">BUY NOW</button>
+                    </a>
+                </div>
+            <% end %>
+
     </div>
 </div>
 
@@ -57,3 +68,6 @@
 
     </div>
 </div>
+</div>
+
+<a class="" href="/nfts/<%= @nft.id %>/delete"><button class="opensea">Send to OpenSea</button></a>
