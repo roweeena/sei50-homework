@@ -1,0 +1,32 @@
+
+<p class ="title_for_movie"><%= @movie['title'] %><p>
+<br>
+<img src="<%= @movie['image_url'] %>" alt="<%= @movie['title'] %>" class="movie_image">   
+
+</p>
+
+<p>
+
+    <span>Title</span><br> <%= @movie['title'] %>
+</p>
+
+<p>
+    <span>Release Date </span><br> <%= @movie['release'] %>
+</p>
+    
+<p>
+    <span>Duration </span><br> <%= @movie['duration'] %>
+</p>
+    
+<p>
+    <span>Rating </span><br> <%= @movie['rating'] %>
+</p>
+
+<p>
+    <span>Role in the movie </span><br> <%= @movie['role'] %>
+</p>
+    
+ 
+
+<br>
+<button><a href="/bradpitt/<%= @movie['id'] %>/edit">Edit</a></button>

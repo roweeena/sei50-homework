@@ -1,0 +1,22 @@
+main {
+  padding-top: 50px;
+}
+
+main ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+main li {
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px rgb(207, 207, 207);
+  padding: 40px 0;
+  text-align: center;
+  transition: 0.3s;
+}
+
+main li:hover {
+  background: rgb(255, 166, 0);
+  transition: 0.3s;
+}

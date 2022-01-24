@@ -1,0 +1,31 @@
+<form action="/movies" method="post">
+<h2>EDIT MOVIE</h2>
+
+    <label>
+        Name:
+        <input type="text" name="name" value="<%= @movie.name %>">
+    </label>
+    <br>
+    <label>
+        Genre:
+        <input type="text" name="genre" value="<%= @movie.genre %>" >
+    </label>
+    <br>
+    <label>
+        Release Year:
+        <input type="text" name="release_year" value="<%= @movie.release_year %>">
+    </label>
+    <br>
+    <label>
+        Overview:
+        <input type="text" name="overview" value="<%= @movie.overview %>">
+    </label>
+    <br>
+    <label>
+        Poster URL:
+        <input type="text" name="poster_url" value="<%= @movie.poster_url %>">
+    </label>
+    <br>
+    <button>Save Changes</button>
+
+</form>

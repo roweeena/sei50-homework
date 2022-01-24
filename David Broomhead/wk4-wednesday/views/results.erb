@@ -1,0 +1,20 @@
+<h3>
+    <%= @results['results'].length %> Results for "<%= params[:title] %>"
+</h3>
+
+<ul>
+    <% @results['results'].each do |film| %>
+        <li>
+            <h4><%= film['original_title'] %></h4>
+            <%= film['release_date'] %> <br>
+            <%= film['overview'] %> <br>
+
+            <% if film['poster_path'] == nil %>
+                <p>No image sorry!</p>
+            <% else %>
+                <img src="https://www.themoviedb.org/t/p/w500<%= film['poster_path']%>" height=150>
+            <% end %> 
+        </li>
+    <% end %>
+</ul>
+    

@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: "Racing Sans One", cursive;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #a1e6d9;
+  color: white;
+  font-size: 30px;
+  font-family: "Racing Sans One", cursive;
+  width: 100%;
+}
+
+.navbar {
+  background-color: #70b4a8;
+  height: 40px;
+  padding: 8px 10px;
+  top: 275px;
+}
+
+.navbar_menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar_menu li {
+  display: inline-bock;
+  float: left;
+  padding: 0px 140px;
+}
+
+.navbar_menu li a:hover {
+  color: #a1e6d9;
+  border-radius: 4px;
+}
+
+.mimage {
+  border-radius: 50%;
+  top: 400px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  top: 400px;
+}
+
+p#quote {
+  font-family: "IM Fell Great Primer", serif;
+  font-size: 40px;
+  text-align: center;
+  color: rgb(218, 216, 216);
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+p#name {
+  text-align: center;
+  font-size: 20px;
+  color: #038b6e;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+}
+
+p#name span {
+  text-align: center;
+  font-size: 15px;
+  color: darkgray;
+  font-style: italic;
+}
+
+p#quote {
+  font-family: "IM Fell Great Primer", serif;
+  font-size: 40px;
+  text-align: center;
+  color: rgb(218, 216, 216);
+}
+
+hr {
+  border: 1px solid #70b4a8;
+  width: 50%;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.contents {
+  max-width: 900px;
+  padding: 10px;
+  margin: auto;
+}
+
+.profilephoto {
+  float: left;
+}
+
+ul {
+  list-style-type: square;
+}
+
+div ul li {
+  padding: 7px;
+  font-family: "Merriweather", serif;
+  text-align: center;
+}
+
+li span {
+  color: #038b6e;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #a1e6d9;
+  padding: 10px 0;
+  margin-top: 100px;
+}
+
+p#footer {
+  text-align: center;
+  color: white;
+  font-family: "Racing Sans One", cursive;
+}
+
+h2 {
+  font-family: "Merriweather", serif;
+  text-align: center;
+  font-weight: bold;
+  color: #038b6e;
+}
+
+.projects_container {
+  font-family: "Merriweather", serif;
+  text-align: center;
+  color: gray;
+}
+
+.careerimages {
+  margin: auto;
+  padding: auto;
+  display: block;
+}

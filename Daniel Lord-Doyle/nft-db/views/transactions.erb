@@ -1,0 +1,18 @@
+<h1>Transaction History</h1>
+
+<div class="transactionContainer">
+    <% @nfts.each do |nft| %>
+        <div class="transactionInside">
+            <div class="inlineBlock">
+                <a href="/nfts/<%= nft.id %>"><img class="homepageImage" src="<%= nft.image_route %>" alt=" <%= nft.project_name %> "></a>
+            </div>
+            <div class="inlineBlock transactionText">
+                <h1> Ape #<%= nft.id %>  </h1>
+                <h2> Project: <%= nft.project_name %> </h2>
+                <p class="previousOwner"> Previous Owner: <%= nft.previous_owner %> </p>
+                <br><br><br><br>
+                <p>Purchased for: <%= nft.last_purchase_price %></p>
+            </div>
+        </div>
+    <% end %>
+</div>

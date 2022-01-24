@@ -1,0 +1,214 @@
+
+:root {
+    --main-width: 960px
+}
+
+@media screen and (max-width: 1000px) {
+    :root {
+        --main-width: 600px
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+    :root {
+        --main-width: 400px
+    }
+    
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+    color: white;
+    background: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    background: linear-gradient(rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0.5));
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    /* height: 3em; */
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    height: 100%;
+    padding: 1em 2em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-color);
+    display: inline-block;
+}
+
+nav a::after, footer a::after{
+    content: '';
+    width: 100%;
+    height: 3px;
+    display: block;
+    background: rgba(0, 0, 0, 0);
+    transition: 300ms;
+} 
+
+nav a:hover::after, footer a:hover::after{
+    background: rgb(255, 255, 255);
+}
+
+article {
+    margin: 200px auto;
+    width: var(--main-width);
+    /* height: 100vh; */
+    /* background: rgb(95, 0, 0); */
+    text-align: center;
+}
+
+h1{
+    margin: 100px auto;
+}
+
+#facts-box {   
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+    #facts-box{
+        width: 600px;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #facts-box{
+        width: 400px;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+    }
+}
+
+#facts-box li{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.matz-facts {
+    /* border: 1px solid grey; */
+    border-radius: 40px;
+    padding: 10px 30px;
+    /* background: white; */
+    color: white;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fact-cover {
+    content: " ";
+    background: black;
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 1s;
+}
+
+.fact-cover img{
+    width: 100%;
+}
+
+.fact-cover:hover {
+    opacity: 0
+}
+
+
+.matz-facts li img {
+    width: 50px;
+    height: 60px;
+    background: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#eiffel-img {
+    width: 80px;
+}
+
+#eiffel-li {
+    grid-area: 3/1/4/3;
+}
+
+#matz-pic {
+    height: 250px;
+    border: 5px solid red;
+    border-radius: 30px;
+    margin: 0;
+    padding: 0;
+       
+}
+
+#matz-facts-5 ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    align-items: center;
+    grid-gap: 10px;
+    width: 200px;
+}
+
+
+#matz-facts-6{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+section h {
+    text-align: center;
+}
+
+
+
+footer {
+    position: sticky;
+    width: 100vw;
+    bottom: 0;
+    background: black;
+}
+
+footer p{
+    text-align: center;
+    font-size: 0.8em;
+}
+

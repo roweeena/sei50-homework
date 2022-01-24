@@ -1,0 +1,16 @@
+body{
+  background-color: black;
+}
+
+#words {
+  display: none;
+  /* visibility:hidden */
+}
+
+.word {
+  color: white;
+  font-family: Georgia, serif;
+  position: absolute;
+  font-size: 20pt;
+  display: none;
+}

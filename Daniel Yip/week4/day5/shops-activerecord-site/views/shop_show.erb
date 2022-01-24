@@ -1,0 +1,29 @@
+
+<div class="shop-container">
+  <img src="<%= @shop.image_url %>" alt="<%= @shop.name %>" class= "shop-img">
+  <div class="shop-details">
+    <h3><%= @shop.name %></h3> 
+    
+    <p><strong>Rating: </strong><%= @shop.rating %>/10</p>
+    <p><strong>Address: </strong><%= @shop.address %></p>
+    <p><strong>Opening Hours: </strong><%= @shop.opening_time.strftime("%I:%M %p")  %> - <%= @shop.closing_time.strftime("%I:%M %p") %></p>
+    <p><strong>Mon-Fri: </strong> <%= @shop.open_weekdays ? 'Open' : 'Closed' %></p>
+    <p><strong>Sat-Sun: </strong> <%= @shop.open_weekends ? 'Open' : 'Closed' %></p>
+    <p><strong>Description:</strong><br><%= @shop.description %></p>
+    <p><strong>Items:</strong></p>
+    <% items = Item.all %>
+    <div>
+    <% items.each do |item|%>
+    <% if item.shop_id == @shop.id %>
+    <a href="/items/<%= item.id %>"><img src="<%= item.image_url %>" alt="<%= item.name%>" title="<%= item.name%>" class="link-image"></a>
+    <% end%>
+    <% end%>
+    </div>
+
+    <a href="/shops/<%= @shop.id %>/edit" class="page-link">Update</a>
+    <a href="/shops/<%= @shop.id %>/delete" class="page-link">Delete</a>
+  </div>
+  
+</div>
+
+

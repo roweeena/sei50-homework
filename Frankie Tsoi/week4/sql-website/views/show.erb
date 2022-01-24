@@ -1,0 +1,26 @@
+<h3><%= @gundams['name'] %></h3>
+
+[<a href="/gundams/<%= @gundams['id']%>/edit">Edit</a>]
+[<a href="/gundams/<%= @gundams['id']%>/delete">Delete</a>]
+
+<p>
+  <strong>Model Number:</strong> <%= @gundams['model_number']%>
+</p>
+
+<p>
+  <strong>Pilot:</strong> <%= @gundams['pilot']%>
+</p>    
+
+<p>
+<strong>Designer:</strong> <%= @gundams['designer']%>
+</p>
+
+<p>
+<strong>Power Sources:</strong> <%= @gundams['power_sources']%>
+</p>
+
+<p>
+<strong>Height:</strong> <%= @gundams['height']%>
+</p>
+
+<img src="<%= @gundams['image_url'] %>" alt=" <%= @gundams['name']%>" class="gundams_image">

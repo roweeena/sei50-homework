@@ -1,0 +1,14 @@
+<h3>Index of shops</h3>
+
+<ul class="index-ul">
+  <% @results.each do |shop| %>
+  <li>
+    <a href="/shops/<%=shop.id  %>">
+    <%= shop.name %>
+    <img src="<%= shop.image_url %>" alt="<%= shop.name %>">
+    </a>
+  </li>
+  <% end%>
+</ul>
+<br>
+<a href="/shops/new" class="page-link">New Shop</a>

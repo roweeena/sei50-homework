@@ -1,0 +1,20 @@
+#main-meow {
+    position: absolute;
+    /* background: yellow; */
+}
+.kitten {
+    position: absolute;
+}
+
+#main-meow:hover{
+    transform: scale(1.2);
+}
+
+#cat-box, #kitten-box{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}

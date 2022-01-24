@@ -1,0 +1,45 @@
+#container {
+  width: 90vw;
+  max-width: 960px;
+  margin: 50px auto;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  line-height: 17px;
+  color: #656565;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.banner {
+  width: 100%;
+}
+
+.collection > h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.collection > .date {
+  color: #86bee6;
+}
+
+.collection > .para {
+  margin-bottom: 20px;
+}
+
+.collection a {
+  color: #9ec8e5;
+}
+
+.collection a:hover {
+  color: #20222a;
+}
+
+.presses > img {
+  border: 5px solid rgb(185, 185, 185);
+}

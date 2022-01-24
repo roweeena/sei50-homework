@@ -1,0 +1,25 @@
+
+<h3>
+Artist: <%= @artist.name %>
+</h3>
+
+<p>
+    <strong>Birth: </strong>
+    <%= @artist.birth_year %>
+</p>
+
+<p>
+    <strong>Albums:</strong>
+        <ul>
+        <% @artist.albums.each do |album| %>
+            <li>
+                <a href="/albums/<%=album.id%>">
+                <%= album.name %>
+                </a>
+            </li>
+        <% end  %>
+    </ul>
+</p>
+
+<a href="/artists/<%=@artist.id%>/edit">edit</a>
+<a href="/artists/<%=@artist.id%>/delete">delete</a>

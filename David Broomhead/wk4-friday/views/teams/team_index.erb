@@ -1,0 +1,10 @@
+<h3>List of NFL Teams and Year Last Sold</h3>
+<ul>
+    <% @teams.each do |team| %>
+    <li>
+        <a href="/teams/team_show/<%= team.id %>">
+        <%= team.franchise %>
+        <a> (<%= team.year %>)
+    </li>
+    <% end %> 
+</ul>

@@ -1,0 +1,10 @@
+<h3>AUTHOR LIST</h3>
+
+<ul>
+  <% @author.each do |author|%>
+    <li>
+    <a href="/authors/<%= author.id%>">
+      <%= author.name %>
+    </a>
+  <%end%>
+</ul>

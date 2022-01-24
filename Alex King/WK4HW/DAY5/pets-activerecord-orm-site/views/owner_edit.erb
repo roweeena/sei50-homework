@@ -1,0 +1,23 @@
+
+
+<h3>Edit Owner: <%= @owner.name %></h3>
+
+<form action="/owners/<%=@owner.id%>" method="post">
+
+<label>
+    Name:
+    <input type="text" name="name" value="<%=@owner.name%>">
+</label>
+<br>
+
+<label>
+    Email:
+    <input type="text" name="email" value="<%=@owner.email%>">
+</label>
+<br>
+
+<input type="submit" value="update">
+
+<!-- -->
+
+</form>

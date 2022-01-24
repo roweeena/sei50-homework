@@ -1,0 +1,27 @@
+
+
+h1 {
+    color: hotpink;
+}
+
+p {
+    color: green;
+    border: 1px solid red;
+}
+
+#intro {
+    background-color: rgb(213, 255, 181); /*rgb(0, 0, 0, 0);*/
+}
+
+.special {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img:hover {
+    border: 1px solid red;
+}
+
+#bill {
+    position: absolute;
+    top: 0px; /* JS won't notice this*/
+}

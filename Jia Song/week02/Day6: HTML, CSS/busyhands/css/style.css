@@ -1,0 +1,117 @@
+/* basic setting */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  background: rgb(233, 233, 233);
+}
+
+header,
+footer {
+  width: 100%;
+  background: black;
+  padding: 20px 0;
+}
+
+header > .header-container,
+footer > .footer-container,
+#main-content {
+  width: 90vw;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* header */
+nav > a {
+  font-size: 16px;
+  color: rgb(192, 192, 192);
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+/* main > .top-box */
+.top-box {
+  margin: 20px 0;
+}
+
+#main-content > .photobanner {
+  width: 100%;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.8);
+  margin-bottom: 40px;
+}
+
+/* main > #blurb */
+#blurb {
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  box-shadow: inset 1px 1px 1px gray;
+  padding: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+/* main > #home-box */
+#home-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.home-box > h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.home-box > img {
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 5px solid rgb(177, 177, 177);
+}
+
+.home-box > p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.home-box > a {
+  font-size: 14px;
+  color: rgb(81, 152, 199);
+  text-decoration: none;
+}
+
+/* footer */
+footer {
+  color: rgb(88, 88, 88);
+  font-size: 12px;
+}
+
+.box-footer {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.box-footer > div {
+  width: 20%;
+}
+
+.box-footer > .textwidget {
+  width: 40%;
+}
+
+.box-footer h1 {
+  font-size: 18px;
+  color: rgb(228, 228, 228);
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgb(88, 88, 88);
+}
+
+.box-footer li {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgb(88, 88, 88);
+}

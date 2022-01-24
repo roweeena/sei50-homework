@@ -1,0 +1,14 @@
+<section>
+  <ul>
+  <% @results.each do |todo| %>
+    <li>
+      <a href="/todo/<%=todo["id"]%>">
+        <h2> <%=todo["todo"]%> </h2>
+        <p>Due date: <%=todo["dueDate"]%> </p>
+        <p>Completed: <%=todo["completed"]%> </p>
+      </a>
+    </li>
+  <% end %>
+  </ul>
+  <a href="/create" class="button">Create new to-do</a>
+</section>

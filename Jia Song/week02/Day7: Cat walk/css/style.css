@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  background: url("https://content.api.news/v3/images/bin/9c38802b693df8f35dc06c80c27f9997");
+  background-size: cover;
+  position: relative;
+
+  padding-top: 10%;
+}
+
+/* cat in the middle */
+.codingCat-wrapper {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.codingCat-wrapper > .codingCat {
+  display: block;
+  width: 100%;
+  position: relative;
+  right: 10px;
+}
+
+.codingCat-wrapper > .rainbow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url("https://cdn.pixabay.com/photo/2021/02/11/19/43/rainbow-6006300_1280.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rainbow > .purpleBg {
+  position: absolute;
+  width: 66%;
+  height: 66%;
+  background: rgb(165, 10, 255);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* floating images */
+.images-wrapper img {
+  width: 250px;
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.js_logo,
+.ruby_logo,
+.css_logo,
+.html_logo,
+.jquery_logo {
+  width: 120px !important;
+  animation: rotate 5s infinite;
+}
+
+.ruby_logo {
+  animation: rotate 3s infinite reverse;
+}
+
+.css_logo {
+  animation: rotate 7s infinite reverse;
+}
+
+.html_logo {
+  animation: rotate 2s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.controls-wrapper {
+  background: rgb(6, 138, 28);
+  padding: 30px;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px blue;
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 101;
+}
+
+#controlButton,
+#speedRange {
+  display: block;
+  width: 200px;
+  font-size: 24px;
+}
+
+#controlButton {
+  margin-bottom: 20px;
+}

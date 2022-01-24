@@ -1,0 +1,30 @@
+<h1>Who was <%= @brummy['name'] %>?</h1>
+
+<a href="/famous_brummies/<%= @brummy['id'] %>/edit">Edit</a><br>
+
+<a href="/famous_brummies/<%= @brummy['id'] %>/delete">Delete</a><br>
+
+<img class="bigBrummyPic" src="<%= @brummy['image_url'] %>" alt="<%= @brummy['famous_for'] %>">
+
+<span><p class='inlineBlock'><strong>Year born: </strong><%= @brummy['year_born'] %></p> <p class='inlineBlock'><strong>Year died: </strong><%= @brummy['year_died'] %></p> </span>
+<div class='spacer'></div>
+
+<h3>Famous For:</h3>
+
+    <p><%= @brummy['famous_for'] %></p>
+
+<h3>Born In Brum:</h3>
+
+    <p>
+        <% if @brummy['born_in_brum'] == 1 %>
+        Yes
+        <% else %>
+        No
+        <% end %>
+    </p>
+
+<h3>FAMOUS BRUMMY RATING:</h3>
+
+    <h1>
+    <%= @brummy['famous_brummy_rating'] %>
+    </h1>

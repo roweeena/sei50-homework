@@ -1,0 +1,10 @@
+<h3>Results for "<%= params[:title] %>"</h3>
+<h4> Total results for this search: <%= @results['totalItems'] %> </h4>
+
+
+<!-- DO NOT USE = WHEN YOU ARE GETTING RESULTS -->
+<% @results['items'].each do |book| %>
+<!-- BUT YOU DO WANT AN EQUALS WHEN YOU ARE INSIDE THE DO AND END -->
+<%= book['volumeInfo']['title'] %> <br>
+
+<% end %>
