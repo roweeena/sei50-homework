@@ -1,5 +1,8 @@
 <h3>Rich Person: <%= @owner.name %></h3>
-[<a href="/owners/owner_show/<%= @owner.id %>">Edit</a>]
+[<a href="/owners/owner_show/<%= @owner.id %>/edit">Edit</a>]
+|
+[<a href="/owners/owner_show/<%= @owner.id %>/delete">Delete</a>]
+
 <p>
     <strong>Age: </strong><%= @owner.age %><br>
     <strong>Wealth ($m): </strong><%= @owner.wealth_m %>

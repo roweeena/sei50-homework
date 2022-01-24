@@ -1,0 +1,33 @@
+<h1>Editing: <%= @team.franchise %></h1>
+
+
+<form action="/teams/team_show/<%= @team.id %>/edit" method="post">
+
+    <label>
+        Franchise:
+        <input type="text" name="franchise" value="<%= @team.franchise %>">
+    </label>
+    <br>
+
+    <label>
+        Price:
+        <input type="text" name="price" value="<%= @team.price %>">
+    </label>
+    <br>
+
+    <label>
+        Year Last Sold:
+        <input type="text" name="year" value="<%= @team.year %>">
+    </label>
+    <br>
+
+
+    <% Owner.all.each do |owner| %>
+    <input type="radio" id="<%= owner.id %>" name="owner_id" value="<%= owner.id %>" <%= @team.owner_id == owner.id ? "checked" : ""  %>  >
+    <label for="owner.id"><%= owner.name %></label>
+    <br>
+    <% end %>
+
+    <input type="submit" value="Update">
+
+</form>
