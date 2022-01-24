@@ -1,0 +1,24 @@
+<h3>
+<%= @owner.name %>
+</h3>
+
+<p>
+<strong>Email:</strong>
+<%= @owner.email %>
+</p>
+
+
+<p>
+<strong>bears:</strong>
+<ul>
+<% @owner.bears.each do |bear| %>
+<li>
+<a href="/bears/<%= bear.id %>">
+<%= bear.name %>
+</a>
+</li>
+<% end %>
+</ul>
+</p>
+<a href="/owner/<%= @owner.id %>/edit">Edit</a>
+<a href="/owner/<%= @owner.id %>/edit">Edit</a>

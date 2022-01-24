@@ -1,0 +1,14 @@
+<h3>Bear Name: <%= @bear['name'] %></h3>
+<a href="/bears/<%= @bear['id'] %>/edit">Edit</a>
+
+
+  <strong>Description:</strong> <%= @bear['description']%>
+    
+
+
+
+<strong>Age:</strong> <%= @bear['age']%>
+
+<strong>Owner:</strong> 
+<%= @bear.owner.name %>
+<img src="<%= @bear["image_url"]%>" alt=" <%= @bear['description']%>" class="bear_image">
