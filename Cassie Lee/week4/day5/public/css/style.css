@@ -138,8 +138,11 @@ img {
   margin: 20px;
 }
 
-ul.home_ul {
+.home_ul {
   margin: 100px 0px 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .index_css {
@@ -189,4 +192,10 @@ p{
   padding: 50px 5px 5px 5px;
 }
 
+select {
+  font-family: "Bitter", serif;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: center;
 
+}

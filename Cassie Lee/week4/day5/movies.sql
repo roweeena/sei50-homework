@@ -6,7 +6,7 @@ CREATE TABLE movies(
     title TEXT,
     release INTEGER,
     duration TEXT,
-    rating INTEGER,
+    rating FLOAT,
     image_url TEXT,
     video_url TEXT
 

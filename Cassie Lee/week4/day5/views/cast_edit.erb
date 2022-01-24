@@ -27,7 +27,21 @@
         </label>
         <br>
 
+        <label>
+            Edit movie
+
+        <select id="movie" name="movie_id" id = "option">
+            <option value="">Choose a movie</option>
        
+        <% @results.each do |movie| %>
+            <option value="<%= movie.id %>"><%= movie.title %></option> 
+        
+            <% end %>
+        </select>
+    </label>
+        
+
+
 <br>
     <button>Update</button>
 

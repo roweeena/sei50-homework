@@ -27,7 +27,7 @@ INSERT INTO casts( name, born, awards, image_url, movie_id )
         'Brad Pitt',
         '18 December 1963',
         'Academy Award for Best Supporting Actor',
-        'https://prod-images.tcm.com/Master-Profile-Images/BradPitt.152994.jpg',
+        'https://c.tenor.com/1ANrpWYGZzQAAAAM/brad-pitt-amused.gif',
         4
         
 
@@ -49,7 +49,7 @@ INSERT INTO casts( name, born, awards, image_url, movie_id)
         'Samuel L. Jackson',
         '21 December 1948',
         'Academy Award for Best Supporting Actor',
-        'https://www.indiewire.com/wp-content/uploads/2019/01/samuel-l-jackson-body-measurements-religion-horoscope-net-worth.jpg',
+        'https://pyxis.nymag.com/v1/imgs/7e1/ec9/db83f8cd85af298994686290a4d100e8c8-29-Samuel-L-Jackson.rsquare.w330.jpg',
         1
         
 
