@@ -1,0 +1,28 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-around;
+
+
+}
+
+li {
+    text-align: left;
+    list-style-type: none;
+}
+
+a {
+    position: relative;
+}
+
+.man_logo {
+    width: 100%;
+    max-width: 200px;
+}
+
+.index_photo {
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+}

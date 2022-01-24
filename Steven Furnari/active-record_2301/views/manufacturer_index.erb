@@ -1,0 +1,11 @@
+<h4>Manufacturer Index</h4>
+
+<ul>
+    <% @manufacturers.each do |maker| %>
+        <li>
+            <a href="/manufacturers/<%= maker.id %>">
+            <%= maker.name %>
+            </a>
+        </li>
+   <% end %>
+</ul>
