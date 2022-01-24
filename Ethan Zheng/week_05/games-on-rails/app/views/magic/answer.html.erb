@@ -1,0 +1,12 @@
+<h2>Magic 8 Ball</h2>
+
+<h4>Question: <%= @question %> </h4>
+
+<h4>Answer: <%= @answer %></h4>
+
+<h4>Ask Another Question?</h4>
+
+<form action='/magic8ball/answer' method="get">
+    <input type="text" name="question">
+    <button>Submit</button>
+</form>

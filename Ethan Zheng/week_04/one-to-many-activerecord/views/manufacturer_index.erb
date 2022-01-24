@@ -1,0 +1,12 @@
+<h3>All Owners</h3>
+
+
+<ul>
+    <% @manufacturers.each do |manufacturer| %>
+    <li>
+        <a href="/manufacturers/<%=manufacturer.id%>">
+        <%= manufacturer.name %>
+        </a>
+    </li>
+    <% end %>
+</ul>

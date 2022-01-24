@@ -1,0 +1,32 @@
+<h3>Edit Manufacturer</h3>
+
+
+
+<form action="/manufacturers/<%=@manufacturer.id%>" method="post">
+
+    <label>
+        Name:
+        <input type="text" name="name" value="<%=@manufacturer.name%>">
+    </label>
+    <br>
+
+    <label>
+        Location:
+        <input type="text" name="email" value="<%=@manufacturer.location%>">
+    </label>
+
+    <label>
+        Year Established:
+        <input type="text" name="email" value="<%=@manufacturer.date_established%>">
+    </label>
+    <br>
+
+    <!-- WHAT ABOUT EDITTING PETS?
+    How would you show a checkbox list of the manufacturer's current pets, and unchecking the box will 'dissociate'
+    the watch from this manufacturer?
+    How would you also show a dropdown to add an existing watch to this manufacturer?
+    -->
+
+    <input type="submit" value="Edit">
+
+</form>

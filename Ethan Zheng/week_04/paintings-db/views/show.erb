@@ -1,0 +1,38 @@
+<section class = "painting">
+    <img src="<%= @painting['image_url']%>" alt="<%=@painting['name']%> by <%=@painting['artist']%>" class = "painting-img">
+
+    <div class = "painting-info">
+        <h3>
+        <%= @painting['name'] %>
+        </h3>
+
+        <p>
+            Artist: <%= @painting['artist'] %>
+        </p>
+
+        <p>
+            Year made: <%= @painting['year'] %>
+        </p>
+
+        <p>
+            Movement: <%= @painting['movement'] %>
+        </p>
+
+        <p>
+            Medium: <%= @painting['medium'] %>
+        </p>
+    </div>
+
+    <p class = "painting-description">
+        <%= @painting['description'] %>
+    </p>
+
+</section>
+
+<hr>
+
+<footer>
+    <a href="/paintings/<%= @painting['id']%>/edit">Edit</a>
+    |
+    <a href="/paintings/<%= @painting['id']%>/delete">Delete</a>
+</footer>
