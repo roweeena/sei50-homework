@@ -68,6 +68,25 @@ end
 
 # UPDATE
 
+get '/teams/:id/team_edit' do
+    @team = Team.find params[:id]
+    @owners = Owner.all
+    erb :"/teams/team_edit"
+end
+
+post '/teams/team_show/:id/edit' do
+    team = Team.find params[:id]
+    team.update(
+        franchise: params[:franchise],
+        price: params[:price],
+        year: params[:year],
+        owner_id: params[:owner_id]
+    )
+    redirect "/teams/team_show/#{ params[:id] }"
+end
+
+
+# special route to link team to owner if no owner exists
 post '/teams/link/:id' do
     team = Team.find params[:id]
     team.update(
@@ -75,6 +94,7 @@ post '/teams/link/:id' do
     )
     redirect "/teams/team_show/#{ params[:id] }"
 end
+
 
 
 # DELETE
@@ -93,10 +113,9 @@ end
 
 # CREATE
 
-
 get '/owners/owner_new' do
     erb :"owners/owner_new"
-  end
+end
   
 post '/owners' do
     Owner.create(
@@ -108,9 +127,8 @@ post '/owners' do
 end
   
   
-
-
 #READ
+
 get '/owners/owner_index' do
     @owners = Owner.all
     erb :"/owners/owner_index"
@@ -122,9 +140,29 @@ get '/owners/owner_show/:id' do
 end
 
 
-
-
 #UPDATE
+
+get '/owners/owner_show/:id/edit' do
+    @owner = Owner.find params[:id]
+    erb :"owners/owner_edit"
+end
+
+post '/owners/owner_show/:id/edit' do
+    owner = Owner.find params[:id]
+
+    owner.update(
+        name: params[:name],
+        age: params[:age],
+        wealth_m: params[:wealth_m]
+    )
+redirect "/owners/owner_show/#{params[:id]}"
+end
+
 
 
 #DELETE
+
+get '/owners/show_owner/:id/delete' do
+    Owner.destroy params[:id]
+    redirect '/owners/owner_index'
+end
