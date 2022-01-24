@@ -1,0 +1,15 @@
+<header>
+    <h4>
+        List of Teams
+    </h4>
+</header>
+
+<ul> 
+    <% @results.each do |team| %>
+        <li>
+           <a href="/teams/<%= team['id'] %>">
+                <img src="<%= team['club_logo_url'] %>" alt="club logo" class="home_img">
+           </a> 
+        </li>
+    <% end%>
+</ul>

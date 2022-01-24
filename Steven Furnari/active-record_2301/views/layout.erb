@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sakura-dark-solarized.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Car Database</title>
+</head>
+<body>
+    <nav>
+        <h1>Cars of the World</h1>
+        <a href="/">Home</a>
+        |
+        <a href="/cars">Cars</a>
+        |
+        <a href="/cars/new">Add New Car</a>
+        |
+        <a href="/manufacturers">Manufacturers</a>
+        |
+        <a href="/manufacturers/new">Add New Manufacturer</a>
+        <hr>
+    </nav>
+
+    <section>
+        <%= yield %>
+    </section>
+
+    <footer>
+    <hr>
+    &copy; Smooth Brain Inc. &trade; &reg;
+    </footer>
+
+</body>
+</html>

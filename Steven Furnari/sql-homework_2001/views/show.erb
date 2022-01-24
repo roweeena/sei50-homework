@@ -1,0 +1,25 @@
+<a href="/teams/<%=@team['id']%>/edit">[Edit]</a>|
+<a href="/teams/<%=@team['id']%>/delete">[Delete]</a>
+
+<h3><%= @team['team_name'] %></h3>
+
+<p>
+    <strong>Home Stadium:</strong> <%= @team['home_ground'] %>
+</p>
+<p>
+    <strong>State:</strong> <%= @team['state'] %>
+</p>
+<p>
+    <strong>Est:</strong> <%= @team['founded'] %>
+</p>
+<p>
+    <strong>Premierships:</strong> <%= @team['premierships'] %>
+    
+</p>
+<p>
+    <strong>Still Active:</strong> <%= @team['still_active'] == 1 ? 'Yes' : 'No' %>
+</p>
+
+<img src="<%= @team['club_logo_url'] %>" class="team_image">
+
+
