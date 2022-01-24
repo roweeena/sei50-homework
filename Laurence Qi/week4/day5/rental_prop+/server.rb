@@ -22,7 +22,7 @@ def get_travel_time(start_street, start_suburb, destination_street, destination_
     p "URL is: #{url}"
     api_obj = HTTParty.get(url)
     travel_time = api_obj['rows'][0]['elements'][0]['duration']['value']
-    travel_time
+    # travel_time
 end
 
 # close the sql&active_record connection after every query
@@ -67,6 +67,7 @@ get '/rental/travel' do
     Rental.all.each do |rental|
         sum_hr = 0
         sum_dollar_equivalent = 0
+        
         Destination.all.each do |destination|
             current_travel_sec = get_travel_time(
                 rental.street_address,
@@ -78,7 +79,7 @@ get '/rental/travel' do
             sum_dollar_equivalent += sum_hr * destination.person.time_value
         end
         # update the specific rentals total_travel_time
-        
+        #TODO: find out how to do multiple requests
         rental.update(
             total_travel_time: sum_hr.round(2),
             total_time_value: sum_dollar_equivalent.round(2),
@@ -95,7 +96,7 @@ get '/rental/create' do
     erb :'rentals/create'
 end
 
-post '/rental' do # TODO: find out the correct route for this
+post '/rental' do
     Rental.create(
         street_address: params[:street_address],
         suburb: params[:suburb],
@@ -107,6 +108,7 @@ end
 
 #READ 
 # page showing all rentals
+#TODO: ASK HOW TO SORT WITH A BUTTON
 get '/rental' do
     #TODO: implement logic here so that the current value of a button or something is read and determines the sorting
     @rentals = Rental.all.sort_by { |obj| obj.cost}
