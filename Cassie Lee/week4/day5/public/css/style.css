@@ -192,4 +192,10 @@ p{
   padding: 50px 5px 5px 5px;
 }
 
+select {
+  font-family: "Bitter", serif;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: center;
 
+}

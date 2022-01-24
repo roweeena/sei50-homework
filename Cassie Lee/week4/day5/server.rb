@@ -126,7 +126,8 @@ end #get/casts/:id
 
 
 get '/casts/:id/edit' do
-    # @casts = Cast.all
+    
+    @results =  Movie.all
     @cast = Cast.find params[:id]
 
     erb :cast_edit
