@@ -1,0 +1,49 @@
+<h3>EDIT DRAMA SECTION</h3>
+
+<form action="/movies/<%= @drama_info['id'] %>" method="post">
+
+    <label>
+        Name:
+        <input type="text" name="name" value= "<%= @drama_info['name'] %>" >
+    </label>
+    <br>
+
+    <label>
+        Genre:
+        <input type="text" name="genre" value= "<%= @drama_info['genre'] %>">
+    </label>
+    <br>
+
+    <label>
+        Original Language:
+        <input type="text" name="original_language" value= "<%= @drama_info['original_language'] %>">
+    </label>
+    <br>
+
+    <label>
+        Status(watched/to watch):
+        <input type="text" name="status" value= "<%= @drama_info['status'] %>">
+    </label>
+    <br>
+
+    <label>
+        Rating(1-10):
+        <input type="text" name="rating" value= "<%= @drama_info['rating'] %>">
+    </label>
+    <br>
+
+    <label>
+        Description:
+       <input type="text" name="description" value= "<%= @drama_info['description'] %>">
+    </label>
+    <br>
+
+    <label>
+        Poster URL:
+        <input type="url" name="poster_url" value= "<%= @drama_info['poster_url'] %>">
+    </label>
+    <br>
+
+    <button>Save Changes</button>
+
+</form>

@@ -1,0 +1,19 @@
+<h1>Dan's NFT Database</h1>
+
+<ul>
+
+    <% @nfts.each do |nft| %>
+
+        <li>
+            <div>
+                <a href="/nfts/<%= nft.id %>"><img class="homepageImage" src="<%= nft.image_route %>" alt=" <%= nft.project_name %> "></a>
+            </div>
+            <div>
+                <p> Ape #<%= nft.id %>  </p>
+            </div>
+
+        </li>
+
+    <% end %>
+
+</ul>

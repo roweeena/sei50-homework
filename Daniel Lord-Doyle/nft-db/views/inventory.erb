@@ -1,0 +1,49 @@
+
+<div class="pageContainer">
+
+    <div class="sidebar">
+
+        <div class="projectBanner">
+            <h4><%= @nfts.first.project_name %></h4>
+        </div>
+    
+
+    </div>
+
+    <div class="nftsContainer">
+        <div class="inventoryGrid">
+            <% @nfts.each do |nft| %>
+                <a class="internalGridLink" href="/nfts/<%= nft.id %>">
+            
+                    <div class="gridAsset">
+
+                        <div class="assetImage">
+                            <img src="<%= nft.image_route %>" alt="<%= nft.project_name %>">
+                        </div>
+                    
+                        <div class="assetDetails">
+                            <div class="assetDetails2">
+                                <div class="assetDetails3">
+
+                                       <span class="span1">
+                                            <%= nft.project_name %>
+                                       </span>
+                                
+                                        <span class="span2">
+                                            Ape#<%= nft.id %>
+                                       </span>
+
+                                </div> 
+                            </div>
+                        </div>
+                    
+                    
+                    </div>
+            
+                </a>
+            <% end %>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+ <section class="layout">
+        <div class="sidebar">
+            <div class="logo"> <h3>GA-Panel</h3> </div>
+            <hr/>
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+            <a href="/"><i class="fas fa-table"></i> Idk</a>
+            <a href="add"><i class="fas fa-plus-square"></i> Add Team</a>
+        </div>
+        <div class="content-body">
+            <%= yield %>
+        </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<h2><%= @cast.name %></h2>
+
+<div class="detail_css">
+    <img src="<%= @cast.image_url %>" alt="<%= @cast.name %>" class="cast_image">
+    </p>
+
+    <p>
+        Name<br>
+        <span><%= @cast.name %></span>
+    </p>
+
+    <p>
+        Born<br>
+        <span><%= @cast.born %></span>
+    </p>
+
+    <p>
+        Awards<br>
+        <span><%= @cast.awards %></span>
+    </p>
+
+    <p>
+    
+
+        </ul>
+    </p>
+
+
+    <button><a href="/casts/<%= @cast.id %>/edit">Edit</a></button>
+    <button><a href="/casts/<%= @cast.id %>/delete">Delete</a></button>
+
+</div>

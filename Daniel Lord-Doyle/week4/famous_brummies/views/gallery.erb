@@ -1,0 +1,18 @@
+<h2>
+Index of Famous Brummies
+</h2>
+
+<ul>
+    <% @results.each do |brummy|  %>
+        <li>
+            <div>
+                <a href="/famous_brummies/<%= brummy['id'] %>"><img class='brummyPicture' src="<%= brummy["image_url"] %>"></a>
+            </div>
+            <div>
+                <h1><%= brummy['name'] %></h1>
+                <h4>Famous Brummy Rating: <%= brummy['famous_brummy_rating'] %></h4>
+            </div>
+
+        </li>
+    <% end%>
+</ul>

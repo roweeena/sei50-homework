@@ -1,0 +1,16 @@
+<h3>Index of Balloons</h3>
+
+<ul>
+
+<% @results.each do |balloon|%>
+<li>
+<a href="/balloons/<%= balloon["id"] %>">
+<%= balloon["type"] %>
+</a>
+</li>
+<% end %>
+
+
+
+
+</ul>

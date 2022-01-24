@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Dongle&display=swap');
+
+* {
+  /* border: 1px solid red; */
+}
+
+:root {
+  box-sizing: border-box;
+  --main-width: 80vw; 
+  /* font-family: 'Dongle', sans-serif; */
+  font-family: sans-serif;
+  
+}
+
+@media screen and (min-width: 1000px) {
+  :root {
+    --main-width: 800px;
+  }
+}
+
+main {
+  width: var(--main-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+#main-heading {
+  font-family: 'Bungee', cursive;
+  font-size: 2em;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav li{
+  list-style: none;
+  margin: 0 2em;
+  
+}
+
+.index-ul {
+  /* background-color: aquamarine; */
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 6em);
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: var(--main-width);
+  }
+
+.index-ul li {
+  list-style: none;
+  text-align: center;
+  width: fit-content;
+  align-self: center;
+  justify-self: center;
+
+}
+
+.index-ul a {
+  display: flex;
+  flex-direction: column;
+}
+
+.index-ul img {
+  width: 6em;
+  margin: 0 auto;
+}
+.shop-details {
+  text-align: left;
+}
+
+.shop-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-img {
+  width: 20em;
+}
+
+.page-link, button {
+  display: inline block;
+  background-color: white;
+  width: fit-content;
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 0.7em;
+}
+
+.page-link:hover , button:hover {
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+input, select {
+  align-self: left;
+  max-width: fit-content
+}
+
+label {
+  align-self: right;
+  text-align: right;
+}
+
+.update-button {
+  grid-column: 2;
+  justify-self: left;
+}
+
+.link-image {
+  height: 3em;
+}

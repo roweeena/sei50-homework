@@ -1,0 +1,54 @@
+/* * {
+    margin: 0;
+    padding: 0
+} */
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: gainsboro;
+    list-style: none;
+    padding: 0 5%;
+}
+
+img {
+    width: 200px;
+}
+
+img .frontPage {
+    padding-right: 40px;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+.bigBrummyPic {
+    width: 50%;
+    justify-self: center;
+}
+
+.brummyPicture {
+    margin-right: 40px;
+}
+
+.spacer {
+    padding: 10px 0 10px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

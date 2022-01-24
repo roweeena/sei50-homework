@@ -1,0 +1,14 @@
+
+<h2>
+    My list:
+</h2>
+
+<ul>
+<% @results.each do |album|%>
+    <li>
+    <a href="/albums/<%=album['id']%>">
+        <%= album['name'] %>
+    </a>
+    </li>
+<% end %>
+</ul>

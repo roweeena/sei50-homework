@@ -1,0 +1,41 @@
+<h3>Add a New Album</h3>
+
+<form action="/albums" method="post" class="new-album">
+    <label>
+        Album Name:
+        <input type="text" name="album_name">
+    </label>
+    <br>
+
+    <label>
+        Artist:
+        <input type="text" name="artist">
+    </label>
+    <br>
+
+    <label>
+        Genre:
+        <input type="text" name="genre">
+    </label>
+    <br>
+
+    <label>
+        Released Year:
+        <input type="text" name="released_year">
+    </label>
+    <br>
+
+    <label>
+        Explicity(1 for yes, 0 for no):
+        <input type="text" name="explicity">
+    </label>
+    <br>
+
+    <label>
+        Album Cover:
+        <input type="text" name="album_cover">
+    </label>
+    <br>
+    <button class="edit">Add album</button>
+    <%# <a href="/albums" id="add-button"> Add Album  </a> %>
+</form>

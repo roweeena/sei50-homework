@@ -4,11 +4,11 @@ def runCalc
 
     while true
         # TODO: refactor this quitting function. 
-        # def quit(input)
-        #     if input == 'q'
-        #         break;
-        #     end 
-        # end
+        def quit(input)
+            if input == 'q'
+                break;
+            end 
+        end
 
         puts 'enter first number:'
         first_number = gets.chomp

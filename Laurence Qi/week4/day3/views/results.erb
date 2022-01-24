@@ -1,0 +1,10 @@
+<ol>
+    <ul>
+        <% @requested_data.each do |movie| %>
+            <li>
+                <%= movie['title'] %>
+                    <image src="https://image.tmdb.org/t/p/w500/<%= %>.jpg"></image>
+            </li>
+            <% end %>
+    </ul>
+</ol>

@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+body {
+  font-family: "Work Sans";
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  text-align: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  background: linear-gradient(
+    125deg,
+    #2c3e50,
+    #27ae60,
+    #2980b9,
+    #e74c3c,
+    #8e44ad
+  );
+  background-size: 500%;
+  animation: bgAnimation 15s linear infinite;
+}
+@keyframes bgAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.homepage {
+  padding: 250px;
+}
+.homepage h3 {
+  font-family: "Work Sans";
+  font-size: 2em;
+}
+a{
+    text-decoration:none;
+    color:white;
+    margin: 0.5em;
+}
+ul{
+    list-style: none;
+    display: inline;
+}
+li{
+    display: block;
+    font-size: 30px;
+}
+.detail{
+    color:whitesmoke;
+}
+#album-name{
+    color:darkblue;
+    font-weight: bold;    
+}
+.new-album{
+    color:whitesmoke
+}
+#delete{
+    position:relative;
+    width: 400px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #fff;
+    background: linear-gradient(to right, #03a9f4,#f441a5,#ffeb3b,#09a8f4);
+    background-size: 400%;
+    border-radius: 50px;
+    z-index: 1;
+}
+#delete::before{
+    content: "";
+    position: absolute;
+    /* top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right: -5px; */
+    background: linear-gradient(to right, #03a9f4,#f441a5,#ffeb3b,#09a8f4);
+    background-size: 400%;
+    border-radius: 50px;
+    z-index: 1;
+    filter: blur(20px);
+}
+#delete:hover{
+    animation: streamer 8s infinite;
+}
+#delete:hover::before{
+    animation: streamer 8s infinite;
+}
+.edit{
+    position:relative;
+    width: 400px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #fff;
+    background: linear-gradient(to right, #03a9f4,#f441a5,#ffeb3b,#09a8f4);
+    background-size: 400%;
+    border-radius: 50px;
+    z-index: 1;
+    cursor: pointer;
+}
+.edit::before{
+    content: "";
+    position: absolute;
+    /* top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right: -5px; */
+    background: linear-gradient(to right, #03a9f4,#f441a5,#ffeb3b,#09a8f4);
+    background-size: 400%;
+    border-radius: 50px;
+    z-index: 1;
+    filter: blur(20px);
+}
+.edit:hover{
+    animation: streamer 8s infinite;
+}
+.edit:hover::before{
+    animation: streamer 8s infinite;
+}
+@keyframes streamer{
+    100%{
+        background-position: -400% 0;
+    }
+}

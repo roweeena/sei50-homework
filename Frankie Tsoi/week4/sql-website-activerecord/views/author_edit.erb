@@ -1,0 +1,32 @@
+<h3>Edit Author</h3>
+
+<form action="/authors/<%= @author.id%>" method="post">
+  <label>
+    Name:
+    <input type="text" name="name" value="<%= @author.name%>">
+  </label>
+  <br>
+  <label>
+    Birth Date:
+    <input type="text" name="birthday" value="<%= @author.birthday%>">
+  </label>
+  <br>
+  <label>
+    Age:
+    <input type="text" name="age" value="<%= @author.age%>">
+  </label>
+  <br>
+  <label>
+    Nationality:
+    <input type="text" name="nationality" value="<%= @author.nationality%>">
+  </label>
+  <br>
+  <label>
+  Image URL:
+  <input type="text" name = "image_url" value="<%= @author.image_url%>">
+  </label>
+<br>
+
+<button>Update</button>
+
+</form>

@@ -1,0 +1,16 @@
+<h2>Movie Casts</h2>
+
+<div class="index_css">
+
+<ul>
+    <% @casts.each do |cast| %>
+    <li id="index_li">
+        <a href="/casts/<%= cast.id %>" id = "index_link">
+        <%= cast.name %>
+        </a>
+    </li>
+    <% end %>
+
+
+</ul>
+</div>

@@ -85,7 +85,7 @@ def plan_trip(start_line, start_station, end_line, end_station)
 end
 
 
-def get_prompt()
+def get_inputs()
   puts ("Train map -------------------------------------
     line N: #{$train_lines[:N].join(', ')}
     line L: #{$train_lines[:L].join(', ')}
@@ -117,7 +117,7 @@ finish_trip = "n"
 # finish_trip = "y"
 
 until finish_trip == "y"
-  get_prompt()
+  user_inputs = get_inputs()
 
   print("Do you want to finish? (y/n) ")
   finish_trip = gets.chomp
