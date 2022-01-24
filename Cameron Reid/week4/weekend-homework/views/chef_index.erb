@@ -1,0 +1,11 @@
+<h2>Index of Chefs</h2>
+
+<ul>
+  <% @result.each do |chef|%>
+  <li>
+    <a href="/chefs/<%= chef.id %>">
+      <%= chef.name%>
+    </a>
+  </li>
+  <% end %>
+</ul>

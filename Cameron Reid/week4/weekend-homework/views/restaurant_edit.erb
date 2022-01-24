@@ -1,0 +1,36 @@
+<h3> Edit <%= @rest.name %></h3>
+
+<form action="/restaurants" method="post">
+
+  <label for="">
+    Name:
+    <input type="text" name="name" value="<%= rest.name%>">
+  </label>
+  <br>
+
+<label for="">
+    Image URL:
+    <input type="text" name="image_url" value="<%= rest.image_url%>">
+  </label>
+  <br>
+
+  <label for="">
+    Location:
+    <input type="text" name="location" value="<%= rest.location%>">
+  </label>
+  <br>
+
+  <label for="">
+    Style:
+    <input type="text" name="style" value="<%= rest.style%>">
+  </label>
+  <br>
+
+  <label for="">
+    Stars:
+    <input type="text" name="stars" value="<%= rest.stars%>">
+  </label>
+  <br>
+
+  <button>Add Restaurant</button>
+</form>
