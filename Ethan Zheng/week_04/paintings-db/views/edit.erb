@@ -1,0 +1,50 @@
+<h3>Edit <%= @painting['name'] %></h3>
+
+<img src="<%= @painting['image_url']%>" alt="<%=@painting['name']%> by <%=@painting['artist']%>" class = "painting-img">
+
+
+<form action="/paintings/<%= @painting['id']%>" method="post">
+    <label>
+        Painting Title:
+        <input type="text" name="name" value="<%= @painting['name']%>">
+    </label>
+    <br>
+
+    <label>
+        Artist:
+        <input type="text" name="artist" value="<%= @painting['artist']%>">
+    </label>
+    <br>
+
+    <label>
+        Year Made:
+        <input type="text" name="year" value="<%= @painting['year']%>">
+    </label>
+    <br>
+
+    <label>
+        Movement:
+        <input type="text" name="movement" value="<%= @painting['movement']%>">
+    </label>
+    <br>
+
+    <label>
+        Medium:
+        <input type="text" name="medium" value="<%= @painting['medium']%>">
+    </label>
+    <br>
+
+    <label>
+        Image URL:
+        <input type="text" name="image_url" value="<%= @painting['image_url']%>">
+    </label>
+    <br>
+
+    <label>
+        Description:
+        <input type="text" name="description" value="<%= @painting['description']%>">
+    </label>
+    <br>
+   
+<button>Edit Painting Details</button>
+</form>

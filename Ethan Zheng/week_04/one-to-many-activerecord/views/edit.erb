@@ -1,0 +1,55 @@
+<h3>
+    Edit Watch: <%= @watch.name %>
+</h3>
+
+<form action="/watches/<%= @watch.id %>" method="post">
+    <label>
+        Name:
+        <input type="text" name="name" value="<%= @watch.name %>">
+    </label>
+    <br>
+
+    <label>
+        Still in Production?:
+        <input type="text" name="production" value="<%= @watch.production %>">
+    </label>
+    <br>
+    
+    <label>
+        Diameter:
+        <input type="text" name="diameter" value="<%= @watch.diameter %>">
+    </label>
+    <br>    
+
+    <label>
+        Movement:
+        <input type="text" name="movement" value="<%= @watch.movement %>">
+    </label>
+    <br>
+
+    <label>
+        Year of Production:
+        <input type="text" name="year_made" value="<%= @watch.year_made %>">
+    </label>
+    <br>
+
+    <label>
+        Current Price:
+        <input type="text" name="current_price" value="<%= @watch.current_price %>">
+    </label>
+    <br>
+
+    <label>
+        Image URL:
+        <input type="text" name="image_url" value="<%= @watch.image_url %>">
+    </label>
+    <br>
+
+    <!--
+    How to show a dropdown which specifies the current owner of this watch,
+    and lets you switch to a different owner as part of this update?
+    (Should list all owners)
+    -->
+    
+    <button>Update Watch</button>
+</form>

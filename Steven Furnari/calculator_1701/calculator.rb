@@ -67,6 +67,3 @@ loop do
     when 9 then break
     end
 end
-
-# MORTGAGE CALCULATOR
-

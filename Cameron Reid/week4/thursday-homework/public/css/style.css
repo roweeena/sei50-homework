@@ -1,0 +1,99 @@
+body {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://media.cntraveler.com/photos/5b88151874e73e0a25548f4b/16:9/w_4000,h_2250,c_limit/The-Everleigh_James-Morgan_2018_001-170627-The-Everleigh-1Z6A2060-Edit.jpg) ;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: stretch; 
+  color: whitesmoke;
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+.wrapper {
+  height: 100vh;
+  margin: 4opx
+  
+}
+
+section {
+  width: 80%;
+  padding: 20px;
+  margin: 40px auto;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+  border: 2px solid white;
+  border-radius: 20px;;
+}
+
+.row {
+  display: flex;
+}
+
+#column1, #column2 {
+  margin: 20px;
+}
+
+#column1 {
+  width: 40%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: violet;
+}
+
+.drink_image {
+  max-height: 40vh;
+}
+
+.index {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.index div {
+  width: 33%;
+  margin-bottom: 50px;
+}
+
+.drink_image_index {
+  max-width: 150px;
+  max-height: 200px
+}
+
+.glass_icon {
+
+  height: 40px;
+  margin: 10px 0 0 20px;
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+.heading {
+  margin: 10px 0 0 0;
+  
+  
+}
+
+.outline {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.pad {
+  padding: 0 0 0 40px;
+}
+
+ul {
+  margin-top: 0
+}
+
+li {
+  list-style-type: none;
+}

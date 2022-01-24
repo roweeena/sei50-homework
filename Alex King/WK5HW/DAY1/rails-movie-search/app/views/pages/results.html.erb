@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/water_edited.css">
+    <title>Results</title>
+</head>
+<body>
+    <h3><%= @results['total_results'] %> Results for "<%=params[:user_input] %>"</h3>
+
+<ul>
+<% @results['results'].each do |movie| %>
+
+<div class="container">
+    <div class="title">
+        <b><%= "#{movie['original_title']}: ☆ #{movie["vote_average"]}"%><br></b>
+    </div>
+    <div class="poster">
+        <img src="https://image.tmdb.org/t/p/w200<%=movie['poster_path']%>" alt="">
+    </div>
+        <div class="overview"><p><%= movie['overview'] %></p>
+    </div>
+</div>
+
+<% end %>
+</ul>
+</body>
+</html>
+
+
+
+

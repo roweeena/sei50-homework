@@ -1,0 +1,14 @@
+<h4>
+    Index of Pets
+</h4>
+
+<ul>
+    <% @results.each do |watch| %>
+        <li>
+            <a href="/watches/<%= watch.id %>">
+            <%= watch.name %>
+            </a>
+        </li>    
+    <% end %>
+</ul>
+

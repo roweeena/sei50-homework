@@ -1,0 +1,27 @@
+<div><a href="/"><button>HOME!!!!!!!!</button></a><h1>ROCK PAPER SCISSORS</h1> </div>
+
+<form action="/rockpaperscissors/shoot">
+<button name="choice" value="ROCK">ROCK</button>
+<button name="choice" value="PAPER">PAPER</button>
+<button name="choice" value="SCISSOR">SCISSOR</button>
+</form>
+
+<h1>YOUR CHOICE: <%=@choice%></h1>
+<h1>PC CHOICE: <%= @pc_choice %></h1>
+
+
+<% if @choice == @pc_choice  %>
+<h1>tie!</h1>
+<%= image_tag "/assets/graphics-children-137270.gif", height: 300 %>
+
+<% elsif @pc_choice == @win_if  %>
+
+<h1>🤡 LOOOSER TRY AGAIN, BOZO 🤡</h1>
+<%= image_tag "/assets/alcohol-y-drogas-gif-animados-13.gif", height: 300 %>
+
+<% else %>
+
+<h1>WINNER</h1>
+<%= image_tag "/assets/gif-andando-5.gif", height: 300 %>
+
+<% end %>
