@@ -1,0 +1,33 @@
+<a href="/manufacturers/<%= @manufacturer['id']%>/edit">Edit</a>
+|
+<a href="/manufacturers/<%= @manufacturer['id']%>/delete">Delete</a>
+
+<h3>
+    Manufacturer:
+    <%= @manufacturer.name %>
+</h3>
+
+<p>
+    <strong>Location:</strong>
+    <%= @manufacturer.location %>
+</p>
+
+<p>
+    <strong>Year Established:</strong>
+    <%= @manufacturer.date_established %>
+</p>
+
+<p>
+    <strong>Watches made:</strong>
+    <ul>
+        <% @manufacturer.watches.each do |watch| %>
+            <li>
+                <a href="/watches/<%=watch.id%>">
+                <%= watch.name %>
+                </a>
+            </li>
+            
+        <% end %>
+        
+    </ul>
+</p>

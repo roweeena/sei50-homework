@@ -1,0 +1,39 @@
+<h2>
+    Watch details for: <%= @watch['name'] %>
+</h2>
+
+<a href="/watches/<%= @watch['id']%>/edit">Edit</a>
+|
+<a href="/watches/<%= @watch['id']%>/delete">Delete</a>
+
+<section>
+    <p>
+    <strong>Name:</strong> <%= @watch.name %>
+    </p>
+
+    <p>
+    <strong>Still in Production?</strong> <%= @watch.production %>
+    </p>
+
+    <p>
+    <strong>Diameter:</strong> <%= @watch.diameter %>
+    </p>
+
+    <p>
+    <strong>Movement:</strong> <%= @watch.movement %>
+    </p>
+
+    <p>
+    <strong>Year of Production:</strong> <%= @watch.year_made %>
+    </p>
+
+    <p>
+    <strong>Current Price:</strong> <%= @watch.current_price %>
+    </p>
+
+    <p>
+    <strong>Manufacturer: </strong>
+    <a href="/manufacturers/<%=@watch.manufacturer.id%>"><%= @watch.manufacturer.name %></a>
+    </p>
+    <img src= "<%= @watch.image_url %>" alt="<%= @watch.name%>" class="watch_image">
+</section>
