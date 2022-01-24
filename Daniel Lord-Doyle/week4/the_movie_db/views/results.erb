@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="style.css">
+
+<h3>Results for "<%= params[:title] %>"</h3>
+<h4> Total results for this search: <%= @result['total_results'] %> </h4>
+
+<!-- DO NOT USE = WHEN YOU ARE GETTING RESULTS -->
+<% @result['results'].each do |film| %>
+<!-- BUT YOU DO WANT AN EQUALS WHEN YOU ARE INSIDE THE DO AND END -->
+<div class='filmOverview'>
+    <div>
+        <img class="filmPoster" src="https://image.tmdb.org/t/p/w500<%= film["poster_path"] %>"">
+    </div>
+        <div>
+            <h2 class="film_title">Title: <%= film['title'] %></h2>
+            <h3 class="film_description">Overview: <%= film['overview'] %> </h3>
+    </div>
+</div>
+<% end %>
