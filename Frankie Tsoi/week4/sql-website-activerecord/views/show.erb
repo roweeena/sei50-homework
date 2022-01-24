@@ -1,0 +1,29 @@
+
+
+<h3><%= @mangabook.name %></h3>
+
+<p>
+<strong>Author:</strong> 
+<% unless @mangabook.author.nil?%>
+<a href="/authors/<%= @mangabook.author.id%>">
+<%= @mangabook.author.name%>
+<% @author.each do |author|%>
+<option value="<%= @author.id%>"> <%= @author.name%> </option>
+<% end %>
+</a>
+<%end%>
+</p>
+
+<p>
+  <strong>Volumes:</strong> <%= @mangabook.volumes%>
+</p>
+
+<p>
+  <strong>End:</strong> <%= @mangabook.end%>
+</p>
+
+<img src="<%= @mangabook.image_url %>" alt=" <%= @mangabook.name%>" class="manga_image">
+<br>
+
+[<a href="/mangabooks/<%= @mangabook.id %>/edit">Edit</a>]
+[<a href="/mangabooks/<%= @mangabook.id %>/delete">Delete</a>]

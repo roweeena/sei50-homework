@@ -1,0 +1,14 @@
+body{
+  background-image: url(https://wallpaperaccess.com/full/434452.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  color: white;
+  font-family: 'Quicksand';
+
+}
+h1{
+  font-family: 'Roboto Slab';
+}
+.gundams_image{
+  max-height: 40vh;
+}
