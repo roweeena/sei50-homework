@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get '/magic_ball' => 'magicballs#home'
   get '/magic_ball/query' => 'magicballs#question'
   
-  get '/secret_number' => 'secretnumbers#home'
+  get '/secret_number' => 'secrets#home'
+  get '/secret_number/guess' => 'secrets#guess'
+
 end
