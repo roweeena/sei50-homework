@@ -1,0 +1,26 @@
+
+
+<br><br><br>
+<h1>Choose your move</h1>
+
+<form class="numbers-form" action="/rock_paper_scissors/result" method="get">
+
+  <div class="radio-wrapper">
+    <label class="numbers-label">
+      <%= image_tag 'rock', width: 50 %>
+      <input type="radio" name="throw" value="rock" checked>
+    </label>
+    <label class="numbers-label">
+      <%= image_tag 'paper', width: 50%>
+      <input type="radio" name="throw" value="paper">
+    </label>
+    <label class="numbers-label">
+      <%= image_tag 'scissors', width: 50 %>
+      <input type="radio" name="throw" value="scissors">
+    </label>
+   
+  </div>
+  <br><br>
+  <button class="rps-button"><%= image_tag 'rps', width: 100 %></button>
+
+</form>
