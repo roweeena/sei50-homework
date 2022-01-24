@@ -3,24 +3,17 @@ class SecretnumberController < ApplicationController
     def home
     end
 
-    def guess
-    end
-    
    
-    @numbers = [1,2,3,4,5,6,7,8,9,10]
-    @secret_number = @numbers.sample
-    
-    
-
-    def get_guess 
-        @guess = params[:user_guess].to_i
-        if @guess != @secret_number
-            puts "wrong guess"
+    def guess 
+        @numbers = [1,2,3,4,5,6,7,8,9,10]
+        @user_pick =params[:user_guess].to_i
+        @secret_number = @numbers.sample
+        if @user_pick == @secret_number
+            @message ="You guessed right!"
         else
-            puts "congratulations"
+            @message = "You guessed wrong!"
         end
-        
     end   
 
-   raise 'hell'
+
 end
