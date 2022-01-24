@@ -39,7 +39,7 @@ end
 
 
 get '/movies/new' do
-     @studio_list = Studio.all.select :name
+
     erb :new_movie
 end
 
@@ -88,15 +88,15 @@ get '/movies/:id/edit' do
 end
 
 post '/movies/:id' do
-    movie = Movie.find params[:id],
+    movie = Movie.find params[:id]
 
     movie.update(
-    name: params[:name],
-    genre: params[:genre],
-    release_year: params[:release_year],
-    overview: params[:overview],
-    poster_url: params[:poster_url]
-    );
+        name: params[:name],
+        genre: params[:genre],
+        release_year: params[:release_year],
+        overview: params[:overview],
+        poster_url: params[:poster_url]
+    )
     redirect "/movies/#{ params[:id]}"
 end
 
@@ -125,18 +125,15 @@ get '/studios/new' do
     erb :new_studio
 end
 
-
-
-
 #submits
 post '/studios' do
     Studio.create(
-    name: params[:name],
-    foundation_year: params[:foundation_year],
-    founders: params[:founders],
-    headquarters: params[:headquarters],
-    website: params[:website],
-    studio_logo: params[:studio_logo]
+        name: params[:name],
+        foundation_year: params[:foundation_year],
+        founders: params[:founders],
+        headquarters: params[:headquarters],
+        website: params[:website],
+        studio_logo: params[:studio_logo]
     );
     redirect '/studios'
 end
@@ -168,15 +165,14 @@ post '/studios/:id' do
 
     studio.update(
     name: params[:name],
-    genre: params[:genre],
-    release_year: params[:release_year],
-    overview: params[:overview],
-    poster_url: params[:poster_url]
-    );
+    foundation_year: params[:foundation_year],
+    founders: params[:founders],
+    headquarters: params[:headquarters],
+    website: params[:website],
+    studio_logo: params[:studio_logo],
+    )
     redirect "/studios/#{ params[:id]}"
 end
-
-
 
 #DELETE
 
