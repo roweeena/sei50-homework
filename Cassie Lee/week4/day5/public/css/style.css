@@ -1,0 +1,192 @@
+body {
+  text-align: center;
+  margin: 0;
+}
+
+header {
+  background-color: black;
+  padding: 50px;
+}
+
+h1 {
+  font-family: "Bitter", serif;
+  font-size: 100px;
+  margin: 0px;
+  color: #fccc04;
+  line-height: 90px;
+}
+
+.heading {
+  font-family: "Bitter", serif;
+  margin: 0px;
+  color: #fccc04;
+}
+.links {
+  background-color: #fccc04;
+  font-family: "Bitter", serif;
+  padding: 10px;
+}
+
+
+footer {
+  background-color: black;
+  font-family: "Bitter", serif;
+  color: #fccc04;
+  padding: 30px;
+  clear: both;
+  position: relative; 
+ 
+}
+
+span {
+  font-weight: bold;
+  color: #fa6f04;
+}
+
+#main_link {
+  padding: 70px;
+  color: black;
+}
+
+#main_link:link {
+  text-decoration: none;
+}
+
+#main_link:hover {
+  color: #e45d49;
+}
+
+#index_link {
+  font-size: 30px;
+}
+
+h2 {
+  color: #fa6f04;
+  font-family: "Bitter", serif;
+  margin-top: 70px;
+  font-size: 70px;
+}
+
+#index_li {
+  list-style-type: none;
+  margin-right: 30px;
+  padding: 20px;
+}
+
+a {
+  color: black;
+  font-family: "Bitter", serif;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+    color:#fa6f04;
+}
+
+
+
+.title_for_movie {
+  font-size: 30px;
+  font-family: "Bitter", serif;
+}
+
+button {
+  background-color: #fa6f04;
+  border-radius: 10px;
+  border: none;
+  padding: 6px;
+  margin: 10px 0px 20px 0px;
+  font-family: "Bitter", serif;
+
+}
+
+button:hover {
+  color: #b84911;
+} 
+
+input {
+  margin: 0px 0px 15px 0px;
+  text-align: center;
+  font-family: "Bitter", serif;
+}
+
+input[type="text"],
+select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc; */
+   border-radius: 4px; 
+  box-sizing: border-box;
+}
+
+form {
+  margin-top: 20px;
+  font-family: "Bitter", serif;
+}
+
+img {
+  height: 400px;
+  width: auto;
+}
+
+.home_image {
+  /* padding: 20px; */
+  margin: 20px;
+}
+
+ul.home_ul {
+  margin: 100px 0px 100px 0;
+}
+
+.index_css {
+  background-color: #fccc04;
+  width: 300px;
+  position: relative;
+  float:left;
+  left: 50%;
+  margin: 0px 60px 70px -159px;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.cast_css {
+  background-color: #fccc04;
+}
+
+.movie_detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+p{
+  font-family: "Bitter", serif;
+}
+
+#cast_li {
+  list-style-type: none;
+  margin-left: 10px;
+
+}
+
+.movie_content {
+    margin-left:10px;
+}
+
+.detail_css {
+    background-color: #fccc04;
+  width: 500px;
+  position: relative;
+  float:left;
+  left: 50%;
+  margin: 0px 60px 70px -250px;
+  border-radius: 30px;
+  padding: 50px 5px 5px 5px;
+}
+
+

@@ -1,0 +1,16 @@
+
+    <h2>LIST OF MOVIES</h2>
+
+
+<div class="index_css">
+<ul>
+    <% @results.each do |movie| %>
+    <li id="index_li">
+        <a href="/movies/<%= movie.id %>" id = "index_link">
+        <%= movie.title %>
+        </a>
+    </li>
+    <% end %>
+
+</ul>
+</div>

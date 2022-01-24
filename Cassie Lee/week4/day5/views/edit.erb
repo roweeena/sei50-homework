@@ -1,0 +1,50 @@
+<h2>
+    Edit movie<br> <%= @movie.title %>
+</h2>
+
+<div class="index_css">
+
+    <form action="/movies/<%= @movie.id %>" method="post">
+        
+        <label>
+            Title<br>
+            <input type="text" name="title" value="<%= @movie.title %>">
+        </label>
+        <br>
+
+
+        <label>
+            Release Year <br>
+            <input type="text" name="release" value="<%= @movie.release %>">
+        </label>
+        <br>
+
+        <label>
+            Running Time <br>
+            <input type="text" name="duration" value="<%= @movie.duration %>">
+        </label>
+        <br>
+
+        <label>
+            Rating <br>
+            <input type="text" name="rating" value="<%= @movie.rating %>">
+        </label>
+        <br>
+
+        
+
+        <label>
+            Image URL <br>
+            <input type="text" name="image_url" value="<%= @movie.image_url %>">
+        </label>
+        <br>
+        <label>
+            Video URL <br>
+            <input type="text" name="video_url" value="<%= @movie.video_url %>">
+        </label>
+        <br>
+
+        <button>Update</button>
+    </form>
+
+</div>

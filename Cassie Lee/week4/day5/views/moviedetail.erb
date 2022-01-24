@@ -1,0 +1,54 @@
+    <h2><%= @movie.title %></h2>
+
+<div class="detail_css">
+    <div class = "movie_detail">
+
+        <div class="movie_img">
+        <img src="<%= @movie.image_url %>" alt="<%= @movie.title %>" class="movie_image">
+        </div>
+
+        <div class="movie_content">
+        <p>
+            Title
+            <br><span><%= @movie.title %></span>
+        </p>
+
+        <p>
+            Release Year
+            <br><span><%= @movie.release %></span>
+        </p>
+
+        <p>
+            Running Time
+            <br><span><%= @movie.duration %></span>
+        </p>
+
+        <p>
+            Rating
+            <br><span><%= @movie.rating %></span>
+        </p>
+
+    
+
+
+        <p>Casts</p>
+        
+            <% @movie.casts.each do |cast| %>
+            <li id="cast_li">
+                <a href="/casts/<%= cast.id %>">
+                <span><%= cast.name %></span>
+                
+                </a>
+            </li>
+            <% end %>
+
+        <p>
+            
+            <a href="<%= @movie.video_url %>" target="_blank">Trailer</a>
+        </p>
+        </div>
+    </div>
+    <br>
+    <button><a href="/movies/<%= @movie.id %>/edit">Edit</a></button>
+    <button><a href="/movies/<%= @movie.id %>/delete">Delete</a></button>
+</div>

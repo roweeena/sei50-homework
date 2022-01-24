@@ -1,0 +1,14 @@
+
+
+    <ul class = "home_ul">
+        <% @results.each do |movie| %>
+        
+            <a href="/movies/<%= movie.id %>" class="home_image">
+                <img src="<%= movie.image_url %>">
+            </a>
+        
+        <% end %>
+    
+    </ul>
+
+
