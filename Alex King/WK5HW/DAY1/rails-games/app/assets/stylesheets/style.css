@@ -1303,9 +1303,8 @@
   
   img,
   video {
-    max-width: 100px;
+    max-width: 200px;
     height: auto;
-    border: 3px solid white;
     border-radius:20px;
     margin-top:20px;
     margin-bottom:20px;
