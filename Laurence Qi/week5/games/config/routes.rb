@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get '/secret_number' => 'secrets#home'
   get '/secret_number/guess' => 'secrets#guess'
 
+  get '/rps' => 'rockpaperscissors#home'
+  get '/rps/:choice' => 'rockpaperscissors#results'
+
 end
