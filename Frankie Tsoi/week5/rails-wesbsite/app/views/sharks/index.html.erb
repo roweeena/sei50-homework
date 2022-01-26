@@ -1,0 +1,17 @@
+<h3>Sharks List</h3>
+
+<ul>
+  <% @sharks.each do |shark| %> <!--@sharks is refer back to sharks_controller def index of the variable -->
+  <li>
+
+    <%= link_to shark.name, shark_path(shark.id) %>
+
+   
+  </li>
+  <% end%>
+
+
+
+
+
+</ul>
