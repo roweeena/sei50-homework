@@ -1,0 +1,25 @@
+<h3><%= @team.name %></h3>
+
+<p>
+    <strong>Founded: </strong>
+    <%= @team.founded %>
+</p>
+
+<p>
+    <strong>Premierships: </strong>
+    <%= @team.premierships %>
+</p>
+
+<p>
+    <strong>Still Active?: </strong>
+    <%= @team.still_active ? 'Yes' : 'No' %>
+</p>
+
+<%= image_tag @team.logo_url, alt: @team.name %>
+
+<hr>
+<nav>
+    <%= link_to "[Edit]", edit_team_path(@team.id) %>   
+
+    <%= link_to "[Delete]", destroy_team_path(@team.id) %>   
+</nav>
