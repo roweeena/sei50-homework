@@ -1,0 +1,33 @@
+
+<h2><%= @place.name %></h2>
+
+<%= link_to 'Edit', edit_place_path(@place.id) %>
+<%= link_to 'Delete', destroy_place_path(@place.id) %>
+
+
+<p>
+<strong>Location: </strong>
+<%= @place.location %>
+</p>
+
+<p>
+<strong>Built: </strong>
+<%= @place.built %>
+</p>
+
+<p>
+<strong>Number of known Ghosts: </strong>
+<%= @place.ghosts_num %> 
+</p>
+
+<p>
+<strong>Notorious Ghost: </strong>
+<%= @place.ghost_name %>
+</p>
+<p>
+<strong>Description/Activity: </strong>
+<%= @place.ghost_description%> 
+</p>
+
+<%= image_tag @place.image_url, alt: @place.name %>
+
