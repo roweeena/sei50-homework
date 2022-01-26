@@ -1,4 +1,4 @@
-<form action="/movies" method="post">
+<form action="/movies/<%= @movie.id %>" method="post">
 <h2>EDIT MOVIE</h2>
 
     <label>
@@ -26,6 +26,8 @@
         <input type="text" name="poster_url" value="<%= @movie.poster_url %>">
     </label>
     <br>
+     
     <button>Save Changes</button>
+
 
 </form>

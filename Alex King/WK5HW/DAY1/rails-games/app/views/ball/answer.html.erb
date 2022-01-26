@@ -1,0 +1,16 @@
+<div><a href="/"><button>HOME!!!!!!!!</button></a><h1>8BALL</h1> </div>
+<h1>Your question: <%= @question %></h1>
+<h3>8 BALL SAYS: <%= @output %>  </h3>
+
+<form action="/8ball/answer">
+
+<label>
+ASK AGAIN!?
+<input type="text" name="question"> 
+<br>
+</label>
+
+<button>submit</button>
+
+
+</form>

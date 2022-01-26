@@ -1,0 +1,36 @@
+<div class="row">
+  <div id="column1">
+    <h2><%= @drink['name'] %></h2>
+
+    <img src="<%= @drink['image_url'] %>" alt="some espresso martinis" class="drink_image">
+  </div>
+  
+  <div id="column2">
+    <p><%= @drink['description']%></p>
+
+    <p class='heading ' >Glass type:</p>
+    <img src="<%= @drink['glass_type_url'] %>" alt="Type of glass to be served in" class="glass_icon outline">
+
+    <p class='heading'>Garnish:</p>
+    <p class="pad"><%= @drink['garnish'] %></p>
+
+    <h3>Recipe: </h3>
+    <p class="heading">Ingredients:</p>
+    <ul>
+      <li><%= @drink['ingredient1']%></li>
+      <li><%= @drink['ingredient2']%></li>
+      <li><%= @drink['ingredient3']%></li>
+      <li><%= @drink['ingredient4']%></li>
+      <li><%= @drink['ingredient5']%></li>
+    </ul>
+
+    <p class='heading'>Steps</p>
+    <p class="pad"><%= @drink['steps'].gsub "\n", "<br>" %></p>
+
+    <a href="/cocktails/<%= @drink['id'] %>/edit">Edit Drink</a>
+    <br>
+    <a href="/cocktails/<%= @drink['id'] %>/delete">Delete Drink</a>
+  </div>
+
+  
+</div>

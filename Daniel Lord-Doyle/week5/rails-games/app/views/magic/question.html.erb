@@ -1,0 +1,23 @@
+<h1>Magic 8 Ball</h1>
+
+<%= form_tag(magic8ball_path, :method => "get") do %>
+
+    <%= label_tag(:question, "What is your question:") %>
+    <%= text_field_tag(:question) %>
+
+    <%= submit_tag("Submit") %>
+
+<% end %>
+
+<% if params[:commit] == 'Submit'  %>
+    <% if @question[-1,1] == '?' %>
+    <h3>The answer to '<%= @question %>' is:</h3>
+    <h1><%= @answer %></h1>
+    <% else %>
+    <h1>Get a real question.</h1>
+    <% end%>
+<% end %>
+
+<a href="/magic8ball">
+<button>Refresh</button>
+</a>

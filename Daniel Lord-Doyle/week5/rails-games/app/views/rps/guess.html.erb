@@ -1,0 +1,10 @@
+<h1>Choose: Rock, Paper, Scissor</h1>
+
+<%= form_tag(rps_path, :method => "post") do %>
+
+    <%= label_tag(:guess, "Rock, Paper or Scissors:") %>
+    <%= text_field_tag(:guess) %>
+
+    <%= submit_tag("Submit") %>
+
+<% end %>

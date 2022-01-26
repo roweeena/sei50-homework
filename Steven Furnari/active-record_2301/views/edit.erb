@@ -1,0 +1,42 @@
+<h3>Edit Car: <%= @car.model %></h3>
+
+<form action="/cars/<%=@car.id%>" method="post">
+    Manufacturer:
+    <label>
+        <select name="manufacturer_id">
+            <% Manufacturer.all.each do |maker| %>
+            <option value="<%= maker.id %>"><%= maker.name %></option>
+            <% end %>
+            
+        </select>
+    </label>
+    <br>
+    <label>
+        Model:
+        <input type="text" name="model" value=<%= @car.model %>>
+    </label>
+    <br>
+    <label>
+        Body Type:
+        <input type="text" name="body_type" value=<%= @car.body_type %>>
+    </label>
+    <br>
+    <label>
+        Entered Market:
+        <input type="text" name="entered_market" value=<%= @car.entered_market %>>
+    </label>
+    <br>
+    <label>
+        Still in Production?:
+        <input type="text" name="in_production" placeholder="1 for YES, 0 for NO" value=<%= @car.in_production %>>
+    </label>
+    <br>
+    <label>
+        Photo:
+        <input type="text" name="photo_url" value=<%= @car.photo_url %>>
+    </label>
+    <br>
+
+    <button>Update Car</button>
+
+</form>

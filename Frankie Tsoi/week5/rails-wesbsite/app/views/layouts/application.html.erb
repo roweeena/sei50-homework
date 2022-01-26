@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SHARK ATTACK!</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  </head>
+
+  <body>
+    <h1>All The Things About SHARK</h1>
+    <nav>
+
+    <%= link_to 'All Sharks', sharks_path %>
+    <%= link_to 'Add New Shark', new_shark_path %>
+    </nav>
+    <hr>
+    <%= yield %>
+    <footer>
+      
+      &copy; frankie tsoi edited 2022
+    </footer>
+  </body>
+</html>

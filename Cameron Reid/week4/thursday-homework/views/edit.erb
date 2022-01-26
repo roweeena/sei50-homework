@@ -1,0 +1,79 @@
+<h3>Edit Koktail</h3>
+
+
+<form action="/cocktails/<%= @drink['id'] %>" method="post">
+  <label for="">
+    Name:
+    <input type="text" name="name" value="<%= @drink['name'] %>">
+  </label>
+  <br>
+
+  <label for="">
+    Description:
+    <input type="text" name="description" value="<%= @drink['description'] %>">
+  </label>
+  <br>
+
+  <label for="">
+    Image URL:
+    <input type="text" name="image_url" value= "<%= @drink['image_url'] %>">
+  </label>
+  <br>
+
+  <label for="">
+    Glasstype:
+    <select name="glass_type_url" id="" value= "<%= @drink['glass_type_url'] %>">
+      <option value="https://cdn-icons-png.flaticon.com/512/83/83512.png">Cocktail glass</option>
+
+      <option value="https://cdn-icons.flaticon.com/png/512/2279/premium/2279808.png?token=exp=1642674058~hmac=1687b9b3ff4b4e182245eade46b18246">Tumbler glass</option>
+
+      <option value="https://cdn-icons-png.flaticon.com/512/3329/3329163.png">Highball glass</option>
+    </select>
+  </label>
+  <br>
+
+  <label for="">
+    Garnish:
+    <input type="text" name="garnish" value= "<%= @drink['garnish'] %>">
+  </label>
+  <br>
+
+  <label for="">
+    Ingredient 1:
+    <input type="text" name="ingredient1" value= "<%= @drink['ingredient1'] %>">
+  </label>
+  <br>
+
+  <label for="">
+    Ingredient 2:
+    <input type="text" name="ingredient2" value= "<%= @drink['ingredient2'] %>">
+  </label>
+  <br>
+
+  <label for="">
+    Ingredient 3:
+    <input type="text" name="ingredient3" value= "<%= @drink['ingredient3'] %>">
+  </label>
+  <br>
+
+  <label for="">
+    Ingredient 4:
+    <input type="text" name="ingredient4" value= "<%= @drink['ingredient4'] %>">
+  </label>
+  <br>
+
+  <label for="">
+    Ingredient 5:
+    <input type="text" name="ingredient5" value= "<%= @drink['ingredient5'] %>">
+  </label>
+  <br>
+
+  <label for="">
+    Steps:
+    <textarea name="steps" id="" cols="30" rows="10" value= "<%= @drink['steps'] %>"><%= @drink['steps'] %></textarea>
+  </label>
+  <br>
+
+  <button>Edit Drink</button>
+
+</form>

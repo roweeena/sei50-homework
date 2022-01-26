@@ -1,0 +1,15 @@
+<h4>
+    Index of Cars
+</h4>
+
+<ul> 
+    <% @cars.each do |car| %>
+        <li>
+            <a href="/cars/<%= car.id %>">
+                <%= car.manufacturer.name %> <%= car.model %>
+                <img src="<%= car.photo_url %>" class="index_photo">
+                <br>
+            </a> 
+        </li>
+    <% end%>
+</ul>
