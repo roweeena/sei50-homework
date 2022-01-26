@@ -1,0 +1,22 @@
+<h2><%= @planet.name %> </h2>
+
+<%= link_to 'Edit', edit_planet_path(@planet.id) %>
+<%= link_to 'Delete', destroy_planet_path(@planet.id) %>
+
+
+<p>
+    <strong>Mass: </strong>
+    <%= @planet.mass %> earth mass
+</p>
+
+<p>
+    <strong>Orbit: </strong>
+    <%= @planet.orbit %> earth orbit
+</p>
+
+<p>
+    <strong>Moons: </strong>
+    <%= @planet.moons %> 
+</p>
+
+<%= image_tag @planet.image_url, alt: @planet.name %>

@@ -75,19 +75,25 @@
       display:grid;
       /* border: 3px solid pink; */
       grid-auto-columns: 1fr; 
-      grid-template-columns: 0.4fr 1.6fr; 
-      grid-template-rows: 0.2fr 2.1fr; 
+      grid-template-columns: 0.4fr 0.5fr 0.5fr 0.6fr; 
+      grid-template-rows: 0.2fr 0.6fr 1.6fr; 
+      border: 3px solid white;
+      border-radius:10px;
       /* background:white; */
       gap: 0px 0px; 
       margin-bottom:5px;
       grid-template-areas: 
-        "title title"
-        "poster text"; 
+        "title title title title"
+        "poster creator release episodes"
+        "poster bio bio bio"; 
     }
+    .title { grid-area: title; }
+    /* .rating { grid-area: rating; } */
     .poster { grid-area: poster; }
-    .text { grid-area: text; }
-    .title { grid-area: title; }    
-  
+    .creator { grid-area: creator; }
+    .bio { grid-area: bio;}    
+    .release { grid-area: release; }
+    .episodes { grid-area: episodes; }
   .snbutt{
     display:grid;
     grid-auto-columns: 1fr; 
@@ -97,6 +103,17 @@
     margin: 2px
   }
 
+  .bio{
+    border-left:2px solid white;
+    border-top:2px solid white;
+  }
+  .title, .rating{
+    border-bottom:2px solid white;
+  }
+  .creator, .release_year, .episodes{
+    border-left:2px solid white;
+    padding-left:7px;
+  }
 
   @media (prefers-color-scheme: dark) {
   
@@ -281,7 +298,7 @@
   }
   
   h1,
-  h2,
+  /* h2, */
   h3,
   h4,
   h5,
@@ -1303,7 +1320,7 @@
   
   img,
   video {
-    max-width: 200px;
+    max-width: 8vw;
     height: auto;
     border-radius:20px;
     margin-top:20px;
@@ -1732,4 +1749,3 @@
       text-decoration: underline;
     }
   }
-  
