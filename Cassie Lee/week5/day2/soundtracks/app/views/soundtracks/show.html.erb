@@ -1,0 +1,39 @@
+
+
+    <h1><%= @soundtrack.title %></h1>
+
+    <hr>
+
+    <div class="show_container">
+        <%= image_tag @soundtrack.image_url, alt: @soundtrack.title %>
+        <br>
+        <%= link_to 'Edit', edit_soundtrack_path(@soundtrack.id), class: "edit_and_delete" %>
+        <%= link_to 'Delete', destroy_soundtrack_path(@soundtrack.id), class: "edit_and_delete" %>
+        
+        <div class="show_content">
+            <p>
+            <strong>Artists</strong><br>
+            <%= @soundtrack.artists %>
+            </p>
+
+            <p>
+            <strong>Nomination</strong><br>
+            <%= @soundtrack.nomination %>
+            </p>
+
+            <p>
+            <strong>Release Date</strong><br>
+            <%= @soundtrack.release %>
+            </p>
+
+            <p>
+            <strong>Songs</strong><br>
+            <%= @soundtrack.songs %>
+            </p>
+
+            
+            <br>
+            <%= link_to "Click to listen", ( @soundtrack.link_url), class: "show_link", target: "_blank" %>
+
+        </div>
+    </div>
