@@ -18,7 +18,7 @@ class CreatePlanets < ActiveRecord::Migration[5.2]
       t.float :orbit      # a float for the orbit time (expressed as a fraction of earth orbit)
       t.float :mass       # mass, as a proportion of earth's mass
       t.integer :moons    # number of moons
-
+      
 
     end # create_table
   end # change()
