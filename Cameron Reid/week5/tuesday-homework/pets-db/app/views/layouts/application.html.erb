@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PetsDb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <div class="outer_wrapper">
+      <h1>Welcome to the pet index!</h1>
+      <nav>
+        <p class = "button"><%= link_to 'All Pets', pets_path %></p>
+        <p class = 'button'><%= link_to 'Add New Pet', new_pet_path %></p>
+      </nav>
+        
+      <div class="wrapper">
+        <div class="content">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
