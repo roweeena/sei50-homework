@@ -1,0 +1,23 @@
+
+<%= link_to 'Edit', edit_shark_path(@shark.id) %>
+<%= link_to 'Delete', kill_shark_path(@shark.id) %> 
+
+<h2> <%= @shark.name%> </h2>
+
+
+<p>
+  <strong>size:</strong>
+  <%= @shark.size %> m
+  </p>
+  
+  <p>
+    <strong>Color:</strong>
+    <%= @shark.color %> 
+  </p>
+  
+  <p>
+    <strong>Habitat:</strong>
+    <%= @shark.habitat %>
+  </p>
+  
+  <%= image_tag @shark.image_url, alt: @shark.name%>
