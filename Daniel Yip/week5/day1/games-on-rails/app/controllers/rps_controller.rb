@@ -7,9 +7,21 @@ class RpsController < ApplicationController
     @player = params[:throw]
 
     game = {
-      'rock'=> {'scissors' => 'win', 'paper'=> 'loose', 'rock'=> 'draw'},
-      'paper' =>{'rock' =>'win', 'scissors' =>'loose', 'paper'=> 'draw'},
-      'scissors' =>{'paper'=> 'win', 'rock' =>'loose', 'scissors'=> 'draw'}
+      'rock'=> {
+        'scissors' => 'win', 
+        'paper'=> 'loose', 
+        'rock'=> 'draw'
+      },
+      'paper' =>{
+        'rock' =>'win', 
+        'scissors' =>'loose', 
+        'paper'=> 'draw'
+      },
+      'scissors' =>{
+        'paper'=> 'win', 
+        'rock' =>'loose', 
+        'scissors'=> 'draw'
+      }
     }
 
     @message = game[@player][@computer]
