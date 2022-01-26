@@ -1,0 +1,8 @@
+<h3>All books</h3>
+
+<% Book.all.each do |book| %>
+    <h5><%= link_to book.title, book_path(book.id) %></h5>
+    <h6><%= book.author %></h6>
+    <img src="<%= book.image_url %>" alt="<%= book.title %> cover art">
+    <p>rating: <%= book.rating %></p>
+<% end %>
