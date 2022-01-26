@@ -1,0 +1,20 @@
+
+<h1>List of movie soundtracks</h1>
+<hr>
+
+<ul class ="index_ul">
+
+    <% @soundtracks.each do |soundtrack|%>
+
+    <li>
+    <%= link_to soundtrack.title, soundtrack_path(soundtrack.id), class: 'index_list' %>
+    
+    </a>
+
+    </li>
+    <% end %>
+
+
+
+</ul>
+
