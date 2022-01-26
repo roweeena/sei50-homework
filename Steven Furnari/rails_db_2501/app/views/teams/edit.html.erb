@@ -1,0 +1,20 @@
+<h2>Edit Team: <%= @team.name %></h2>
+
+<%= form_with model: @team, local: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :founded %>
+    <%= f.text_field :founded %>
+    <br>
+    <%= f.label :premierships %>
+    <%= f.text_field :premierships %>
+    <br>
+    <%= f.label :still_active %>
+    <%= f.text_field :still_active, placeholder: '1 for YES, 0 for NO' %>
+    <br>
+    <%= f.label :logo_url %>
+    <%= f.text_field :logo_url %>
+    <br>
+    <%= f.submit %>
+<% end %>
