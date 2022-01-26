@@ -1,0 +1,12 @@
+<h1>WELCOME TO HELL!!!!1</h1>
+
+
+
+
+<ul>
+    <% @animes.each do |anime|  %>
+        <li>
+            <%= link_to anime.title, title_path(anime.id) %>
+        </li>
+    <% end  %>
+</ul>

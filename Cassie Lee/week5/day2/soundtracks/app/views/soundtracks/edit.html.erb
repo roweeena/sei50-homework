@@ -1,0 +1,36 @@
+<h1>Edit Soundtrack <br>
+<%= @soundtrack.title %> </h1>
+<hr>
+
+<div class="home_ul">
+<%= form_with model: @soundtrack, local: true do |f| %>
+
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+    <br>
+     <%= f.label :artists %><br>
+    <%= f.text_field :artists %>
+    <br>
+    <%= f.label :nomination %><br>
+    <%= f.text_field :nomination %>
+    <br>
+     <%= f.label :release, 'Release Date'%><br>
+    <%= f.text_field :release %>
+    <br>
+     <%= f.label :songs %><br>
+    <%= f.text_field :songs %>
+    <br>
+
+    <%= f.label :link_url, 'Video.URL' %><br>
+    <%= f.text_field :link_url %>
+    <br>
+
+    <%= f.label :image_url, 'Image.URL'  %><br>
+    <%= f.text_field :image_url %>
+    <br>
+
+    <%= f.submit %>
+
+<% end %>
+
+</div>
