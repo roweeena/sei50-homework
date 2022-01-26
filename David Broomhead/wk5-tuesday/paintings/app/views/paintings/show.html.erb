@@ -1,0 +1,20 @@
+<h3> <%= @painting.name %> </h3>
+
+<%= link_to 'Edit', edit_painting_path(@painting.id)  %>
+|
+<%= link_to 'Delete', destroy_painting_path(@painting.id)  %>
+
+<p>
+    Artist: <%= @painting.artist %>
+</p>
+
+<p>
+    Price (USD millions): <%= @painting.price %>
+</p>
+
+<p>
+    Year: <%= @painting.year %>
+</p>
+
+
+<%= image_tag @painting.url %>
