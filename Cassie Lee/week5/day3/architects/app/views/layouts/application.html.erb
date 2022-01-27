@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Architects</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  </head>
+
+  <body>
+    <header>
+      <nav>
+      <h1>Architects</h1>
+      <%= link_to 'Architects', architects_path %>
+      <%= link_to 'Add Architects', new_architect_path %>
+      <%= link_to 'Architectures', architectures_path %>
+
+
+
+
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>
