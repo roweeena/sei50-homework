@@ -1,0 +1,27 @@
+
+
+<%= link_to "EDIT", edit_book_path(@book) %>
+|
+<%= link_to "DELETE", book_path(@book), method:'delete' %>
+
+<h2><%= @book.title %></h2>
+<%= link_to @book.author.name, author_path(@book.author) %>     (b. <%= @book.author.dob.year %>)</strong></h3>
+
+<p>
+    <strong>publish date:</strong>
+    <%= @book.publish_date %>
+</p>
+<p>
+    <strong>genre:</strong>
+    <%= @book.genre %>
+</p>
+<p>
+    <strong>bio:</strong>
+    <%= @book.bio %>
+</p>
+
+
+
+<% if @book.image.present? %>
+        <%= image_tag (@book.image), class:"book_image" %>
+    <% end %>
