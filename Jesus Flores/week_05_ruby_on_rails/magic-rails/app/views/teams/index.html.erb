@@ -1,0 +1,6 @@
+<h1>Teams</h1>
+<ul>
+    <% @result.each do |el| %>
+    <li> <%=  link_to el.name,  team_path(el.id) %> </li>
+    <% end %>
+</ul>

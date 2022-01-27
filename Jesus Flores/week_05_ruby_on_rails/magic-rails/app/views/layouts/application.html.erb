@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MagicRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+    <header>
+      <%= link_to "Leagues", leagues_path %>
+      <%= link_to "Teams", teams_path %>
+      <%= link_to "Add League", new_league_path %>
+      <%= link_to "Add Team", new_team_path %>
+  <body>
+    <%= yield %>
+  </body>
+</html>

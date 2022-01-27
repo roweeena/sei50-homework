@@ -1,0 +1,19 @@
+<section class="container">
+    <div class="content-center">
+        <div class="title"> <h1><%= @result.name %></h1> </div> 
+        <ul>
+            <li> <strong>Email: </strong> <%= @result.email %> </li>
+            <li><strong>Phone Number: </strong> <%= @result.phone_number %> </li>
+            <li><strong>Address: </strong> <%= @result.address %></li>
+            <li><strong>Course Year: </strong> <%= @result.year %> </li>
+              
+            </li>
+        </ul>
+        <div>   
+            <%= link_to "Edit", edit_student_path(@result.id) %>
+        </div>
+        <div>   
+            <%= link_to "Delete", delete_student_path(@result.id) %>
+        </div>
+     </div>
+</section>
