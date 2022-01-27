@@ -1,0 +1,13 @@
+<h2>Snack reviews</h2>
+<ul>
+  <% @snacks.each do |snack| %>
+    <li>
+      <div class="imgContainer">
+        <img src="<%= snack.image_url %>" alt="">
+      </div>
+      <h3>
+        <%= link_to snack.name, snack_path(snack.id) %>
+      <h3>
+    </li>
+  <% end %>
+</ul>
