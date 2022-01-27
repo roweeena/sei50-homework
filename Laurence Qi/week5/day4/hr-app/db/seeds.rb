@@ -1,3 +1,6 @@
+Company.destroy_all
+
+
 apple = Company.create(
     name: 'Apple',
     industry: 'tech',
@@ -60,5 +63,3 @@ Employee.create(
 
 puts "Sucess! Created #{Employee.count} Employees"
 puts Employee.pluck(:name).join(', ')
-
-Employee.destroy_all

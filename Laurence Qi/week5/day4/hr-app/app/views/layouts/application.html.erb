@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HrApp</title>
+    <title>Company & Employee App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <h1>Company Employee Register</h1>
+    <%= link_to 'All Companies', companies_path %>
+    <%= link_to 'New Company', new_company_path %> |
+    <%= link_to 'All Employees', employees_path %>
+    <%= link_to 'New Employee', new_employee_path %>
     <%= yield %>
   </body>
 </html>
