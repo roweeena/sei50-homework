@@ -1,0 +1,22 @@
+<h3>Create new Book</h3>
+
+<%= form_with model: @book, local: true do |f|%>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+    <br>
+
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+    <br>
+
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+    <br>
+
+    <%= f.submit %>
+
+<% end %>
