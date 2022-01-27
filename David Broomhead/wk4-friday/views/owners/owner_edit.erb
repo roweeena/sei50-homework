@@ -1,0 +1,25 @@
+<h3>Editing <%= @owner.name %> </h3> 
+
+<form action="/owners/owner_show/<%= @owner.id %>/edit" method="post">
+
+    <label>
+        Name:
+        <input type="text" name="name" value="<%= @owner.name %>">
+    </label>
+    <br>
+
+    <label>
+        Age:
+        <input type="text" name="age" value="<%= @owner.age %>">
+    </label>
+    <br>
+
+    <label>
+        Wealth:
+        <input type="text" name="wealth_m" value="<%= @owner.wealth_m %>">
+    </label>
+    <br>
+
+    <input type="submit" value="Update">
+
+</form>

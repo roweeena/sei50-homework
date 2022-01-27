@@ -1,0 +1,32 @@
+<h2>Edit Anime: <%= @anime.title %></h2>
+
+<%= form_with model: @anime, local: true do |f|%>
+
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br>
+
+<%= f.label :release_year %>
+<%= f.text_field :release_year %>
+<br>
+
+<%= f.label :creator %>
+<%= f.text_field :creator %>
+<br>
+
+<%= f.label :episodes %>
+<%= f.text_field :episodes %>
+<br>
+
+<%= f.label :rating%>
+<%= f.text_field :rating %>
+<br>
+
+<%= f.label :poster, 'Image URL'%>
+<%= f.text_field :poster %>
+<br>
+
+<%= f.submit %>
+
+<% end %>

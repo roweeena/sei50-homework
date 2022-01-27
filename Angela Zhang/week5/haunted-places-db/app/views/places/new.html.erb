@@ -1,0 +1,31 @@
+
+<h2>Add a new haunted place</h2>
+
+
+<%= form_with model: @place, local: true do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    <br>
+    <%= f.label :built, "Year built" %>
+    <%= f.text_field :built %> 
+    <br>
+    <%= f.label :ghosts_num, "Number of known Ghost" %>
+    <%= f.text_field :ghosts_num %>  
+    <br>
+    <%= f.label :ghost_name, "Notorious Ghost's Name" %>
+    <%= f.text_field :ghost_name %>  
+    <br>
+    <%= f.label :ghost_description %>
+    <%= f.text_field :ghost_description %>  
+    <br>
+    <%= f.label :image_url, 'Image URL' %>
+    <%= f.text_field :image_url %> 
+    <br>
+
+    <%= f.submit "Add Place" %>
+
+<% end %>

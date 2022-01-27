@@ -1,0 +1,17 @@
+<div><a href="/"><button>HOME!!!!!!!!</button></a><h1>SECRET NUMBER</h1> </div>
+<h1>Your guess: <%= @guess %></h1>
+<h1>The number: <%= @answer %></h1>
+
+
+
+<%if @guess == @answer %>
+
+<h3>good job... you guessed correctly.</h3>
+
+<% else %>
+
+
+<h1>🤡 L BOZO YOU'RE WRONG 🤡</h1>
+
+<%= image_tag "/assets//interrogantes-gif-animado-10.gif", height: 300 %>
+<% end %>

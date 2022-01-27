@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NRL TEAMS</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1>Teams of the NRL</h1>
+    <hr>
+    <nav>
+      <%= link_to 'Teams', teams_path %>
+      |
+      <%= link_to 'Add New Team', new_team_path %>
+    </nav>
+    <hr>
+
+    <%= yield %>
+    <footer>
+      <hr>
+      &copy; smooth brain productions &trade; &reg;
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<h3>Edit Manufacturer: <%= @manufacturer.name %></h3>
+
+<form action="/manufacturers/<%= @manufacturer.id %>" method="post">
+
+    <label>
+        Name:
+        <input type="text" name="name" value="<%= @manufacturer.name %>">
+    </label>
+    <br>
+    <label>
+        Country:
+        <input type="text" name="country" value="<%= @manufacturer.country %>">
+    </label>
+    <br>
+    <label>
+        Founded:
+        <input type="text" name="founded" value="<%= @manufacturer.founded %>">
+    </label>
+    <br>
+    <label>
+        Active:
+        <input type="text" name="active" value="<%= @manufacturer.active %>">
+    </label>
+    <br>
+    <label>
+        Logo URL:
+        <input type="text" name="logo_url" value="<%= @manufacturer.logo_url %>">
+    </label>
+    <br>
+
+    <input type="submit" value="Update Manufacturer">
+
+</form>

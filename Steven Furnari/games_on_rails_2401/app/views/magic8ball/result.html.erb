@@ -1,0 +1,19 @@
+<nav>
+    <a href="/">Home</a>
+    |
+    <a href="/magic8ball">Magic 8 Ball</a>
+    |
+    <a href="/secretnumber">Secret Number</a>
+    |
+    <a href="/rps">Rock Paper Scissors</a>
+</nav>
+<hr>
+<h2><%= params[:question] %>?</h2>
+<br>
+
+<h1><%= @answer %></h1>
+
+<form action="/magic8ball">
+    <button type="submit">Ask New Question</button>
+</form>
+

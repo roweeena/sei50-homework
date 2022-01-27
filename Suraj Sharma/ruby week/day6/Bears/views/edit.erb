@@ -1,0 +1,41 @@
+
+
+<h3>
+Edit bear_image: <%= @bear['name'] %>
+</h3>
+
+
+<form action="/bears/<%= @bear['id'] %>" method="post">
+
+<label>
+  Name:
+  <input type="text" name="name" value="<%= @bear['name'] %>">
+</label>
+<br>
+
+
+
+<label>
+  Description:
+  <input type="text" name="description" value="<%= @bear['description'] %>">
+</label>
+<br>
+
+<label>
+  Age:
+  <input type="text" name="age" value="<%= @bear['age'] %>">
+</label>
+<br>
+
+<label>
+  Image URL:
+  <input type="text" name="image_url" value="<%= @bear['image_url'] %>">
+</label>
+<br>
+
+<button>Update bear</button>
+
+
+</form>
+
+ 

@@ -1,0 +1,3 @@
+class Soundtrack < ApplicationRecord
+
+end

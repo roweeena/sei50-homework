@@ -1,0 +1,31 @@
+
+<h2>Edit Place: <%= @place.name %></h2>
+
+<!-- NOT VERY DRY to copy-paste this entire identical form from new.html.erb,tomorrow we'll use 'render'-->
+<%= form_with model: @place, local: true do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    <br>
+    <%= f.label :built %>
+    <%= f.text_field :built %> 
+    <br>
+    <%= f.label :ghosts_num %>
+    <%= f.text_field :ghosts_num %>  
+    <br>
+    <%= f.label :ghost_name %>
+    <%= f.text_field :ghost_name %>  
+    <br>
+    <%= f.label :ghost_description %>
+    <%= f.text_field :ghost_description %>  
+    <br>
+    <%= f.label :image_url, 'Image URL' %>
+    <%= f.text_field :image_url %> 
+    <br>
+
+    <%= f.submit %>
+
+<% end %>

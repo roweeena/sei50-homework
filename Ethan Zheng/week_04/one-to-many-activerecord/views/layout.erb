@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Database</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+
+    <nav>
+        <h1>Watch Database</h1>
+        <a href="/">Home</a>
+        |
+        <a href="/watches">Watches</a>
+        |
+        <a href="/watches/new">Add Watch</a>
+        |
+        <a href="/manufacturers">Manufacturers</a>
+        |
+        <a href="/manufacturers/new">Add Manufacturer</a>
+        <hr>
+    </nav>
+
+
+    <section>
+        <%= yield %>
+    
+    </section>
+    
+    <footer>
+        <hr>
+    </footer>
+
+</body>
+</html>

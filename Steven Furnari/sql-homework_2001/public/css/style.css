@@ -1,0 +1,32 @@
+.home_img {
+    padding: 10px 50px;
+    width: 100%;
+    max-width: 9em;
+    max-height: 9em;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.home_logo {
+    margin-left: 32%;
+}
+
+nav a {
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    text-align: center;
+    text-decoration: underline;
+}

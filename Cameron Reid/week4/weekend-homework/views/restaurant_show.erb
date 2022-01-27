@@ -1,0 +1,26 @@
+<h3> <%= @rest.name %></h3>
+
+<img src="<%= @rest.image_url %>" alt="">
+<p>
+  <strong>Location:</strong>
+  <%= @rest.location%>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @rest.style%>
+</p>
+
+
+<p>
+  <strong>Stars:</strong>
+  <%= @rest.stars%>
+</p>
+
+<p>
+  <strong>Chef:</strong>
+    <a href="/chefs/<%= @rest.chef.id %>">
+      <%= @rest.chef.name%>
+    </a>
+   
+</p>

@@ -1,0 +1,23 @@
+ <section class="grid-container-1">
+            <div class="grid-item-1">
+                    <form action="/students/<%= @result[0].student.id %>/update" method="post">
+                        <label for="first_name" >First Name</label>
+                        <input id="first_name" name="first_name" type="text" value="<%= @result[0].student.first_name %>">
+                        <label for="second_name">Last Name</label>
+                        <input id="second_name" name="second_name" type="text" value="<%= @result[0].student.second_name %>">
+
+                        <label for="course_year" >Course Year</label>
+                        <input id="course_year" name="course_year" type="text" value="<%= @result[0].student.course_year %>" >
+
+                        <label for="address">Address</label>
+                        <input id="address" name="address" type="text" value="<%= @result[0].student.address %>"> 
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="text" value="<%= @result[0].student.email %>">
+                        <button>Submit</button>
+                    </form>
+            </div>
+</section>
+
+<pre>
+   
+</pre>

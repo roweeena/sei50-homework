@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GamesOnRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <main>
+    
+      <nav>
+        <div>
+          <%= image_tag "saw", height: 100 %>
+         <a href="/" id="main-heading">Do you want to play a game?</a>
+          <%= image_tag "saw", height: 100 %>
+        </div>
+        <ul>
+          <li><a href="/magic8ball">Magic 8 Ball</a></li>
+          <li><a href="/secretnumber">Secret Number</a></li>
+          <li><a href="/rock_paper_scissors">Rock Paper Scissors</a></li>
+        </ul>
+      </nav>
+    
+      <%= yield %>
+    
+    </main>
+  </body>
+</html>

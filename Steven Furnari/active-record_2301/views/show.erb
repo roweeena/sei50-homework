@@ -1,0 +1,28 @@
+<h3>Details for <%= @car.manufacturer.name %> <%= @car.model %></h3>
+
+<p>
+    <strong>Manufacturer:</strong> 
+    <a href="/manufacturers/<%= @car.manufacturer.id %>">
+        <%= @car.manufacturer.name %>
+    </a>
+</p>
+
+<p>
+    <strong>Model:</strong> <%= @car.model %>
+</p>
+<p>
+    <strong>Body:</strong> <%= @car.body_type %>
+</p>
+<p>
+    <strong>Entered Market:</strong> <%= @car.entered_market %>
+</p>
+<p>
+    <strong>Still in Production:</strong>
+    <%= @car.in_production ? 'Yes' : 'No' %>
+</p>
+
+
+<img src="<%= @car.photo_url %>" class="car_photo">
+
+<a href="/cars/<%=@car.id%>/edit">[Edit]</a>|
+<a href="/cars/<%=@car.id%>/delete">[Delete]</a>

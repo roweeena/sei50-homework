@@ -1,0 +1,12 @@
+<h4>
+  Index of bears
+</h4>
+<ul>
+  <% @results.each do |bear| %>
+    <li>
+      <a href="/bears/<%= bear.id %>">
+        <%= bear.name  %>
+      </a>
+    </li>
+  <% end %>
+</ul>
