@@ -1,0 +1,30 @@
+<%= form_with model: @team, local: true do |f| %>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :players %>
+     <br>
+    <%= f.text_field :players %>
+    <br>
+    <%= f.label :logo, 'Image Url'%>
+     <br>
+    <%= f.text_field  :logo%>
+    <br>
+    <%= f.label :coach%>
+     <br>
+    <%= f.text_field  :coach%>
+    <br>
+    <%= f.label :captain%>
+     <br>
+    <%= f.text_field  :captain%>
+    <br>
+    <%= f.label :sponsor%>
+     <br>
+    <%= f.text_field  :sponsor%>
+    <br>
+     <%=  f.collection_select :league_id, League.all, :id, :name  %>
+    <br> <br>   
+    <%= f.submit %>
+<% end %>
+

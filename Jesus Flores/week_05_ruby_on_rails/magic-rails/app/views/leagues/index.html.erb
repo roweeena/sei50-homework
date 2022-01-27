@@ -1,0 +1,6 @@
+<h1>Leagues</h1>
+<ul>
+    <% @result.each do |el| %>
+    <li> <%=  link_to el.name,  league_path(el.id) %> </li>
+    <% end %>
+</ul>
