@@ -1,0 +1,20 @@
+<h1><%= @architect.name %></h1>
+
+<%= link_to 'Edit', edit_architect_path(@architect) %>
+<%= link_to 'Delete', architect_path(@architect), method: 'delete' %>
+
+
+
+<p>
+<strong>Nationality:</strong>
+<%= @architect.nationality%>
+</p>
+
+<p>
+<strong>Date of Birth:</strong>
+<%= @architect.dob%>
+</p>
+
+<% if @architect.image !=nil %>
+<%= image_tag @architect.image, alt: @architect.name %>
+<% end %>
