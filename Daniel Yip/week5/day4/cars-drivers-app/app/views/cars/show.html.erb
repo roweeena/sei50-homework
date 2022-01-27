@@ -1,5 +1,7 @@
 <h2><%= @car.make %> <%= @car.model %></h2>
 
+<%= link_to 'Edit', edit_car_path %>
+<%= link_to 'Delete', car_path, method: 'delete' %>
 
 <% Car.attribute_names.each do |attr| %>
   <p>

@@ -1,0 +1,15 @@
+<%= form_with model: @car, local: true do |f| %>
+
+  <%= f.label :make %>
+  <br>
+  <%= f.text_field :make %>
+  <br><br>
+  
+  <%= f.label :model %>
+  <br>
+  <%= f.text_field :model %>
+  <br><br>
+
+<%= f.submit %>
+
+<%end%>
