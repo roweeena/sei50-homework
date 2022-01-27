@@ -1,0 +1,9 @@
+<h2>List of Cars</h2>
+
+<ul>
+  <% @cars.each do |c| %>
+  <li>
+    <%= link_to c.name, car_path(c.id)%>
+  </li>
+  <%end%>
+</ul>
