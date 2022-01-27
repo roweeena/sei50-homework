@@ -1,0 +1,7 @@
+<h1>Viewing: <%= @result.name %> </h1>
+<h3> <%= link_to "Edit", edit_team_path(@result.id) %> </h3>
+<p> <strong>players: </strong> <%= @result.players %> </p>
+<p> <strong>Coach: </strong> <%= @result.coach %> </p>
+<p> <strong>Captain: </strong> <%= @result.captain %> </p>
+<p><strong>Sponsor: </strong> <%= @result.sponsor %>  </p>
+<p> <strong>League:</strong> <%= @result.league.name %> </p>

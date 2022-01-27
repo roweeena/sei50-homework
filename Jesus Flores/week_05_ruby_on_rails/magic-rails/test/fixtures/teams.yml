@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  players: 1
+  logo: MyText
+  coach: MyString
+  captain: MyString
+  sponsor: MyString
+
+two:
+  name: MyString
+  players: 1
+  logo: MyText
+  coach: MyString
+  captain: MyString
+  sponsor: MyString

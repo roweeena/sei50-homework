@@ -1,0 +1,14 @@
+<section class="container">
+    <div class="content-center">
+        <div class="title"> <h1>Students</h1> </div> 
+        <div> <h4> <%= link_to 'Add New Student', new_student_path %> </h4></div>
+        <ul>
+        <% @result.each do |el| %>
+            <li>
+               <%= link_to el.name, student_path(el.id)  %>
+            </li>
+        <% end %>
+        </ul>
+     </div>
+
+</section>

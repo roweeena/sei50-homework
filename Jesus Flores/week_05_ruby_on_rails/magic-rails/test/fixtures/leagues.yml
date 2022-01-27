@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  location: MyText
+  teams: 1
+  season: MyText
+  date_start: 2022-01-27
+
+two:
+  name: MyText
+  location: MyText
+  teams: 1
+  season: MyText
+  date_start: 2022-01-27
