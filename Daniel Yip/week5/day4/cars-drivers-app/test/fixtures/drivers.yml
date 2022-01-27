@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  dob: 2022-01-27
+  licenced: 
+
+two:
+  name: MyString
+  dob: 2022-01-27
+  licenced: 
