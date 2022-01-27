@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   get '/book/:id' => 'books#show', as: '/book'
 
   # U 
-
-
+  get '/books/:id/edit' => 'books#edit', as: 'edit_book'
+  patch 'books/:id' => 'books#update'
 
   # D
   

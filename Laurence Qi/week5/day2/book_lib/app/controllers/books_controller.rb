@@ -11,6 +11,17 @@ class BooksController < ApplicationController
     end
 
     def create
-        
+        Book.create(
+            title: params[:book][:title],
+            author: params[:book][:author],
+            image_url: params[:book][:image_url],
+            rating: params[:book][:rating]
+        )
+
+        redirect_to books_path
+    end
+
+    def edit
+        @book = Book.find params[:id]
     end
 end
