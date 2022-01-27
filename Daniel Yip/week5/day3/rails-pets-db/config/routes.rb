@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
-#ROOT
 
 
 #CREATE
 
 #READ
-
+get '/pets' => 'pets#index'
 #UPDATE
 
 #DESTROY

@@ -1,0 +1,16 @@
+<h2><%= @car.make %> <%= @car.model %></h2>
+
+
+<% Car.attribute_names.each do |attr| %>
+  <p>
+    <% if attr == 'image' %>
+      <%= image_tag @car[attr] %>
+    <% else%>
+      <strong><%= attr.capitalize %></strong>
+      <br>
+      <%= @car[attr] %>
+    <% end%>
+  </p>
+
+<% end %>
+

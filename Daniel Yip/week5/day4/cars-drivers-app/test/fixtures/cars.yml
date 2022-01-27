@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  make: MyString
+  model: MyString
+  manufacture_date: 2022-01-27
+  registered: false
+  cool_factor: 1
+  owner_id: 1
+
+two:
+  make: MyString
+  model: MyString
+  manufacture_date: 2022-01-27
+  registered: false
+  cool_factor: 1
+  owner_id: 1

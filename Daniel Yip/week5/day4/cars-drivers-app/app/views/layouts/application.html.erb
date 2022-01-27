@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CarsDriversApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+  <nav>
+  <h1>Cars and Drivers</h1>
+  <%= link_to 'Cars Index', cars_path %> |
+  <%= link_to 'New Car', new_car_path %> |
+  <%= link_to 'Drivers Index', drivers_path %> |
+  <%= link_to 'New Driver', new_driver_path %>
+  </nav>
+    <%= yield %>
+  </body>
+</html>

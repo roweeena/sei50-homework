@@ -1,0 +1,16 @@
+<h2><%= @driver.name %></h2>
+
+
+<% Driver.attribute_names.each do |attr| %>
+  <p>
+
+  <% if attr == 'image' %>
+      <%= image_tag @driver[attr] %>
+    <% else%>
+    <strong><%= attr.capitalize %></strong>
+    <br>
+    <%= @driver[attr] %>
+    <% end%>
+  </p>
+
+<% end %>
