@@ -1,0 +1,10 @@
+
+<h2>Index of Books:</h2>
+
+<ul>
+<% @books.each do |a| %>
+    <li>
+        <%= link_to a.title, book_path(a.id) %>
+    </li>
+<% end %>
+</ul>
