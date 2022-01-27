@@ -1,0 +1,16 @@
+<h2> <%= @pokemon.name %> </h2>
+
+<%= link_to 'Edit', edit_pokemon_path(@pokemon) %>
+<%= link_to 'Delete', pokemon_path(@pokemon), method: 'delete' %>
+
+<% if @pokemon.image.present? %>
+    <%= image_tag @pokemon.image, alt: @pokemon.name, class: 'pokemon_image' %>
+<% end %>
+
+<p>
+    <strong>Level: </strong> <%= @pokemon.level %>
+</p>
+
+<p>
+    <strong>Special Move: </strong> <%= @pokemon.special_move %>
+</p>
