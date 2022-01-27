@@ -1,0 +1,9 @@
+<h3>Top Paintings</h3>
+
+<ul>
+    <% @paintings.each do |painting| %>
+    <li>
+        <%= link_to painting.name, painting_path(painting.id) %>
+    </li>
+    <% end %>
+</ul>
