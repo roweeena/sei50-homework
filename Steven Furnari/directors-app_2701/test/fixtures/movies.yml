@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  director_id: 1
+  released: 1
+  boxoffice: 1
+  description: MyText
+  image: MyText
+
+two:
+  title: MyString
+  director_id: 1
+  released: 1
+  boxoffice: 1
+  description: MyText
+  image: MyText

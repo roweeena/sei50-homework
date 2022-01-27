@@ -1,0 +1,35 @@
+<h3><%= @director.name %></h3>
+
+<p>
+    <strong>DOB:</strong>
+    <%= @director.dob %>
+</p>
+
+<p>
+    <strong>Nationality:</strong>
+    <%= @director.nationality %>
+</p>
+
+<p>
+    <strong>Bio:</strong>
+    <%= @director.bio %>
+</p>
+
+<% if @director.photo.present? %>
+    <%= image_tag @director.photo, alt: @director.name, class: 'director_photo' %>
+<% end %>
+<hr>
+<p>
+    <strong>Movies:</strong>
+    <ul>
+        <% @director.movies.each do |m| %>
+        <li>
+            <%= link_to "#{m.title}", movie_path(m.id) %>
+        </li>
+        <% end %>
+    </ul>
+</p>
+<hr>
+    <%= link_to 'Edit', edit_director_path(@director.id) %>
+    |
+    <%= link_to 'Delete', director_path(@director), method: 'delete' %>
