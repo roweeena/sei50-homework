@@ -1,0 +1,17 @@
+li {
+    height: 300px;
+    width: 200px;
+    display:inline-block;
+    margin: 20px;
+}
+
+.icon {
+    max-width: 90%;
+    max-height: 90%;
+    
+}
+
+.poster_image {
+    max-height: 40vh;
+    width: auto;
+}
