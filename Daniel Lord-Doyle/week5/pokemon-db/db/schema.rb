@@ -10,24 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_27_095600) do
+ActiveRecord::Schema.define(version: 2022_01_27_211030) do
 
   create_table "owners", force: :cascade do |t|
     t.string "name"
+    t.string "jap_name"
     t.integer "age"
+    t.string "gender"
+    t.string "eye_colour"
+    t.string "hair_colour"
     t.string "hometown"
-    t.integer "pokemon_owned"
-    t.boolean "champion"
-    t.text "image"
+    t.string "region"
+    t.string "specializes_in"
+    t.string "anime_debut"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
-    t.integer "level"
-    t.string "special_move"
-    t.text "image"
+    t.string "description"
+    t.string "image_one"
+    t.string "image_two"
+    t.integer "pokedex_no"
+    t.string "pokemon_type"
+    t.integer "gender_ration"
+    t.integer "catch_rate"
+    t.float "height"
+    t.float "weight"
+    t.string "ability_one"
+    t.string "ability_two"
+    t.string "ability_three"
+    t.string "ability_four"
     t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -2,14 +2,34 @@
 
 one:
   name: MyString
-  level: 1
-  special_move: MyString
-  image: MyText
+  description: MyString
+  image_one: MyString
+  image_two: MyString
+  pokedex_no: 1
+  pokemon_type: MyString
+  gender_ration: 1
+  catch_rate: 1
+  height: 1.5
+  weight: 1.5
+  ability_one: MyString
+  ability_two: MyString
+  ability_three: MyString
+  ability_four: MyString
   owner_id: 1
 
 two:
   name: MyString
-  level: 1
-  special_move: MyString
-  image: MyText
+  description: MyString
+  image_one: MyString
+  image_two: MyString
+  pokedex_no: 1
+  pokemon_type: MyString
+  gender_ration: 1
+  catch_rate: 1
+  height: 1.5
+  weight: 1.5
+  ability_one: MyString
+  ability_two: MyString
+  ability_three: MyString
+  ability_four: MyString
   owner_id: 1

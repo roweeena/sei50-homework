@@ -12,6 +12,7 @@ header {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: green;
+    margin-bottom: 100px;
 }
 
 .yield {
@@ -19,7 +20,7 @@ body {
 }
 
 .owner_image {
-    width: 400px
+    height: 400px
 }
 
 footer {
@@ -28,4 +29,13 @@ footer {
     bottom: 0px;
     background-color: white;
     padding: 30px
+}
+
+.pokemonUL {
+    list-style: none;
+    display: inline-block;
+}
+
+.pokemonUL img {
+    width: 200px
 }

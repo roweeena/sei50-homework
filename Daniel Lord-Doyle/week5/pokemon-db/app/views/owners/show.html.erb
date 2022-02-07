@@ -1,8 +1,8 @@
 <h2> <%= @owner.name %> </h2>
-
+<h4> <%= @owner.jap_name %> </h4>
 <%= link_to 'Edit', edit_owner_path(@owner) %>
 <%= link_to 'Delete', owner_path(@owner), method: 'delete' %>
-
+<br><br>
 <% if @owner.image.present? %>
     <%= image_tag @owner.image, alt: @owner.name, class: 'owner_image' %>
 <% end %>
@@ -12,13 +12,37 @@
 </p>
 
 <p>
+    <strong>Gender: </strong> <%= @owner.gender %>
+</p>
+
+<p>
+    <strong>Eye Colour: </strong> <%= @owner.eye_colour %>
+</p>
+
+<p>
+    <strong>Hair Colour: </strong> <%= @owner.hair_colour %>
+</p>
+
+<p>
     <strong>Hometown: </strong> <%= @owner.hometown %>
 </p>
 
 <p>
-    <strong>Number of Pokemon Owned: </strong> <%= @owner.pokemon_owned %>
+    <strong>Region: </strong> <%= @owner.region %>
 </p>
 
 <p>
-    <strong>Are they champion: </strong> <%= @owner.champion %>
+    <strong>Specializes in: </strong> <%= @owner.specializes_in %>
 </p>
+
+<p>
+    <strong>Anime Debut: </strong> <%= @owner.anime_debut %>
+</p>
+
+<ul>
+    <% @owner.pokemons.each do |pokemon| %>
+        <li>
+            <%= link_to image_tag(pokemon.image_one), pokemon_path(pokemon.id)  %>
+        </li>
+    <% end %>
+</ul>

@@ -8,22 +8,18 @@
 
 Owner.destroy_all
 
-owner1 = Owner.create!(
-    name: 'Ash Ketchum',
-    age: 14,
-    hometown: 'Pallettown',
-    pokemon_owned: 1,
-    champion: false,
-    image: 'https://fictionhorizon.com/wp-content/uploads/2021/10/das-digda-problem.jpg'
-)
-
-Owner.create!(
-    name: 'Brock The Rock',
-    age: 14,
-    hometown: 'Rocktown',
-    pokemon_owned: 1,
-    champion: false,
-    image: 'https://static.wikia.nocookie.net/sonicpokemon/images/8/8c/Ashanime.png/revision/latest?cb=20200811025240'
+brock = Owner.create!(
+    name: 'Brock',
+    jap_name: 'Takeshi',
+    age: 15,
+    gender: 'Male',
+    eye_colour: 'Black',
+    hair_colour: 'Brown',
+    hometown: 'Pewter City',
+    region: 'Kanto',
+    specializes_in: 'Rock type',
+    anime_debut: 'Showndown in Pewter City',
+    image: 'https://archives.bulbagarden.net/media/upload/thumb/a/a6/Lets_Go_Pikachu_Eevee_Brock.png/243px-Lets_Go_Pikachu_Eevee_Brock.png'
 )
 
 puts "Done! Created #{ Owner.count } pokemon trainers:"
@@ -32,10 +28,39 @@ puts Owner.pluck( :name ).join(", ")
 Pokemon.destroy_all
 
 Pokemon.create!(
-    name: 'Pikachu',
-    level: 12,
-    special_move: 'Lightening',
-    owner_id: owner1.id
+    name: 'Geodude',
+    description: 'Rock Pokémon',
+    image_one: 'https://archives.bulbagarden.net/media/upload/9/90/Spr_5b_074.png',
+    image_two: 'https://archives.bulbagarden.net/media/upload/8/81/Spr_b_5b_074.png',
+    pokedex_no: 74,
+    pokemon_type: 'Rock / Ground',
+    gender_ration: 50,
+    catch_rate: 43,
+    height: 0.4,
+    weight: 20,
+    ability_one: 'Sturdy',
+    ability_two: 'Sand Veil',
+    ability_three: 'Galvanize',
+    ability_four: 'Magnet Pull',
+    owner_id: brock.id
+)
+
+Pokemon.create!(
+    name: 'Onix',
+    description: 'Rock Snake Pokémon',
+    image_one: 'https://archives.bulbagarden.net/media/upload/2/29/Spr_5b_095.png',
+    image_two: 'https://archives.bulbagarden.net/media/upload/8/8f/Spr_b_5b_095.png',
+    pokedex_no: 95,
+    pokemon_type: 'Rock / Ground',
+    gender_ration: 50,
+    catch_rate: 45,
+    height: 8.8,
+    weight: 210,
+    ability_one: 'Sturdy',
+    ability_two: 'Rock Head',
+    ability_three: 'Weak Armor',
+    ability_four: 'Avalanche',
+    owner_id: brock.id
 )
 
 puts "Done! Created #{ Pokemon.count } pokemons."

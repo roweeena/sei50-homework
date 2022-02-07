@@ -1,11 +1,10 @@
 <h2>Index of Pokemon</h2>
 
-<ul>
+<ul class="pokemonUL">
 
     <% @pokemons.each do |pokemon| %>
         <li>
-            <%= pokemon.name %>
-            <%= link_to pokemon.name, pokemon_path(pokemon.id)  %>
+            <%= link_to image_tag(pokemon.image_one), pokemon_path(pokemon.id)  %>
         </li>
     <% end %>
 

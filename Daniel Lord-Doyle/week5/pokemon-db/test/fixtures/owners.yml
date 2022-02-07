@@ -2,16 +2,26 @@
 
 one:
   name: MyString
+  jap_name: MyString
   age: 1
+  gender: MyString
+  eye_colour: MyString
+  hair_colour: MyString
   hometown: MyString
-  pokemon_owned: 1
-  champion: false
-  image: MyText
+  region: MyString
+  specializes_in: MyString
+  anime_debut: MyString
+  image: MyString
 
 two:
   name: MyString
+  jap_name: MyString
   age: 1
+  gender: MyString
+  eye_colour: MyString
+  hair_colour: MyString
   hometown: MyString
-  pokemon_owned: 1
-  champion: false
-  image: MyText
+  region: MyString
+  specializes_in: MyString
+  anime_debut: MyString
+  image: MyString

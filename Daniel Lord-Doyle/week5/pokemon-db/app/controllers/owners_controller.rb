@@ -14,6 +14,7 @@ class OwnersController < ApplicationController
 
   def show
     @owner = Owner.find params[:id]
+    @pokemon = Pokemon.all
   end
 
   def edit
