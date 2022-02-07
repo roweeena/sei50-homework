@@ -1,0 +1,26 @@
+#content-wrapper {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+h1{
+  display: inline-block;
+}
+
+#results-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  
+}
+
+.result-item{
+  border: 1px solid red;
+  width: 200px;
+  text-align: center;
+}
+
+img{
+  z-index: 1;
+}
+
