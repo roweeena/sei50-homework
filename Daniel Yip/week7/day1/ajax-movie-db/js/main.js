@@ -42,8 +42,15 @@ const moreDetails = function (id) {
 
     $('<div>',{
       class: 'single-movie',
-      
-    })
+    }).appendTo("body")
+
+    $('<h2>',{
+      text: `${data.original_title}`,
+    }).appendTo('.single-movie')
+
+    $('<img>',{
+      src: `http://image.tmdb.org/t/p/w500/${data.poster_path}`
+    }).appendTo('.single-movie')
     
   };
 
@@ -61,12 +68,12 @@ $(function () {
   console.log("DOM is loaded");
 
   $("#search-button").on("click", function () {
+    $('.single-movie').remove()
     $('#results-wrapper').empty()
     searchMovies();
   });
 
   $("#content-wrapper").on('click', '.result-item', function(e){
-
     moreDetails(e.currentTarget.id)
   })
 
