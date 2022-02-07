@@ -1,0 +1,13 @@
+
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <p>
+        <%= image_tag pet.image_url, alt: pet.name, class: 'index_img'%>
+      </p>  
+      <p class="button">
+        <%= link_to pet.name, pet_path(pet.id) %>
+      </p>  
+    </li>
+  <% end %>
+</ul>
