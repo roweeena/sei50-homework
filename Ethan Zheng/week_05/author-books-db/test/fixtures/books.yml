@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  date: 2022-01-27
+  genre: MyText
+  image: MyText
+  author_id: 1
+
+two:
+  name: MyText
+  date: 2022-01-27
+  genre: MyText
+  image: MyText
+  author_id: 1

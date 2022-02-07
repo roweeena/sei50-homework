@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MoMAApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+    <header>
+      <nav>
+        <h1>MOMA</h1> 
+        <%= link_to 'Artists Index', artists_path %>
+        |
+        <%= link_to 'Add Artist', new_artist_path %>
+        |
+        <%= link_to 'Works Index', works_path %>
+        |
+        <%= link_to 'Add Works', new_work_path %>
+      </nav>
+    </header>
+  <hr>
+
+
+    <%= yield %>
+
+
+    <footer>
+      <hr>
+      &copy; Art School Dropout Productions 2022
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<%= form_with model: @car, local: true do |f| %>
+
+  <%= f.label :make %>
+  <br>
+  <%= f.text_field :make %>
+  <br><br>
+  
+  <%= f.label :model %>
+  <br>
+  <%= f.text_field :model %>
+  <br><br>
+  
+  <%= f.label :manufacture_date %>
+  <br>
+  <%= f.date_field :manufacture_date %>
+  <br><br>
+  
+  <%= f.label :registered %>
+  <br>
+  <%= f.check_box :registered %>
+  <br><br>
+  
+  <%= f.label :cool_factor %>
+  <br>
+  <%= f.number_field :cool_factor, min: 0, max: 10 %>
+  <br><br>
+   
+  <%= f.label :image, 'Image URL' %>
+  <br>
+  <%= f.text_field :image %>
+  <br><br>
+
+  <%= f.label :driver_id, Driver %>
+  <br>
+  <%= f.collection_select :driver_id, Driver.all, :id, :name%>
+  <br><br>
+
+<%= f.submit %>
+
+<%end%>

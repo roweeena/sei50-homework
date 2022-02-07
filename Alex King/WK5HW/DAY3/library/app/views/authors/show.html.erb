@@ -1,0 +1,18 @@
+
+<%= link_to "EDIT", edit_author_path(@author) %>
+|
+<%= link_to "DELETE", author_path(@author), method:'delete' %>
+
+<h2><%= @author.name %></h2>
+
+<p>
+    <strong>DOB:</strong>
+    <%= @author.dob %>
+</p>
+<p>
+    <strong>bio:</strong>
+    <%= @author.bio %>
+</p>
+<% if @author.image.present? %>
+        <%= image_tag (@author.image), class:"author_image" %>
+    <% end %>

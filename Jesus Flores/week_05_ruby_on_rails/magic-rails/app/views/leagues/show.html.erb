@@ -1,0 +1,15 @@
+<h1>Viewing: <%= @result.name %> </h1>
+<h3> <%= link_to 'Edit', edit_league_path(@result.id) %></h3>
+<p> <strong>Locaiton: </strong> <%= @result.location %> </p>
+<p> <strong>Season: </strong> <%= @result.season %> </p>
+<p> <strong>Starting Date: </strong> <%= @result.date_start %> </p>
+<p><strong>Teams: </strong>
+<ul>
+<% @result.teams.each do |el| %>
+  <li> <%= link_to el.name, team_path(el.id)  %> </li>
+<% end %>
+</ul>
+
+
+
+</p>

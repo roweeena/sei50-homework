@@ -1,0 +1,25 @@
+<%= form_with model: @architect, local: true do |f| %>
+
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br><br>
+
+    <%= f.label :nationality %>
+    <br>
+    <%= f.text_field :nationality %>
+    <br><br>
+
+    <%= f.label :dob, 'Date of Birth' %>
+    <br>
+    <%= f.text_field :dob %>
+    <br><br>
+
+    <%= f.label :image %>
+    <br>
+    <%= f.text_field :image, placeholder: 'URL here' %>
+    <br><br>
+
+    <%= f.submit %>
+
+    <% end %>

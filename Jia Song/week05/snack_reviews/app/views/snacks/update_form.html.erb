@@ -1,0 +1,21 @@
+<h2>Edit a snack review</h2>
+
+<%= form_with model: @snack, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.label :image_url, "image_url" %>
+  <%= f.text_field :image_url %>
+  <br>
+
+  <%= f.label :review %>
+  <%= f.text_field :review %>
+  <br>
+
+  <%= f.label :rate %>
+  <%= f.text_field :rate %>
+  <br>
+  
+  <%= f.submit %>
+<% end %>

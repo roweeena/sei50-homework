@@ -1,0 +1,19 @@
+<%= form_with model: @league, local: true do |f| %>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :location %>
+     <br>
+    <%= f.text_field :location %>
+    <br>
+    <%= f.label :season%>
+     <br>
+    <%= f.text_field  :season%>
+    <br>
+    <%= f.label :date_start%>
+     <br>
+    <%= f.date_field  :date_start%>
+    <br><br>    
+    <%= f.submit %>
+<% end %>

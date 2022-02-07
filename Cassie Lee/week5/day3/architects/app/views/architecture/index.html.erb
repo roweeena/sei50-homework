@@ -1,0 +1,11 @@
+<h2>All Architectures</h2>
+
+<ul>
+    <% @works.each do |a|%>
+        <li>
+            <%= link_to a.title, Architecture_path(w)%>
+        </li>
+    <% end %>
+
+
+</ul>

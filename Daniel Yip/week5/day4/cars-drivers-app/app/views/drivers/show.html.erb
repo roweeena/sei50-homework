@@ -1,0 +1,19 @@
+<h2><%= @driver.name %></h2>
+
+<%= link_to 'Edit', edit_driver_path %>
+<%= link_to 'Delete', driver_path, method: 'delete' %>
+
+
+<% Driver.attribute_names.each do |attr| %>
+  <p>
+
+  <% if attr == 'image' %>
+      <%= image_tag @driver[attr] %>
+    <% else%>
+    <strong><%= attr.capitalize %></strong>
+    <br>
+    <%= @driver[attr] %>
+    <% end%>
+  </p>
+
+<% end %>
