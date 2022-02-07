@@ -13,6 +13,6 @@
     <strong>bio:</strong>
     <%= @author.bio %>
 </p>
-<% if @author.image.present? %>
+    <% if @author.image.present? %>
         <%= image_tag (@author.image), class:"author_image" %>
     <% end %>
