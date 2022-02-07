@@ -1,0 +1,127 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+}
+body{
+    background-color: black;
+}
+nav{
+    position:fixed;
+    top:0;
+    height:30px;
+    width:100vw;
+    /* justify-content:center; */
+}
+#userQuery{
+    background-color:#272729;
+    border: 1px solid #343536;
+    border-radius:20px;
+    color:#848688;
+    height:25px;
+    padding-left:6px;
+}
+#loadMore{
+    background-color:#272729;
+    border: 1px solid #343536;
+    border-radius:20px;
+    color:#848688;
+    margin-left:10px;
+    width:30px;
+}
+#userQuery:hover, #loadMore:hover, #goHome:hover{
+    background-color:#1a1a1b;
+    border:1px solid #d7dadc;
+
+}
+#userQuery:focus{
+    outline:none;
+    color:white
+}
+
+
+nav, .film{
+    background-color:#1a1a1b;
+    border:2px solid #343536;
+    padding: 5px;
+    color:white
+}
+
+
+.film{
+    margin-top:10px;
+    border-radius:20px;
+}
+#output{
+    margin-top:60px;
+}
+.poster > img{
+    width:60px;
+    height:auto;
+    border-radius:10px;
+}
+h4,h5{
+    color:white;
+}
+.search{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:250px;
+    margin-top:-28px;
+}
+.home{
+    /* display:flex; */
+    justify-content:left;
+    width:40px;
+    height:auto;
+    /* z-index:-9999 */
+}
+
+#goHome{
+    margin-left:10px;
+    color:white;
+    margin-top:1px;
+    border:1px solid #343536;
+    background-color:#272729;
+    border-radius:10px;
+    padding:5px;
+    cursor:pointer
+}
+
+#topOutput, #ratedOutput{
+    display:grid;
+    grid-template-columns: repeat(5, 2fr);
+    /* gap:10px; */
+
+    /*  */
+}
+
+.homefilm{
+    margin-top:10px;
+    border-radius:20px;
+    border:2px solid black;
+    display:grid;
+    grid-template-rows:repeat(3 1fr);
+    width:150px;
+    justify-content:center;
+    margin-bottom:8px;
+    /* background-color:#272729; */
+    background-color:rgb(88, 107, 83);
+    /* float:left; */
+}
+.homefilm > *{
+    display:flex;
+    justify-content:center;
+    text-align:center;
+}
+
+.homeposter > img{
+    width:80px;
+    height:auto;
+}
+
+.homefilm:hover{
+    /* display:none; */
+    border:2px solid white;
+    cursor:pointer;
+}
