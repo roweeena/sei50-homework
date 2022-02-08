@@ -172,7 +172,7 @@ $(() => {
                     </div>`)
             });
             $('.film').on('click', (e) => {
-                window.open(`https://www.themoviedb.org/movie/${e.target.id}?language=en-US`)
+                getFilm(e.target.id)
             })
             // console.log(resultsLoop)
         }
