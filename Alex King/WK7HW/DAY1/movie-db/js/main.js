@@ -93,27 +93,29 @@ $(() => {
 
             resultsLoop = data.results.forEach((a) => {
                 $('#output').append(
-                    `<div class="film"> 
-                        <div class="title">
+                    `<div class="film" id="${a.id}"> 
+                        <div class="title" id="${a.id}">
                             ${a.title}
                         </div> 
 
-                        <div class="poster">
+                        <div class="poster" id="${a.id}">
                             <img src="https://image.tmdb.org/t/p/w200/${a.poster_path}">
                         </div>
 
-                        <div class="release">
+                        <div class="release" id="${a.id}">
                             ${a.release_date}
                         </div>
 
-                        <div class="score">
+                        <div class="score" id="${a.id}">
                             ★${a.vote_average}
                         </div>
 
                     </div>`)
             });
-
-            console.log(resultsLoop)
+            $('.film').on('click', (e) => {
+                window.open(`https://www.themoviedb.org/movie/${e.target.id}?language=en-US`)
+            })
+            // console.log(resultsLoop)
         }
         const userQuery = $('#userQuery').val();
         // console.log(userQuery)

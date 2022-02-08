@@ -28,7 +28,7 @@ nav{
     margin-left:10px;
     width:30px;
 }
-#userQuery:hover, #loadMore:hover, #goHome:hover{
+#userQuery:hover, #loadMore:hover, #goHome:hover, .film:hover{
     background-color:#1a1a1b;
     border:1px solid #d7dadc;
 
