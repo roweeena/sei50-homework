@@ -16,25 +16,22 @@ $(() => {
                     $('#topOutput').append(
                         `<div class="homefilm" id="${a.id}"> 
 
-                            <div class="hometitle">
-                                <p>${a.title}</p>
+                            <div class="hometitle" id="${a.id}">
+                                ${a.title}
                             </div> 
     
-                            <div class="homeposter">
-                                <img src="https://image.tmdb.org/t/p/w200/${a.poster_path}">
+                            <div class="homeposter" id="${a.id}">
+                                <img src="https://image.tmdb.org/t/p/w200/${a.poster_path}" id="${a.id}">
                             </div>
     
-                            <div class="homescore">
-                                <p>★${a.vote_average}</p>
+                            <div class="homescore" id="${a.id}">
+                                ★${a.vote_average}
                             </div>
     
                         </div>`)
                 } // for loop
-                $('.homefilm').on('click', () => {
-                    $('#output').html('')
-                    console.log('hello')
-                    console.log($(this).attr("id"))
-                    // $(this).attr("id")
+                $('.homefilm').on('click', (e) => {
+                    window.open(`https://www.themoviedb.org/movie/${e.target.id}?language=en-US`)
                 })
             } //xhr.onload
             xhr.open('GET', 'https://api.themoviedb.org/3/movie/popular?api_key=24d863d54c86392e6e1df55b9a328755&language=en-US&page=1')
@@ -51,25 +48,24 @@ $(() => {
                 for (let i = 0; i<10; i++){
                     let a = data.results[i]
                     $('#ratedOutput').append(
-                        `<div class="homefilm"> 
-                            <div class="hometitle">
-                                <p>${a.title}</p>
+                        `<div class="homefilm" id="${a.id}"> 
+
+                            <div class="hometitle" id="${a.id}">
+                                ${a.title}
                             </div> 
     
-                            <div class="homeposter">
-                                <img src="https://image.tmdb.org/t/p/w200/${a.poster_path}">
+                            <div class="homeposter" id="${a.id}">
+                                <img src="https://image.tmdb.org/t/p/w200/${a.poster_path}" id="${a.id}">
                             </div>
     
-                            <div class="homescore">
-                                <p>★${a.vote_average}</p>
+                            <div class="homescore" id="${a.id}">
+                                ★${a.vote_average}
                             </div>
     
                         </div>`)
-                }
-                $('.homefilm').on('click', () => {
-                    $('#output').html('')
-                    console.log('hello')
-                    // $(this).attr("id")
+                } // for loop
+                $('.homefilm').on('click', (e) => {
+                    window.open(`https://www.themoviedb.org/movie/${e.target.id}?language=en-US`)
                 })
             }
             xhr.open('GET', 'https://api.themoviedb.org/3/movie/top_rated?api_key=24d863d54c86392e6e1df55b9a328755&language=en-US&page=1&primary_release_date.gte=2021-12-01')
