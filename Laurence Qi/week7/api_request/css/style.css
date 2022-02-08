@@ -1,0 +1,21 @@
+.btn{
+    margin: 10px 0px 10px 0px;
+}
+
+
+img{
+    width: 400px;
+    display: block;
+}
+
+.result{
+    margin-top: 10px;
+}
+
+#error{
+    color: red;
+}
+
+iframe{
+
+}
