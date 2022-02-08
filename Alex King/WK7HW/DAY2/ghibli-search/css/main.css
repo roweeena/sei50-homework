@@ -1,0 +1,152 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+}
+body{
+    background-color: black;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    height:30px;
+    width:100vw;
+    background-color:#1a1a1b;
+    border:2px solid #343536;
+    padding: 5px;
+    color:white
+}
+
+.search{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:250px;
+    margin-top:-28px;
+}
+
+.output{
+    margin-top:60px;
+}
+
+#userQuery{
+    background-color:#272729;
+    border: 1px solid #343536;
+    border-radius:20px;
+    color:#848688;
+    height:25px;
+    padding-left:6px;
+}
+
+#loadMore{
+    background-color:#272729;
+    border: 1px solid #343536;
+    border-radius:20px;
+    color:#848688;
+    margin-left:10px;
+    width:30px;
+}
+
+#userQuery:hover, #loadMore:hover, #goHome:hover, #back:hover{
+    background-color:#1a1a1b;
+    border:1px solid #d7dadc;
+
+}
+#userQuery:focus{
+    outline:none;
+    color:white
+}
+
+#goHome{
+    margin-left:10px;
+    color:white;
+    margin-top:1px;
+    border:1px solid #343536;
+    background-color:#272729;
+    border-radius:10px;
+    padding:5px;
+    cursor:pointer
+}
+.show-poster > img{
+    padding-top:5px;
+    max-width:150px;
+}
+
+.container{
+    display:grid;
+    position:relative;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px 10px 10px 10px;
+}
+.container > *{
+    text-align:center;
+}
+.home-film{
+    background:#1a1a1b;
+    border: 2px solid #343536;
+    border-radius:20px;
+    padding-bottom:10px;
+    padding-top:10px;
+    max-width:230px;
+}
+.home-film:hover{
+    border:2px solid white;
+    cursor:pointer;
+}
+
+.show-page {
+    display: grid; 
+    max-width:100vw;
+    max-height:100vh;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 0.4fr 1fr 1.6fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". header header header ."
+      "titles . . . score"
+      "poster overview overview overview ."
+      "misc overview overview overview ."; 
+  }
+  .titles { grid-area: titles; }
+  .poster { grid-area: poster; }
+  .header { grid-area: header; }
+  .overview { grid-area: overview; }
+  .director { grid-area: director; }
+  .producer { grid-area: producer; }
+  .release { grid-area: release; }
+  .misc { grid-area: misc; }
+  .score { grid-area: score; }
+
+  .header>img, .poster>img{
+    max-width:65%
+  }
+  
+  .show-page > *{
+    text-align:center;
+  }
+
+  .overview{
+      /* margin-top:-15px; */
+  }
+  img{
+      border-radius:20px;
+  }
+
+  .header>img{
+    box-shadow: 0px 0px 40px 30px rgb(177, 177, 177);
+  }
+
+  #back{
+    /* margin-left:30px; */
+    position:fixed;
+    transform:translateX(-200%);
+    left:100%;
+    color:white;
+    margin-top:-30px;
+    border:1px solid #343536;
+    background-color:#272729;
+    border-radius:10px;
+    padding:5px;
+    cursor:pointer
+  }
