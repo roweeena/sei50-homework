@@ -91,35 +91,49 @@ $(() => {
                         <div class="title">
                             ${data.original_title}
                         </div>
+
                         <div class="backdrop">
-                            <img src="https://image.tmdb.org/t/p/w200/${data.backdrop_path}"
+                            <img src="https://image.tmdb.org/t/p/w500/${data.backdrop_path}">
                         </div>
+
                         <div class="showPoster">
-                            <img src="https://image.tmdb.org/t/p/w200/${data.poster_path}"
+                            <img src="https://image.tmdb.org/t/p/w200/${data.poster_path}">
                         </div>
-                        <div class="genres">
-                            ${data.genres[0].name}
-                        </div>
+
                         <div class="overview">
                             ${data.overview}
                         </div>
-                        <div class="company">
-                            ${data.production_companies[0].name}
-                        </div>
-                        <div class="tagline">
-                            ${data.tagline}
-                        </div>
-                        <div class="release">
-                            ${data.release_date}
-                        </div>
                         <div class="score">
-                            ${data.vote_average}
+                            <div class="number">
+                                ★${data.vote_average}
+                            </div>
+
+                            <div class="votes">
+                                votes: ${data.vote_count}
+                            </div>
                         </div>
-                        <div class="votes">
-                            ${data.vote_count}
+
+                        <div class="tagline">
+                                ${data.tagline}
                         </div>
-                        <div class="runtime">
-                            runtime:${data.runtime}
+
+                        <div class="misc">
+                            <div class="genres">
+                                Genre: ${data.genres[0].name}
+                            </div>
+
+                            <div class="company">
+                                Studio: ${data.production_companies[0].name}
+                            </div>
+
+                            <div class="release">
+                                release: ${data.release_date}
+                            </div>
+
+
+                            <div class="runtime">
+                                runtime: ${data.runtime}
+                            </div>
                         </div>
                     </div>    
                     `)
