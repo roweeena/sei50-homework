@@ -28,7 +28,7 @@ nav{
     margin-left:10px;
     width:30px;
 }
-#userQuery:hover, #loadMore:hover, #goHome:hover, .film:hover{
+#userQuery:hover, #loadMore:hover, #goHome:hover{
     background-color:#1a1a1b;
     border:1px solid #d7dadc;
 
@@ -50,6 +50,10 @@ nav, .film{
 .film{
     margin-top:10px;
     border-radius:20px;
+}
+.film:hover{
+    background-color:#1a1a1b;
+    border:2px solid #d7dadc;
 }
 #output{
     margin-top:60px;
