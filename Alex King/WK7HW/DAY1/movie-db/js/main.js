@@ -30,9 +30,10 @@ $(() => {
     
                         </div>`)
                 } // for loop
-                $('.homefilm').on('click', (e) => {
-                    window.open(`https://www.themoviedb.org/movie/${e.target.id}?language=en-US`)
-                })
+                // $('.homefilm').on('click', (e) => {
+                //     getFilm(e.target.id)
+                //     window.open(`https://www.themoviedb.org/movie/${e.target.id}?language=en-US`)
+                // })
             } //xhr.onload
             xhr.open('GET', 'https://api.themoviedb.org/3/movie/popular?api_key=24d863d54c86392e6e1df55b9a328755&language=en-US&page=1')
             xhr.send();
@@ -65,7 +66,7 @@ $(() => {
                         </div>`)
                 } // for loop
                 $('.homefilm').on('click', (e) => {
-                    window.open(`https://www.themoviedb.org/movie/${e.target.id}?language=en-US`)
+                    getFilm(e.target.id)
                 })
             }
             xhr.open('GET', 'https://api.themoviedb.org/3/movie/top_rated?api_key=24d863d54c86392e6e1df55b9a328755&language=en-US&page=1&primary_release_date.gte=2021-12-01')
@@ -77,13 +78,57 @@ $(() => {
 
         
     } //homePage()
-
     homePage()
-        $('.homefilm').on('click', () => {
-            $('#output').html('')
-            console.log('hello')
-            $(this).attr("id")
-        })
+
+    function getFilm(filmID){
+        $('#output').html('')
+        const xhr = new XMLHttpRequest();
+            xhr.onload = function(){
+                const data = JSON.parse(xhr.response);
+                window.Response = data;
+                $('#output').append(
+                    `<div class="showFilm">
+                        <div class="title">
+                            ${data.original_title}
+                        </div>
+                        <div class="backdrop">
+                            <img src="https://image.tmdb.org/t/p/w200/${data.backdrop_path}"
+                        </div>
+                        <div class="showPoster">
+                            <img src="https://image.tmdb.org/t/p/w200/${data.poster_path}"
+                        </div>
+                        <div class="genres">
+                            ${data.genres[0].name}
+                        </div>
+                        <div class="overview">
+                            ${data.overview}
+                        </div>
+                        <div class="company">
+                            ${data.production_companies[0].name}
+                        </div>
+                        <div class="tagline">
+                            ${data.tagline}
+                        </div>
+                        <div class="release">
+                            ${data.release_date}
+                        </div>
+                        <div class="score">
+                            ${data.vote_average}
+                        </div>
+                        <div class="votes">
+                            ${data.vote_count}
+                        </div>
+                        <div class="runtime">
+                            runtime:${data.runtime}
+                        </div>
+                    </div>    
+                    `)
+                    
+            }
+        xhr.open('GET', `https://api.themoviedb.org/3/movie/${filmID}?api_key=24d863d54c86392e6e1df55b9a328755`)
+        xhr.send();
+    }
+
 
     function loadFilm(){
         const xhr = new XMLHttpRequest();
@@ -143,7 +188,6 @@ $(() => {
             $(this).attr("id")
         })
     }); 
-
 
 }); //
 
