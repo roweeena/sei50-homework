@@ -1,0 +1,39 @@
+#content-wrapper {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+h1{
+  display: inline-block;
+}
+
+#results-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  height: 80vh;
+  overflow: scroll;
+  
+}
+
+.result-item{
+  border: 1px solid red;
+  width: 200px;
+  text-align: center;
+}
+
+img{
+  z-index: 1;
+}
+
+.single-movie{
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 80vw;
+  height: calc(100% - 100px);
+  background-color: green;
+  text-align: center;
+}

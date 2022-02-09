@@ -1,0 +1,89 @@
+* { 
+  margin: 0;
+}
+body {
+  background-image:linear-gradient(rgba(130, 170, 255, 0.5), rgba(130, 170, 255, 0.5)), url("https://image.freepik.com/free-vector/colorful-dog-cat-paw-prints-pattern-background_1017-30662.jpg");
+
+}
+
+.index_img {
+  border-radius: 10px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.outer_wrapper {
+  text-align: center;
+}
+
+.wrapper {
+  margin: auto;
+  width: 60%;
+  border-radius: 20px;
+  background-color: rgba(255,255,255, 0.5);
+  border: 2px solid cornflowerblue;
+}
+
+h1 {
+  background-color:burlywood;
+  padding: 40px;
+
+}
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin: 10px;
+  padding: 5px 10px;
+  background-color: olivedrab;
+  border-radius: 10px;
+  border: 2px solid cornflowerblue;
+
+}
+
+.button:hover {
+  background-color: cornflowerblue;
+  border: 2px solid olivedrab;
+}
+a {
+  text-decoration: none;
+  color: black;
+  
+}
+.content {
+  margin: auto;
+  display: flex;
+  text-align: center;
+}
+
+.show {
+  margin: auto;
+}
+
+.show img {
+  border-radius: 10px;
+  width: 350px;
+  height: 450px;
+  object-fit:contain;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
+
+ul li {
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+}
+
