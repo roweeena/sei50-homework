@@ -41,6 +41,7 @@ $(function(){
         $('.list-image').on('click', function(){
             const photoID = $(this).data('photo')
             getShow(photoID)
+            $('#list').hide()
         })
     }; // renderSearch()
 
@@ -54,13 +55,34 @@ $(function(){
             nojsoncallback: 1   
         }}) // get()
         .then(function(res){
-            console.log(res);
-        })
+            renderShow(res.data.photo)
+        }) // then()
         .catch(function(err){
             console.log('AJAX Show Error: ', err);
-        })
+        }) // catch()
     }
-    
+
+    const renderShow = function(photoData){
+        const imageUrl = `https://live.staticflickr.com/${photoData.server}/${photoData.id}_${photoData.secret}_c.jpg`
+
+        $('#list').hide();
+        $('#show').show();
+
+        $('#show').append(`
+            <p><strong>Title:</strong> ${photoData.title._content}</p>
+            <p><strong>By:</strong> ${photoData.owner.realname} (${photoData.owner.username})</p>
+            <img src="${imageUrl}" id="show-image">
+            <p>Veiws: ${photoData.views}</p>
+            <button id="backButton">Back to Results</button>
+            `)
+
+        $('#backButton').on('click', function(){
+            $('#show').hide();
+            $('#list').show();
+            $('#show').empty()
+            }); // back button click handler
+   } //renderShow()
+
 
 
     $('#search').on('click', function(e){
