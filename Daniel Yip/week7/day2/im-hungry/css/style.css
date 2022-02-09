@@ -1,3 +1,94 @@
-*{
-  border: 1px solid red;
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap');
+:root {
+  box-sizing: border-box;
+  --main-width: 1000px;
+  font-family: 'Asap', sans-serif;
 }
+@media screen and (max-width: 1100px){
+  :root{
+    --main-width: 90vw;
+  }
+}
+@media screen and (max-width: 800px){
+  #instructions-wrapper{
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+  #recipe{
+    text-align: center;
+  }
+}
+
+body, html {
+  margin: 0;
+}
+
+*{
+  /* border: 1px solid red; */
+}
+
+h3, h2 {
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+
+h3{
+  background-color: rgba(0, 0, 0, 0.126);
+}
+
+header {
+  width: var(--main-width);
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#content-wrapper{
+  margin: 0 auto;
+  width: var(--main-width);
+}
+
+#search-results-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.meal{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.meal:hover{
+  outline: 3px solid black;
+}
+
+#instructions-wrapper{
+  display: flex;
+}
+ol {
+  margin: 0;
+}
+li{
+  margin: 1rem 0;
+}
+
+a{
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.414);
+}
+
+a:hover{
+  color: rgb(0, 0, 0);
+}
+
+#recipe button{
+  margin-bottom: 1rem;
+}
+
