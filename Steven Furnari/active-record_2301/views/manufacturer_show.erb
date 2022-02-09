@@ -1,0 +1,33 @@
+<h3><%= @manufacturer.name %></h3>
+
+<p>
+    <strong>Country:</strong>
+    <%= @manufacturer.country %>
+</p>
+
+<p>
+    <strong>Founded:</strong>
+    <%= @manufacturer.founded %>
+</p>
+
+<p>
+    <strong>Still Active:</strong>
+    <%= @manufacturer.active ? 'Yes' : 'No' %>
+</p>
+
+<img src="<%= @manufacturer.logo_url %>" class="man_logo">
+
+<p>
+    <strong>Cars:</strong>
+    <ul>
+        <% @manufacturer.cars.each do |car| %>
+        <li>
+            <a href="/cars/<%= car.id %>">
+            <%= car.model %>
+            </a>
+        </li>
+        <% end %>
+    </ul>
+</p>
+<a href="/manufacturers/<%=@manufacturer.id%>/edit">[Edit]</a>|
+<a href="/manufacturers/<%=@manufacturer.id%>/delete">[Delete]</a>

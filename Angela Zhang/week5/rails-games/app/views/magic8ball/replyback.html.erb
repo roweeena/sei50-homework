@@ -1,0 +1,18 @@
+<h1>Welcome to Magic 8 Ball Game!</h1>
+
+<a href="/">Home</a>
+
+<h4>Your Question:</h4>
+
+<p><%= params[:question] %></p>
+
+<h4>My reply is:</h4>
+
+<%= @answers.sample %>
+
+<br>
+<br>
+
+
+<a href="/magic8ball"><button>another question?</button></a>
+

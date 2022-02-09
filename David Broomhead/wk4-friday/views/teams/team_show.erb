@@ -1,0 +1,37 @@
+<h3>Team: <%= @team.franchise %></h3>
+
+[<a href="/teams/<%= @team.id %>/team_edit">Edit</a>]
+|
+[<a href="/teams/team_show/<%= @team.id %>/delete">Delete</a>]
+
+
+<p>
+    <strong>Price Paid ($): </strong><%= @team.price %>
+</p>
+
+<p>
+    <strong>Year sold: </strong><%= @team.year %>
+</p>
+
+<p>
+    <strong>Owner: </strong>
+    <% if @team.owner == nil %>
+        not owned!
+        <br>
+        <a href="/owners/owner_new">[Make New Owner]</a>
+        <br>
+
+        <form action="/teams/link/<%= @team.id %>" method="post">
+            <% @owners.each do |owner| %>
+            <input type="radio" id="<%= owner.id %>"
+            name = "owner_id" value="<%= owner.id %>">
+            <label for="owner.id"><%= owner.name %></label>
+            <br>
+        <% end %>
+        <input type="submit" value="Add">
+        </form>
+
+    <% else %>
+        <a href="/owners/owner_show/<%= @team.owner.id %>"><%= @team.owner.name %></a>
+    <% end %>
+</p>

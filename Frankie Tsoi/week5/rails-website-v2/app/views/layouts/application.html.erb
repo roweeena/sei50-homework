@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BrandsofCARS</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1>LOVE CARS?</h1>
+        <%= link_to 'All Brands', brands_path%>
+        |
+        <%= link_to 'Add Brand', new_brand_path, class:'nav_add' %>
+        |
+        <%= link_to 'All Cars', cars_path%>
+        |
+        <%= link_to 'Add car', new_car_path%>
+        
+
+      </nav>
+      <hr>
+    </header>
+    <%= yield %>
+    <footer>
+      <hr>
+      &copy frankie tsoi edited 2020
+    </footer>
+   
+  </body>
+</html>

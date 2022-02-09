@@ -1,0 +1,11 @@
+<section>
+  <img src="<%= @snack.image_url %>" alt="">
+  <h2>
+    <%= link_to @snack.name, snack_path(@snack.id) %>
+  <h2>
+  <span>rate: <%= @snack.rate %></span>
+  <p>review: <%= @snack.review %></p>
+
+  <%= link_to "Edit", update_snack_path(@snack.id) %>
+  <%= link_to "Delete", destroy_snack_path(@snack.id) %>
+</section>

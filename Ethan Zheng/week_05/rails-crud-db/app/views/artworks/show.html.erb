@@ -1,0 +1,21 @@
+<section>
+    <div class='tags'>
+        <ul>
+            <% @tags.each do |tag| %>
+                <%= link_to tag, tag_path(tag)  %>
+                <br>
+            <% end %>
+        </ul>
+    </div>
+
+    <div class='main'>
+        <%= image_tag @artwork.image_url, alt: @artwork.name, class: 'show-image'  %>
+        <hr>
+
+        <h2><%= @artwork.name %>, <em><%= @artwork.year %></em></h2>
+        <h3><%= @artwork.artist %></h3>
+
+        <%= link_to 'Edit', edit_artwork_path(@artwork.id)  %>
+        <%= link_to 'Delete', destroy_artwork_path(@artwork.id)  %>
+    </div>
+</section>

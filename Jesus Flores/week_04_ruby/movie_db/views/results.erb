@@ -1,0 +1,11 @@
+<div class="grid-search ">
+  <% @result['results'].each do |el|  %>
+  <div>
+      <ul> 
+        <li><img src="http://image.tmdb.org/t/p/w185/<%=el['poster_path']%>"onerror="this.onerror=null;this.src='https://placeimg.com/185/285/animals';" /></li>
+        <li> <a href="/search/get_movie?id=<%= el['id']%>" >  <button type="submit" class="submit-btn2">...</button> </a></li>
+        <li> <h6 class="movie-title"><%= el['title'] %></h6></li>
+        </ul> 
+  </div>
+  <% end %>
+ </div>

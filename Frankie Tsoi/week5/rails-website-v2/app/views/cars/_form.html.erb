@@ -1,0 +1,30 @@
+
+<%= form_with model: @car, local: true do |f|%>
+
+<%= f.label :name %>
+<br>
+<%= f.text_field :name %>
+<br><br>
+<%= f.label :body_type %>
+<br>
+<%= f.text_field :body_type %>
+<br><br>
+<%= f.label :model %>
+<br>
+<%= f.text_field :model %>
+<br><br>
+<%= f.label :price %>
+<br>
+<%= f.text_field :price, placeholder: '$' %>
+<br><br>
+
+<%= f.label :image %>
+<br>
+<%= f.text_field :image, placeholder: 'URL here' %>
+<br><br>
+
+<%= f.submit %>
+
+</label>
+
+<%end%>

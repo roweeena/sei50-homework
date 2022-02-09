@@ -1,0 +1,13 @@
+<h3>
+SHELF OF ALBUMS
+</h3>
+<ul>
+<% @results.each do |album| %>
+    <li>
+    <a href="/albums/<%= album['id'] %>">
+    <%= album['album_name'] %>
+    <img src="<%= album['album_cover']%>" alt="<%= album['album_name']%>" class="album_cover">   
+    </a>
+    </li>
+<% end %>
+</ul>

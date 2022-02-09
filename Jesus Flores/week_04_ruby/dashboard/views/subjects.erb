@@ -1,0 +1,36 @@
+<section id="grid-cotainer">
+   <div class="grid-item">
+      <table class="show-content">
+         <tr>
+            <th>Student Information</th>
+         </tr>
+         <tr>
+            <td>
+               <ul>
+                  <li> <%= @subjects.name%>  
+               </ul>
+            </td>
+         </tr>
+      </table>
+   </div>
+   <div class="grid-item">
+      <table class="show-content">
+         <tr>
+            <th>Subjects</th>
+         </tr>
+         <tr>
+            <td>
+               <ul>
+                 <% if !@result.empty? %>
+                        <% @result.each do |el| %>
+                            <li> <%= el.student.first_name %>   </li>
+                            <% end %>
+                        <% else %>
+                        <h1> No students</h1>
+                  <% end %>
+               </ul>
+            </td>
+         </tr>
+      </table>
+   </div>
+</section>

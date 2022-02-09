@@ -1,0 +1,49 @@
+<h1>Edit Brummy!</h1>
+
+<form action="/famous_brummies/<%= @brummy['id'] %>" method="post">
+
+    <label>
+        Name:
+        <input type="text" name="name" value="<%= @brummy['name'] %>">
+    </label>
+    <br><br>
+
+    <label>
+        Famous For:
+        <input type="text" name="famous_for" value="<%= @brummy['famous_for'] %>">
+    </label>
+    <br><br>
+    
+    <label>
+        Year Born:
+        <input type="text" name="year_born" value="<%= @brummy['year_born'] %>">
+    </label>
+    <br><br>
+
+    <label>
+        Year Died:
+        <input type="text" name="year_died" value="<%= @brummy['year_died'] %>">
+    </label>
+    <br><br>
+
+    <label>
+        Born in Brum?
+        <input type="text" name="born_in_brum" value="<%= @brummy['born_in_brum'] %>">
+    </label>
+    <br><br>
+
+    <label>
+        Famous Brummy Rating (1-10):
+        <input type="text" name="famous_brummy_rating" value="<%= @brummy['famous_brummy_rating'] %>">
+    </label>
+    <br><br>
+
+    <label>
+        Image URL:
+        <input type="text" name="image_url" value="<%= @brummy['image_url'] %>">
+    </label>
+    <br><br>
+
+    <button type="submit">Submit Changes</button>
+
+</form>

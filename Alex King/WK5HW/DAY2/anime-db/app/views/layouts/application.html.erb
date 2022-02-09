@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AnIMeDB</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+   
+    <nav>
+      <h1>My AnimeDB</h1>
+      <%= link_to 'Anime List', animes_path, class: 'navlink' %>
+      |
+      <%= link_to 'List Anime', new_anime_path %>
+      <hr>
+      <%= yield %>
+    </nav>
+
+    <footer>
+    &copy; CALICO producitons 2022
+    </footer>
+
+  </body>
+</html>

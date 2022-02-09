@@ -1,0 +1,13 @@
+<%# need to have my links to editing etc in this page.  %>
+<%# TODO: get the data below into a table. %>
+<h3><%= @rental.street_address + ', ' + @rental.suburb %></h3>
+<div class="wrapper">
+    <div class="grid-item">Cost: </div>
+    <div class="grid-item">$<%= @rental.cost %></div>
+    <div class="grid-item">Total Travel Time:</div>
+    <div class="grid-item"><%= @rental.total_travel_time %> Hours </div>
+</div>
+
+<br>
+<a href="/rental/<%= @rental.id %>/update">Edit</a>
+<a href="/rental/<%= @rental.id %>/delete">Delete</a>

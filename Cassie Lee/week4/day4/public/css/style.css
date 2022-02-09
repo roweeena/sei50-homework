@@ -1,0 +1,106 @@
+body {
+  text-align: center;
+  margin: 0;
+}
+
+header {
+  background-color: #ff7043;
+  padding: 50px;
+}
+
+h1 {
+  font-family: "Bitter", serif;
+  font-size: 100px;
+  margin: 0px;
+  color: #ffee58;
+}
+
+.links {
+  background-color: #ffb74d;
+  font-family: "Bitter", serif;
+
+  padding: 10px;
+}
+
+.content {
+  padding: 40px;
+  font-family: "Mulish", sans-serif;
+}
+
+footer {
+  background-color: #ff7043;
+  font-family: "Bitter", serif;
+  color: #ffee58;
+  padding: 10px;
+}
+
+span {
+  font-weight: bold;
+  color: #ff7043;
+}
+
+#main_link {
+  padding: 70px;
+  color: white;
+}
+
+#main_link:link {
+  text-decoration: none;
+}
+
+#main_link:hover {
+  color: #ff5722;
+}
+
+#main_link:active {
+  color: #ff5722;
+}
+
+h2 {
+  color: #ff7043;
+  font-family: "Bitter", serif;
+}
+
+li {
+  list-style-type: none;
+  margin-right: 30px;
+  padding: 10px;
+}
+
+a {
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffb74d;
+}
+
+img {
+  width: 600px;
+}
+
+.title_for_movie {
+  font-size: 30px;
+  font-family: "Bitter", serif;
+}
+
+button {
+  background-color: #ffb74d;
+  border-radius: 10px;
+  border: none;
+  padding: 6px;
+  margin-top: 10px;
+}
+
+button:hover {
+  color: #ff8a50;
+}
+
+input {
+  margin: 0px 0px 15px 0px;
+  text-align: center;
+}

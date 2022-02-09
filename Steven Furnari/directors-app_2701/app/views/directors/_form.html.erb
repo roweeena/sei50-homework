@@ -1,0 +1,28 @@
+<%= form_with model: @director, local: true do |f|%>
+    <br>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+
+    <br>
+    <%= f.label :dob, 'Date of Birth' %>
+    <%= f.date_field :dob %>
+    <br>
+
+    <br>
+    <%= f.label :nationality %>
+    <%= f.text_field :nationality %>
+    <br>
+
+    <br>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+    <br>
+
+    <br>
+    <%= f.label :photo, 'Photo URL' %>
+    <%= f.text_field :photo %>
+    <br>
+    <%= f.submit %>
+
+<% end %>

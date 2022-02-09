@@ -1,0 +1,46 @@
+
+        <section id="grid-cotainer">
+            <div class="grid-item">
+                <div class="title-dash"> <h1>Students </h1></div>
+                        <table class="show-content">
+                            <tr>
+                                <th>Name</th>
+                                <th>Year</th>
+                                <th>Email</th>
+                                <th></th>
+                            </tr>
+                            <% @students.each do |el| %>
+                                <tr>
+                                <td><%= el.first_name %></td>
+                                <td><%= el.course_year %></td>
+                                <td><%= el.email %></td>
+                                <td>
+                                    <a href="/students/<%=el.id%>"> <i class="far fa-file-alt"></i> </a>  
+                                    <a href="/students/<%=el.id%>/edit"> <i class="far fa-edit"></i> </a>
+                                    <a href="/students/<%=el.id%>/delete"> <i class="far fa-trash"></i> </a>
+                                </td>
+                                </tr>
+                            <% end %>
+                    </table>
+                </div>
+            <div class="grid-item two">
+            <div class="title-dash"> <h1>Subjects </h1></div>
+                        <table class="show-content">
+                            <tr>
+                                <th>Class</th>
+                                <th>Clssroom</th>
+                                <th>Teacher</th>
+                                <th></th>
+                            </tr>
+                            <% @subjects.each do |el| %>
+                                <tr>
+                                <td><%= el.name %></td>
+                                <td><%= el.clssroom %></td>
+                                <td><%= el.teacher %></td>
+                                <td><a href="/subject/<%=el.id%>"> <i class="far fa-file-alt"></i> </a> </td>
+                                </tr>
+                            <% end %>
+                    </table>
+                </div>
+            </div>
+        </section>

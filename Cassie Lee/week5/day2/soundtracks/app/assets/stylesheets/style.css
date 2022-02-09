@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  
+
+}
+
+.header {
+  background-image: linear-gradient(
+      rgba(146, 158, 151, 0.5),
+      rgba(82, 82, 82, 0.5)
+    ),
+    url("https://www.wallpapertip.com/wmimgs/50-505120_call-me-by-your-name-image-call-me.jpg");
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.text-box {
+  width: 90%;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 130px;
+  color: #f8f7f8;
+}
+
+nav {
+  position: absolute;
+  left: 65%;
+  padding: 2% 6%;
+  align-items: center;
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relateive;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: "Titillium Web", sans-serif;
+  -webkit-text-stroke: 1px black;
+}
+
+nav ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #030303;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+nav ul li:hover::after {
+  width: 100%;
+}
+
+img {
+  width: 500px;
+  height: auto;
+}
+
+.home_ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  margin: 80px 0 80px 0;
+}
+
+.home_ul li {
+  transition: 0.5s;
+}
+
+.home_ul li:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.home_image {
+  margin: 20px;
+}
+
+.index {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  font-family: "Titillium Web", sans-serif;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+.index_ul {
+  padding: 100px;
+  list-style-type: none;
+  background: #bed1c3;
+  border-radius: 10px;
+  transition: 0.5s;
+  width: 30%;
+  height: auto;
+  margin: 10% 20% 20% 25%;
+}
+
+.index_ul li {
+  padding: 40px;
+}
+
+.index_ul li a {
+  text-decoration: none;
+  font-size: 50px;
+  color: black;
+}
+
+.index_list {
+  transition: 0.5s;
+}
+
+.index_list:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  padding: 1px;
+}
+
+hr {
+  margin-top: 80px;
+}
+
+footer {
+  background-color: black;
+  font-family: "Bitter", serif;
+  color: #fccc04;
+  padding: 30px;
+
+}
+.show_container{
+    margin: 150px;
+}
+
+strong {
+    color: rgb(100, 155, 114);
+    font-size: 30px;
+}
+
+p {
+    padding: 20px;
+    font-size: 25px;
+
+}
+
+.show_link {
+    color: rgb(100, 155, 114);
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.show_link:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+.edit_and_delete{
+    font-size: 20px;
+    color: black;
+    background-color: rgb(190, 223, 225);
+    border-radius: 10px;
+    padding: 1px 7px 1px 7px;
+    text-decoration: none;
+    transition: 0.5s;
+
+}
+
+.edit_and_delete:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.show_content{
+    margin-top: 50px;
+}
+
+
+
+input[type="text"],
+select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+   border-radius: 4px; 
+  box-sizing: border-box;
+}

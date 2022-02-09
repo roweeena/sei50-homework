@@ -1,0 +1,13 @@
+body {
+  background-color: burlywood;
+}
+h1 {
+  text-align: center;
+}
+#search-page {
+  margin-top: 20%;
+  margin-left: 30%;
+}
+#release-date {
+  list-style: none;
+}

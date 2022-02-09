@@ -1,0 +1,45 @@
+<header>
+    <h3>Edit Team: <%= @team['name'] %></h3>
+</header>
+
+<form action="/teams/<%=@team['id']%>" method="post">
+
+    <label>
+        Team Name:
+        <input type="text" name="team_name" value=<%= @team['team_name'] %>>
+    </label>
+    <br>
+    <label>
+        Home Ground:
+        <input type="text" name="home_ground" value=<%= @team['home_ground'] %>>
+    </label>
+    <br>
+    <label>
+        State:
+        <input type="text" name="state" value=<%= @team['state'] %>>
+    </label>
+    <br>
+    <label>
+        Founded:
+        <input type="text" name="founded" value=<%= @team['founded'] %>>
+    </label>
+    <br>
+    <label>
+        Premierships:
+        <input type="text" name="premierships" value=<%= @team['premierships'] %>>
+    </label>
+    <br>
+    <label>
+        Still Active:
+        <input type="text" name="still_active"placeholder="1 for YES, 0 for NO"  value=<%= @team['still_active'] %>>
+    </label>
+    <br>
+    <label>
+        Club Logo:
+        <input type="text" name="club_logo_url" value=<%= @team['club_logo_url'] %>>
+    </label>
+    <br>
+
+    <button>Update Team</button>
+
+</form>

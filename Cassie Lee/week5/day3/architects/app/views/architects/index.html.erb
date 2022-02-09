@@ -1,0 +1,11 @@
+<h2>Index of Architects</h2>
+
+<ul>
+    <% @architects.each do |a|%>
+        <li>
+            <%= link_to a.name, architect_path(a)%>
+        </li>
+
+    <%end%>
+
+</ul>

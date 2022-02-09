@@ -1,0 +1,29 @@
+
+
+<h3>Edit Manga Name: <%= @mangabook.name %></h3>
+
+<form action="/mangabooks/<%= @mangabook.id %>" method="post">
+<label>
+Name:
+<input type="text" name = "name" value="<%=@mangabook.name%>">
+</label>
+<br>
+<label>
+Volumes:
+<input type="text" name = "volumes" value="<%=@mangabook.volumes%>">
+</label>
+<br>
+<label>
+End(1 for yes, 0 for no):
+<input type="text" name = "end" value="<%=@mangabook.end%>">
+</label>
+<br>
+<label>
+Image URL:
+<input type="text" name = "image_url" value="<%=@mangabook.image_url%>">
+</label>
+<br>
+
+<button>Update Manga</button>
+
+</form>

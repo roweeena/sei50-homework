@@ -1,0 +1,29 @@
+<%= form_with model: @book, local: true do |f|  %>
+
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br><br>
+
+    <%= f.label :date %>
+    <br>
+    <%= f.date_field :date %>
+    <br><br>
+
+    <%= f.label :genre %>
+    <br>
+    <%= f.text_field :genre %>
+    <br><br>
+
+    <%= f.label :image, 'Image URL' %>
+    <br>
+    <%= f.text_field :image %>
+    <br><br>
+
+    <%= f.label :author_id %>
+    <br>
+    <%= f.collection_select :author_id, Author.all, :id, :name, include_blank: true %>
+    <br><br>
+    <%= f.submit %>
+
+<% end %>

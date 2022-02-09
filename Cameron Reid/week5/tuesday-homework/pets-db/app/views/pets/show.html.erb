@@ -1,0 +1,24 @@
+<div class="show">
+  <h2><%= @pet.name %></h2>
+
+  <p class="button"><%= link_to 'Edit', edit_pet_path %></p>
+  <p class="button"><%= link_to 'Delete', destroy_pet_path %></p>
+  <br>
+  <%= image_tag @pet.image_url, alt: @pet.name %>
+  <p>
+  <strong>Age:</strong>
+  <%= @pet.age%>
+  </p>
+  <br>
+
+  <p>
+  <strong>Vaccinated:</strong>
+  <%= @pet.vaccinated%>
+  </p>
+  <br>
+  <p>
+  <strong>Favorite Food:</strong>
+  <%= @pet.favourite_food%>
+  </p>
+  <br>
+</div>

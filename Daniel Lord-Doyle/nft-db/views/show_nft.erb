@@ -1,0 +1,75 @@
+<div class="wrap">
+<div class="flexWrapper">
+    <div class="nftImageWrap">
+        <img class="individualPageImage" src="<%= @nft.image_route %>" alt=" <%= @nft.project_name %> ">
+    </div>
+
+    <div class="nftDetailsWrap">
+
+            <div class="nftIndividualDetails">
+
+                <div class="leftDetails">
+
+                    <p class="smallNftNumber">#00<%= @nft.id %></p>
+                    <h1>Ape #<%= @nft.id %></h1>
+                    <h2><%= @nft.project_name %></h2>
+                </div>
+                
+
+                <div class="rightDetails">
+                    <% if @nft.owned == true %>
+                    <h2>Owned</h2>
+                    <% else %>
+                    <h2>Unowned</h2>
+                    <% end%>
+                </div> 
+
+            </div>
+
+            <% if @nft.owned == true %>
+                <div class="nftListingButton">
+                    <a class="listing" href="/nfts/<%= @nft.id %>/sell">
+                    <button class="listing">SELL NOW</button>
+                    </a>
+                </div>
+            <% else %>
+                <div class="nftListingButton">
+                    <a class="listing" href="/nfts/<%= @nft.id %>/buy">
+                    <button class="listing">BUY NOW</button>
+                    </a>
+                </div>
+            <% end %>
+
+    </div>
+</div>
+
+<div class="metaDetails">
+<h3>Properties</h3>
+<br>
+    <div class="grid">
+
+        <% @nft.properties.each do |nft| %>
+
+        <div class="gridColumn"> <p class="propTitle">Fur:</p> <p class="prop"> <%= nft.fur %> </p> </div>
+
+        <div class="gridColumn"> <p class="propTitle">Eyes:</p> <p class="prop"> <%= nft.eyes %> </p> </div>
+
+        <div class="gridColumn"> <p class="propTitle">Mouth:</p> <p class="prop"> <%= nft.mouth %> </p> </div>
+
+        <div class="gridColumn"> <p class="propTitle">Headwear:</p> <p class="prop"> <%= nft.headwear %> </p> </div>
+
+        <div class="gridColumn"> <p class="propTitle">Bodywear:</p> <p class="prop"> <%= nft.bodywear %> </p> </div>
+
+        <div class="gridColumn"> <p class="propTitle">Background:</p> <p class="prop"> <%= nft.background %> </p> </div>
+
+        <div class="gridColumn"> <p class="propTitle">Eye Accessory:</p> <p class="prop"> <%= nft.eye_accessory %> </p> </div>
+
+        <% end %>
+
+    </div>
+</div>
+</div>
+
+<a class="" href="/nfts/<%= @nft.id %>/delete"><button class="opensea">Send to OpenSea</button></a>
+<br><br>
+<a class="" href="/"><button class="opensea">Edit Properties</button></a>

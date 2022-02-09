@@ -46,7 +46,7 @@ end
 def bmi
     print "Weight(kg): "
     weight = gets.to_f
-    print "Height(kg): "
+    print "Height(cm): "
     height = gets.to_f
     puts "Your BMI = #{weight/(height * height) * 10000}"
     weight/(height * height) * 10000

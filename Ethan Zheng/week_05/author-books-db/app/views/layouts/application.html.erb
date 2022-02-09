@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AuthorBooksDb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <header>
+      <nav>
+        <h1>Authors And Books DB</h1>
+        <%= link_to 'Authors Index', authors_path %>
+        |
+        <%= link_to 'Add Authors', new_author_path %>
+        |
+        <%= link_to 'Books Index', books_path %>
+        |
+        <%= link_to 'Add Book', new_book_path %>
+
+      </nav>
+      <hr>
+    </header>
+
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

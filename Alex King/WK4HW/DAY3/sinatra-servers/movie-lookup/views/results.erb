@@ -1,0 +1,20 @@
+<h3><%= @results['total_results'] %> Results for "<%=params[:title] %>"</h3>
+
+<ul>
+<% @results['results'].each do |movie| %>
+
+<div class="container">
+    <div class="title">
+        <b><%= "#{movie['original_title']}: ☆ #{movie["vote_average"]}"%><br></b>
+    </div>
+    <div class="poster">
+        <img src="https://image.tmdb.org/t/p/w200<%=movie['poster_path']%>" alt="">
+    </div>
+        <div class="overview"><p><%= movie['overview'] %></p>
+    </div>
+</div>
+
+
+
+<% end %>
+</ul>

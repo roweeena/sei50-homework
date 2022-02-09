@@ -31,10 +31,16 @@ const guessLetter = function(playerGuess){
             console.log("Congratulations! You found a new letter!")
         }
     }
-    if (playerProgress === solution){                         // not working, probably nested in the wrong spot?
-        console.log("Congratulations! You win!!!!")
+    if (!playerProgress.includes("_")){ 
+        return console.log("Congratulations! You win!!!!");
     }
 }
+
+
+// if(!playerProgress.includes("_")){
+//    console.log("Congratulations! You win!")
+// }
+
 
 console.log(guessLetter("F"));   // example game with correct and wrong guesses
 console.log(playerProgress);
@@ -52,6 +58,14 @@ console.log(playerProgress);
 // - Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
 // - When they guess the word, log their final reward amount.
 
+//  const rewardCalculator = function(correctGuess){
+//    if (correctGuess === true) {
+        
+//     }
+//     let reward = 0;
+//     reward = reward  + (Math.random * 100)
+    
+// }
 
 // ## Bonus: Make it like Hangman:
 // - Keep track of all the guessed letters (right and wrong) and only let the user guess a letter once. If they guess a letter twice, do nothing.

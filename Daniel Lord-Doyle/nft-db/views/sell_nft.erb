@@ -1,0 +1,92 @@
+<h1 class="newMintH1">Sell NFT</h1>
+
+<div class="mintBody">
+
+    <img class="buyImage" src="<%= @nft.image_route %>" alt="image of ape">
+    <div>
+        <img class="buyEthImg" src="https://design-system.immutable.com/currency_icons/currency--eth.svg" alt="eth">
+        <h1 class="buyEthPrice"><%= @nft.asking_price %></h1>
+    </div>
+    
+
+        <form class="mint" action="/nfts/<%= @nft.id %>/sell" method="post">
+
+            <div class="hidden">
+                <div>
+                    <label>
+                        <div class="leftFormColumn">
+                            <h3>Project Name:</h3>
+                        </div>
+                        <div>
+                            <input type="text" name="project_name" value="<%= @nft.project_name %>">
+                        </div>
+                    </label>
+                    <br>
+                </div>
+
+                <div>
+                    <label>
+                        <div class="leftFormColumn">
+                            <h3>Last Purchase Price:</h3>
+                        </div>
+                        <div>
+                            <input type="text" name="last_purchase_price" value="<%= @nft.last_purchase_price %>">
+                        </div>
+                    </label>
+                    <br>
+                </div>
+
+                <div>
+                    <label>
+                        <div class="leftFormColumn">
+                            <h3>Owned:</h3>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="owned" value="false" checked>
+                        </div>
+                    </label>
+                    <br>
+                </div>
+
+                <div>
+                    <label>
+                        <div class="leftFormColumn">
+                            <h3>For Sale:</h3>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="for_sale" value="true" checked>
+                        </div>
+                    </label>
+                    <br>
+                </div>
+
+                <div>
+                    <label>
+                        <div class="leftFormColumn">
+                            <h3>Asking Price:</h3>
+                        </div>
+                        <div>
+                            <input type="text" name="asking_price" value="<%= @nft.asking_price %>">
+                        </div>
+                    </label>
+                    <br>
+                </div>
+
+                <div>
+                    <label>
+                        <div class="leftFormColumn">
+                            <h3>Image URL:</h3>
+                        </div>
+                        <div>
+                            <input type="text" name="image_route" value="<%= @nft.image_route %>">
+                        </div>
+                    </label>
+                    <br>
+                </div>
+            </div>
+
+        <input class="mintButton" type="submit" value="Sell">
+
+        </form>
+
+</div>

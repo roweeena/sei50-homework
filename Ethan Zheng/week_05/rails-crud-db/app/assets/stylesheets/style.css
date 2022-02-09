@@ -1,0 +1,46 @@
+body {
+    background-color: antiquewhite;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 4.5fr 0.5fr;
+}
+
+.tags {
+    grid-column-end: 2;
+    border-right: 1px solid black;
+    
+}
+
+.main {
+    padding: 0px 0px 0px 20px;
+    grid-column-start: 2;
+}
+
+ul {
+    list-style-type: none;
+    
+}
+
+li {
+    display: inline-block;
+    vertical-align: top;
+    height: 300px;
+    width: 300px;
+    object-fit: scale-down;
+    margin: 10px;
+}
+
+.icon {
+    max-height: 90%;
+    max-width: 90%;
+    border: 10px solid white;
+    
+}
+
+
+.show-image {
+    max-height: 500px;
+    width: auto;
+}

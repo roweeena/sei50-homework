@@ -1,0 +1,19 @@
+<h3><%= @rental.street_address + ', ' + @rental.suburb %></h3>
+
+<%# TODO: Double check this form method %>
+<form action="/rental/<%= @rental.id %>" method="post"> 
+
+    <label>Street Address:</label>
+    <input type="text" name="street_address" value="<%= @rental.street_address %>">
+    <br>
+
+    <label>Suburb</label>
+    <input type="text" name="suburb" value="<%= @rental.suburb %>">
+    <br>
+
+    <label>Cost (Per week)</label>
+    <input type="text" name="cost" value="<%= @rental.cost %>">
+    <br>
+    
+    <button>Submit</button>
+</form>

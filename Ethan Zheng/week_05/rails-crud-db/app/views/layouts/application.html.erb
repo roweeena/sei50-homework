@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Artworks Database</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <%= link_to 'Artworks', artworks_path %>
+    |
+    <%= link_to 'New Artwork', new_artwork_path %>
+
+    <hr>
+
+
+    <%= yield %>
+  </body>
+</html>

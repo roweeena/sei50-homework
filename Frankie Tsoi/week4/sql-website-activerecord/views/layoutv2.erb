@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>MangaBooks Fanpage</title>
+  
+</head>
+<body>
+  <div class="bg">
+    <img src="/image/bgimage.png" class="bg_image">
+      <div class="content">
+        <nav>
+          <h1>Best Manga All Time!</h1>
+          <a href="/">Home</a>
+          <a href="/mangabooks">All Manga</a>
+          <a href="/mangabooks/new">Add New Manga</a>
+          <a href="/authors">All Author</a>
+          <a href="/authors/new">Add New Author</a>
+        </nav>
+
+        <section>
+          <%= yield %>
+        </section>
+      </div>
+  </div>
+        <footer>
+        <hr>
+          &copy; frankie tsoi edited 2022
+       </footer>
+</body>
+</html>

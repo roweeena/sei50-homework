@@ -1,0 +1,13 @@
+<h3><%= @results['total_results'] %> Results for "<%= params[:title].capitalize %>"</h3>
+<br>
+<ul id = "list_of_movies">
+<% @results['results'].each do |movie| %>
+    <li class = "title_of_movie"><%= movie['title'] %></li><br>
+<li><img src="https://image.tmdb.org/t/p/w154/<%= movie['poster_path'] %>"></li><br>
+
+    <li><p>Release Date: <%= movie['release_date'] %></p></li>
+    <li><p>Overview<br><%= movie['overview'] %></p></li>
+
+
+<% end %>
+</ul>

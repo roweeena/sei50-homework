@@ -1,0 +1,51 @@
+<h2>Edit Cast <br> <%= @cast.name %></h2>
+
+
+<div class="index_css">
+
+
+    <form action="/casts/<%= @cast.id %>" method = "post">
+
+        <label>
+            Name<br>
+            <input type="text" name="name" value = "<%= @cast.name %>" required>
+        </label>
+        <br>
+        <label>
+            Born <br>
+            <input type="text" name="born" value = "<%= @cast.born %>" required>
+        </label>
+        <br>
+        <label>
+            Awards <br>
+            <input type="text" name="awards" value = "<%= @cast.awards %>" required>
+        </label>
+        <br>
+        <label>
+            Image <br>
+            <input type="text" name="image_url" value = "<%= @cast.image_url %>" required>
+        </label>
+        <br>
+
+        <label>
+            Edit movie
+
+        <select id="movie" name="movie_id" id = "option">
+            <option value="">Choose a movie</option>
+       
+        <% @results.each do |movie| %>
+            <option value="<%= movie.id %>"><%= movie.title %></option> 
+        
+            <% end %>
+        </select>
+    </label>
+        
+
+
+<br>
+    <button>Update</button>
+
+
+    </form>
+
+</div>

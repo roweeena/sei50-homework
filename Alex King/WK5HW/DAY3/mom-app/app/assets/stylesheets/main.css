@@ -1,0 +1,13 @@
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:cornflowerblue;
+    background-color:darkslateblue;
+}
+
+a{
+    color:beige;
+}
+
+a:hover{
+    color:rgba(255, 251, 251, 0.664);
+}

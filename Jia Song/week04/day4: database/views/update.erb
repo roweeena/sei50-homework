@@ -1,0 +1,19 @@
+<form action="/todo/<%= @result["id"]%>" method="post">
+  <label>
+    TODO: 
+    <input type="text" name="todo" placeholder="Write your todo" value="<%= @result["todo"]%>">
+  </label>
+  <label>
+    DUE DATE:
+    <input type="date" name="dueDate" value="<%= @result["dueDate"]%>">
+  </label>
+  <label>
+    DESCRIPTION: 
+    <input type="text" name="description" placeholder="What is this about?" value="<%= @result["description"]%>">
+  </label>
+  <label>
+    COMPLETED:
+    <input type="radio" name="completed" value="<%= @result["completed"]%>">
+  </label>
+  <button type="submit">Update</button>
+</form>

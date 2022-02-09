@@ -1,0 +1,29 @@
+<%= form_with model: @author, local: true do |f| %>
+
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :nationality %>
+    <br>
+    <%= f.text_field :nationality %>
+    <br>
+    <%= f.label :dob, 'Date of Birth (yyyy/mm/dd)' %>
+    <br>
+    <%= f.date_field :dob %>
+    <br>
+    <%= f.label :movement %>
+    <br>
+    <%= f.text_field :movement %>
+    <br>
+    <%= f.label :image %>
+    <br>
+    <%= f.text_field :image %>
+    <br>
+
+    <%= f.submit %>
+
+
+
+
+<% end %>

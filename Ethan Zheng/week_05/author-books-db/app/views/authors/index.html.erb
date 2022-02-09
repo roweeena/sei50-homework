@@ -1,0 +1,15 @@
+<h2>Index of Authors</h2>
+
+<ul>
+    <% @authors.each do |a| %>
+        <li>
+            <%= link_to author_path(a) do%>
+                <% if a.image.present? %>
+                    <%= image_tag(a.image, class: "icon") %>
+                    <br>
+                <% end %>
+                <%= a.name %>
+            <% end %>
+        </li>
+    <% end %>
+</ul>

@@ -1,0 +1,15 @@
+<h3>MANGA LIST</h3>
+
+<ul class="index_ul">
+  <% @results.each do |mangabook| %>
+  <li>
+  <a href="/mangabooks/<%=mangabook.id%>">
+  
+  <img src="<%= mangabook.image_url %>" alt=" <%= mangabook.name%>" class="manga_image">
+  </a>
+  </li>
+  <% end %>
+</ul>
+
+
+

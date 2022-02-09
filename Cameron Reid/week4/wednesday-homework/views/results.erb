@@ -1,0 +1,13 @@
+<h2><%= @results["total_results"] %> Results for <%= params[:title] %></h2>
+
+<ul>
+  <% @results['results'].each do |movie| %>
+    <li>
+    <img src=<%=  "http://image.tmdb.org/t/p/w200/#{movie['poster_path']}" %>>
+    <h3><%= movie["title"] %></h3>
+      <li><span>Ovewrview:</span> <%= movie["overview"] %></li>
+      <li><span>Release date:</span> <%= movie["release_date"] %></li>
+    </li>
+
+    <% end %>
+</ul>

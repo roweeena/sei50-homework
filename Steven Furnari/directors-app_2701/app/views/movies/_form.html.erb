@@ -1,0 +1,35 @@
+<%= form_with model: @movie, local: true do |f| %>
+
+    <br>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+
+    <br>
+    <%= f.label :director_id, 'Director' %>
+    <%= f.collection_select :director_id, Director.all, :id, :name, include_blank: true %>
+    <br>
+    
+    <br>
+    <%= f.label :released %>
+    <%= f.text_field :released, placeholder: 'yyyy' %>
+    <br>
+
+    <br>
+    <%= f.label :boxoffice, 'Box Office' %>
+    <%= f.text_field :boxoffice %>
+    <br>
+
+    <br>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <br>
+
+    <br>
+    <%= f.label :image, 'Image URL' %>
+    <%= f.text_field :image %>
+    <br>
+
+    <%= f.submit %>
+
+<% end%>

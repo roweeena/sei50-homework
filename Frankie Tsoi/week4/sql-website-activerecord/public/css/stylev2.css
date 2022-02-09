@@ -1,0 +1,25 @@
+
+.bg_image{
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: 100%;
+  background: repeat scroll 0% 0%;
+}
+
+.content{
+  position: relative;
+}
+
+.index_ul .manga_image{
+  padding: 20px;
+  justify-content: center;
+}
+.index_ul{
+  list-style: none;
+  text-align: center;
+  position: center;
+
+}

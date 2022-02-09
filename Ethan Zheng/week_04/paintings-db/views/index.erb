@@ -1,0 +1,16 @@
+<h4>Index of Paintings</h4>
+
+
+
+<ul>
+    <% @results.each do |painting| %>
+        <li>
+            <a href="/paintings/<%= painting['id'] %>">
+            <%= painting['name']  %>
+            </a>
+        
+        </li>
+    <% end %>
+    
+</ul>
+

@@ -1,0 +1,43 @@
+<h3>
+Edit Album:<%= @album['name'] %>
+</h3>
+
+<form action="/albums/<%= @album['id'] %>" method="post">
+    <label>
+        Album Name:
+        <input type="text" name="album_name" value="<%= @album['album_name'] %>">
+    </label>
+    <br>
+
+    <label>
+        Artist:
+        <input type="text" name="artist" value="<%= @album['artist'] %>">
+    </label>
+    <br>
+
+    <label>
+        Genre:
+        <input type="text" name="genre" value="<%= @album['genre'] %>">
+    </label>
+    <br>
+
+    <label>
+        Released Year:
+        <input type="text" name="released_year" value="<%= @album['released_year'] %>">
+    </label>
+    <br>
+
+    <label>
+        Exlicity(1 for yes, 0 for no):
+        <input type="text" name="explicity" value="<%= @album['explicity'] %>">
+    </label>
+    <br>
+
+    <label>
+        Album Cover URL:
+        <input type="text" name="album_cover" value="<%= @album['album_cover'] %>">
+    </label>
+    <br>
+
+    <button class="edit">Change Album</button>
+</form>

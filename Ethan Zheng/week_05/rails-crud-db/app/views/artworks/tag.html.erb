@@ -1,0 +1,25 @@
+<section>
+    <div class='tags'>
+        <ul>
+            <% @tags.each do |tag| %>
+                <%= link_to tag, tag_path(tag)  %>
+                <br>
+            <% end %>
+        </ul>
+    </div>
+    <div class='main'>
+        <h2>Index of Artworks with <em><%= @tag %></em></h2>
+
+        <ul>
+            <% @artworks_with_tag.each do |artwork| %>
+                <li>
+                    <%= link_to artwork_path(artwork.id) do %>
+                        <%= image_tag(artwork.image_url, class: 'icon') %>
+                        <br>
+                        <%= artwork.name %>
+                    <% end %>
+                </li>   
+            <% end %>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    margin: 30px;
+
+}
+div {
+    background-color: rgb(65, 102, 111);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.movie-title {
+    color: #E34234;
+}
+

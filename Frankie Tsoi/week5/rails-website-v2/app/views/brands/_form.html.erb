@@ -1,0 +1,26 @@
+
+<%= form_with model: @brand, local: true do |f|%>
+
+<%= f.label :name %>:
+<br>
+<%= f.text_field :name %>
+<br><br>
+<%= f.label :year %>:
+<br>
+<%= f.text_field :year %>
+<br><br>
+<%= f.label :location %>:
+<br>
+<%= f.text_field :location %>
+<br><br>
+
+<%= f.label :image %>:
+<br>
+<%= f.text_field :image, placeholder: 'URL here' %>
+<br><br>
+
+<%= f.submit %>
+
+</label>
+
+<%end%>

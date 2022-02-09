@@ -1,0 +1,47 @@
+<section class="addTodo">
+  <form 
+    action="<%= @todo ? "/todo/#{@todo.id}" : "/todo" %>" 
+    method="post"
+  >
+    <label>
+      TODO: 
+      <input 
+        type="text" 
+        name="todo" 
+        placeholder="Write your todo"
+        value="<%= @todo ? @todo.todo : "" %>"
+        required
+      >
+    </label>
+    <label>
+      DUE DATE:
+      <input 
+        type="date" 
+        name="dueDate"
+        value="<%= @todo ? @todo.dueDate : "" %>"
+      >
+    </label>
+    <label>
+      PROJECT:
+      <select name="project_id">
+        <% @projects.each do |project| %>
+          <option
+            value=<%= project.id %>
+            <%= @todo && @todo.id == project.id ? "selected" : "" %>
+          >
+            <%= project.name %>
+          </option>
+        <% end %>
+      </select>
+    </label>
+    <label>
+      COMPLETED:
+      <input 
+        type="radio" 
+        name="completed"
+        <%= @todo && @todo.completed == 1 ?  "checked" : ""  %>
+      >
+    </label>
+    <button type="submit" class="createBtn">Create</button>
+  </form>
+</section>

@@ -1,0 +1,12 @@
+<h3>All current destination listings around North Strathfield</h3>
+
+<div class="destination-wrapper">
+    <div class="col-heading">Address</div>
+    <div class="col-heading">Travel Frequency</div>
+    <div class="col-heading">Person Travelling</div>
+    <% @destinations.each do |destination| %>
+    <div class="grid-item"><a href="/destination/<%= destination.id %>"><%= destination.street_address + ", " + destination.suburb %></a></div>
+    <div class="grid-item"><%= destination.visiting_frequency %></div>
+    <div class="grid-item"><%= @Person.find(destination.person_id).name %></div>
+    <% end %>
+</div>

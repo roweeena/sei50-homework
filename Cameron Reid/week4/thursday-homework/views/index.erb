@@ -1,0 +1,13 @@
+<h2>Your Koktails</h2>
+
+<div class="index">
+  <% @results.each do |cocktail|%>
+    <div>
+      <img src="<%= cocktail['image_url'] %>" alt="Drink image" class="drink_image_index">
+      <br>
+      <a href="/cocktails/<%= cocktail['id'] %>">
+        <%= cocktail['name']%> 
+      </a>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+
+
+<h3><%= @author.name %></h3>
+
+<p>
+  <strong>Birth Date:</strong> <%= @author.birthday%>
+</p>
+
+<p>
+  <strong>Age:</strong> <%= @author.age%>
+</p>
+
+<p>
+  <strong>Nationality:</strong> <%= @author.nationality%>
+</p>
+
+<img src="<%= @author.image_url %>" alt=" <%= @author.name%>" class="author_image">
+<br>
+
+[<a href="/authors/<%= @author.id %>/edit">Edit</a>]
+[<a href="/authors/<%= @author.id %>/delete">Delete</a>]

@@ -1,0 +1,8 @@
+<section>
+  <h2><%= @result["todo"] %></h2>
+  <p>Due date: <%= @result["dueDate"] %></p>
+  <p>Completed: <%= @result["completed"] %></p>
+  <p><%= @result["description"] %></p>
+  <a href="/todo/<%= @result["id"] %>/delete" class="button">Delete</a>
+  <a href="/todo/<%= @result["id"] %>/update" class="button">Edit</a>
+</section>

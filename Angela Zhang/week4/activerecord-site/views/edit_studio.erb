@@ -1,0 +1,36 @@
+<form action="/studios/<%= @studio.id %>" method="post">
+<h2>EDIT STUDIO</h2>
+
+    <label>
+        Name:
+        <input type="text" name="name" value="<%= @studio.name %>">
+    </label>
+    <br>
+    <label>
+        Founded:
+        <input type="text" name="foundation_year" value="<%= @studio.foundation_year %>" >
+    </label>
+    <br>
+    <label>
+        Founders:
+        <input type="text" name="founders" value="<%= @studio.founders %>">
+    </label>
+    <br>
+    <label>
+        Headquarters:
+        <input type="text" name="headquarters" value="<%= @studio.headquarters %>">
+    </label>
+    <br>
+    <label>
+        Website:
+        <input type="text" name="website" value="<%= @studio.website %>">
+    </label>
+    <br>
+    <label>
+        Studio Logo:
+        <input type="text" name="studio_logo" value="<%= @studio.studio_logo %>">
+    </label>
+    <br>
+    <button>Save Changes</button>
+
+</form>

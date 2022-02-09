@@ -1,0 +1,19 @@
+
+<%= link_to 'Edit', edit_brand_path(@brand.id) %>
+<%= link_to 'Delete', brand_path(@brand.id), method:'delete'%>
+
+<h2><%= @brand.name%></h2>
+
+<p>
+  <strong>year:</strong>: 
+  <%= @brand.year %>
+</p>
+
+<p>
+  <strong>location:</strong> 
+  <%= @brand.location %>
+</p>
+
+<% if @brand.image.present? %> 
+<%= image_tag @brand.image, alt: @brand.name, class: 'brands_image'%>
+<%end%>

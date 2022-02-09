@@ -1,0 +1,27 @@
+<h2>Create A New Pet</h2>
+
+<%= form_with model: @pet, local: true do |f| %>
+
+<%= f.label :name%>
+<%= f.text_field :name%>
+<br>
+
+<%= f.label :age%>
+<%= f.text_field :age%>
+<br>
+
+<%= f.label :vaccinated%>
+<%= f.text_field :vaccinated%>
+<br>
+
+<%= f.label :favourite_food%>
+<%= f.text_field :favourite_food%>
+<br>
+
+<%= f.label :image_url%>
+<%= f.text_field :image_url%>
+<br>
+
+<%= f.submit%>
+
+<% end %>

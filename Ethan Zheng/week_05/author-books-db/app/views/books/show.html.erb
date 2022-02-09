@@ -1,0 +1,18 @@
+<h2><%= @book.name %>, <em><%= @book.date.year %></em></h2>
+<h4>
+    By:
+    <%= link_to @book.author.name, author_path(@book.author) %>
+</h4>
+<%= link_to 'Edit', edit_book_path(@book.id) %>
+<%= link_to 'Delete', book_path(@book.id), method: 'delete' %>
+
+<p>
+    <strong>Genre</strong>:
+    <%= @book.genre %>
+</p>
+
+
+
+<% if @book.image.present? %>
+    <%= image_tag @book.image, alt: @book.name, class: 'poster_image' %>    
+<% end %>

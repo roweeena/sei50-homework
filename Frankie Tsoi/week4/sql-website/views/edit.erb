@@ -1,0 +1,42 @@
+<h3> edit gundam: <%= @gundams['name']%> </h3>
+
+<form action="/gundams/<%= @gundams['id']%>" method = "post">
+  <label>
+    Name:
+    <input type="text" name="name" value="<%=@gundams['name']%>">
+  </label>
+  <br>
+  <label>
+    Model Number:
+    <input type="text" name="model_number" value="<%=@gundams['model_number']%>">
+  </label>
+  <br>
+  <label>
+    Pilot:
+    <input type="text" name="pilot" value="<%=@gundams['pilot']%>">
+  </label>
+  <br>
+  <label>
+    Designer:
+    <input type="text" name="designer" value="<%=@gundams['designer']%>">
+  </label>
+  <br>
+  <label>
+    Power Sources:
+    <input type="text" name="power_sources" value="<%=@gundams['power_sources']%>">
+  </label>
+  <br>
+  <label>
+    Height:
+    <input type="text" name="height" value="<%=@gundams['height']%>">
+  </label>
+  <br>
+  <label>
+    Image URl:
+    <input type="text" name="image_url" value="<%=@gundams['image_url']%>">
+  </label>
+  <br>
+
+  <button>Update Gundam Info</button>
+
+</form>

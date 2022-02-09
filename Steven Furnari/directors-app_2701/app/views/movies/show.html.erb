@@ -1,0 +1,30 @@
+<h3>
+    <%= @movie.title %>,
+    <em>
+        <%= @movie.released %>
+    </em>
+</h3>
+
+
+<p>
+    <strong>Directed By:</strong> 
+    <%= link_to @movie.director.name, director_path(@movie.director) %>
+</p>
+
+<p>
+    <strong>Box Office:</strong>
+    $<%= @movie.boxoffice %> million
+</p>
+<p>
+    <strong>Description:</strong>
+    <br>
+    <%= @movie.description %>
+</p>
+
+<%= image_tag @movie.image, alt: @movie.title, class: 'movie_image' %>
+<br>
+
+<hr>
+    <%= link_to 'Edit', edit_movie_path(@movie.id) %>
+    |
+    <%= link_to 'Delete', movie_path(@movie), method: 'delete' %>

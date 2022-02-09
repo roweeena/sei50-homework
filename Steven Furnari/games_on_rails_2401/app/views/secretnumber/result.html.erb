@@ -1,0 +1,18 @@
+<nav>
+    <a href="/">Home</a>
+    |
+    <a href="/magic8ball">Magic 8 Ball</a>
+    |
+    <a href="/rps">Rock Paper Scissors</a>
+</nav>
+<hr>
+
+<h1><%= @result %></h1>
+
+<h4>Unfortunately, you win nothing.</h4>
+
+<br>
+<br>
+<form action="/secretnumber">
+    <button type="submit">Play again?</button>
+</form>

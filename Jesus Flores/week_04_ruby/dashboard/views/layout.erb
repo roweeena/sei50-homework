@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <section  id="nav">
+            <section id="title-container"> 
+            <img src="/school.png" alt="">
+            <h1>
+                GA University
+            </h1>
+            </section>
+            <section class="links-container">
+                <div class="links">
+                    
+                    <div class="icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                     <a href="/">   <span>Home</span></a>
+                </div>
+            </section>
+    </section>
+    <section id="main-dashboard">
+        <section id="top-content">
+                <%# <div class="input-box">
+                    <input type="text" placeholder="Search...">
+                    <div class="">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div> %>
+                <div class="actions">
+                    <h1 class="dashboard-title">GA - Dashboard</h1>
+                        <div class="actions-icons-1"><i class="fas fa-plus"></i>
+                            <div class="dropdown-content">
+                            <ul>
+                                <a href="/students/add"><li>Student</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <%= yield %>
+    </section>
+</body>
+</html>
