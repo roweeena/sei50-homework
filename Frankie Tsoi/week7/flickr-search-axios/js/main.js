@@ -9,14 +9,13 @@ const FLICKR_API_KEY = '2f5ac274ecfac5a455f38745704ad084';
 //text - specify the search query
 //nojsoncallback=1
 
-
+//the bottom URl is to get the json data
 //https://api.flickr.com/services/rest?method=flickr.photos.search&format=json&nojsoncallback=1&text=ocean+coral&api_key=2f5ac274ecfac5a455f38745704ad084
 
 
 $(function(){
   
   const fetchSearchResults = function( searchWord ){
-
     
     const FLICKR_BASE_URL = `https://api.flickr.com/services/rest?method=flickr.photos.search&text=${searchWord}&api_key=2f5ac274ecfac5a455f38745704ad084`;
 
@@ -26,20 +25,31 @@ $(function(){
         api_key: FLICKR_API_KEY,
         format: 'json',
         nojsoncallback: 1,
-        text: 'searchWord'
+        text: searchWord //this is a parameter not a string
       }
     })
     .then(function(res){
-      // console.log(res.data.photos.total);
+      console.log(res.data.photos.total);
       countResults(res.data.photos);
-      const showPhotos =  function(data){
-        let photos = '<ul>';
+    })
+    .catch(function(err){
+      console.log('AJAX search error:', err);
+    });
+  }// end fetchSearchResults
+
+  const countResults = function( data ){
+    console.log( 'countResults():', data );
+    const $output = $('#output');
+    
+    $output.html(`<p>${data.total} matches found: </p>`)
+
+    let photos = '<ul>';
           
-            data.forEach(function(photo){
-              console.log(photo);
+            data.photo.forEach(function(photo){
+              console.log('check if photo is working', photo);
               photos +=`
               <li data-photo-id="${photo.id}">
-          
+                <img src="https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_m.jpg
                 ${photo.title}
               </li>
               `;
@@ -47,34 +57,9 @@ $(function(){
             photos += '</ul>';
           
             $output.append(photos);
-        }
-    })
-    .catch(function(err){
-      console.log('AJAX search error:', err);
-    });
-  }
-  const countResults = function( data ){
-      console.log( 'countResults()', data );
-      const $output = $('#output');
-      
-    
-      $output.html(`<p>${data.total} matches found: </p>`)
-    };
 
-    let photos = '<ul>';
+  };//end countResults
   
-    data.forEach(function(photo){
-      console.log(photo);
-      photos +=`
-      <li data-photo-id="${photo.id}">
-  
-        ${photo.title}
-      </li>
-      `;
-    });
-    photos += '</ul>';
-  
-    $output.append(photos);
 
     
     $('#userQuery').focus();
@@ -86,7 +71,7 @@ $(function(){
       const query = $('#userQuery').val();
   
       fetchSearchResults(query);
-    })
+    }) //end form submit
   
 
 })//DOM ready
