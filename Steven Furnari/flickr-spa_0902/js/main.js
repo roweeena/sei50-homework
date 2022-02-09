@@ -31,11 +31,10 @@ $(function(){
     }; // getSearch()
 
     const renderSearch = function(arr){
-        const idArr = arr.map(img => [img.server, img.id, img.secret])
-        
-        idArr.forEach( (urlArray) => {
-            const photoUrl = `https://live.staticflickr.com/${urlArray[0]}/${urlArray[1]}_${urlArray[2]}_q.jpg`
-            $('#list').append(`<img class="list-image" data-photo="${urlArray[1]}" src="${photoUrl}"></img>`)     
+ 
+        arr.forEach( (img) => {
+            const photoUrl = `https://live.staticflickr.com/${img.server}/${img.id}_${img.secret}_q.jpg`
+            $('#list').append(`<img class="list-image" data-photo="${img.id}" src="${photoUrl}"></img>`)     
         })
         
         $('.list-image').on('click', function(){
