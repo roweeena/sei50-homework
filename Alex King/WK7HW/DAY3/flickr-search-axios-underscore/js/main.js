@@ -19,12 +19,11 @@ $(()=>{
 
     const home = () => {
         $(".output").html('homepage')
-
     }
-
 
     const fetchResults = (userInput)=>{
         $(".output").html('')
+        $(".output").append(`Showing Results for "${userInput}":`)
         axios.get(FLICKR_BASE_URL, {
             params: {
             //  axios will combine these key-value pairs into the querystring for us
@@ -78,6 +77,7 @@ $(()=>{
                 $('.3').hide()
                 $('.4').hide()
                 $('.5').hide()
+                findPage(1)
             })
             $('#pageSecond').on('click', () => {
                 console.log('clicked')
@@ -86,6 +86,7 @@ $(()=>{
                 $('.3').hide()
                 $('.4').hide()
                 $('.5').hide()
+                findPage(2)
             })
             $('#pageThird').on('click', () => {
                 console.log('clicked')
@@ -94,6 +95,7 @@ $(()=>{
                 $('.3').show()
                 $('.4').hide()
                 $('.5').hide()
+                findPage(3)
             })
             $('#pageFourth').on('click', () => {
                 console.log('clicked')
@@ -102,6 +104,7 @@ $(()=>{
                 $('.3').hide()
                 $('.4').show()
                 $('.5').hide()
+                findPage(4)
             })
             $('#pageFifth').on('click', () => {
                 console.log('clicked')
@@ -110,6 +113,7 @@ $(()=>{
                 $('.3').hide()
                 $('.4').hide()
                 $('.5').show()
+                findPage(5)
             })
             // console.log(photoOutput)
             $('img').on('click',(ev)=>{

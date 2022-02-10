@@ -37,7 +37,6 @@ $(() => {
 
     } homePage()
 
-
     function fetchSearchResults(searchText){
         $('.output').html(`<p> Results </p><div class="container"></div>`)
         axios.get(url)
