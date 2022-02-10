@@ -1,7 +1,5 @@
 
 
-//TODO: implement vue for the forms etc. 
-//TODO: convert geocode search to a proper submittable form that chains off of the search function
 //TODO: add loading div
 
 
@@ -19,7 +17,16 @@ myApp = new Vue({
 
         title: '',
         nasa_img: '',
-        googleURL: ''
+        googleURL: '',
+
+        geoCodeClass: 'tab-pane fade show active',
+        searchMapsClass: 'tab-pane fade show active',
+        show: true,
+
+        geoCodeNavClass: 'nav-link active',
+        searchMapsNavClass: 'nav-link'
+        
+        
     },
     
     methods: {
@@ -44,6 +51,9 @@ myApp = new Vue({
             } catch (error) {
                 console.log('AJAX ERROR:', error);
             }
+            
+
+
         },
 
         searchMaps: async function (e){
@@ -57,69 +67,31 @@ myApp = new Vue({
             const response = await axios.get( NASA_BASE_URL, {
                 params: {
                     lat: this.lat, 
-                    lng: this.lng, 
+                    lon: this.lng, 
                     date: date, 
                     api_key: NASA_KEY, 
                 }
             })
             try {
-                this.title = $(`Photo taken on ${response.data.date}`);
+                this.title = `Photo taken on ${response.data.date}`
                 this.nasa_img = response.data.url;
                 this.googleURL = `https://www.google.com/maps/embed/v1/view?key=AIzaSyAm7vYw4jkC7m9hbEKpMfFxjwLAOZgxwko&center=${this.lat},${this.lng}&maptype=satellite`
-                $('#error').text('')
-                $('#output').empty().append(title).append(map_iframe).append(img);
             } catch (error) {
                 console.log(error);   
+            }
+        },
+
+        switchTabs: function (){
+            this.show = !this.show
+
+            if (this.show) {
+                this.geoCodeNavClass = 'nav-link active'
+                this.searchMapsNavClass = 'nav-link'
+            }
+            else {
+                this.geoCodeNavClass = 'nav-link'
+                this.searchMapsNavClass = 'nav-link active'
             }
         }
     }
 });
-
-
-
-
-$(function() {
-    $('#lat').focus();
-
-    // add searching NASA satellite images by their Latitude and lnggitude values. 
-    $('#search').on('submit', function(ev) {
-        ev.preventDefault();
-        searchMaps();
-    })
-
-    // Convert address to geocodes and populate the above searchMaps fields
-    $('#geocode').on('click', function(ev){
-        const address = $('#address').val();
-        generateGeoCodes(address);
-    })
-    // axios.get(`https://api.nasa.gov/planetary/earth/imagery?lon=${long}.75&lat=${lat}&date=${date}&api_key=${nasa_api_key}`);
-});
-
-async function searchMaps() {
-    const lat = $('#lat').val();
-    const lon = $('#lon').val();
-    const date = '2018-01-01'// NOTE: this is an arbitrary date, I found that contrary to the docs, any date will not work. NASA API will not find images beyond 5 years from the query date. 
-    // const dim = $('#dim').val(); //width and height of image in degrees //FIXME: didn't find how to search for this. 
-    const NASA_KEY = 'Y3DDqVZTa23oDDvIuzdp8HotSVQdXVXZ5WmfZ5fs';
-    const NASA_BASE_URL = 'https://api.nasa.gov/planetary/earth/assets'
-
-    const response = await axios.get( NASA_BASE_URL, {
-        params: {
-            lat: lat, 
-            lon: lon, 
-            date: date, 
-            api_key: NASA_KEY, 
-        }
-    })
-    try {
-        const title = $(`<h3>Photo taken on ${response.data.date}<h3>`);
-        const map_iframe = $(`<iframe width="400" height="300" style="border:0" loading="lazy" src=https://www.google.com/maps/embed/v1/view?key=AIzaSyAm7vYw4jkC7m9hbEKpMfFxjwLAOZgxwko&center=${lat},${lon}&zoom=18&maptype=satellite></iframe>`)
-        const img = $(`<img src="${response.data.url}" class="result"><img>`);
-        // console.log(`<iframe width="400" height="300" style="border:0" loading="lazy" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyAm7vYw4jkC7m9hbEKpMfFxjwLAOZgxwko&center=${lat},${lon}&maptype=satellite"></iframe>`)
-        $('#error').text('')
-        $('#output').empty().append(title).append(map_iframe).append(img);
-    } catch (error) {
-        console.log(error);   
-    }
-}
-
