@@ -5,17 +5,29 @@ body{
 #app{
   width: 80vw;
   margin: 0 auto;
+  text-align: center;
 }
 #search-results{
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 #search-results img{
   box-shadow: 3px 2px 2px 2px;
 }
-  #search-results img:hover{
+
+#search-results img:hover{
   outline: 5px solid purple;
+}
+
+#single-show{
+  margin-top: 2rem;
+}
+
+#single-show img {
+  width: 80vw;
 }

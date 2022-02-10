@@ -23,12 +23,18 @@
     
     <div v-if="showResults" id="search-results">
       <div v-for="img in imageUrlList">
-        <img :src="img.url" :title="img.title" @click="imageClickHandler(img.id)">
+        <img :src="img.url" :title="img.title" @click="loadSingleResult(img.id)">
       </div>  
     </div>
       
-    <div v-if="singleShow" id="single-show">
-      <h1 @click="closeSingle">HELLO</h1>
+    <div v-if="singleShow" id="single-show" @click="closeSingle">
+      <img :src="singleUrl" alt="singleTitle">
+      <h2>{{singleTitle}}</h2>
+      <p>{{singleDescription}}</p>
+    </div>
+
+    <div v-if="loading" id="loading">
+      <h1>LOADING...</h1>
     </div>
 
   </div>
