@@ -29,8 +29,8 @@ const renderSearchResults = function( data ){
     // console.log(giphy);
     giphys +=`
     <li data-giphy-id="${giphy.id}">
-    
-      ${giphy.title}
+    ${giphy.title}
+    <img src="${giphy.images.url}">
     </li>
     `;
   });
