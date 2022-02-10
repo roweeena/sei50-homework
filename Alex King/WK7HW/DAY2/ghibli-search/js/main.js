@@ -171,7 +171,10 @@ $(() => {
             }
         }
         checkblank()
-        
+        $('#userQuery').blur(function(){
+            userHistory.push($(this).val())
+            console.log(userHistory)
+        })
 
         $('#goHome').on('click', () => {
             $('.output').html('<div id="homeOutput"></div>') 
@@ -182,9 +185,9 @@ $(() => {
             if (userHistory.length===0){
                 homePage()
             } else{
-                userHistory.pop()
                 let dest = userHistory[userHistory.length - 1]
                 console.log(dest)
+                userHistory.pop()
                 fetchSearchResults(dest)
             }
         })
