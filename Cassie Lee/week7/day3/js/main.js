@@ -26,19 +26,22 @@ const fetchSearchResults = function(searchText){
 
 }
 
-
 const renderSearchResults = function(data){
     console.log(data);
 
     $results = $('#results');
+    $results.show();
+    $('#details').hide();
+
+    $results.html(`<p>Total results : ${data.total}</p>`)
 
 let photos = '<ul>'
     data.photo.forEach(resultsEntry => {
-
+        const imageURL = generateImageURL(resultsEntry)
 
             photos += `
-                <li data-photo-id="${resultsEntry.id}>
-                <img src= https://live.staticflickr.com/${resultsEntry.server}/${resultsEntry.id}_${resultsEntry.secret}_q.jpg>
+                <li data-photo-id="${resultsEntry.id}">
+                <img src= "${imageURL}" alt="${resultsEntry.title}>
                 </li>
             
             `;
@@ -47,11 +50,63 @@ let photos = '<ul>'
     photos += '</ul>'
     $results.append(photos);
     
+    $('li').on('click', function(){
+        const photoID = $(this).data('photo-id')
+        console.log('photoid clicked', photoID);
+        fetchPhotoById(photoID)
+    })
     
-    
+}; // renderSearchResults()
+
+const generateImageURL = (photo, size = 'q') => {
+    return `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_${size}.jpg`
 }
 
+const fetchPhotoById = function(id){
+    console.log('fetchphotibyid', id);
 
+    axios.get(FLICKR_BASE_URL, { 
+        params: {
+            //axios will combine these key-value pairs into the querystring for us
+            method: 'flickr.photos.getInfo',
+            api_key: FLICKR_API_KEY,
+            format: 'json',
+            nojsoncallback: 1,
+            photo_id: id
+        }
+    })
+        .then( function( res) {
+            console.log(res.data.photo);
+            renderPhotoResults( res.data.photo)
+        })
+        .catch( function( err ){
+            console.log('AJAX Search Error', err);
+        });
+
+} // fetch photo by id 
+
+const renderPhotoResults = function(photo){
+    console.log('renderphotoresults', photo)
+    $('#results').hide();
+    $('#details').show();
+
+    $('#details').html(`
+        
+        <h3>${photo.title._content}<h3>
+        <img src="${generateImageURL(photo, 'b')}" alt="${photo.title.content}">
+        <p>
+            ${photo.description._content}
+        </p>
+
+        <button id = "backButton"> Back to results </button>
+    `)
+
+    $('#backButton').on('click', () => {
+        $('#details').hide();
+        $('#results').show();
+        
+    })
+}
 
 $(function(){
 
