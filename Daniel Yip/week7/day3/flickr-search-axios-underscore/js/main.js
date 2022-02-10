@@ -41,7 +41,23 @@ $(function () {
   const makeResultsPage = function (arr) {
 
     const contents = arr.reduce((acc, photoObj) => {
-      const queryString = `${photoObj.server}/${photoObj.id}_${photoObj.secret}`;
+      const queryString = const makeResultsPage = function (arr) {
+
+        const contents = arr.reduce((acc, photoObj) => {
+          const queryString = `${photoObj.server}/${photoObj.id}_${photoObj.secret}`;
+          const title = `${photoObj.title}`;
+          const image = `<img 
+          src="${FLICKR_IMAGE_URL}${queryString}_q.jpg" 
+          alt="${title}" 
+          class="thumbnail" 
+          data-query-string="${queryString}" 
+          data-title="${title}"
+          >`;
+          return acc + image;
+        }, "");
+        
+        $('.results-wrapper').append(contents);
+      }
       const title = `${photoObj.title}`;
       const image = `<img 
       src="${FLICKR_IMAGE_URL}${queryString}_q.jpg" 

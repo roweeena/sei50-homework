@@ -1,0 +1,21 @@
+body{
+  background-color: rgba(0, 0, 0, 0.222);
+
+}
+#app{
+  width: 80vw;
+  margin: 0 auto;
+}
+#search-results{
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#search-results img{
+  box-shadow: 3px 2px 2px 2px;
+}
+  #search-results img:hover{
+  outline: 5px solid purple;
+}
