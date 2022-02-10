@@ -1,0 +1,44 @@
+<h2> <%= @pokemon.name %> </h2>
+
+<%= link_to 'Edit', edit_pokemon_path(@pokemon) %>
+<%= link_to 'Delete', pokemon_path(@pokemon), method: 'delete' %>
+<br>
+<% if @pokemon.image_one.present? %>
+    <%= image_tag @pokemon.image_one, alt: @pokemon.name, class: 'pokemon_image' %>
+<% end %>
+<% if @pokemon.image_two.present? %>
+    <%= image_tag @pokemon.image_two, alt: @pokemon.name, class: 'pokemon_image' %>
+<% end %>
+
+<p>
+    <strong>Description: </strong> <%= @pokemon.description %>
+</p>
+
+<p>
+    <strong>Pokédex No.: </strong> <%= @pokemon.pokedex_no %>
+</p>
+
+<p>
+    <strong>Gender Ration: </strong> <%= @pokemon.gender_ration %>%
+</p>
+<p>
+    <strong>Catch Rate: </strong> <%= @pokemon.catch_rate %>%
+</p>
+<p>
+    <strong>Height: </strong> <%= @pokemon.height %>
+</p>
+<p>
+    <strong>Weight: </strong> <%= @pokemon.weight %>
+</p>
+<p>
+    <strong>Ability 1: </strong> <%= @pokemon.ability_one %>
+</p>
+<p>
+    <strong>Ability 2: </strong> <%= @pokemon.ability_two %>
+</p>
+<p>
+    <strong>Ability 3: </strong> <%= @pokemon.ability_three %>
+</p>
+<p>
+    <strong>Ability 4: </strong> <%= @pokemon.ability_four %>
+</p>

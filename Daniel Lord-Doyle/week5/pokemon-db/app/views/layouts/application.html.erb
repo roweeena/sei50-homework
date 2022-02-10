@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PokemonDb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <header>
+    <nav>
+    <h1>Pokemon</h1>
+    <%= link_to 'See All Trainers', owners_path %>
+    <%= link_to 'New Trainer', new_owner_path %>
+      <%= link_to 'See All Pokemon', pokemons_path %>
+    <%= link_to 'New Pokemon', new_pokemon_path %>
+    </nav>
+  </header>
+
+  <body>
+
+<div class='yield'>
+    <%= yield %>
+</div>
+
+      <footer>
+      <hr>
+      &copy; Pokemon DB
+    </footer>
+  </body>
+
+</html>
