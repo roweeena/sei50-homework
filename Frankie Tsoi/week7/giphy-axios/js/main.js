@@ -1,11 +1,22 @@
 console.log('Loaded!');
 
+const giphyAPI = 'jti3xBGEdwwauf1muQ3bIJEDBjZJJr60'
+const giphyURL = 'https://api.giphy.com/v1/gifs/search'
+
 const fetchSearchResults = function( searchWord ){
   console.log('fetchSearchResults(): ', searchWord);
 
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=jti3xBGEdwwauf1muQ3bIJEDBjZJJr60&q=${searchWord}&limit=25&offset=0&rating=g&lang=en`;
 
-  axios.get(url)
+
+  // const url = `https://api.giphy.com/v1/gifs/search?api_key=jti3xBGEdwwauf1muQ3bIJEDBjZJJr60&q=${searchWord}&limit=25&offset=0&rating=g&lang=en`;
+
+  axios.get(giphyURL,{
+    params:{
+      api_key: giphyAPI,
+      q: searchWord,
+      limit: 25,
+    }
+  })
   .then(function(res){
     console.log('Success!', res.data);
     renderSearchResults(res.data);
@@ -38,12 +49,6 @@ const renderSearchResults = function( data ){
 
   $output.append(giphys);
 
-  //After the append above is done, add a click handler for all the new <li> tags
-  $('li').on('click', function(){
-    const giphyID = $(this).data('giphy-id')
-    console.log('giphy clicked', giphyID);
-    fetchMovieByID(giphyID);
-  })
 
 };
 
