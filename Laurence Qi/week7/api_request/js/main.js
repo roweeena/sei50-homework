@@ -5,14 +5,21 @@
 // TODO: iterate through the lat long points to get the values of the locations. 
 console.log('Nasa query form loaded')
 
+//TODO: use the search params hash with axios
+//TODO: refactor all of this code to have clean layout with separated concerns
+//TODO: implement vue for the forms etc. 
+//TODO: convert to an await async function
+
 $(function() {
     $('#lat').focus();
 
+    // add searching NASA satellite images by their Latitude and Longitude values. 
     $('#search').on('submit', function(ev) {
         ev.preventDefault();
         search();
     })
 
+    // Convert address to geocodes and populate the above search fields
     $('#geocode').on('click', function(ev){
         const address = $('#address').val();
         convertAddress2GeoCode(address);
@@ -20,21 +27,22 @@ $(function() {
     // axios.get(`https://api.nasa.gov/planetary/earth/imagery?lon=${long}.75&lat=${lat}&date=${date}&api_key=${nasa_api_key}`);
 });
 
-
 function search() {
-    console.log('form submitted')
-    //TODO: perform the axios get request
     const lat = $('#lat').val();
     const lon = $('#lon').val();
-    const date = '2018-01-01'// $('#date').val(); //yyy-mm--dd (optional).val()
-    const dim = $('#dim').val(); //width and height of image in degrees
+    const date = '2018-01-01'// NOTE: this is an arbitrary date, I found that contrary to the docs, any date will not work. NASA API will not find images beyond 5 years from the query date. 
+    // const dim = $('#dim').val(); //width and height of image in degrees //FIXME: didn't find how to search for this. 
     const apiKey = 'Y3DDqVZTa23oDDvIuzdp8HotSVQdXVXZ5WmfZ5fs';
-    const requestURL = `https://api.nasa.gov/planetary/earth/assets?lat=${lat}&lon=${lon}&date=${date}&api_key=${apiKey}`
+    const NASA_BASE_URL = 'https://api.nasa.gov/planetary/earth/assets'
 
-    console.log('request:', requestURL);
-
-    //TODO: make it so that if the thing returns false we should iterate and try out different dates
-    axios.get(requestURL)
+    axios.get( NASA_BASE_URL, {
+            params: {
+                lat: lat, 
+                lon: lon, 
+                date: date, 
+                api_key: apiKey, 
+            }
+        })
         .then( function(data) {
             const title = $(`<h3>Photo taken on ${data.data.date}<h3>`);
             const map_iframe = $(`<iframe width="400" height="300" style="border:0" loading="lazy" src=https://www.google.com/maps/embed/v1/view?key=AIzaSyAm7vYw4jkC7m9hbEKpMfFxjwLAOZgxwko&center=${lat},${lon}&zoom=18&maptype=satellite></iframe>`)
