@@ -75,7 +75,7 @@ const displayIndividualMeal = function (meal) {
 
 const processInstructions = function (instructions) {
   console.log(instructions);
-  const array = instructions.split("\r\n").filter(Boolean); // WHY DOES THIS 'Boolean' WORK AS A FUNCTION???
+  const array = instructions.split("\r\n").filter(Boolean);
   console.log(array);
   let list = "";
 

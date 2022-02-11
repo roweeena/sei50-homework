@@ -1,0 +1,72 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/calicoalex/sei/homework/Alex King/WK7HW/DAY1/fruitstore-tdd/app/controllers/fruits_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          6,
+          null,
+          null,
+          1,
+          5,
+          5,
+          3,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          5,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/calicoalex/sei/homework/Alex King/WK7HW/DAY1/fruitstore-tdd/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/calicoalex/sei/homework/Alex King/WK7HW/DAY1/fruitstore-tdd/app/models/shelf.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/calicoalex/sei/homework/Alex King/WK7HW/DAY1/fruitstore-tdd/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/calicoalex/sei/homework/Alex King/WK7HW/DAY1/fruitstore-tdd/app/models/fruit.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1644295271
+  }
+}

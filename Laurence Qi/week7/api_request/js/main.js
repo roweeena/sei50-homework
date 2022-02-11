@@ -31,7 +31,9 @@ function search() {
     const apiKey = 'Y3DDqVZTa23oDDvIuzdp8HotSVQdXVXZ5WmfZ5fs';
     const requestURL = `https://api.nasa.gov/planetary/earth/assets?lat=${lat}&lon=${lon}&date=${date}&api_key=${apiKey}`
 
+
     console.log('request:', requestURL);
+
 
     //TODO: make it so that if the thing returns false we should iterate and try out different dates
     axios.get(requestURL)
@@ -48,6 +50,7 @@ function search() {
         });
 }
 
+ 
 //TODO: use the geocoding api to get an address for the long lat values
 function convertAddress2GeoCode(address) {
     const urlAddress = address.replaceAll(' ', '+')
@@ -58,8 +61,15 @@ function convertAddress2GeoCode(address) {
         console.log(coords)
         $('#lat').val(coords.lat);
         $('#lon').val(coords.lng);
+
         //TODO: look into the geocoded gem at the model level (RUBY).  USING THE GEO LOCATION API FROM THE BROWSER 
+
     }).catch( function(err) {
         $('#error').text(err)
     });
 }
+
+
+// 29.78
+// -95.33
+
