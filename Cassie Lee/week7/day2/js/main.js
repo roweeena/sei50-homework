@@ -20,37 +20,47 @@ const renderPokemonResults = function(data){
     console.log('Search', data);
     const $results = $('#results');
 
-    
+    $results.append(`<p>${(data.name)}</p>`)
     let species = '<ul>';
     
-    data.forEach(function( poke ){
+    data.abilities.forEach(function( poke ){
         species += `
             <li data-poke-id ="${poke.id}">
-            ${poke.name}<br>
+            ${poke.ability.name}<br>
             </li>
         `;
 
     })
     species += '<ul>';
 
-    $results.append(species);
+    $results.append(species, `<img src="${data.sprites.front_default}" width="200px">`);
 }
 
-const fetchPokemonDetails = function(SearchForm){
-    console.log('Your Search :', SearchForm);
+const fetchPokemonDetails = function(id){
+    console.log('Your Search :', id);
 
-    const url = `https://pokeapi.co/api/v2/pokemon/${searchForm}`
+    const url = `https://pokeapi.co/api/v2/ability/${id}`
 
     axios.get (url)
         .then(function( res ){
             console.log('Sucess', res.data );
-            renderPokemonResults( res.data )
+            renderPokemonDetails( res.data )
             
         })
         .catch(function(err){
             console.log('problem', err);
         });
 
+
+}
+
+const renderPokemonDetails = function(ability){
+    console.log('renderPokemonDetails', ability);
+
+    $('#details').html(`
+    
+    
+    `)
 
 }
 
