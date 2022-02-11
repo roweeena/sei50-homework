@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Square from './Square';
 
 
 ReactDOM.render(
   
-    <App />,
+    <Square />,
  
   document.getElementById('root')
 );
