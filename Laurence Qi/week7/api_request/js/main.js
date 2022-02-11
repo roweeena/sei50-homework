@@ -1,11 +1,8 @@
-
-
 //TODO: add loading div
 
-
+//TODO: do some chaining with with the geo code => generate maps
 //TODO: use a Vue component for the iframe.
 // Vue.component('')
-
 
 myApp = new Vue({
     el: '#app',
@@ -19,14 +16,15 @@ myApp = new Vue({
         nasa_img: '',
         googleURL: '',
 
-        geoCodeClass: 'tab-pane fade show active',
+        // TODO: fix this 
+        geoCodeClass: 'tab-pane fade show active', 
         searchMapsClass: 'tab-pane fade show active',
         show: true,
 
+        //look into vue-bootstrap.
+
         geoCodeNavClass: 'nav-link active',
         searchMapsNavClass: 'nav-link'
-        
-        
     },
     
     methods: {
@@ -48,12 +46,12 @@ myApp = new Vue({
                 console.log(coords);
                 this.lat = coords.lat
                 this.lng = coords.lng
+
+                //TODO: how to do chaining on this? TODO: there is an error on monday
+
             } catch (error) {
                 console.log('AJAX ERROR:', error);
             }
-            
-
-
         },
 
         searchMaps: async function (e){
