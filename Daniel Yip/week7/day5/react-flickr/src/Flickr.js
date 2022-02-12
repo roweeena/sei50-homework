@@ -7,7 +7,7 @@ class Flickr extends React.Component{
 
   state = {
     searchValue: 'ocean coral',
-    showResults: false
+    query: ''
   }
 
   handleChange = (e)=> {
@@ -18,18 +18,16 @@ class Flickr extends React.Component{
   handleSubmit = (e) => {
     e.preventDefault()
     console.log('SUBMIT!');
-    this.setState({showResults: true})
+    this.setState({query: this.state.searchValue})
   }
 
   render(){
 
     return(
       <div className="main">
-      <Header searchValue={this.state.searchValue} handleChange={()=>this.handleChange} handleSubmit={()=> this.handleSubmit}/>
-      
-      {
-        this.state.showResults ? <Results/> : <p>nothing to show</p>
-      }
+        <Header searchValue={this.state.searchValue} handleChange={()=>this.handleChange} handleSubmit={()=> this.handleSubmit}/>
+        
+        <Results query={this.state.query}/>
 
 
       

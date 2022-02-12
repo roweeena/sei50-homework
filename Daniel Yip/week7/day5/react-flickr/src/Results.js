@@ -10,7 +10,9 @@ const FLICKR_IMAGE_URL = "https://live.staticflickr.com/";
 class Results extends React.Component{
 
   state = {
-    results: []
+    photos: [],
+    searchData: {},
+    searchValue:''
   }
 
   getSearchRes = async () => {
@@ -22,29 +24,39 @@ class Results extends React.Component{
           format: "json",
           nojsoncallback: 1,
           safe_search: 1,
-          text: "ocean coral"
+          text: this.props.query
         }
       })
+
       console.log(res.data.photos.photo);
-      this.setState({results: res.data.photos.photo})
+      
+      this.setState({searchData: res.data.photos})
+      this.setState({photos: res.data.photos.photo})
 
     } catch (err) {
       console.log("AXIOS SEARCH ERROR", err);
     }
   }
-  componentDidMount(){
 
+  componentWillReceiveProps(){
+    this.setState({searchValue: this.props.query})
     this.getSearchRes()
-  
   }
+
+  // componentDidMount(){
+
+  //   this.getSearchRes()
+  //   this.setState({searchValue: this.props.query})
+  // }
 
 
   render(){
     return(
-      <div id="results">
-        {this.state.results.map(result => <Thumbnail key={result.id} url= {`${FLICKR_IMAGE_URL}${result.server}/${result.id}_${result.secret}_q.jpg`}/> )}
-
-        <Thumbnail url="http://www.fillmurray.com/200/200"/>
+      <div id="results-wrapper">
+        <strong>{`${this.state.searchData.total} results for ${this.state.searchValue}`}</strong>
+        <div id="results">
+          {this.state.photos.map(photo => <Thumbnail key={photo.id} url= {`${FLICKR_IMAGE_URL}${photo.server}/${photo.id}_${photo.secret}_q.jpg`}/> )}
+        </div>
       </div>
     )
   }
