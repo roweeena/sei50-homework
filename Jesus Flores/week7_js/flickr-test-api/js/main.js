@@ -3,7 +3,7 @@
 // document.addEventListener('DOMContentLoaded', getData);
 
 
-const FLICKR_API_KEY = '';
+const FLICKR_API_KEY = '2f5ac274ecfac5a455f38745704ad084';
 const FLICK_BASE_URL = 'https://api.flickr.com/services/rest';
 const gridSearch = document.querySelector('.grid-search');
 const loader = document.querySelector("#loading");
