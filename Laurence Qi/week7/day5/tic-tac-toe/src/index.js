@@ -6,7 +6,7 @@ import './index.css'
 class Square extends React.Component {
     render() {
         return (
-        <button className="square">
+        <button className="square" onClick={() => this.props.onClick({value: 'X'})}>
             {this.props.value}
         </button>
         );
@@ -14,30 +14,48 @@ class Square extends React.Component {
 }
 
 class Board extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            squares: Array(9).fill(null)
+        };
+    }
+    
+    handleClick(i) {
+        const squares = this.state.squares.slice(); // make copy of the current board state. 
+        squares[i] = 'X';
+        this.setState({squares: squares});
+    }
+    
     renderSquare(i) {
-        return <Square  value={i} />;
+        return (
+            <Square
+            value={this.state.squares[i]} 
+            onClick={ () => this.handleClick(i)}
+            />
+        );
     }
 
     render() {
         const status = 'Next player: X';
 
-        return (
+        return ( //TODO: we're changing the number values here (props*)
         <div>
             <div className="status">{status}</div>
             <div className="board-row">
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
+                {this.renderSquare(0)}
+                {this.renderSquare(1)}
+                {this.renderSquare(2)}
             </div>
             <div className="board-row">
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
+                {this.renderSquare(3)}
+                {this.renderSquare(4)}
+                {this.renderSquare(5)}
             </div>
             <div className="sboard-row">
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}
+                {this.renderSquare(6)}
+                {this.renderSquare(7)}
+                {this.renderSquare(8)}
             </div>
         </div>
         );
