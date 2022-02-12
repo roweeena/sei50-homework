@@ -1,0 +1,15 @@
+.board {
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.board button {
+  all: unset;
+  display: block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 28px;
+}
