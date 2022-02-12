@@ -6,29 +6,19 @@ import Results from "./Results"
 class Flickr extends React.Component{
 
   state = {
-    searchValue: 'ocean coral'
+    searchValue: 'ocean coral',
+    showResults: false
   }
 
   handleChange = (e)=> {
-    console.log('hello from Flickr value = ', e.target.value );
+    // console.log('hello from Flickr value = ', e.target.value );
     this.setState({searchValue: e.target.value})
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
     console.log('SUBMIT!');
-  }
-
-  fetchSearchResults = async (query) => {
-    
-    try {
-      const res = await axios.get(query)
-        
-      };
-
-    } catch (err) {
-      
-    }
+    this.setState({showResults: true})
   }
 
   render(){
@@ -36,7 +26,13 @@ class Flickr extends React.Component{
     return(
       <div className="main">
       <Header searchValue={this.state.searchValue} handleChange={()=>this.handleChange} handleSubmit={()=> this.handleSubmit}/>
-      <Results/>
+      
+      {
+        this.state.showResults ? <Results/> : <p>nothing to show</p>
+      }
+
+
+      
       </div>
     )
   }
