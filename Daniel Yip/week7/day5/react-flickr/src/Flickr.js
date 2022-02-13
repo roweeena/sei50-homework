@@ -27,7 +27,8 @@ class Flickr extends React.Component{
       <div className="main">
         <Header searchValue={this.state.searchValue} handleChange={()=>this.handleChange} handleSubmit={()=> this.handleSubmit}/>
         
-        <Results query={this.state.query}/>
+        {this.state.query ? <Results query={this.state.query}/> : <p>nothing to show</p> }
+        
 
 
       
