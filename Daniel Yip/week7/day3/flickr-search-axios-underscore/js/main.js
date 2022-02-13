@@ -4,6 +4,15 @@ const FLICKR_API_KEY = "2f5ac274ecfac5a455f38745704ad084";
 const FLICKR_BASE_URL = "https://api.flickr.com/services/rest";
 const FLICKR_IMAGE_URL = "https://live.staticflickr.com/";
 
+// {server-id}/{id}_{secret}_{size-suffix}.jpg'
+
+// params:
+// method=flikr.photos.search
+// format=json
+// text - specify the search query
+// nojsoncallback=1
+// https://api.flickr.com/services/rest?method=flickr.photos.search&text=ocean+coral&format=json&nojsoncallback=1&api_key=2f5ac274ecfac5a455f38745704ad084
+
 
 $(function () {
   const $page = $("#page-wrapper");
@@ -41,23 +50,8 @@ $(function () {
   const makeResultsPage = function (arr) {
 
     const contents = arr.reduce((acc, photoObj) => {
-      const queryString = const makeResultsPage = function (arr) {
 
-        const contents = arr.reduce((acc, photoObj) => {
-          const queryString = `${photoObj.server}/${photoObj.id}_${photoObj.secret}`;
-          const title = `${photoObj.title}`;
-          const image = `<img 
-          src="${FLICKR_IMAGE_URL}${queryString}_q.jpg" 
-          alt="${title}" 
-          class="thumbnail" 
-          data-query-string="${queryString}" 
-          data-title="${title}"
-          >`;
-          return acc + image;
-        }, "");
-        
-        $('.results-wrapper').append(contents);
-      }
+      const queryString = `${photoObj.server}/${photoObj.id}_${photoObj.secret}`;
       const title = `${photoObj.title}`;
       const image = `<img 
       src="${FLICKR_IMAGE_URL}${queryString}_q.jpg" 
@@ -69,6 +63,7 @@ $(function () {
       return acc + image;
     }, "");
     
+
     $('.results-wrapper').append(contents);
   }
 
@@ -90,6 +85,7 @@ $(function () {
     $(".results-wrapper").removeClass('hide')
   });
 
+
   $(window).scroll(function(){
     // console.log('scroll top: ' ,$(window).scrollTop());
     // console.log('document height: ' ,$(document).height());
@@ -98,12 +94,15 @@ $(function () {
     // console.log($(document).height() - $(window).height());
 
     if ($(window).scrollTop() === $(document).height() - $(window).height() - 0.5 && !$('.results-wrapper').hasClass('hide')){
-      // console.log('MORE');
+
+      console.log('MORE');
       loadSearchResults($("#search-input").val(), pageCount++ )
-      // console.log(pageCount);
+      // pageCount++
+      console.log(pageCount);
     }
     
-  });  
+  })
+
 
 }); // document ready
 

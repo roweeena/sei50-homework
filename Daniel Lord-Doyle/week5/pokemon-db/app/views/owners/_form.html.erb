@@ -1,0 +1,35 @@
+<%= form_with model: @owner, local: true do |f| %>
+
+    <%= f.label :name  %>
+    <br>
+    <%= f.text_field :name %>
+    <br><br>
+
+    <%= f.label :age  %>
+    <br>
+    <%= f.text_field :age %>
+    <br><br>
+
+    <%= f.label :hometown  %>
+    <br>
+    <%= f.text_field :hometown %>
+    <br><br>
+
+    <%= f.label :pokemon_owned  %>
+    <br>
+    <%= f.text_field :pokemon_owned %>
+    <br><br>
+
+    <%= f.label :champion  %>
+    <br>
+    <%= f.text_field :champion %>
+    <br><br>
+    
+    <%= f.label :image  %>
+    <br>
+    <%= f.text_field :image %>
+    <br><br>
+
+<%= f.submit %>
+
+<% end %>

@@ -50,14 +50,6 @@ INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
         2
     );
 
-INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
-    VALUES (
-        '85 Castlereagh street',
-        'Sydney',
-        3,
-        2
-    );
-
 --Patrick's Destinations
 INSERT INTO destinations (street_address, suburb, visiting_frequency, person_id)
     VALUES (

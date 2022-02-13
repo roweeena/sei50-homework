@@ -86,7 +86,7 @@ get '/rental/travel' do
             net_cost: (sum_dollar_equivalent + rental.cost).round(2)
         )
     end
-
+    
     redirect '/rental'
 end
 

@@ -1,0 +1,46 @@
+<%= form_with model: @pokemon, local: true do |f| %>
+
+    <%= f.label :name  %>
+    <br>
+    <%= f.text_field :name %>
+    <br><br>
+
+    <%= f.label :level  %>
+    <br>
+    <%= f.text_field :level %>
+    <br><br>
+
+    <%= f.label :special_move  %>
+    <br>
+    <%= f.text_field :special_move %>
+    <br><br>
+
+    <%= f.label :image  %>
+    <br>
+    <%= f.text_field :image %>
+    <br><br>
+
+  <%= f.label :owner_id %>
+  <br>
+  <%= f.collection_select :owner_id, Owner.all, :id, :name %>
+  <br><br>
+
+<%= f.submit %>
+
+<% end %>
+
+      <%# t.string :name
+      t.string :description
+      t.string :image_one
+      t.string :image_two
+      t.integer :pokedex_no
+      t.string :pokemon_type
+      t.integer :gender_ration
+      t.integer :catch_rate
+      t.float :height
+      t.float :weight
+      t.string :ability_one
+      t.string :ability_two
+      t.string :ability_three
+      t.string :ability_four
+      t.integer :owner_id %>

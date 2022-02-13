@@ -1,0 +1,11 @@
+<h2>Index of Owners</h2>
+
+<ul>
+
+    <% @owners.each do |trainer| %>
+        <li>
+            <%= link_to trainer.name, owner_path(trainer.id)  %>
+        </li>
+    <% end %>
+
+</ul>
