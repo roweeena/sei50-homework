@@ -2,6 +2,7 @@ console.log('DOM traverse main.js loaded');
 
 
 const traverseDOMIterative = (node) => {
+    console.log(node);
   // print out node, and print all child
   // nodes, and child-child nodes etc
   // NO RECURSION ALLOWED
