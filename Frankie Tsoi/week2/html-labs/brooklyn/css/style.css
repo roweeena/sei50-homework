@@ -1,0 +1,67 @@
+
+.container{
+	font-family: 'Times New Roman', Times, serif;
+	color: gray;
+	font-size: 24px;
+	max-width: 960px;
+	max-height: auto;
+	margin: 0 auto;
+}
+
+.bottomHalf{
+	width: 960px;
+	max-height: auto;
+	margin: 0 auto;
+}
+h2{
+	font-family: 'Times New Roman', Times, serif;
+	color: rgb(100, 100, 100);
+}
+.theDate{
+	font-family: 'Times New Roman', Times, serif;
+	color: rgb(95, 95, 194);
+} 
+.bottomText{
+	color: rgb(100, 100, 100);
+}
+
+.moretext{
+	display: none;
+	margin: 0;
+	color:rgb(100, 100, 100);
+}
+.readMoreButton{
+	float: right; 
+	color: rgb(95, 95, 194);
+	background-color: white;
+	border: none;	
+} 
+
+.logos{
+	max-width: 960px;
+	max-height: auto;
+	margin: 0 auto;
+}
+#logo1{
+	border: 4px solid gray;
+	/* margin-left: 4px; */
+}
+#logo2{
+	border: 4px solid gray;
+	margin-left: 4px;
+}
+#logo3{
+	border: 4px solid gray;
+	margin-left: 4px;
+}
+#logo4{
+	border: 4px solid gray;
+	margin-left: 4px;
+}
+#copyright{
+	font-size: 14px;
+	color: gray;
+	width: 960px;
+	max-height: auto;
+	margin: 0 auto;
+}

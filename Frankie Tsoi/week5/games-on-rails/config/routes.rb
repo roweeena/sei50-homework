@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
  
-
 get '/magicball' => 'magicball#home'
 
 get '/magicball/results' => 'magicball#results'

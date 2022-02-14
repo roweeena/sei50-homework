@@ -4,29 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="js/jquery.js"></script>
+  <!-- <script src="js/jquery.js"></script> -->
   <script src="js/axios.js"></script>
-  <script src="js/underscore.js"></script>
+  <!-- <script src="js/underscore.js"></script> -->
   <script src="js/main.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Flickr Photos</title>
 </head>
 <body>
   <h1>Flickr Search </h1>
 
-
-
   <form id="searchForm">
-    <input type="text" id ="userQuery" placeholder="Photos, people, or pets">
-    <button id="loadMore">Search</button>
+    <input type="text" id="searchText" value="ocean coral">
+    <button>Search</button>
   </form>
 
+  <div id="results"></div>
 
-  <div id="output">
-  </div>
-
-  <div id="details">
-  </div>
+  <div id="details"></div>
+  
 
   
 </body>

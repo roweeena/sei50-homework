@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 2022_01_27_123122) do
 
   create_table "cars", force: :cascade do |t|
     t.string "name"
-    t.text "brand"
     t.text "body_type"
     t.text "model"
     t.float "price"
     t.text "image"
+    t.integer "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
