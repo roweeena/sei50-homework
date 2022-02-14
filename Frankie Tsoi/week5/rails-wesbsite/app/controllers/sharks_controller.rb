@@ -1,4 +1,5 @@
 class SharksController < ApplicationController # here needs to inherit from application_controller.rb in controllers folder
+  
 #CREATE
   def new
     @shark = Shark.new

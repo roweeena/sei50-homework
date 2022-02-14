@@ -4,13 +4,7 @@ class SecretnumController < ApplicationController
   end
 
   def results
-    
     @answers = rand 100       
-   
   end
-
-
-
-
 
 end # end of class

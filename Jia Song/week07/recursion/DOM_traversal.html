@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="firstNode">
+    <div class="1">
+      <div class="2">
+        <div class="3">
+          <div class="3-1">
+            <div class="3-2">
+              <div class="3-3"></div>
+            </div>
+          </div>
+          <div class="4">
+            <div class="5">
+              <div class="6">
+                <div class="7">
+                  <div class="8"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const traverseDOMIterative = (node) => {
+      // print out node, and print all chiputs n, memold
+      // nodes, and child-child nodes etc
+      // NO RECURSION ALLOWED
+
+      let currentNode = node;
+
+      while(currentNode) {
+        console.log(currentNode)
+
+        for(let i=0; i<currentNode.childNodes.length; i++) {
+          currentNode = currentNode.childNodes[i];
+          // .......
+        }
+      }
+
+    };
+
+
+    const traverseDOMRecursive = (node) => {
+      // Loop through every child node (while or forEach method is ok here)
+      // but use a recursive call to process them
+
+      // print current node
+      console.log(node);
+
+      // base case (if the current node doesn't have any child, that recursive is done.)
+      if(!node.childNodes[0]) return;
+
+      // if the current node has children, one more recursive for each child
+      for(let i=0; i<node.childNodes.length; i++) {
+        traverseDOMRecursive(node.childNodes[i]);
+      }
+    }; // traverseDOMRecursive
+
+
+    const firstNode = document.querySelector(".firstNode");
+    // To run them:
+    // traverseDOMIterative( firstNode );
+    // traverseDOMRecursive( firstNode );
+
+  </script>
+</body>
+</html>

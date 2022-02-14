@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/vue.js"></script>
+  <script src="js/axios.js"></script>
+  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Vue Flickr</title>
+</head>
+<body>
+  <div id="app">
+
+    <header>
+      <h1>Vue Flickr</h1>
+      <form @submit.prevent="loadSearchResults(1)">
+        <input type="text" v-model="searchText">
+        <button>Search</button>
+      </form>  
+    </header>
+    
+    <div v-if="showResults" id="search-results">
+      <div v-for="img in imageUrlList">
+        <img :src="img.url" :title="img.title" @click="loadSingleResult(img.id)">
+      </div>  
+    </div>
+      
+    <div v-if="singleShow" id="single-show" @click="closeSingle">
+      <img :src="singleUrl" alt="singleTitle">
+      <h2>{{singleTitle}}</h2>
+      <p>{{singleDescription}}</p>
+    </div>
+
+    <div v-if="loading" id="loading">
+      <h1>LOADING...</h1>
+    </div>
+
+  </div>
+</body>
+</html>
+
+
