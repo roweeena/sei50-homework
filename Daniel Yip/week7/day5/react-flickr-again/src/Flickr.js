@@ -7,7 +7,6 @@ const FLICKR_API_KEY = "2f5ac274ecfac5a455f38745704ad084";
 const FLICKR_BASE_URL = "https://api.flickr.com/services/rest";
 
 
-
 class Flickr extends React.Component{
 
   state = {
@@ -54,7 +53,7 @@ class Flickr extends React.Component{
   render(){
     return(
       <div id="flickr">
-        <Header message="a message from Flickr to Header" handleSubmit={this.handleSubmit} searchValue={this.state.searchValue} handleChange={this.handleChange}/>
+        <Header handleSubmit={this.handleSubmit} searchValue={this.state.searchValue} handleChange={this.handleChange}/>
         {this.state.searchResults.length > 0 && 
         
         <Results resultsToShow={this.state.searchResults} numberResults={this.state.searchResultNumber} query={this.state.query}/>

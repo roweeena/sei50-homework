@@ -55,6 +55,13 @@ const findE = arr => arr.filter(person => person.username === 'E')
 console.log(findE(people));
 
 // Find the first object in people that has the id of 3
+const findById = (idNum, objArr)=>{
+
+  return objArr.find(obj => obj.id === idNum)
+
+}
+
+console.log(findById(3, people ));
 
 // Find the first person who has an age of less than 50
 // Get an array of all of the people with an age of over 60
