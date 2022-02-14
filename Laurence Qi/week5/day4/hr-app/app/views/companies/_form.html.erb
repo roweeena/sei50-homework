@@ -1,0 +1,16 @@
+<%= form_with model: @company, local: true do |f| %>
+
+    <div><%= f.label :name %></div>
+    <div><%= f.text_field :name %></div>
+    <br>
+
+    <div><%= f.label :industry %></div>
+    <div><%= f.text_field :industry %></div>
+    <br>
+
+    <div><%= f.label :revenue %></div>
+    <div><%= f.text_field :revenue %></div>
+    <br>
+    <div><%= f.submit %></div>
+    
+<% end %>

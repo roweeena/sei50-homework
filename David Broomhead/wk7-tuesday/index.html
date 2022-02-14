@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Photos From Mars</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+        <h1>Mars Rover Photos</h1>
+
+        <div id="instructions">
+            <p>Welcome! Enter a date using format YYYY-MM-DD and a code for the camera from the menu below. Curiosity landed on 2012-08-06 so you can check out images from the landing on that date.</p>
+
+            <table id="#camera-table">
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Camera</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>FHAZ</td>
+                    <td>Front Hazard Avoidance Camera</td>
+                  </tr>
+                  <tr>
+                    <td>RHAZ</td>
+                    <td>Rear Hazard Avoidance Camera</td>
+                  </tr>
+                  <tr>
+                    <td>MAST</td>
+                    <td>Mast Camera</td>
+                  </tr>
+                  <tr>
+                    <td>CHEMCAM</td>
+                    <td>Chemistry and Camera Complex</td>
+                  </tr>
+                  <tr>
+                    <td>MAHLI</td>
+                    <td>Mars Hand Lens Imager</td>
+                  </tr>
+                  <tr>
+                    <td>MARDI</td>
+                    <td>Mars Descent Imager</td>
+                  </tr>
+                  <tr>
+                    <td>NAVCAM</td>
+                    <td>Navigation Camera</td>
+                  </tr>
+                </tbody>
+                </table>
+
+
+        </div>
+
+        <form id="searchForm">
+            <input type="text" id="earthDate" placeholder="YYYY-MM-DD">
+            <input type="text" id="camera" placeholder="camera">
+            <button id="search">Search</button>
+        </form>
+
+        <div id="output-grid">
+            <div id="output">
+            </div>
+        </div>
+        
+        <script src="js/axios.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

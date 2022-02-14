@@ -2,41 +2,65 @@
 console.log('Ghibli Search:')
 $(() => {
     const url = (`https://ghibliapi.herokuapp.com/films/`)
-    let lastSpot = ''
+    let userHistory = []
     function homePage(){
         $('.output').html(`home`)
         const top = () => {
-            $('.output').append(`<h4>Alex's top picks:</h4><div class="container"></div>`)
+            $('.output').append(`<h4>For you:</h4><div class="container top-picks"></div>`)
         axios.get(url)
             .then( (res) => {
+                arrAll = []
                 function findFavs(title){
                     res.data.forEach((e)=>{
                         if (e.title.includes(title)){
                             renderSearchResults(e)
                         } 
                     }) // forEach
-                }
+                } // findFavs
                 favourites = ["Porco Rosso", "Howl's Moving Castle", "Ponyo", "Kiki's Delivery Service", "Spirited Away"]
                 favourites.forEach((e)=>{
                     findFavs(e)
                 })
+                res.data.forEach((e)=>{
+                    e.rt_score = parseInt(e.rt_score) // ty ro!!!!!!!!!!!!!!!!!!!!!!!!!
+                    arrAll.push(e)
+                })
+
+                function compare(a,b){ 
+                    if(a.rt_score < b.rt_score){
+                        return -1
+                    }
+                    if (a.rt_score > b.rt_score){
+                        return 1;
+                    }
+                    return 0;
+                }
+                arrAll.sort(compare)
+                arrAll.reverse()
+                $('.output').append(`<h4>Top picks: </h4><div class="container reccomendations">`)
+                let counter = 0
+                arrAll.forEach((e)=>{
+                    if (counter < 10){
+                        counter++
+                        $('.reccomendations').append(
+                        `<div class="home-film">
+                        <div class="show-title" id="${e.id}">
+                            ${e.title}
+                        </div>
+                        <div class="show-poster" id="${e.id}">
+                            <img src="http://image.tmdb.org/t/p/w185${e.image}" alt="${e.title}" id="${e.id}">
+                        </div>
+                    </div>`
+                    )}
+                })
+
             }) // then
             .catch( (err) => {
                 console.log('Problem!', err)
-
             })
         }
-        const all = () => {
-            $('.output').append(`<h4>Today's reccomendations:</h4>`)
-        }
-        
         top()
-        // all()
-
-        lastSpot = 'home'
-
     } homePage()
-
 
     function fetchSearchResults(searchText){
         $('.output').html(`<p> Results </p><div class="container"></div>`)
@@ -52,7 +76,7 @@ $(() => {
             .catch( (err) => {
                 console.log('Problem!', err)
             })// catch
-        lastSpot = searchText
+
     } // fetchSearchResults()
 
     function renderSearchResults(data){
@@ -123,31 +147,59 @@ $(() => {
             lastShow = id
     }
 
-    $(() =>{
+    // function renderSearchBox(query){
+    //     $('body').append()
+    // }
+
+
+    $(function(){
         $('#searchForm').on('submit', (ev) => {
             ev.preventDefault();
             const query = $('#userQuery').val()
             fetchSearchResults(query);
+            userHistory.push(query)
         })
+        $('#userQuery').keyup(function(e){
+            console.log($(this).val());
+            checkblank()
+            fetchSearchResults($(this).val())
+            // console.log(input)
+        })
+        function checkblank(){
+            if (!$('#userQuery').val()){
+                console.log('search empty')
+            }
+        }
+        checkblank()
+        $('#userQuery').blur(function(){
+            userHistory.push($(this).val())
+            console.log(userHistory)
+        })
+
         $('#goHome').on('click', () => {
             $('.output').html('<div id="homeOutput"></div>') 
             homePage();
         });
-        $(".output").on('click', (e) => {
-            renderFilmPage(e.target.id)
-        })
+        
         $("#back").on('click', (e) => {
-            if (lastSpot === 'home'){
+            if (userHistory.length===0){
                 homePage()
-            } 
-            // else if (lastSpot === 'show'){
-            //     renderFilmPage(lastShow)
-            // }
-             else {
-                fetchSearchResults(lastSpot)
+            } else{
+                let dest = userHistory[userHistory.length - 1]
+                console.log(dest)
+                userHistory.pop()
+                fetchSearchResults(dest)
             }
-            console.log(lastSpot)
+        })
+        $(".output").on('click', '.home-film',(e) => {
+            renderFilmPage(e.target.id)
         })
     }) 
 
 }) // DOM
+
+
+// FIX: 
+//      if you type too fast, too many results are appended. Maybe need await? 
+//      For you and top picks should be able to have a next and back function. need an 
+//          array of the ids in the list and just render them based chosen index.

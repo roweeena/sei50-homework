@@ -1,0 +1,41 @@
+* {
+    border: 0;
+    margin: 0
+}
+
+header {
+    background-color: whitesmoke;
+    padding: 20px 0;
+    text-align: center;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: green;
+    margin-bottom: 100px;
+}
+
+.yield {
+    padding: 30px
+}
+
+.owner_image {
+    height: 400px
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    background-color: white;
+    padding: 30px
+}
+
+.pokemonUL {
+    list-style: none;
+    display: inline-block;
+}
+
+.pokemonUL img {
+    width: 200px
+}

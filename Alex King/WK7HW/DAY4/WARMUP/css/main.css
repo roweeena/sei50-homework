@@ -1,0 +1,18 @@
+h1 {
+    color: black;
+}
+
+#hidden-text{
+    display: none;
+}
+
+body{
+    background-color:black;
+    overflow:none;
+}
+.dg{
+    z-index:9999 important;
+}
+/* *{
+    overflow:none;
+} */

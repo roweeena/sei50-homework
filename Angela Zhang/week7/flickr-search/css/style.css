@@ -1,0 +1,15 @@
+ul{
+list-style-type: none;
+    
+}
+
+li{
+    display: inline-block;
+    margin: 5px;
+}
+
+.showPageImg{
+    height: 200px;
+    width:auto;
+    object-fit: cover;
+}
