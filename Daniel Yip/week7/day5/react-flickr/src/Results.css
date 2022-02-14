@@ -1,0 +1,13 @@
+#results-wrapper{
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#results{
+  border: 1px solid red;
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

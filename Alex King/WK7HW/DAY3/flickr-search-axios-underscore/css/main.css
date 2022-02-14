@@ -1,0 +1,96 @@
+body{
+    margin:0;
+    background:black;
+}
+*{
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+nav{
+    position:fixed;
+    top:0;
+    height:30px;
+    width:100vw;
+    background-color:#1a1a1b;
+    border:2px solid #343536;
+    padding: 5px;
+    color:white
+}
+.search{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:250px;
+    margin-top:-28px;
+}
+#back{
+    /* margin-left:30px; */
+    position:fixed;
+    transform:translateX(-200%);
+    left:100%;
+    color:white;
+    margin-top:-30px;
+    border:1px solid #343536;
+    background-color:#272729;
+    border-radius:10px;
+    padding:5px;
+    cursor:pointer
+}
+#goHome{
+    margin-left:10px;
+    color:white;
+    margin-top:1px;
+    border:1px solid #343536;
+    background-color:#272729;
+    border-radius:10px;
+    padding:5px;
+    cursor:pointer
+}
+#userQuery{
+    background-color:#272729;
+    border: 1px solid #343536;
+    border-radius:20px;
+    color:#848688;
+    height:25px;
+    padding-left:6px;
+}
+#loadMore{
+    background-color:#272729;
+    border: 1px solid #343536;
+    border-radius:20px;
+    color:#848688;
+    margin-left:10px;
+    width:30px;
+}
+
+#userQuery:hover, #loadMore:hover, #goHome:hover, #back:hover, .pageButton:hover{
+    background-color:#1a1a1b;
+    border:1px solid #d7dadc;
+}
+.output{
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap:5px;
+}
+img{
+    width:80%;
+    border:2px solid black;
+}
+img:hover{
+    border:2px solid white;
+    cursor:pointer;
+}
+button:hover{
+    cursor:pointer
+}
+.pages{
+    width:200px;
+}
+.pageButton{
+    background-color:#272729;
+    border: 1px solid #343536;
+    border-radius:20px;
+    color:#848688;
+    width:30px;
+}
