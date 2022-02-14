@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../App.css';
 import SearchForm from './SearchForm';
 import ThumbnailGallery from './ThumbnailGallery'
+import { Route, HashRouter as Router} from 'react-router-dom';
 
 //TODO: import from some single file of global constants
 const FLICKR_API_KEY = '2f5ac274ecfac5a455f38745704ad084';
@@ -53,15 +54,22 @@ class FlickrSearch extends React.Component {
 
     return (
       <div className="App">
-        <h1>FlickrSearch</h1>
-        <hr/>
+        <Router>
+          <h1>FlickrSearch</h1>
 
-        <SearchForm onSearch={ this.performSearch }/>
+          <Link to="/">Home</Link> 
 
-        <ThumbnailGallery 
-        loading={this.state.loading} 
-        photo={this.state.resultPhotos}/>
-      
+          <hr/>
+
+          <SearchForm onSearch={ this.performSearch }/>
+
+          <ThumbnailGallery 
+          loading={this.state.loading} 
+          photo={this.state.resultPhotos}/>
+
+          <Route exact path="/" component={Home} />
+          
+        </Router>
       </div>
     );
   }//render
