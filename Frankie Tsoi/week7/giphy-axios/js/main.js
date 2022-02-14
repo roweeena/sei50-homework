@@ -38,14 +38,14 @@ $(function () {
    
     let giphys = '<ul>';
     data.data.forEach(function (giphy) {
-      console.log(giphy);
-      giphys += `
-    <li data-giphy-id="${giphy.id}">
-    ${giphy.title}
-    
-    <img src="${giphy.images.original.url}">
-    </li>
-    `;
+      // console.log(giphy);
+    giphys += `
+        <li data-giphy-id="${giphy.id}">
+        ${giphy.title}
+        <br>
+        <img src="${giphy.images.original.url}">
+        </li>
+        `;
     });
     giphys += '</ul>';
 

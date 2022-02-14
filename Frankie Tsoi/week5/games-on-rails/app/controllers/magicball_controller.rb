@@ -1,7 +1,7 @@
 class MagicballController < ApplicationController
 
   def home
-  end
+  end # end def home
 
   def results
     array = ["It is certain.",
@@ -16,10 +16,6 @@ class MagicballController < ApplicationController
                "Very doubtful."]
     @answers = array[0..9].to_a.sample          
    
-  end
-
-
-
-
+  end # end of def results
 
 end # end of class

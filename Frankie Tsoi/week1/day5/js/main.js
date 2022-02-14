@@ -25,12 +25,12 @@ const subwayLines = {
   line6: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'],
 }
 
-let stopsCount = 0;
 
 const singleTrip = function(line, startStation, endStation) {
   let stationsOnLine = subwayLines[line];
   let startStationIndex = stationsOnLine.indexOf(startStation);
   let endStationIndex = stationsOnLine.indexOf(endStation);
+  let stopsCount = 0;
   let stops = ' ';
       
     if (startStationIndex < endStationIndex) { // Go forward

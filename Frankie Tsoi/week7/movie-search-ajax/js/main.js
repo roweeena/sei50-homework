@@ -14,11 +14,14 @@ const loadTrivia  = function(){
 
     // console.log('data:', response.results);
 
+    
+
     for (let i = 0; i < response.results.length; i++) {
       const currentMovie = response.results[i];
       // console.log(currentMovie.title);
       $('#output').append(`<h1> ${currentMovie.title}</h1> 
       <p> <strong>overview: </strong>${currentMovie.overview}</p> <img src='https://image.tmdb.org/t/p/w154/${currentMovie.poster_path}'>`);
+      
     }; //end of loop
 
   };
