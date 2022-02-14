@@ -20,7 +20,8 @@ class SearchForm extends React.Component {
         this.props.onSearch(this.state.searchText);
         // we are really runnign the method called 'performSearch' in the
         // parent component <FlickrSearch>
-
+        console.log(this.props)
+        this.props.history.push(`/results/${this.state.searchText}`)
     };
 
     render() {
