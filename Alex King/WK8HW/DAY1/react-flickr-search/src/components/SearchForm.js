@@ -1,42 +1,47 @@
 
-import React from 'react';
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
-class SearchForm extends React.Component {
+const SearchForm = ()=> {
+    const [searchText, setSearchText] = useState('')
+    const his = useHistory()
+    // state = {
+    //     searchText: ''
+    // }
 
-    state = {
-        searchText: ''
-    }
-
-    handleInput = (ev) => {
-        this.setState({searchText: ev.target.value})
+    const handleInput = (ev) => {
+        setSearchText(ev.target.value)
+        // this.setState({searchText: ev.target.value})
     } // handleInput()
 
-    handleSubmit = (ev) => {
+    const handleSubmit = (ev) => {
         ev.preventDefault();
-        console.log('handleSubmit')
+        console.log('handleSubmit', searchText)
 
         // Tell the parent component that htere is a search ready
         // to perform, and tell it the query text for the search
-        this.props.onSearch(this.state.searchText);
+        // this.props.onSearch(this.state.searchText);
+        // performSearch(searchText)
         // we are really runnign the method called 'performSearch' in the
         // parent component <FlickrSearch>
-        console.log(this.props)
-        this.props.history.push(`/results/${this.state.searchText}`)
+        // console.log(this.props)
+        his.push(`/search/${searchText}`)
     };
 
-    render() {
-        return (
-            <div>
-                {/* <p>{this.state.searchText}</p> */}
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" onChange={this.handleInput}/>
-                    <button>Search</button>
 
+    return (
+        <div>
+            {/* <p>{this.state.searchText}</p> */}
+            <form onSubmit={handleSubmit}>
+                <input type="text" onChange={handleInput}/>
+                <button>Search</button>
 
-                </form>
-            </div>
-        );
-    }
+            </form>
+        </div>
+    );
+
 }
 
 export default SearchForm;
+
+  

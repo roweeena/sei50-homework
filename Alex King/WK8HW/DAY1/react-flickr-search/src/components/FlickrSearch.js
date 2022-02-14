@@ -22,9 +22,8 @@ class FlickrSearch extends React.Component {
 
     performSearch = async (query) => {
         console.log('FlickrSearch::performSearch()', query)
-
         this.setState({loading:true})
-
+        
         const flickrParams = {
             method: 'flickr.photos.search',
             api_key: FLICKR_API_KEY,
@@ -72,13 +71,14 @@ class FlickrSearch extends React.Component {
                 <hr />
 
                 <SearchForm onSearch={ this.performSearch }/>
+
                 {/* <SearchForm history={this.props.history} /> */}
 
 
                 <ThumbnailGallery loading={ this.state.loading } photos={ this.state.resultPhotos } />
 
 
-                <Route exact path ='/:query' component={ SearchForm } />
+                {/* <Route exact path ='/search/:query' component={ SearchForm } /> */}
                 
                 </Router>
 
