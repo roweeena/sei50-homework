@@ -2,7 +2,7 @@
 
 function Thumbnail(props) {
   return(
-    <img src={props.url}/>
+    <img  src={props.url}/>
   )
 }
 
