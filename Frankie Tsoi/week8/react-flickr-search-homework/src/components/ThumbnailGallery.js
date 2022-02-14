@@ -24,4 +24,4 @@ export default ThumbnailGallery
 
 {/* this.props.photo.map(photo => <p key={photo.id}>{photo.title}</p>) */}
 
-// testing git add .
+
