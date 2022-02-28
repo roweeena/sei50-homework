@@ -23,4 +23,16 @@ export default class FlightsHttp {
       return error
     }
   }
+
+  async saveReservation (newReservation) {
+    try {
+      console.log(newReservation)
+      return
+      const url = `${API_BASE_URL}/reservation/`
+      const res = await axios.get(url, {data})
+      return res.data
+    } catch (error) {
+      return error
+    }
+  }
 }
