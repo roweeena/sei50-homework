@@ -6,11 +6,13 @@
         <div v-if="flights">
             <ul >
                 <li v-for="value in flights" :key="value.id">
-                    Origin: {{ value.origin }} <strong>|</strong>
-                    Destination: {{ value.destination }} <strong>|</strong>
-                    Flight: {{value.flight_number}} <strong>|</strong>
-                    Airplane: {{value.airplane.name}}
-                </li>
+                    <router-link :to="{ name: 'ShowFlight', params: { id: value.id }}">
+                      Origin: {{ value.origin }} <strong>|</strong>
+                      Destination: {{ value.destination }} <strong>|</strong>
+                      Flight: {{value.flight_number}} <strong>|</strong>
+                      Airplane: {{value.airplane.name}}
+                    </router-link>
+                 </li>
             </ul>
         </div>
         <div v-else>
@@ -20,8 +22,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-const API_BASE_URL = 'http://localhost:3000/'
+import FlightsHttp from '../services/Flights'
+const flights = new FlightsHttp()
 export default {
   name: 'FlightSearchResults',
   props: ['origin', 'destination'],
@@ -33,17 +35,11 @@ export default {
       // state goes here
     }
   },
-  async mounted () {
-    try {
-      const url = `${API_BASE_URL}/flights/search/${this.origin}/${this.destination}`
-      const res = await axios.get(url)
-      console.log(res.data);
-      this.flights = res.data
-    } catch (error) {
-      this.error = error
-    } finally {
-      this.loading = false
-    }
+  mounted () {
+    flights.getFlights(this.origin, this.destination)
+      .then(res => { this.flights = res })
+      .catch(error => { this.error = error })
+      .finally(() => { this.loading = false })
   }
 }
 </script>
