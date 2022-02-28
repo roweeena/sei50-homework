@@ -39,8 +39,13 @@ Reservation.destroy_all
 
 print "Creating reservations..."
 r1  = Reservation.create! flight_id: f1.id, user_id: u1.id, row: 10, col: 2
-r2  = Reservation.create! flight_id: f2.id, user_id: u2.id, row: 10, col: 2
+r2  = Reservation.create! flight_id: f1.id, user_id: u2.id, row: 10, col: 2
 r3  = Reservation.create! flight_id: f3.id, user_id: u3.id, row: 10, col: 2
+r4  = Reservation.create! flight_id: f2.id, user_id: u3.id, row: 10, col: 2
 
 
 puts "Reservations created #{Reservation.count} reservations"
+puts "Flight #1 has #{Flight.first.reservations.length} reservatios"
+puts "User #3 has #{User.third.reservations.length} reservartions"
+puts "Flight #1 has airplane name #{Flight.first.airplane.name}"
+puts "Reservation #1 has user name #{Reservation.first.user.name}"
