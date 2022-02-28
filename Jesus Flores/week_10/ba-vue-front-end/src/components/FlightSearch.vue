@@ -41,7 +41,13 @@ export default{
   },
   methods: {
     submitSearch () {
-      console.log('submitted!')
+      this.$router.push({
+        name: 'SearchResults',
+        params: {
+          origin: this.origin,
+          destination: this.destination
+        }
+      })
     }
   }
 }
