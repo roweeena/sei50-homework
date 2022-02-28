@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button v-on:click="reverseMessage">Change Heading</button>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -89,6 +90,11 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    reverseMessage () {
+      this.msg = this.msg.split('').reverse().join('')
     }
   }
 }
