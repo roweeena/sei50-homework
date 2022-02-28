@@ -6,6 +6,7 @@
     <h2>
       Departure Date: {{flight.departure_date}}
     </h2>
+    <h3> {{message}} </h3>
         <div class="seat_details">
             <div class="column-letters text-center" v-for="(cols, index)  in board" :key="index">
                   <p> {{ letters[index].toUpperCase() }} </p>
@@ -30,7 +31,8 @@ export default {
       error: null,
       letters: [...'abcdefghijklmnopqrstuvwxyz'],
       reservations: [],
-      board: null
+      board: null,
+      message: ""
       // state goes here
     }
   },
@@ -66,7 +68,9 @@ export default {
       this.flight.reservations.push({col: cols, row: rows}) // We change the state
       flights.saveReservation(newReservation)
         .then(res => {
-          console.log(res)
+          if (res.id !== null) {
+            this.message = `Flight has been booked, your seat: ${this.letters[cols].toUpperCase()}${rows + 1}`
+          }
         })
         .catch(error => { this.error = error })
         .finally(() => { this.loading = false })
