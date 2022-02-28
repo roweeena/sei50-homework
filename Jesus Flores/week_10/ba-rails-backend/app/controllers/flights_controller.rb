@@ -8,7 +8,7 @@ class FlightsController < ApplicationController
         flights = Flight.where origin: params[:origin], destination: params[:destination]
         render json: flights, include:{
             airplane:{},
-            reservations:{}
+            
         }
     end
 

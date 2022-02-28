@@ -33,15 +33,17 @@ f1 = Flight.create! flight_number: "BA256", departure_date: '2022-03-01 04:20', 
 f2 = Flight.create! flight_number: "BADDD", departure_date: '2022-03-01 04:20', origin: 'SYD', destination: 'SIN', airplane_id: a1.id
 f3 = Flight.create! flight_number: "LOLSITO", departure_date: '2022-03-01 04:20', origin: 'SYD', destination: 'LAX', airplane: a2
 
+
 puts "created #{Flight.count} flights"
 
 Reservation.destroy_all
 
 print "Creating reservations..."
 r1  = Reservation.create! flight_id: f1.id, user_id: u1.id, row: 10, col: 2
-r2  = Reservation.create! flight_id: f1.id, user_id: u2.id, row: 10, col: 2
+r2  = Reservation.create! flight_id: f1.id, user_id: u2.id, row: 5, col: 3
 r3  = Reservation.create! flight_id: f3.id, user_id: u3.id, row: 10, col: 2
 r4  = Reservation.create! flight_id: f2.id, user_id: u3.id, row: 10, col: 2
+r5  = Reservation.create! flight_id: f1.id, user_id: u2.id, row: 2, col: 4
 
 
 puts "Reservations created #{Reservation.count} reservations"
