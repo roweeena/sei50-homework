@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   # Search route, all flights which match a specific origin and destination
   get '/flights/search/:origin/:destination' => 'flights#search'
 
-  post '/flights/book/:id/:row/:col' => 'flights#book'
+  post '/flights/book/:id' => 'flights#book'
 
 end

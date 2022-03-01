@@ -40,8 +40,10 @@ class FlightsController < ApplicationController
 
     def book
         flight = Flight.find params[:id]
-        newBooking = Reservation.create flight_id: flight.id, user_id: 25, row: params[:row], col: params[:col]
+        newBooking = Reservation.new flight_id: flight.id, user_id: 24, row: params[:row], col: params[:col]
+        newBooking.save
         p '******************************', newBooking
+        render json: newBooking
     end
 
 
