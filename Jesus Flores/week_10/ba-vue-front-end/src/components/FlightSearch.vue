@@ -35,12 +35,13 @@ export default{
     // However we never refer to the 'data' key directly; in vue you
     // access the state keys directly on the instace (this)  sample: this.origin and not this.data.origin
     return {
-      origin: '',
-      destination: ''
+      origin: 'SYD',
+      destination: 'MEL'
     }
   },
   methods: {
     submitSearch () {
+      console.log('router', this.$router)
       this.$router.push({
         name: 'SearchResults',
         params: {
