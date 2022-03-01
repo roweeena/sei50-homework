@@ -57,10 +57,13 @@ const API_BASE_URL = 'http://localhost:3000/'
                 console.log(this.seats)
                 
             },
-            async takeSeat(row, col){
+            async takeSeat(col, row){
                 console.log("TAKE SEAT", row + 1, col + 1)
-                const url = `${API_BASE_URL}flights/book/${this.id}/${row}/${col}`
-                const res = await axios.post(url)
+                const url = `${API_BASE_URL}flights/book/${this.id}`
+                const res = await axios.post(url, {
+                    row: row,
+                    col: col
+                })
             },
             seatTaken(column, rows){
                 const reservations = this.reservations 
@@ -89,11 +92,19 @@ const API_BASE_URL = 'http://localhost:3000/'
         border:1px solid black;
         margin-top:3px;
     }
+    .seats:hover{
+        background-color:royalblue
+    }
     .seat-plan{
         display:grid;
         grid-template-columns: repeat(6, 1fr)
     }
     .taken{
-        border:1px solid red;
+        background-color:crimson;
+        cursor:not-allowed
+    }
+    .taken:hover{
+        background-color:crimson; 
+        /* lol */
     }
 </style>
