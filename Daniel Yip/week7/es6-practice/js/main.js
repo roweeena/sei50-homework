@@ -51,18 +51,38 @@ const findE = arr => arr.filter(person => person.username === 'E')
 //     return person.username === 'E'
 //   })
 // }
-
 console.log(findE(people));
 
 // Find the first object in people that has the id of 3
 const findById = (idNum, objArr)=>{
-
   return objArr.find(obj => obj.id === idNum)
-
 }
 
 console.log(findById(3, people ));
 
 // Find the first person who has an age of less than 50
+
+const findAge = (objArr) => objArr.find(person => person.age < 50)
+
+
+console.log(findAge(people));
+
 // Get an array of all of the people with an age of over 60
+
+const over60 = (objArr=>{
+  objArr.filter(person=> person.age > 60 )
+})
+
+console.log(people.filter(person => {return person.age > 60}));
+
 // Remove all of the people with an age less than 40
+// sort by age
+people.sort((a,b)=>{
+  return b.age - a.age
+})
+//splice out from the minimum
+
+
+
+console.log(people);
+
