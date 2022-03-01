@@ -32,7 +32,7 @@ export default {
       letters: [...'abcdefghijklmnopqrstuvwxyz'],
       reservations: [],
       board: null,
-      message: ""
+      message: ''
       // state goes here
     }
   },
@@ -45,6 +45,7 @@ export default {
       .catch(error => { this.error = error })
       .finally(() => { this.loading = false })
   },
+
   methods: {
     boardScheme (cols, rows) {
       this.board = [...Array(cols)].map(_ => Array(rows).fill(null))
@@ -58,6 +59,7 @@ export default {
         }
       }
     },
+
     bookSeats (cols, rows) {
       const newReservation = {
         user_id: 55,
