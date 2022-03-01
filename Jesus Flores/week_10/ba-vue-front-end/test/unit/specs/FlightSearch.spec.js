@@ -54,6 +54,12 @@ describe(' <FlightSearch>', () => {
     await button.trigger('click')
     // Final thing we need to check is that the component
     // Did run the this.$router. push() function (Which we have now mocked)
-    expect($router.push).to.have.been.called
+    expect($router.push).to.have.been.calledWith(Sinon.match({
+      name: 'SearchResults',
+      params: {
+        origin: 'SYD',
+        destination: 'MEL'
+      }
+    }))
   })
 })
