@@ -5,36 +5,42 @@ import FlightSearchResults from "@/components/FlightSearchResults"
 import axios from 'axios'
 import moxios from 'moxios'
 
+
+const $router = {
+  push: sinon.spy() // a spy is a mock that keeps track of whether/how it was called
+}
+
 describe('<FlightSearchResults>', ()=>{
   
   it('should render a loading page', ()=>{
     const wrapper = mount(
-      FlightSearchResults,
-      {
-        mocks: {
-
-        } //mocks
-      } // options
+      FlightSearchResults, {
+        propsData: {
+          origin: 'SYD',
+          destination: 'MEL'
+        },
+      }
     ); // wrapper mount
+    console.log(wrapper.text());
     expect(wrapper.text()).to.contain('Loading')
   }); // should render loading 
 
-  it('should return the results of the search', async ()=>{
+  it('should return the results of the search', (done)=>{
 
-    // console.log(moxios);
-    // moxios.install('http://localhost:3000/search/SYD/MEL')
     moxios.install()
+        
     const wrapper = mount(
-      FlightSearchResults,
-      {
-        mocks: {
-
-        } //mocks
-      } // options
+      FlightSearchResults, {
+        propsData: {
+          origin: 'SYD',
+          destination: 'MEL'
+        },
+      }
     ); // wrapper mount
-    moxios.wait(()=>{
+
+    moxios.wait(async()=>{
       const request = moxios.requests.mostRecent()
-      request.respondWith({status: 200, response: [
+      await request.respondWith({status: 200, response: [
         {
             "id": 7,
             "flight_number": "BA256",
@@ -62,18 +68,11 @@ describe('<FlightSearchResults>', ()=>{
             }
         }
       ]}) //respondWith()
+      expect(wrapper.text()).to.contain('BA512')
+      // console.log(wrapper.text());
+      done();
     }) // moxios.wait()
-
-    console.log(wrapper.text());
-    // const result = await this.mounted()
-    
-    // expect(result).to.have.length(2)
-
+ 
   }); // should re-render results
-
-
-
-
-
 
 }) //describe
