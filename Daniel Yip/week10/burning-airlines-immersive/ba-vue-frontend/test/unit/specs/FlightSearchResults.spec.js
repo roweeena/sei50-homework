@@ -25,7 +25,7 @@ describe('<FlightSearchResults>', ()=>{
     expect(wrapper.text()).to.contain('Loading')
   }); // should render loading 
 
-  it('should return the results of the search', (done)=>{
+  it('should return the results of the search', async (done) => {
 
     moxios.install()
         
@@ -38,9 +38,9 @@ describe('<FlightSearchResults>', ()=>{
       }
     ); // wrapper mount
 
-    moxios.wait(async()=>{
+    moxios.wait(()=>{
       const request = moxios.requests.mostRecent()
-      await request.respondWith({status: 200, response: [
+      request.respondWith({status: 200, response: [
         {
             "id": 7,
             "flight_number": "BA256",
@@ -68,11 +68,65 @@ describe('<FlightSearchResults>', ()=>{
             }
         }
       ]}) //respondWith()
-      expect(wrapper.text()).to.contain('BA512')
-      // console.log(wrapper.text());
-      done();
     }) // moxios.wait()
+
+    await wrapper.vm.$nextTick(()=>{
+      console.log('hello', wrapper.text());
+      expect(wrapper.text()).to.contain('BA512')
+      done();
+    });
+    
  
   }); // should re-render results
+
+  // it('should return the results of the search', (done)=>{
+
+  //   moxios.install()
+        
+  //   const wrapper = mount(
+  //     FlightSearchResults, {
+  //       propsData: {
+  //         origin: 'SYD',
+  //         destination: 'MEL'
+  //       },
+  //     }
+  //   ); // wrapper mount
+
+  //   moxios.wait(async()=>{
+  //     const request = moxios.requests.mostRecent()
+  //     await request.respondWith({status: 200, response: [
+  //       {
+  //           "id": 7,
+  //           "flight_number": "BA256",
+  //           "departure_date": "2022-03-01T04:20:00.000Z",
+  //           "origin": "SYD",
+  //           "destination": "MEL",
+  //           "airplane_id": 9,
+  //           "created_at": "2022-02-28T01:43:47.532Z",
+  //           "updated_at": "2022-02-28T01:43:47.532Z",
+  //           "airplane": {
+  //               "name": "747"
+  //           }
+  //       },
+  //       {
+  //           "id": 8,
+  //           "flight_number": "BA512",
+  //           "departure_date": "2022-03-02T11:20:00.000Z",
+  //           "origin": "SYD",
+  //           "destination": "MEL",
+  //           "airplane_id": 9,
+  //           "created_at": "2022-02-28T01:43:47.538Z",
+  //           "updated_at": "2022-02-28T01:43:47.538Z",
+  //           "airplane": {
+  //               "name": "747"
+  //           }
+  //       }
+  //     ]}) //respondWith()
+  //     expect(wrapper.text()).to.contain('BA512')
+  //     console.log(wrapper.text());
+  //     done();
+  //   }) // moxios.wait()
+ 
+  // }); // should re-render results
 
 }) //describe
