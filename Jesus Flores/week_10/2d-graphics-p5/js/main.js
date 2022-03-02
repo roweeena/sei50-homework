@@ -1,3 +1,4 @@
+let drawCount = 0;
 function setup(){
     createCanvas(windowWidth, windowHeight);
     background(0, 0, 0);
@@ -37,18 +38,24 @@ function setup(){
     colorMode(HSB, 255);
 }
 function draw(){
+    const mouseFraction = mouseX / windowWidth;
+    //const hue = mouseFraction * 255;
+    const hue = map(mouseX,0, windowWidth, 0,255)
+    fill(
+        // random(255), 
+        // random(255), 
+        // random(255),
+        // 220
+        //100 + (drawCount % 255)  ,
+        hue,
+        255,
+        255,
+        254
+
+    )
     if(keyIsDown(SHIFT)){
         const circle = 50;
-        fill(
-            // random(255), 
-            // random(255), 
-            // random(255),
-            // 220
-            0,
-            255,
-            255,
-            
-            )
+       
         ellipse(    
             mouseX,
             mouseY,
