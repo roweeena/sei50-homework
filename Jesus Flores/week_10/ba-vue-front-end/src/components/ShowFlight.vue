@@ -1,5 +1,9 @@
 <template>
   <div>
+     <div v-if="loading">
+      <p>Loading flight details...</p>
+    </div>
+    <div v-else>
     <h2>
         Flight: {{flight.flight_number}} | {{flight.origin}}-{{flight.destination}}
     </h2>
@@ -8,13 +12,14 @@
     </h2>
     <h3> {{message}} </h3>
         <div class="seat_details">
-            <div class="column-letters text-center" v-for="(cols, index)  in board" :key="index">
-                  <p> {{ letters[index].toUpperCase() }} </p>
-                  <div v-on:click="bookSeats(index, index2)"  class="columns" v-for="(rows, index2)  in board[index]" :key="index2" :class="seatReserved(index, index2)">
-                      {{ letters[index].toUpperCase() }}{{index2 + 1}}
+            <div class="column-letters text-center" v-for="col in flight.airplane.cols" :key="col">
+                  <p> {{ letters[col].toUpperCase() }} </p>
+                   <div  v-on:click="bookSeats(col, row)" class="columns" v-for="row in flight.airplane.rows" :key="row" :class="seatReserved(col, row)">
+                      {{ letters[col].toUpperCase()}}{{ row }}
                   </div>
             </div>
         </div>
+    </div>
   </div>
 </template>
 
@@ -26,7 +31,7 @@ export default {
   props: ['id'],
   data () {
     return {
-      flight: [],
+      flight: {},
       loading: true,
       error: null,
       letters: [...'abcdefghijklmnopqrstuvwxyz'],
@@ -40,17 +45,12 @@ export default {
     flights.showFlight(this.id)
       .then(res => {
         this.flight = res
-        this.boardScheme(res.airplane.cols, res.airplane.rows)
       })
       .catch(error => { this.error = error })
       .finally(() => { this.loading = false })
   },
 
   methods: {
-    boardScheme (cols, rows) {
-      this.board = [...Array(cols)].map(_ => Array(rows).fill(null))
-    },
-
     seatReserved (cols, rows) {
       const reservations = this.flight.reservations
       for (let i = 0; i < reservations.length; i++) {
