@@ -1,0 +1,13 @@
+<h1>AJAX Proxy</h1>
+
+<div id="proxyResponse"></div>
+
+<script>
+  $.ajax("http://localhost:3000/fetch?url=https://www.bbc.co.uk/iplayer")
+  .done(response =>{
+    console.log(response.data)
+    $('#proxyResponse').html(response.data)
+  }).fail(error =>{
+    console.log(error)
+  })
+</script>
