@@ -49,7 +49,21 @@ a, label{
 .text-ceter{
     text-align: center;
 }
-
+.selectedNow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    width: 35px;
+    height:35px;
+    border-radius: 5px;
+    background-color: rgb(183, 168, 13);
+    color: rgb(198, 198, 198);
+    cursor: pointer;
+    font-size: 14px;
+    pointer-events: none;
+}
 .reserved{
     display: flex;
     justify-content: center;
