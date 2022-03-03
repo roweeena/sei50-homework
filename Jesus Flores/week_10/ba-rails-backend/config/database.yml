@@ -83,3 +83,32 @@ production:
   database: ba-rails-backend_production
   username: ba-rails-backend
   password: <%= ENV['BA-RAILS-BACKEND_DATABASE_PASSWORD'] %>
+
+
+# development:
+#   adapter: mysql2
+#   database: db1_dev
+#   username: root
+#   password: xyz
+#   host: localhost
+
+# development2:
+#   adapter: mysql2
+#   database: db2_dev
+#   username: root
+#   password: xyz
+#   host: localhost
+
+# production1:
+#   adapter: mysql2
+#   database: db1_prod
+#   username: root
+#   password: xyz
+#   host: your-production-ip
+
+# production2:
+#   adapter: mysql2
+#   database: db2_prod
+#   username: root
+#   password: xyz
+#   host: your-production-ip

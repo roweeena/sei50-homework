@@ -10,6 +10,13 @@
     <h2>
       Departure Date: {{flight.departure_date}}
     </h2>
+    <ReservationConfirm
+    v-if="selectedSeat.rows && selectedSeat.cols"
+    :cols="selectedSeat.cols"
+    :rows="selectedSeat.rows"
+    :letter="letters[selectedSeat.cols].toUpperCase()"
+    v-on:confirmSeat="confirmSeats"
+    />
     <h3> {{message}} </h3>
         <div class="seat_details">
             <div class="column-letters text-center" v-for="col in flight.airplane.cols" :key="col">
@@ -25,10 +32,12 @@
 
 <script>
 import FlightsHttp from '../services/Flights'
+import ReservationConfirm from './ReservationConfirm.vue'
 const flights = new FlightsHttp()
 export default {
   name: 'ShowFlight',
   props: ['id'],
+  components: {ReservationConfirm: ReservationConfirm},
   data () {
     return {
       flight: {},
@@ -37,7 +46,11 @@ export default {
       letters: [...'abcdefghijklmnopqrstuvwxyz'],
       reservations: [],
       board: null,
-      message: ''
+      message: '',
+      selectedSeat: {
+        cols: null,
+        rows: null
+      }
       // state goes here
     }
   },
@@ -52,6 +65,9 @@ export default {
 
   methods: {
     seatReserved (cols, rows) {
+      if (this.selectedSeat.cols === cols && this.selectedSeat.rows === rows) {
+        return 'selectedNow'
+      }
       const reservations = this.flight.reservations
       for (let i = 0; i < reservations.length; i++) {
         if (reservations[i].col === cols && reservations[i].row === rows) {
@@ -61,17 +77,20 @@ export default {
     },
 
     bookSeats (cols, rows) {
+      this.selectedSeat = {cols, rows}
+    },
+    confirmSeats () {
       const newReservation = {
         user_id: 55,
-        col: cols,
-        row: rows,
+        col: this.selectedSeat.cols,
+        row: this.selectedSeat.rows,
         flight_id: this.flight.id
       }
-      this.flight.reservations.push({col: cols, row: rows}) // We change the state
+      this.flight.reservations.push({col: this.selectedSeat.cols, row: this.selectedSeat.rows}) // We change the state
       flights.saveReservation(newReservation)
         .then(res => {
           if (res.id !== null) {
-            this.message = `Flight has been booked, your seat: ${this.letters[cols].toUpperCase()}${rows + 1}`
+            this.message = `Flight has been booked, your seat: ${this.letters[this.selectedSeat.cols].toUpperCase()}${this.selectedSeat.rows + 1}`
           }
         })
         .catch(error => { this.error = error })

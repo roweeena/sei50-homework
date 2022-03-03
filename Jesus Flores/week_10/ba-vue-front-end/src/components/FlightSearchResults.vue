@@ -1,7 +1,7 @@
 <template>
   <div>
         <h2>
-            Search Results from: {{origin}}  {{destination}}
+            Search Results from {{origin}} to {{destination}}
         </h2>
         <div v-if="flights">
             <ul >
