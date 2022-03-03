@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     if res.persisted? 
       render json: res
     else
-      render json: {error: 'Could not create comment'}, status: 422
+      render json: {error: 'Could not create reservation'}, status: 422
     end
     
     

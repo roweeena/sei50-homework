@@ -27,6 +27,15 @@
         {{flight.airplane.name}}
       </div>
 
+      
+      <ReservationConfirm 
+        v-if="selectedSeat.row"
+        :row="this.selectedSeat.row"
+        :col="this.selectedSeat.col"
+        @seatConfirmed.once="handleSeatConfirmed"
+      />
+
+
       <div class="seating">
 
         <div class="planeRow" v-for="row in flight.airplane.rows">
@@ -56,19 +65,28 @@
 </template>
 
 <script>
+  import ReservationConfirm from './ReservationConfirm'
+
   const FAKE_USER_ID = 16;
   import axios from 'axios';
   const API_BASE_URL = 'http://localhost:3000/';
 
 
-
 export default {
   name: 'FlightDetails',
   props: ['id'],
+  components: {
+    ReservationConfirm
+  },
   data(){
     return{
       flight: {},
-      loading: true
+      loading: true,
+      error: null,
+      selectedSeat: {
+        row: null,
+        col: null
+      }
     }
   },
 
@@ -82,6 +100,9 @@ export default {
   methods: {
     getSeatStatus(row, col){
       // return Math.random() > 0.5 ? 'occupied' : 'booked'
+      if(this.selectedSeat.row === row && this.selectedSeat.col === col) {
+        return 'selected'
+      }
       for (const res of this.flight.reservations) {
         if (res.row === row && res.col == col) {
 
@@ -90,18 +111,35 @@ export default {
           }else{
             return 'occupied'
           }
-
-
         }
-
       } // for each reservation
-
       return ''; // not occupied
     },
 
     selectSeat(row, col){
       console.log('clicked', row, col);
+      this.selectedSeat = {row, col}
     },
+
+    async handleSeatConfirmed(){
+      
+      if (this.flight.reservations.some(res => res.row === this.selectedSeat.row && res.col === this.selectSeat.col)) return
+
+      this.loading = true
+      try {
+        const res = await axios.post(`${API_BASE_URL}reservations/create`, {
+          flight_id: this.flight.id,
+          row: this.selectedSeat.row,
+          col: this.selectedSeat.col
+        })
+        console.log(res.data);
+        this.flight.reservations.push(res.data)
+        this.selectedSeat = {}
+        this.loading = false
+      } catch (error) {
+        console.log('ERROR', error);
+      }
+    }, // bookSeat()
   },
 
 
@@ -129,7 +167,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 8px;
+  font-size: 16px;
   gap: 0.7em;
 }
 
@@ -156,16 +194,20 @@ export default {
 
 .booked{
   background-color: rgba(0, 123, 255, 0.667);
-  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .occupied{
   background-color: rgba(255, 9, 9, 0.249);
-  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .available{
   background-color: rgba(2, 176, 2, 0.338);
+}
+
+.selected{
+  background-color: green;
 }
 
 
