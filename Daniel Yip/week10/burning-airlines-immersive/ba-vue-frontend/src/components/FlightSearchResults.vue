@@ -8,7 +8,7 @@
 
     <div v-else class="results">
 
-      <div v-for="flight in flights">
+      <div v-for="flight in flights" class="result">
         <div @click="gotoFlight(flight.id)">
           {{new Date(flight.departure_date) | dateFormat('DD/MM/YY')}}
           {{formatDate(flight.departure_date)}}
@@ -48,17 +48,17 @@ export default {
   // This is like React's componentDidMount() - runs once when the component
   // is added to the DOM
   async mounted(){
-    console.log('Component mounted', this.origin, this.destination);
+    // console.log('Component mounted', this.origin, this.destination);
 
     try {
       const url = `${API_BASE_URL}flights/search/${this.origin}/${this.destination}`;
       const res = await axios.get(url);
       this.flights = res.data;
       this.loading = false;
-      console.log('response', res.data);
+      // console.log('response', res.data);
     } catch( err ){
       console.log('Error loading flight search results', err);
-      this.error = error;
+      this.error = err;
     }
 
   }, // mounted()
