@@ -10,7 +10,11 @@
 
       <div v-for="flight in flights">
         <div @click="gotoFlight(flight.id)">
-        <p>{{ flight.flight_number }} - {{flight.airplane.name}}</p>
+          {{new Date(flight.departure_date) | dateFormat('DD/MM/YY')}}
+          {{formatDate(flight.departure_date)}}
+          {{ flight.flight_number }} 
+          - 
+          {{flight.airplane.name}}
         </div>
       </div><!-- v-for loop closing div tag -->
 
@@ -23,6 +27,9 @@
 <script>
 
 import axios from 'axios';
+import {DateTime} from 'luxon';
+
+// window.testDateTime = DateTime
 
 const API_BASE_URL = 'http://localhost:3000/';
 
@@ -63,6 +70,10 @@ export default {
         name: 'FlightDetails',
         params: {id}
       })
+    },
+
+    formatDate(isoDate){
+      return DateTime.fromISO(isoDate).toLocaleString(DateTime.DATETIME_MED)
     }
   }, // methods
 
