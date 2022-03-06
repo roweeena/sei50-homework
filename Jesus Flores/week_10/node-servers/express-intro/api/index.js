@@ -16,10 +16,11 @@ app.get('/guestbook', (req, res) => {
 })
 
 app.get('/dogs/:id', (req, res) => {
+    console.log('params', req.params)
     res.send({
         dog: req.params.id
     })
 })
 
 
-app.listen(3001 ,( ) => console.log('Example app listening on port 8080!'))
+app.listen(3000 ,( ) => console.log('Example app listening on port 3000!'))
