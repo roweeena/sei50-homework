@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const FlightSchema = new mongoose.Schema({
 
   flight_number: String,
@@ -17,13 +18,11 @@ const FlightSchema = new mongoose.Schema({
     {
       row: Number,
       col: Number,
-      user_id: Number //just for now, fake...
-      
-      //TODO: make this work
-      // user: {
-      //   type: mongoose.Schema.Types.ObjectId,
-      //   ref: 'User' // 'a reservation belongs to a User'
-      // }
+      // user_id: Number, //just for now, fake...
+      user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User' // 'a reservation belongs to a User'
+      }
     }
   ]
 

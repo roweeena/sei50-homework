@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 //Load our Flight model file (and any others?)
 const Flight = require('./Flight');
+const User = require('./User');
+
 
 // Connect to DB server
 
@@ -17,11 +19,38 @@ db.on('error', (err)=>{
 
 db.once('open', async () => {
 
-  await Flight.deleteMany({});
+  await User.deleteMany({});
 
+  let u1Id
+  let u2Id
 
   try {
-    const results = await Flight.create([
+    const users = await User.create([
+      {
+        name: 'Test User 1',
+        email: 'one@one.com'
+      },
+      {
+        name: 'Test User 2',
+        email: 'two@two.com'
+      },
+      {
+        name: 'Test User 3',
+        email: 'three@three.com'
+      }
+    ])
+    u1Id = users[0]._id
+    u2Id = users[1]._id
+    console.log('USER 1 ID', u1Id);
+    
+  } catch (err) {
+    console.log('error creating users', err);
+  }
+
+  await Flight.deleteMany({});
+
+  try {
+    await Flight.create([
       {
         flight_number: 'BA123',
         origin: 'SYD',
@@ -29,9 +58,9 @@ db.once('open', async () => {
         departure_date: new Date('2022-03-20T04:20:00Z'),
         airplane: {name: '737 MAX', rows: 20, cols: 6}, //nested data instead of an ID assocication
         reservations: [
-          {row: 1, col: 1, user_id: 10},
-          {row: 2, col: 2, user_id: 10},
-          {row: 3, col: 3, user_id: 11}
+          {row: 1, col: 1, user: u1Id},
+          {row: 2, col: 2, user: u1Id},
+          {row: 3, col: 3, user: u2Id}
         ],
       },
       {
@@ -41,9 +70,9 @@ db.once('open', async () => {
         departure_date: new Date('2022-03-21T04:20:00Z'),
         airplane: {name: '767', rows: 16, cols: 4}, //nested data instead of an ID assocication
         reservations: [
-          {row: 1, col: 1, user_id: 10},
-          {row: 1, col: 2, user_id: 10},
-          {row: 1, col: 3, user_id: 11}
+          {row: 1, col: 1, user: u1Id},
+          {row: 1, col: 2, user: u1Id},
+          {row: 1, col: 3, user: u2Id}
         ],
       }
     ])
@@ -63,7 +92,6 @@ db.once('open', async () => {
     process.exit(1);
   }
   
-
 
   process.exit(0); // all good exit program
 
