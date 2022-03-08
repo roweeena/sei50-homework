@@ -35,17 +35,25 @@
         @seatConfirmed.once="handleSeatConfirmed"
       />
 
+      <div class="confirmation" v-if="confirmationMessage.length > 0 && !selectedSeat.row">
+        {{confirmationMessage}}
+      </div>
+
 
       <div class="seating">
 
-        <div class="planeRow" v-for="row in flight.airplane.rows">
+        <div 
+          v-for="row in flight.airplane.rows"
+          class="planeRow"
+          :key="row" 
+        >
           
           {{row}}
           <div 
-            class="planeSeat" 
-            v-bind:class="getSeatStatus(row,col)"
             v-for="col in flight.airplane.cols"
             :key="col"
+            class="planeSeat" 
+            :class="getSeatStatus(row,col)"
             @click="selectSeat(row, col)"
           >
             {{col | seatColToLetter }}
@@ -81,12 +89,14 @@ export default {
   data(){
     return{
       flight: {},
+      reservations: {},
       loading: true,
       error: null,
       selectedSeat: {
         row: null,
         col: null
-      }
+      },
+      confirmationMessage: ''
     }
   },
 
@@ -99,20 +109,40 @@ export default {
 
   methods: {
     getSeatStatus(row, col){
-      // return Math.random() > 0.5 ? 'occupied' : 'booked'
-      if(this.selectedSeat.row === row && this.selectedSeat.col === col) {
-        return 'selected'
-      }
-      for (const res of this.flight.reservations) {
-        if (res.row === row && res.col == col) {
 
-          if (res.user_id == FAKE_USER_ID) {
+      if(this.reservations[`${row}-${col}`]){
+
+        if(this.selectedSeat.row === this.reservations[`${row}-${col}`].row && this.selectedSeat.col == this.reservations[`${row}-${col}`].col){
+            this.selectedSeat = {}
+          }
+          
+          if (this.reservations[`${row}-${col}`].user_id == FAKE_USER_ID) {
             return 'booked'
           }else{
             return 'occupied'
           }
+      }
+
+      // for (const res of this.flight.reservations) {
+      //   window.seatRenderCount ++
+
+      //   if (res.row === row && res.col == col) {
+          
+      //     if(this.selectedSeat.row === res.row && this.selectedSeat.col == res.col){
+      //       this.selectedSeat = {}
+      //     }
+          
+      //     if (res.user_id == FAKE_USER_ID) {
+      //       return 'booked'
+      //     }else{
+      //       return 'occupied'
+      //     }
+      //   }
+      // } // for each reservation
+
+        if(this.selectedSeat.row === row && this.selectedSeat.col === col) {
+          return 'selected'
         }
-      } // for each reservation
       return ''; // not occupied
     },
 
@@ -125,7 +155,7 @@ export default {
       
       if (this.flight.reservations.some(res => res.row === this.selectedSeat.row && res.col === this.selectSeat.col)) return
 
-      this.loading = true
+      // this.loading = true
       try {
         const res = await axios.post(`${API_BASE_URL}reservations/create`, {
           flight_id: this.flight.id,
@@ -133,29 +163,46 @@ export default {
           col: this.selectedSeat.col
         })
         console.log(res.data);
-        this.flight.reservations.push(res.data)
+        // this.reservations[`${reservation.row}-${reservation.col}`] = res.data
         this.selectedSeat = {}
-        this.loading = false
+        this.confirmationMessage = 'Your reservation was sucessfully booked!'
+        // this.loading = false
       } catch (error) {
         console.log('ERROR', error);
       }
     }, // bookSeat()
-  },
+    async fetchFlightData(){
 
-
-  async mounted(){
-    console.log('mounted');
-    const url = `${API_BASE_URL}flights/${this.id}`
+      const url = `${API_BASE_URL}flights/${this.id}`
 
     try {
       const res = await axios.get(url)
-      console.log(res);
+      console.log(res.data);
+      
       this.flight = res.data;
+            
+        for (const reservation of res.data.reservations) {
+          this.reservations[`${reservation.row}-${reservation.col}`] = reservation
+        }
+        
+      // res.data.reservations
+      // this.reservations
       this.loading = false;
     } catch (error) {
       console.log('Error loading flight details', error);
     }
+    }
+  },
 
+
+  mounted(){
+    window.seatRenderCount = 0
+    
+    this.fetchFlightData()
+
+    // setInterval(() => {
+    //   this.fetchFlightData()
+    // }, 2000);
 
   }
 }
