@@ -3,8 +3,13 @@ const app = express();
 const PORT = 3000;
 const db = require('./dbconfig');
 const Flight = require('./models/Flight');
+const cors = require('cors')
+app.use(cors())
 
-
+// app.use((req, res, next) => {
+    
+//     next();
+// });
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
@@ -16,7 +21,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/flights/search/:origin/:destination', async (req, res) => {
-    res.header('Access-Control-Allow-Origin','*');
     try {
         const {origin , destination } = req.params
         const flights = await Flight.find({ origin, destination});
@@ -27,11 +31,8 @@ app.get('/flights/search/:origin/:destination', async (req, res) => {
     }
 })
 
-app.get('/flights/:id', (req, res) => {
-    res.header('Access-Control-Allow-Origin','*');
+app.get('/flights/:id', async (req, res) => {
     console.log('all good');
-    res.json({ 
-        flight_number: 'BA123',
-        airplane: {name : '737'}
-    })
+    const flight = await Flight.findOne({_id: req.params.id})
+    res.json(flight)
 })

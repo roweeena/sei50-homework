@@ -81,7 +81,7 @@ export default {
     },
     confirmSeats () {
       const newReservation = {
-        user_id: 55,
+        user_id: 10,
         col: this.selectedSeat.cols,
         row: this.selectedSeat.rows,
         flight_id: this.flight.id
