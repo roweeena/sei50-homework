@@ -16,14 +16,22 @@ app.get('/', (req, res) => {
 })
 
 app.get('/flights/search/:origin/:destination', async (req, res) => {
+    res.header('Access-Control-Allow-Origin','*');
     try {
-        const flights = await Flight.find({
-            origin: req.params.origin,
-            destination: req.params.destination
-        });
+        const {origin , destination } = req.params
+        const flights = await Flight.find({ origin, destination});
         res.json(flights)
     } catch (error) {
         console.log(error)
         res.sendStatus(422); //Unprocesable Entity
     }
+})
+
+app.get('/flights/:id', (req, res) => {
+    res.header('Access-Control-Allow-Origin','*');
+    console.log('all good');
+    res.json({ 
+        flight_number: 'BA123',
+        airplane: {name : '737'}
+    })
 })
