@@ -1,18 +1,5 @@
-
-const mongoose = require('mongoose');
-
-// Load our Flight model file (and any others?)
+const db = require('../dbconfig');
 const Flight = require('./Flight');
-
-// Connect to DB server; note the DB selection: 'ba', like a path
-mongoose.connect('mongodb://127.0.0.1/ba');
-
-const db = mongoose.connection;
-
-db.on('error', (err) => {
-  console.log('Connection error', err);
-});
-
 // Once the connection is established, we can start querying/seeding
 db.once('open', async () => {
 
