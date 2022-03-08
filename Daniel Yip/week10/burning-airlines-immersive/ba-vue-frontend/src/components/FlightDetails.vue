@@ -75,7 +75,7 @@
 <script>
   import ReservationConfirm from './ReservationConfirm'
 
-  const FAKE_USER_ID = 16;
+  const FAKE_USER_ID = '6225e5bce2ce96ae8311f1b1';
   import axios from 'axios';
   const API_BASE_URL = 'http://localhost:3000/';
 
@@ -116,7 +116,7 @@ export default {
             this.selectedSeat = {}
           }
           
-          if (this.reservations[`${row}-${col}`].user_id == FAKE_USER_ID) {
+          if (this.reservations[`${row}-${col}`].user == FAKE_USER_ID) {
             return 'booked'
           }else{
             return 'occupied'
@@ -158,12 +158,12 @@ export default {
       // this.loading = true
       try {
         const res = await axios.post(`${API_BASE_URL}reservations/create`, {
-          flight_id: this.flight.id,
+          flight_id: this.flight._id,
           row: this.selectedSeat.row,
           col: this.selectedSeat.col
         })
         console.log(res.data);
-        // this.reservations[`${reservation.row}-${reservation.col}`] = res.data
+        this.reservations[`${this.selectedSeat.row}-${this.selectedSeat.col}`] = res.data
         this.selectedSeat = {}
         this.confirmationMessage = 'Your reservation was sucessfully booked!'
         // this.loading = false

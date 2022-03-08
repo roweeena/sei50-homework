@@ -9,7 +9,7 @@
     <div v-else class="results">
 
       <div v-for="flight in flights" class="result">
-        <div @click="gotoFlight(flight.id)">
+        <div @click="gotoFlight(flight._id)">
           {{new Date(flight.departure_date) | dateFormat('DD/MM/YY')}}
           {{formatDate(flight.departure_date)}}
           {{ flight.flight_number }} 
@@ -53,6 +53,7 @@ export default {
     try {
       const url = `${API_BASE_URL}flights/search/${this.origin}/${this.destination}`;
       const res = await axios.get(url);
+      console.log(res);
       this.flights = res.data;
       this.loading = false;
       // console.log('response', res.data);

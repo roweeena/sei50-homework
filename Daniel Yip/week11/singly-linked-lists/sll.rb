@@ -107,9 +107,13 @@ class SLL
     @count
   end
 
+
+  
   def [](n)  # random access list[n]
     index = n
     node = @head
+
+    return nil unless n < self.length
     
     while index != 0
       node = node.next
@@ -119,6 +123,8 @@ class SLL
     node
 
   end
+
+
 
   def reverse # returns a reversed verion of the list, do not change the original
     reversedList = SLL.new @head.data
@@ -164,7 +170,7 @@ class SLL
       prev_node = node
       node = node.next
     end
-    
+
     if node == @head
       @head = node.next
       return
@@ -173,13 +179,14 @@ class SLL
     prev_node.next = node.next
 
   end
-# implement the each method as it exists in ruby, version of each must take a block and run that block for each node in the list, providing the block with a block variable which will be the current node as it loops - look into 'yeild' and 'block_given?'
+# implement the each method as it exists in ruby, version of each must take a block and run that block for each node in the list, providing the block with a block variable which will be the current node as it loops - look into 'yield' and 'block_given?'
   def each 
     node = @head
     while node != nil
       yield(node)
       node = node.next
     end
+    self
   end
 
   def map # as above but applies the block to each node and returns an array of transformed values
@@ -208,8 +215,7 @@ class SLL
     
   # end # Node
   
-  # TODO: this half works?
-  Node = Struct.new('Node', :@data, :next)
+  Node = Struct.new('Node', :data, :next)
 
 
 
