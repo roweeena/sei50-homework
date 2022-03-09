@@ -6,8 +6,8 @@ class ReservationsController < ApplicationController
     # binding.pry
     res = Reservation.create! reservation_params
     
-    sleep 0.2
-
+    # sleep 0.2
+    
     if res.persisted? 
       render json: res
     else
@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation)
+    # params.require(:reservation)
       params.permit(:flight_id, :row, :col).merge(user_id: User.first.id )
   end
 
