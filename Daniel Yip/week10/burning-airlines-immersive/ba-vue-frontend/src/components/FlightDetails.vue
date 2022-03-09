@@ -74,11 +74,9 @@
 
 <script>
   import ReservationConfirm from './ReservationConfirm'
+  import {fetchFlightDetails, createReservation} from '../lib/api'
 
-  const FAKE_USER_ID = 16;
-  import axios from 'axios';
-  const API_BASE_URL = 'http://localhost:3000/';
-
+  const FAKE_USER_ID = '6225e5bce2ce96ae8311f1b1'
 
 export default {
   name: 'FlightDetails',
@@ -116,7 +114,7 @@ export default {
             this.selectedSeat = {}
           }
           
-          if (this.reservations[`${row}-${col}`].user_id == FAKE_USER_ID) {
+          if (this.reservations[`${row}-${col}`].user == FAKE_USER_ID) {
             return 'booked'
           }else{
             return 'occupied'
@@ -155,35 +153,26 @@ export default {
       
       if (this.flight.reservations.some(res => res.row === this.selectedSeat.row && res.col === this.selectSeat.col)) return
 
-      // this.loading = true
       try {
-        const res = await axios.post(`${API_BASE_URL}reservations/create`, {
-          flight_id: this.flight.id,
-          row: this.selectedSeat.row,
-          col: this.selectedSeat.col
-        })
+        const res = await createReservation(this.flight_id, this.selectedSeat.row, this.selectedSeat.col)by
         console.log(res.data);
-        // this.reservations[`${reservation.row}-${reservation.col}`] = res.data
+        this.reservations[`${this.selectedSeat.row}-${this.selectedSeat.col}`] = res.data
         this.selectedSeat = {}
         this.confirmationMessage = 'Your reservation was sucessfully booked!'
-        // this.loading = false
+
       } catch (error) {
         console.log('ERROR', error);
       }
     }, // bookSeat()
     async fetchFlightData(){
 
-      const url = `${API_BASE_URL}flights/${this.id}`
-
     try {
-      const res = await axios.get(url)
-      console.log(res.data);
-      
+      const res = await fetchFlightDetails(this.id)
       this.flight = res.data;
-            
-        for (const reservation of res.data.reservations) {
-          this.reservations[`${reservation.row}-${reservation.col}`] = reservation
-        }
+      
+      for (const reservation of res.data.reservations) {
+        this.reservations[`${reservation.row}-${reservation.col}`] = reservation
+      }
         
       // res.data.reservations
       // this.reservations
