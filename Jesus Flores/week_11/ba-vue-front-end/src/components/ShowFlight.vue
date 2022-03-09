@@ -84,7 +84,7 @@ export default {
         user_id: 10,
         col: this.selectedSeat.cols,
         row: this.selectedSeat.rows,
-        flight_id: this.flight.id
+        flight_id: this.flight._id
       }
       this.flight.reservations.push({col: this.selectedSeat.cols, row: this.selectedSeat.rows}) // We change the state
       flights.saveReservation(newReservation)

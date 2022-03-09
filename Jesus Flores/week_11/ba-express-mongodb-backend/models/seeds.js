@@ -48,8 +48,8 @@ db.once('open', async () => {
         // this Flight using the flight ID
         reservations: [
           { row: 1, col: 1, user_id: 10 }, // NOT real user_ids yet!
-          { row: 1, col: 2, user_id: 10 },
-          { row: 1, col: 3, user_id: 11 }
+          { row: 2, col: 2, user_id: 10 },
+          { row: 3, col: 3, user_id: 11 }
         ], // reservations[]
       }, // end of flight #1
       {

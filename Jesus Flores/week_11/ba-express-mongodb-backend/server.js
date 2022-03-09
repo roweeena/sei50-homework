@@ -5,7 +5,10 @@ const db = require('./dbconfig');
 const Flight = require('./models/Flight');
 const cors = require('cors')
 app.use(cors())
-
+// Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded({extended: true})); 
+app.use(express.json());  
+// Parse JSON bodies (as sent by API clients)
 // app.use((req, res, next) => {
     
 //     next();
@@ -35,4 +38,22 @@ app.get('/flights/:id', async (req, res) => {
     console.log('all good');
     const flight = await Flight.findOne({_id: req.params.id})
     res.json(flight)
+})
+
+app.post('/reservation', async (req, res) => {
+    const newReservation = {
+        row: req.body.row,
+        col: req.body.col,
+        user_id: 11
+    }
+    const flight = await Flight.updateOne(
+        { _id: req.body.flight_id },
+        {
+            $push: {
+                reservations: newReservation
+            }
+        }
+
+    )
+    res.json(newReservation);
 })

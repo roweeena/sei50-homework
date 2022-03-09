@@ -28,6 +28,7 @@ export default class FlightsHttp {
     try {
       const url = `${API_BASE_URL}/reservation`
       const res = await axios.post(url, {...newReservation})
+      console.log(res.data)
       return res.data
     } catch (error) {
       return error
