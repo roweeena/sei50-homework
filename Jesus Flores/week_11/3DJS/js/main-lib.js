@@ -71,7 +71,9 @@ app.createSphere = () => {
   );
 
   const sphereMaterial = new THREE.MeshPhongMaterial({
-    color: 0x039BE5
+    color: 0xFFFFFF,
+    map: THREE.ImageUtils.loadTexture('img/earth.jpg'),
+    side: THREE.DoubleSide
   });
 
   const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
@@ -81,3 +83,39 @@ app.createSphere = () => {
   return sphere;
 
 }; // createSphere()
+
+app.createParticleSystem = () => {
+  const particles = new THREE.BufferGeometry();
+  const position = [];
+  const velocities = [];
+  const distrib = app.controls.particleDistribution;
+
+  for (let i = 0; i < app.controls.numParticles; i++) {
+    position.push(
+      THREE.Math.randInt(-distrib,distrib), //x,
+      THREE.Math.randInt(-distrib,distrib), //y,
+      THREE.Math.randInt(-distrib,distrib), //z,
+      
+    );
+
+    velocities.push(
+      THREE.Math.randFloat(-0.5,0.5),
+      THREE.Math.randFloat(-0.5,0.5),
+      THREE.Math.randFloat(-0.5,0.5),
+    );
+  }
+
+  particles.setAttribute('position', new THREE.Float32BufferAttribute(position, 3));
+  particles.setAttribute('velocity', new THREE.Float32BufferAttribute(position, 3));
+
+  const particleMaterial = new THREE.PointsMaterial({
+    color: 0xFFFFFF,
+    size: 6,
+    map: THREE.ImageUtils.loadTexture('img/snowflake.png'),
+    blending: THREE.AdditiveBlending,
+    transparent: true,
+    alphaTest:0.5
+  })
+  const particleSystem = new THREE.Points(particles, particleMaterial)
+  return particleSystem
+}

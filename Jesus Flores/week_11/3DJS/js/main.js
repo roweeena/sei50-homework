@@ -2,12 +2,14 @@ console.log('main.js loaded');
 
 // use the existing 'app' object (if the other main file loaded first) or, if it's not yet defined, initialise it as an empty object
 var app = app || {};
-
+const params = new URLSearchParams(window.location.search)
 // ready for dat.gui
 app.controls = {
   rotationSpeed: 0.01, // to control cube rotation
   counter: 0,
-  counterIncrement: 0.03 // how fast the counter grows
+  counterIncrement: 0.03, // how fast the counter grows
+  numParticles: parseInt(params.get('p')) || 1000,
+  particleDistribution: 500
 };
 
 app.init = () => {
@@ -85,10 +87,16 @@ app.init = () => {
   app.scene.add( app.sphere );
 
 
+
+  app.particleSystem = app.createParticleSystem();
+  app.scene.add(app.particleSystem)
+
   // Let there be light!
   app.spotlight = app.createSpotlight();
   app.scene.add( app.spotlight );
-
+  app.ambientLight = new THREE.AmbientLight(0x444444);
+  app.scene.add(app.ambientLight);
+  
   // const spotLightHelper = new THREE.SpotLightHelper( app.spotlight );
   // app.scene.add( spotLightHelper );
 
@@ -107,6 +115,8 @@ app.init = () => {
 app.animate = () => {
 
   app.controls.counter += app.controls.counterIncrement;
+
+  app.sphere.rotation.y += app.controls.rotationSpeed
 
   // const sphereYOffset = Math.sin( app.controls.counter );
   // // console.log('counter:', app.controls.counter);
