@@ -23,13 +23,25 @@ app.init = () => {
     app.renderer.setSize(window.innerWidth, window.innerHeight);
     app.renderer.setClearColor(0x000000);
 
-    app.renderer.shadowMap.enable = true;
+    app.renderer.shadowMap.enabled = true;
     app.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     document.getElementById('output').appendChild(app.renderer.domElement);
 
-    app.axes = new THREE.AxesHelper(50);
+    app.axes = new THREE.AxesHelper(50  );
     app.scene.add( app.axes ); // Create an axis visualiser and add it to the scene.
     
+
+    //Add cube
+
+    app.cube = app.createCube(4,4,4);
+    app.scene.add( app.cube);
+
+    
+    //Add Sphere
+
+    app.sphere = app.createSphere();
+    app.scene.add(app.sphere);
+
     //let there be light
     app.spotlight = app.createSpotlight();
     app.scene.add( app.spotlight )
@@ -39,9 +51,20 @@ app.init = () => {
     app.plane = app.createPlane();
     app.scene.add( app.plane );
     app.renderer.render( app.scene, app.camera );
-    
 
+    //Use the mouse to control the camera perspective
+    app.mouseControls = new THREE.OrbitControls( 
+        app.camera,
+        app.renderer.domElement
+    )
+    app.animate();
+
+};
+
+app.animate = () => {
+   app.renderer.render(app.scene, app.camera); 
+   requestAnimationFrame( app.animate );
 }
-
+ 
 
 window.onload = app.init();

@@ -31,3 +31,31 @@ app.createSpotlight = () => {
     
     return light
 }
+
+app.createCube = (width, depth, height) => {
+    const cubeGeometry = new THREE.BoxGeometry(width, depth, height);
+    const cubeMaterial = new THREE.MeshLambertMaterial({
+        color: 0xCF8E00,
+        //wireframe: true
+    })
+
+    const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+    cube.position.set(-4, 15, 0);
+    cube.castShadow = true ;
+    return cube;
+}
+
+app.createSphere = () => {
+   const sphereGeometry = new THREE.SphereGeometry(
+       6, //radius
+       40,// number of triangle segments on the X axis
+       40,// same for Y axis
+   );
+   const sphereMaterial = new THREE.MeshPhongMaterial({      
+       color: 0x039BE5,
+   })
+   const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+   sphere.position.set(20, 6, 2);
+   sphere.castShadow = true;
+   return sphere;
+}
