@@ -50,12 +50,12 @@ app.createCube = (width, depth, height) => {
   });
 
   const cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
-  // cube.position.set( -4, 15, 0 );
-  cube.position.set(
-    THREE.MathUtils.randInt(-50, 50),
-    THREE.MathUtils.randInt(-50, 50),
-    THREE.MathUtils.randInt(-50, 50),
-  );
+  cube.position.set( -4, 15, 0 );
+  // cube.position.set(
+  //   THREE.MathUtils.randInt(-50, 50),
+  //   THREE.MathUtils.randInt(-50, 50),
+  //   THREE.MathUtils.randInt(-50, 50),
+  // );
   cube.castShadow = true;
 
   return cube;
@@ -75,8 +75,8 @@ app.createSphere = () => {
   });
 
   const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
-  sphere.position.set( 20, 6, 2 );
-  sphere.castShadow = true;
+  sphere.position.set( 0, 0, 0);
+  //sphere.castShadow = true;
 
   return sphere;
 
