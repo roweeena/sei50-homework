@@ -30,7 +30,17 @@ app.init = () => {
     app.axes = new THREE.AxesHelper(50);
     app.scene.add( app.axes ); // Create an axis visualiser and add it to the scene.
     
+    //let there be light
+    app.spotlight = app.createSpotlight();
+    app.scene.add( app.spotlight )
+
+    //add some cool shit
+    // 1. add a 2D plane i.e sheet, aka 'the runway'
+    app.plane = app.createPlane();
+    app.scene.add( app.plane );
     app.renderer.render( app.scene, app.camera );
+    
+
 }
 
 
